@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-cream: #FBF9F4;
+    --bg-card: #FFFFFF;
+    --primary-green: #2D4A2D;
+    --leaf-green: #466B45;
+    --mint-light: #EAF1E8;
+    --mint-soft: #F2F7F1;
+    --text-dark: #1D2B1E;
+    --text-muted: #5C6B5E;
+    --accent-terracotta: #D97706;
+  }
+
+  body {
+    background-color: #FBF9F4;
+    color: #1D2B1E;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+.font-serif-luxury {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-serif-expressive {
+  font-family: 'Fraunces', Georgia, serif;
+}
+
+/* Organic Soft Shadows & Glass Cards */
+.flavoria-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(45, 74, 45, 0.08);
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 30px -10px rgba(45, 74, 45, 0.06);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.flavoria-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(70, 107, 69, 0.25);
+  box-shadow: 0 20px 40px -12px rgba(45, 74, 45, 0.12);
+}
+
+/* Floating Dish Frame */
+.dish-organic-frame {
+  position: relative;
+  border-radius: 9999px;
+  background: radial-gradient(circle, #F2F7F1 0%, #E2ECE0 70%, #D4E3D1 100%);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 20px 40px -15px rgba(45, 74, 45, 0.15);
+  overflow: hidden;
+}
+
+.dish-organic-frame img {
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.dish-organic-frame:hover img {
+  transform: scale(1.08) rotate(2deg);
+}
+
+/* Primary Organic Button */
+.btn-flavoria-green {
+  background-color: #466B45;
+  color: #FFFFFF;
+  font-weight: 600;
+  border-radius: 9999px;
+  padding: 0.75rem 1.75rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px -6px rgba(70, 107, 69, 0.4);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-flavoria-green:hover {
+  background-color: #2D4A2D;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px -6px rgba(45, 74, 45, 0.5);
+}
+
+/* Outline Pill Button */
+.btn-flavoria-outline {
+  background-color: transparent;
+  color: #2D4A2D;
+  border: 1.5px solid #2D4A2D;
+  font-weight: 600;
+  border-radius: 9999px;
+  padding: 0.75rem 1.75rem;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-flavoria-outline:hover {
+  background-color: #2D4A2D;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+/* Green Badge Pill */
+.badge-leaf {
+  background: #EAF1E8;
+  color: #2D4A2D;
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 0.35rem 1rem;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* Hide Scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
