@@ -5,31 +5,31 @@ export const KitchenGallerySection: React.FC = () => {
   const galleryItems = [
     {
       title: 'Neapolitan Wood-Fired Magic',
-      image: '/assets/PIZZA/Classic Margherita wuth Pesto drizzle.png',
+      image: '/assets/pizza/classic-margherita-wuth-pesto-drizzle.webp',
       likes: '1.4k',
       category: 'Pizza',
     },
     {
       title: 'Handmade Steamed Dim Sums',
-      image: '/assets/DIM SUMS/SPINACH AND CREAM CHEESE DIM SUM .png',
+      image: '/assets/dim-sums/spinach-and-cream-cheese-dim-sum.webp',
       likes: '980',
       category: 'Dim Sum',
     },
     {
       title: 'Sourdough Smash Burger',
-      image: '/assets/SOURDOUGH BURGERS/Smash Chicken Cheese Sourdough Burger .png',
+      image: '/assets/sourdough-burgers/smash-chicken-cheese-sourdough-burger.webp',
       likes: '2.1k',
       category: 'Burgers',
     },
     {
       title: 'Fresh Salmon & Avocado Sushi',
-      image: '/assets/SUSHI/RAINBOW SUSHI.png',
+      image: '/assets/sushi/rainbow-sushi.webp',
       likes: '3.2k',
       category: 'Sushi',
     },
     {
       title: 'Artisanal Creamy Alfredo Pasta',
-      image: '/assets/PASTA/alfredo pasta.png',
+      image: '/assets/pasta/alfredo-pasta.webp',
       likes: '1.8k',
       category: 'Pasta',
     },

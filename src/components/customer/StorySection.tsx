@@ -15,7 +15,7 @@ export const StorySection: React.FC = () => {
           <div className="lg:col-span-6 relative">
             <div className="relative rounded-[2.5rem] overflow-hidden border-4 border-white shadow-xl max-w-lg mx-auto lg:mx-0">
               <img
-                src="/assets/PIZZA/Classic Margherita wuth Pesto drizzle.png"
+                src='/assets/pizza/classic-margherita-wuth-pesto-drizzle.webp'
                 alt="PanFire Artisanal Craft"
                 className="w-full h-[420px] object-cover hover:scale-105 transition-transform duration-700"
               />

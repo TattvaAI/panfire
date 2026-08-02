@@ -14,7 +14,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     isVeg: true,
     price: 365,
     description: 'Rocket leaves, freshly sliced tomatoes, bocconcini and basil pesto, finished with mild seasoning and a balsamic reduction.',
-    imagePath: '/assets/SALAD/Caprese Salad.png',
+    imagePath: '/assets/salad/caprese-salad.webp',
     addons: [{ id: 'add-chicken-50', name: 'Caprese Grilled Chicken', price: 50 }],
     isAvailable: true,
     isChefSpecial: true,
@@ -28,7 +28,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     isVeg: true,
     price: 345,
     description: 'Lettuce, crunchy croutons, sautéed bell peppers and sweetcorn, tossed in a creamy mustard-mayo dressing, finished with parmesan.',
-    imagePath: '/assets/SALAD/Caesar salad.png',
+    imagePath: '/assets/salad/caesar-salad.webp',
     addons: [{ id: 'add-chicken-50-c', name: 'Caesar Grilled Chicken', price: 50 }],
     isAvailable: true,
     spicyLevel: 0
@@ -41,7 +41,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     isVeg: true,
     price: 365,
     description: 'Crisp green apple and orange slices tossed with mixed lettuce, crunchy nuts and a refreshing honey-lemon dressing.',
-    imagePath: '/assets/SALAD/Apple Salad .png',
+    imagePath: '/assets/salad/apple-salad.webp',
     addons: [{ id: 'add-chicken-50-a', name: 'Apple Grilled Chicken', price: 50 }],
     isAvailable: true,
     spicyLevel: 0
@@ -54,7 +54,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     isVeg: true,
     price: 365,
     description: 'Watermelon, burrata, lettuce and feta tossed in a honey-lemon dressing.',
-    imagePath: '/assets/SALAD/Watermelon Salad .png',
+    imagePath: '/assets/salad/watermelon-salad.webp',
     addons: [{ id: 'add-chicken-50-w', name: 'Watermelon Grilled Chicken', price: 50 }],
     isAvailable: true,
     spicyLevel: 0
@@ -67,7 +67,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     isVeg: true,
     price: 445,
     description: 'Rocket leaves, cherry tomatoes, burrata and pesto tossed in a honey-balsamic dressing and finished with a delicate balsamic reduction.',
-    imagePath: '/assets/SALAD/Rucola Salad .png',
+    imagePath: '/assets/salad/rucola-salad.webp',
     addons: [{ id: 'add-chicken-50-r', name: 'Rucola Burrata Grilled Chicken', price: 50 }],
     isAvailable: true,
     isChefSpecial: true,
@@ -83,7 +83,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     isVeg: true,
     price: 350,
     description: 'A hand-crafted potato, mushroom, corn and mozzarella patty, smashed and grilled until golden, topped with crisp lettuce, tomato, gherkins, caramelised onions and cheese, served in a freshly baked wood-fired sourdough bun.',
-    imagePath: '/assets/SOURDOUGH BURGERS/Smash Veggie Cheese Sourdough Burger .png',
+    imagePath: '/assets/sourdough-burgers/smash-veggie-cheese-sourdough-burger.webp',
     isAvailable: true,
     spicyLevel: 1
   },
@@ -95,7 +95,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     isVeg: false,
     price: 380,
     description: 'A hand-crafted chicken patty, smashed and grilled until golden, layered with crisp lettuce, tomato, gherkins, caramelised onions and cheese, served in a freshly baked wood-fired sourdough bun.',
-    imagePath: '/assets/SOURDOUGH BURGERS/Smash Chicken Cheese Sourdough Burger .png',
+    imagePath: '/assets/sourdough-burgers/smash-chicken-cheese-sourdough-burger.webp',
     isAvailable: true,
     isChefSpecial: true,
     spicyLevel: 1
@@ -110,7 +110,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     isVeg: true,
     price: 290,
     description: 'Classic San Marzano tomato sauce, mozzarella and aromatic hand-torn basil.',
-    imagePath: '/assets/PIZZA/Classic Margherita.png',
+    imagePath: '/assets/pizza/classic-margherita.webp',
     variants: [
       { id: 'v-neo-8', name: 'Neapolitan Small (8 inch)', price: 290 },
       { id: 'v-neo-12', name: 'Neapolitan Large (12 inch)', price: 570 },
@@ -132,7 +132,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     isVeg: true,
     price: 345,
     description: 'Mozzarella, sautéed spinach and earthy mushrooms over a velvety white sauce.',
-    imagePath: '/assets/PIZZA/creamy spinach & mushroom.png',
+    imagePath: '/assets/pizza/creamy-spinach-mushroom.webp',
     variants: [
       { id: 'v-csm-8', name: 'Neapolitan Small (8 inch)', price: 345 },
       { id: 'v-csm-12', name: 'Neapolitan Large (12 inch)', price: 670 },
@@ -150,7 +150,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     isVeg: true,
     price: 325,
     description: 'Rich, spiced makhani sauce with mozzarella, paneer, green chillies and a hint of fresh ginger.',
-    imagePath: '/assets/PIZZA/butter paneer pizza.png',
+    imagePath: '/assets/pizza/butter-paneer-pizza.webp',
     variants: [
       { id: 'v-bp-8', name: 'Neapolitan Small (8 inch)', price: 325 },
       { id: 'v-bp-12', name: 'Neapolitan Large (12 inch)', price: 645 },
@@ -172,7 +172,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     isVeg: true,
     price: 325,
     description: 'Mozzarella, marinated peri-peri paneer, spicy jalapeños and red onions over a bold, fiery marinara base.',
-    imagePath: '/assets/PIZZA/Spicy paneer.png',
+    imagePath: '/assets/pizza/spicy-paneer.webp',
     variants: [
       { id: 'v-sp-8', name: 'Neapolitan Small (8 inch)', price: 325 },
       { id: 'v-sp-12', name: 'Neapolitan Large (12 inch)', price: 645 },
@@ -193,7 +193,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     isVeg: true,
     price: 325,
     description: 'Mozzarella, tangy sun-dried tomatoes, garlic and peppery rocket over a classic red sauce, finished with a balsamic reduction drizzle.',
-    imagePath: '/assets/PIZZA/Sun & rocket.png',
+    imagePath: '/assets/pizza/sun-rocket.webp',
     variants: [
       { id: 'v-sr-8', name: 'Neapolitan Small (8 inch)', price: 325 },
       { id: 'v-sr-12', name: 'Neapolitan Large (12 inch)', price: 645 },
@@ -211,7 +211,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     isVeg: true,
     price: 325,
     description: 'Marinara and mozzarella topped with button mushrooms, cherry tomatoes, mixed bell peppers and grilled zucchini, then finished with crumbled feta and fresh basil.',
-    imagePath: '/assets/PIZZA/Panfire Loaded Vegetables.png',
+    imagePath: '/assets/pizza/panfire-loaded-vegetables.webp',
     variants: [
       { id: 'v-lv-8', name: 'Neapolitan Small (8 inch)', price: 325 },
       { id: 'v-lv-12', name: 'Neapolitan Large (12 inch)', price: 645 },
@@ -229,7 +229,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     isVeg: true,
     price: 440,
     description: 'Mozzarella, shiitake and button mushrooms over a creamy white base, finished with a drizzle of white truffle oil.',
-    imagePath: '/assets/PIZZA/Truffle Mushroom.png',
+    imagePath: '/assets/pizza/truffle-mushroom.webp',
     variants: [
       { id: 'v-tm-8', name: 'Neapolitan Small (8 inch)', price: 440 },
       { id: 'v-tm-12', name: 'Neapolitan Large (12 inch)', price: 845 },
@@ -251,7 +251,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     isVeg: false,
     price: 345,
     description: 'Classic marinara and melted mozzarella topped with grilled chicken, smoked chicken and chicken sausage.',
-    imagePath: '/assets/PIZZA/panfire overload chicken.png',
+    imagePath: '/assets/pizza/panfire-overload-chicken.webp',
     variants: [
       { id: 'v-oc-8', name: 'Neapolitan Small (8 inch)', price: 345 },
       { id: 'v-oc-12', name: 'Neapolitan Large (12 inch)', price: 670 },
@@ -272,7 +272,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     isVeg: false,
     price: 440,
     description: 'Classic marinara and melted mozzarella topped with bacon, smoked chicken, chicken sausage and chicken pepperoni.',
-    imagePath: '/assets/PIZZA/panfire 4 meat .png',
+    imagePath: '/assets/pizza/panfire-4-meat.webp',
     variants: [
       { id: 'v-fm-8', name: 'Neapolitan Small (8 inch)', price: 440 },
       { id: 'v-fm-12', name: 'Neapolitan Large (12 inch)', price: 845 },
@@ -294,7 +294,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     isVeg: false,
     price: 345,
     description: 'Classic marinara layered with melted mozzarella, chicken pepperoni and spicy jalapeños.',
-    imagePath: '/assets/PIZZA/chicken pepperoni .png',
+    imagePath: '/assets/pizza/chicken-pepperoni.webp',
     variants: [
       { id: 'v-cp-8', name: 'Neapolitan Small (8 inch)', price: 345 },
       { id: 'v-cp-12', name: 'Neapolitan Large (12 inch)', price: 670 },
@@ -314,7 +314,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     isVeg: true,
     price: 695,
     description: 'Stuffing: Mixed bell peppers, sun-dried tomatoes and jalapeños. Topping: Marinara, parmesan and basil. Served as 6 slices.',
-    imagePath: '/assets/DEEP DISH PIZZA/loaded vegetables .png',
+    imagePath: '/assets/deep-dish-pizza/loaded-vegetables.webp',
     isAvailable: true,
     spicyLevel: 1
   },
@@ -326,7 +326,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     isVeg: true,
     price: 745,
     description: 'Stuffing: Mushrooms and red onion. Topping: Marinara, parmesan and basil. Served as 6 slices.',
-    imagePath: '/assets/DEEP DISH PIZZA/ultimate mushroom .png',
+    imagePath: '/assets/deep-dish-pizza/ultimate-mushroom.webp',
     isAvailable: true,
     spicyLevel: 0
   },
@@ -338,7 +338,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     isVeg: false,
     price: 845,
     description: 'Stuffing: Chicken pepperoni. Topping: Marinara, parmesan and basil. Served as 6 slices.',
-    imagePath: '/assets/DEEP DISH PIZZA/pepperoni melt .png',
+    imagePath: '/assets/deep-dish-pizza/pepperoni-melt.webp',
     isAvailable: true,
     isChefSpecial: true,
     spicyLevel: 2
@@ -351,7 +351,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     isVeg: false,
     price: 845,
     description: 'Stuffing: Grilled chicken, smoked chicken and chicken sausage. Topping: Marinara, parmesan and basil. Served as 6 slices.',
-    imagePath: '/assets/DEEP DISH PIZZA/panfire overload chicken.png',
+    imagePath: '/assets/pizza/panfire-overload-chicken.webp',
     isAvailable: true,
     spicyLevel: 1
   },
@@ -365,7 +365,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     isVeg: true,
     price: 445,
     description: 'Marinara, peri-peri paneer and red onion. Served as 8 slices.',
-    imagePath: '/assets/INDIE CRUST PIZZA/peri peri paneer .png',
+    imagePath: '/assets/indie-crust-pizza/peri-peri-paneer.webp',
     isAvailable: true,
     spicyLevel: 2
   },
@@ -377,7 +377,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     isVeg: false,
     price: 495,
     description: 'Marinara, tandoori chicken and red onion. Served as 8 slices.',
-    imagePath: '/assets/INDIE CRUST PIZZA/tandoori chicken .png',
+    imagePath: '/assets/indie-crust-pizza/tandoori-chicken.webp',
     isAvailable: true,
     isChefSpecial: true,
     spicyLevel: 2
@@ -392,7 +392,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     isVeg: true,
     price: 365,
     description: 'Fiery San Marzano tomato sauce tossed with fresh capsicum, broccoli and zucchini.',
-    imagePath: '/assets/PASTA/arrabbiata pasta.png',
+    imagePath: '/assets/pasta/arrabbiata-pasta.webp',
     variants: [
       { id: 'v-spag', name: 'Spaghetti', price: 365 },
       { id: 'v-penne', name: 'Penne', price: 365 }
@@ -409,7 +409,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     isVeg: true,
     price: 365,
     description: 'Velvety parmesan cream sauce tossed with garlic-herb sautéed mushrooms.',
-    imagePath: '/assets/PASTA/alfredo pasta.png',
+    imagePath: '/assets/pasta/alfredo-pasta.webp',
     variants: [
       { id: 'v-spag-a', name: 'Spaghetti', price: 365 },
       { id: 'v-penne-a', name: 'Penne', price: 365 }
@@ -426,7 +426,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     isVeg: true,
     price: 365,
     description: 'Vibrant house-made basil pesto tossed with bell peppers, broccoli and zucchini.',
-    imagePath: '/assets/PASTA/pesto pastaa.png',
+    imagePath: '/assets/pasta/pesto-pastaa.webp',
     variants: [
       { id: 'v-spag-p', name: 'Spaghetti', price: 365 },
       { id: 'v-penne-p', name: 'Penne', price: 365 }
@@ -444,7 +444,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     isVeg: true,
     price: 365,
     description: 'Spaghetti tossed in extra-virgin olive oil, garlic, sun-dried tomatoes and black olives.',
-    imagePath: '/assets/PASTA/aglio olio pasta .png',
+    imagePath: '/assets/pasta/aglio-olio-pasta.webp',
     addons: [{ id: 'a-gr-ch-50-ao', name: 'Add Grilled Chicken', price: 50 }],
     isAvailable: true,
     spicyLevel: 1
@@ -459,7 +459,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     isVeg: true,
     price: 395,
     description: 'Artisanal Neapolitan bread stuffed with fresh bocconcini mozzarella, sliced ripe tomatoes, basil pesto and rocket.',
-    imagePath: '/assets/NAPOLI SANDWICHES/Caprese sandwich.png',
+    imagePath: '/assets/napoli-sandwiches/caprese-sandwich.webp',
     isAvailable: true,
     spicyLevel: 0
   },
@@ -471,7 +471,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     isVeg: false,
     price: 395,
     description: 'Slow-cooked pulled chicken tossed in basil pesto, layered with melted mozzarella in a freshly toasted Napoli loaf.',
-    imagePath: '/assets/NAPOLI SANDWICHES/pesto pulled chicken .png',
+    imagePath: '/assets/napoli-sandwiches/pesto-pulled-chicken.webp',
     isAvailable: true,
     isChefSpecial: true,
     spicyLevel: 1
@@ -486,7 +486,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     isVeg: true,
     price: 295,
     description: 'Wood-fired garlic bread loaf brushed with garlic herb butter and smothered with melted mozzarella.',
-    imagePath: '/assets/GARLIC BREAD/garlic bread with cheese.png',
+    imagePath: '/assets/garlic-bread/garlic-bread-with-cheese.webp',
     isAvailable: true,
     spicyLevel: 0
   },
@@ -498,7 +498,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     isVeg: true,
     price: 445,
     description: 'Tender grilled asparagus spears over garlic bread topped with rich creamy burrata cheese.',
-    imagePath: '/assets/GARLIC BREAD/asparagus burrata .png',
+    imagePath: '/assets/napoli-sandwiches/asparagus-burrata.webp',
     isAvailable: true,
     isChefSpecial: true,
     spicyLevel: 0
@@ -518,7 +518,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     isVeg: true,
     price: 215,
     description: 'Creamy Thai coconut broth with galangal, lemongrass and kaffir lime leaves.',
-    imagePath: '/assets/SOUPS/TOM KHA SOUP .png',
+    imagePath: '/assets/soups/tom-kha-soup.webp',
     variants: [
       { id: 'v-tk-veg', name: 'Vegetarian', price: 215 },
       { id: 'v-tk-chk', name: 'Chicken', price: 275 },
@@ -536,7 +536,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     isVeg: true,
     price: 175,
     description: 'Classic Indo-Chinese soy garlic soup served with crispy fried noodles.',
-    imagePath: '/assets/SOUPS/MANCHOW SOUP .png',
+    imagePath: '/assets/soups/manchow-soup.webp',
     variants: [
       { id: 'v-mc-veg', name: 'Vegetarian', price: 175 },
       { id: 'v-mc-chk', name: 'Chicken', price: 225 },
@@ -555,7 +555,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     isVeg: true,
     price: 340,
     description: 'Mushrooms and carrot blended with cream cheese. 6 pieces per serving.',
-    imagePath: '/assets/DIM SUMS/MUSHROOM & CREAM CHEESE DIM SUM .png',
+    imagePath: '/assets/dim-sums/mushroom-cream-cheese-dim-sum.webp',
     isAvailable: true,
     isChefSpecial: true,
     spicyLevel: 0
@@ -568,7 +568,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     isVeg: false,
     price: 380,
     description: 'Minced chicken with cream cheese, coriander, spring onion and chilli oil. 6 pieces per serving.',
-    imagePath: '/assets/DIM SUMS/ SPICY CHEESY CHICKEN DIM SUM .png',
+    imagePath: '/assets/dim-sums/spicy-cheesy-chicken-dim-sum.webp',
     isAvailable: true,
     isChefSpecial: true,
     spicyLevel: 2
@@ -583,7 +583,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     isVeg: true,
     price: 220,
     description: 'Handcrafted momos filled with finely minced garden vegetables and melted cheese. 6 pieces per serving.',
-    imagePath: '/assets/MOMO AND GYOZA/VEGETABLE & CHEESE MOMOS .png',
+    imagePath: '/assets/momo-and-gyoza/vegetable-cheese-momos.webp',
     isAvailable: true,
     spicyLevel: 1
   },
@@ -595,7 +595,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     isVeg: false,
     price: 250,
     description: 'Pan-seared Japanese style chicken dumplings served with dipping soy glaze. 6 pieces per serving.',
-    imagePath: '/assets/MOMO AND GYOZA/CHICKEN GYOZA .png',
+    imagePath: '/assets/momo-and-gyoza/chicken-gyoza.webp',
     isAvailable: true,
     isChefSpecial: true,
     spicyLevel: 1
@@ -610,7 +610,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     isVeg: false,
     price: 495,
     description: 'Fried prawns with spicy mayo and wasabi mayo in fluffy steamed buns. 2 pieces per serving.',
-    imagePath: '/assets/BAO/PRAWN FRIER CRACKER BAO .png',
+    imagePath: '/assets/bao/prawn-frier-cracker-bao.webp',
     isAvailable: true,
     isChefSpecial: true,
     spicyLevel: 3
@@ -623,7 +623,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     isVeg: false,
     price: 345,
     description: 'Crispy chicken glazed in a spicy Korean sauce, layered with lettuce. 2 pieces per serving.',
-    imagePath: '/assets/BAO/KOREAN CHICKEN BAO .png',
+    imagePath: '/assets/bao/korean-chicken-bao.webp',
     isAvailable: true,
     spicyLevel: 2
   },
@@ -637,7 +637,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     isVeg: false,
     price: 395,
     description: 'Prawn tempura and avocado with spicy mayo, sesame seeds and crunch tanuki.',
-    imagePath: '/assets/SUSHI/DRAGON URAMAKI .png',
+    imagePath: '/assets/sushi/dragon-uramaki.webp',
     variants: [
       { id: 'v-dra-4', name: '4 Pieces', price: 395 },
       { id: 'v-dra-8', name: '8 Pieces', price: 645 }
@@ -654,7 +654,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     isVeg: true,
     price: 345,
     description: 'Avocado, jalapeño, sesame seeds and cream cheese in a delicate nori roll.',
-    imagePath: '/assets/SUSHI/AVOCADO AND CREAM CHEESE SUSHI .png',
+    imagePath: '/assets/sushi/avocado-and-cream-cheese-sushi.webp',
     variants: [
       { id: 'v-avo-4', name: '4 Pieces', price: 345 },
       { id: 'v-avo-8', name: '8 Pieces', price: 595 }
@@ -670,7 +670,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     isVeg: true,
     price: 375,
     description: 'Cream cheese, beetroot, seasonal fruit and fresh cucumber.',
-    imagePath: '/assets/SUSHI/RAINBOW SUSHI.png',
+    imagePath: '/assets/sushi/rainbow-sushi.webp',
     variants: [
       { id: 'v-rbw-4', name: '4 Pieces', price: 375 },
       { id: 'v-rbw-8', name: '8 Pieces', price: 645 }
@@ -689,7 +689,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     isVeg: false,
     price: 795,
     description: 'Bite-sized tempura prawns tossed in a creamy, spicy dynamite sauce.',
-    imagePath: '/assets/APPETISERS/ROCK SHRIMP TEMPURA.png',
+    imagePath: '/assets/appetisers/rock-shrimp-tempura.webp',
     isAvailable: true,
     isChefSpecial: true,
     spicyLevel: 2
@@ -702,7 +702,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     isVeg: true,
     price: 315,
     description: 'Thai-style crispy fried sweet corn kernels tossed with crushed pepper and spring onions.',
-    imagePath: '/assets/APPETISERS/SALT AND PEPPER CORN .png',
+    imagePath: '/assets/appetisers/salt-and-pepper-corn.webp',
     isAvailable: true,
     spicyLevel: 1
   },
@@ -714,7 +714,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     isVeg: false,
     price: 395,
     description: 'Crispy chicken wok-tossed with spring onions and bell peppers in a sweet-and-spicy honey chilli glaze.',
-    imagePath: '/assets/APPETISERS/CRISPY HONEY CHICKEN.png',
+    imagePath: '/assets/appetisers/crispy-honey-chicken.webp',
     isAvailable: true,
     spicyLevel: 1
   },
@@ -728,7 +728,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     isVeg: true,
     price: 275,
     description: 'Noodles tossed with butter, crispy burnt garlic and fresh wok vegetables.',
-    imagePath: '/assets/NOODLES/butter and burnt garlic noodles.png',
+    imagePath: '/assets/noodles/butter-and-burnt-garlic-noodles.webp',
     variants: [
       { id: 'v-bg-veg', name: 'Vegetarian', price: 275 },
       { id: 'v-bg-chk', name: 'Chicken', price: 325 },
@@ -746,7 +746,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     isVeg: true,
     price: 344,
     description: 'Tibetan-style noodles and fresh vegetables simmered in a warm, mildly spiced aromatic broth.',
-    imagePath: '/assets/NOODLES/Thukpa.png',
+    imagePath: '/assets/noodles/thukpa.webp',
     variants: [
       { id: 'v-thk-veg', name: 'Vegetarian', price: 344 },
       { id: 'v-thk-chk', name: 'Chicken', price: 395 }
