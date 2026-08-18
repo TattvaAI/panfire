@@ -35,19 +35,19 @@ export const Footer: React.FC = () => {
                 <span className="font-serif-luxury text-2xl font-bold tracking-tight text-white block leading-none">
                   PanFire
                 </span>
-                <span className="text-[10px] tracking-widest uppercase font-semibold text-white/70 block">
-                  Artisanal Kitchen
+                <span className="text-[10px] tracking-widest uppercase font-semibold text-white/70 block mt-0.5">
+                  Asian. Italian. Mexican
                 </span>
               </div>
             </a>
 
             <p className="text-xs sm:text-sm text-white/80 max-w-sm leading-relaxed">
-              Experience handcrafted Neapolitan wood-fired pizzas, authentic steamed Asian dim sums, craft sushi, and rich pasta delicacies. Pure culinary bliss in every bite.
+              Experience handcrafted Neapolitan wood-fired pizzas, sizzling Mexican burrito bowls & burgers, and authentic Asian dim sums, baos, and craft sushi.
             </p>
 
             {/* Newsletter Input Form */}
             <div className="pt-2">
-              <p className="text-xs font-semibold text-white mb-2">Sign up for secret menu items & special offers:</p>
+              <p className="text-xs font-semibold text-white mb-2">Sign up for secret menu specials & exclusive invites:</p>
               <form onSubmit={handleSubscribe} className="flex items-center max-w-sm">
                 <input
                   type="email"
@@ -59,7 +59,7 @@ export const Footer: React.FC = () => {
                 />
                 <button
                   type="submit"
-                  className="bg-[#D97706] hover:bg-[#B45309] text-white px-5 py-2.5 rounded-r-full text-xs font-bold transition-all shrink-0"
+                  className="bg-[#D97706] hover:bg-[#B45309] text-white px-5 py-2.5 rounded-r-full text-xs font-bold transition-all shrink-0 cursor-pointer"
                 >
                   {subscribed ? 'Subscribed!' : 'Sign Up'}
                 </button>
@@ -69,43 +69,46 @@ export const Footer: React.FC = () => {
 
           {/* Col 2: Quick Links */}
           <div className="space-y-3">
-            <h4 className="font-serif-luxury font-bold text-lg text-white">Quick Links</h4>
+            <h4 className="font-serif-luxury font-bold text-lg text-white">Navigation</h4>
             <ul className="space-y-2 text-xs text-white/75">
-              <li><a href="#hero" className="hover:text-white transition-colors">Home Page</a></li>
-              <li><a href="#story" className="hover:text-white transition-colors">Our Story & Craft</a></li>
-              <li><a href="#specials" className="hover:text-white transition-colors">Chef's Specials</a></li>
+              <li><a href="#hero" className="hover:text-white transition-colors">Home</a></li>
               <li><a href="#menu" className="hover:text-white transition-colors">Full Food Catalog</a></li>
               <li><a href="#gallery" className="hover:text-white transition-colors">Kitchen Gallery</a></li>
             </ul>
           </div>
 
-          {/* Col 3: Categories */}
+          {/* Col 3: 6 Menu Categories */}
           <div className="space-y-3">
-            <h4 className="font-serif-luxury font-bold text-lg text-white">Categories</h4>
+            <h4 className="font-serif-luxury font-bold text-lg text-white">Menu Categories</h4>
             <ul className="space-y-2 text-xs text-white/75">
-              <li><a href="#menu" className="hover:text-white transition-colors">Wood-Fired Pizza</a></li>
-              <li><a href="#menu" className="hover:text-white transition-colors">Dim Sums & Baos</a></li>
-              <li><a href="#menu" className="hover:text-white transition-colors">Craft Sushi Rolls</a></li>
-              <li><a href="#menu" className="hover:text-white transition-colors">Artisanal Pastas</a></li>
-              <li><a href="#menu" className="hover:text-white transition-colors">Sourdough Burgers</a></li>
+              <li><a href="#menu" className="hover:text-white transition-colors">1. Signature Dishes</a></li>
+              <li><a href="#menu" className="hover:text-white transition-colors">2. Mexican</a></li>
+              <li><a href="#menu" className="hover:text-white transition-colors">3. Italian</a></li>
+              <li><a href="#menu" className="hover:text-white transition-colors">4. Asian</a></li>
+              <li><a href="#menu" className="hover:text-white transition-colors">5. Beverages</a></li>
+              <li><a href="#menu" className="hover:text-white transition-colors">6. Desserts</a></li>
             </ul>
           </div>
 
           {/* Col 4: Opening Hours & Contact */}
           <div className="space-y-3">
-            <h4 className="font-serif-luxury font-bold text-lg text-white">Contact & Hours</h4>
-            <div className="space-y-2 text-xs text-white/75">
-              <p className="flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-[#D97706] shrink-0" />
-                <span>124 Culinary Boulevard, Gourmet District</span>
+            <h4 className="font-serif-luxury font-bold text-lg text-white">Contact & Location</h4>
+            <div className="space-y-2.5 text-xs text-white/75">
+              <p className="flex items-start gap-2">
+                <MapPin className="w-4 h-4 text-[#D97706] shrink-0 mt-0.5" />
+                <span>PanFire Kitchen, New Chandigarh, Punjab</span>
               </p>
               <p className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-[#D97706] shrink-0" />
-                <span>+91 (800) 555-PANFIRE</span>
+                <a href="tel:+917814219191" className="hover:text-white transition-colors font-medium">
+                  +91 78142 19191
+                </a>
               </p>
               <p className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-[#D97706] shrink-0" />
-                <span>concierge@panfire.com</span>
+                <a href="mailto:panfirenewchandigarh@gmail.com" className="hover:text-white transition-colors break-all">
+                  panfirenewchandigarh@gmail.com
+                </a>
               </p>
               <div className="pt-2">
                 <p className="font-bold text-white">Opening Hours:</p>
@@ -118,11 +121,11 @@ export const Footer: React.FC = () => {
 
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-white/60 gap-4">
-          <p>© {new Date().getFullYear()} PanFire Artisanal Kitchen. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} PanFire (Asian • Italian • Mexican). All rights reserved.</p>
           <div className="flex items-center gap-4">
             <span className="hover:text-white cursor-pointer">Privacy Policy</span>
             <span className="hover:text-white cursor-pointer">Terms of Service</span>
-            <span className="hover:text-white cursor-pointer">Site Map</span>
+            <span className="hover:text-white cursor-pointer">Contact Us</span>
           </div>
         </div>
 
@@ -130,3 +133,5 @@ export const Footer: React.FC = () => {
     </footer>
   );
 };
+
+export default Footer;

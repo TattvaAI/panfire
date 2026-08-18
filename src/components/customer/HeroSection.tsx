@@ -11,28 +11,28 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenReservation }) =
       name: 'Classic Margherita w/ Pesto',
       category: 'Wood-Fired Pizza',
       price: '₹445',
-      image: '/assets/pizza/classic-margherita-wuth-pesto-drizzle.webp',
+      image: '/assets/pizza/classic-margherita-wuth-pesto-drizzle.avif',
       rating: '4.9',
     },
     {
       name: 'Spinach & Cream Cheese Dim Sum',
       category: 'Handcrafted Dim Sum',
       price: '₹345',
-      image: '/assets/dim-sums/spinach-and-cream-cheese-dim-sum.webp',
+      image: '/assets/dim-sums/spinach-and-cream-cheese-dim-sum.avif',
       rating: '4.8',
     },
     {
       name: 'Smash Chicken Cheese Burger',
       category: 'Wood-Fired Sourdough',
       price: '₹380',
-      image: '/assets/sourdough-burgers/smash-chicken-cheese-sourdough-burger.webp',
+      image: '/assets/sourdough-burgers/smash-chicken-cheese-sourdough-burger.avif',
       rating: '4.9',
     },
     {
       name: 'Creamy Alfredo Pasta',
       category: 'Italian Pasta',
       price: '₹420',
-      image: '/assets/pasta/alfredo-pasta.webp',
+      image: '/assets/pasta/alfredo-pasta.avif',
       rating: '4.8',
     },
   ];
@@ -68,14 +68,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenReservation }) =
 
             {/* Description */}
             <p className="text-[#5C6B5E] text-base sm:text-lg max-w-xl leading-relaxed">
-              Experience the perfect blend of wood-fired Neapolitan craftsmanship and vibrant Asian wok mastery. Every dish is a celebration of authentic flavors.
+              Experience the perfect blend of wood-fired Neapolitan craftsmanship, vibrant Mexican flavors, and Asian wok mastery. Every dish is a celebration of authentic flavors.
             </p>
 
             {/* Dual CTA Buttons */}
             <div className="flex flex-wrap items-center gap-4 pt-2">
               <button
                 onClick={onOpenReservation}
-                className="btn-flavoria-green text-base px-6 py-3.5 shadow-lg"
+                className="btn-flavoria-green text-base px-6 py-3.5 shadow-lg cursor-pointer"
               >
                 <Calendar className="w-5 h-5" />
                 <span>Book A Table</span>
@@ -83,7 +83,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenReservation }) =
 
               <a
                 href="#menu"
-                className="btn-flavoria-outline text-base px-6 py-3.5"
+                className="btn-flavoria-outline text-base px-6 py-3.5 cursor-pointer"
               >
                 <UtensilsCrossed className="w-5 h-5 text-[#466B45]" />
                 <span>Explore Menu</span>
@@ -101,8 +101,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenReservation }) =
                 <p className="text-xs text-[#5C6B5E] mt-0.5">User Ratings</p>
               </div>
               <div>
-                <p className="font-serif-luxury text-2xl sm:text-3xl font-bold text-[#2D4A2D]">30 Min</p>
-                <p className="text-xs text-[#5C6B5E] mt-0.5">Hot Delivery</p>
+                <p className="font-serif-luxury text-2xl sm:text-3xl font-bold text-[#2D4A2D]">3</p>
+                <p className="text-xs text-[#5C6B5E] mt-0.5">Cuisines</p>
               </div>
             </div>
 

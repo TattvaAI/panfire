@@ -57,7 +57,7 @@ export const TableReservationModal: React.FC<TableReservationModalProps> = ({ is
             Book Your Table
           </h3>
           <p className="text-white/80 text-xs mt-1">
-            Reserve a memorable dining experience at PanFire Artisanal Kitchen
+            Reserve a memorable dining experience at PanFire (Asian • Italian • Mexican)
           </p>
         </div>
 
@@ -116,7 +116,7 @@ export const TableReservationModal: React.FC<TableReservationModalProps> = ({ is
                     <input
                       type="text"
                       required
-                      placeholder="Chef Gordon"
+                      placeholder="Your Name"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-[#2D4A2D]/15 bg-white focus:outline-none focus:ring-2 focus:ring-[#466B45] text-[#2D4A2D]"
@@ -131,7 +131,7 @@ export const TableReservationModal: React.FC<TableReservationModalProps> = ({ is
                     <input
                       type="tel"
                       required
-                      placeholder="+1 (555) 000-0000"
+                      placeholder="+91 78142 19191"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-[#2D4A2D]/15 bg-white focus:outline-none focus:ring-2 focus:ring-[#466B45] text-[#2D4A2D]"

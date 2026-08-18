@@ -27,6 +27,13 @@ export const MenuItemCard: React.FC<MenuItemCardProps> = ({
           alt={item.name}
           className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500"
           loading="lazy"
+          onError={(e) => {
+            // Fallback to placeholder if asset path issue occurs
+            const target = e.currentTarget;
+            if (!target.src.includes('classic-margherita')) {
+              target.src = '/assets/pizza/classic-margherita.avif';
+            }
+          }}
         />
 
         {/* Top Badges (Veg/Non-Veg & Chef Special) */}

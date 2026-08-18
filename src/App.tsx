@@ -2,10 +2,6 @@ import React, { useState } from 'react';
 import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
 import { HeroSection } from './components/customer/HeroSection';
-import { FeaturePillars } from './components/customer/FeaturePillars';
-import { StorySection } from './components/customer/StorySection';
-import { ShowcaseSection } from './components/customer/ShowcaseSection';
-import { VoucherBanner } from './components/customer/VoucherBanner';
 import { MenuSection } from './components/customer/MenuSection';
 import { KitchenGallerySection } from './components/customer/KitchenGallerySection';
 import { TableReservationModal } from './components/customer/TableReservationModal';
@@ -45,29 +41,13 @@ export function App() {
         wishlistCount={wishlistIds.length}
       />
 
-      {/* Main View Conditional Switch */}
+      {/* Main View Switch */}
       {currentView === 'CUSTOMER' ? (
         <main className="relative z-10">
-          {/* Flavoria Hero Banner */}
+          {/* PanFire Hero Banner */}
           <HeroSection onOpenReservation={() => setIsReservationOpen(true)} />
 
-          {/* 4 Feature Pillars */}
-          <FeaturePillars />
-
-          {/* Story Section: Where Taste Meets Tradition */}
-          <StorySection />
-
-          {/* Popular Chef's Specials Showcase */}
-          <ShowcaseSection
-            onSelectItem={(item) => setSelectedMenuItem(item)}
-            wishlistIds={wishlistIds}
-            onToggleWishlist={handleToggleWishlist}
-          />
-
-          {/* Dakingo Voucher Pass Banner */}
-          <VoucherBanner />
-
-          {/* Interactive Menu & Category Pill Selector */}
+          {/* Interactive 6-Category Menu (Signature Dishes #1 in full size) */}
           <MenuSection
             onSelectItem={(item) => setSelectedMenuItem(item)}
             wishlistIds={wishlistIds}

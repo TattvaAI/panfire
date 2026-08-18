@@ -45,16 +45,16 @@ export const Navbar: React.FC<NavbarProps> = ({
         <div className="flex items-center justify-between">
           
           {/* Logo */}
-          <a href="#hero" className="flex items-center gap-2.5 group">
-            <div className="w-10 h-10 rounded-full bg-[#466B45] text-white flex items-center justify-center shadow-md group-hover:bg-[#2D4A2D] transition-colors">
-              <Leaf className="w-5 h-5" />
+          <a href="#hero" className="flex items-center gap-2 sm:gap-2.5 group shrink-0">
+            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#466B45] text-white flex items-center justify-center shadow-md group-hover:bg-[#2D4A2D] transition-colors shrink-0">
+              <Leaf className="w-4 h-4 sm:w-5 sm:h-5" />
             </div>
             <div>
-              <span className="font-serif-luxury text-2xl font-bold tracking-tight text-[#2D4A2D] block leading-none">
+              <span className="font-serif-luxury text-xl sm:text-2xl font-bold tracking-tight text-[#2D4A2D] block leading-none">
                 PanFire
               </span>
-              <span className="text-[10px] tracking-widest uppercase font-semibold text-[#5C6B5E] block">
-                Artisanal Kitchen
+              <span className="text-[8.5px] sm:text-[10px] tracking-wider uppercase font-semibold text-[#5C6B5E] block mt-0.5 whitespace-nowrap">
+                Asian. Italian. Mexican
               </span>
             </div>
           </a>
@@ -68,18 +68,6 @@ export const Navbar: React.FC<NavbarProps> = ({
               Home
             </a>
             <a
-              href="#story"
-              className="hover:text-[#466B45] transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-[#466B45] after:scale-x-0 hover:after:scale-x-100 after:transition-transform"
-            >
-              About Us
-            </a>
-            <a
-              href="#specials"
-              className="hover:text-[#466B45] transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-[#466B45] after:scale-x-0 hover:after:scale-x-100 after:transition-transform"
-            >
-              Chef's Special
-            </a>
-            <a
               href="#menu"
               className="hover:text-[#466B45] transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-[#466B45] after:scale-x-0 hover:after:scale-x-100 after:transition-transform"
             >
@@ -89,32 +77,32 @@ export const Navbar: React.FC<NavbarProps> = ({
               href="#gallery"
               className="hover:text-[#466B45] transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-[#466B45] after:scale-x-0 hover:after:scale-x-100 after:transition-transform"
             >
-              Gallery
+              Kitchen Gallery
             </a>
             <button
               onClick={onOpenTracker}
-              className="hover:text-[#466B45] transition-colors py-1 flex items-center gap-1.5"
+              className="hover:text-[#466B45] transition-colors py-1 flex items-center gap-1.5 cursor-pointer"
             >
               <UtensilsCrossed className="w-4 h-4 text-[#466B45]" />
-              Track Order
+              <span>Track Order</span>
             </button>
           </nav>
 
           {/* Action Right Side */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-1.5 sm:gap-2.5 md:gap-3 shrink-0">
             
             {/* Admin Switcher */}
             <button
               onClick={() => setView(currentView === 'CUSTOMER' ? 'ADMIN' : 'CUSTOMER')}
-              className={`p-2 rounded-full text-xs font-semibold flex items-center gap-1.5 transition-all ${
+              className={`p-2 rounded-full text-xs font-semibold flex items-center gap-1.5 transition-all cursor-pointer ${
                 currentView === 'ADMIN'
-                  ? 'bg-[#2D4A2D] text-white'
+                  ? 'bg-[#2D4A2D] text-white shadow-sm'
                   : 'bg-[#EAF1E8] text-[#2D4A2D] hover:bg-[#D4E3D1]'
               }`}
               title="Toggle Admin View"
             >
               <ShieldCheck className="w-4 h-4" />
-              <span className="hidden sm:inline">
+              <span className="hidden lg:inline">
                 {currentView === 'ADMIN' ? 'Customer Mode' : 'Admin'}
               </span>
             </button>
@@ -122,7 +110,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             {/* Profile Button */}
             <button
               onClick={onOpenProfile}
-              className="p-2.5 rounded-full bg-white text-[#2D4A2D] hover:bg-[#EAF1E8] border border-[#2D4A2D]/10 transition-colors relative"
+              className="p-2 sm:p-2.5 rounded-full bg-white text-[#2D4A2D] hover:bg-[#EAF1E8] border border-[#2D4A2D]/10 transition-colors relative cursor-pointer"
               title="User Profile"
             >
               <User className="w-4 h-4" />
@@ -132,7 +120,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             {onOpenWishlist && (
               <button
                 onClick={onOpenWishlist}
-                className="p-2.5 rounded-full bg-white text-[#2D4A2D] hover:bg-[#EAF1E8] border border-[#2D4A2D]/10 transition-colors relative"
+                className="p-2 sm:p-2.5 rounded-full bg-white text-[#2D4A2D] hover:bg-[#EAF1E8] border border-[#2D4A2D]/10 transition-colors relative cursor-pointer"
                 title="Wishlist"
               >
                 <Heart className="w-4 h-4 text-[#D97706]" />
@@ -147,7 +135,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             {/* Cart Drawer Trigger */}
             <button
               onClick={onOpenCart}
-              className="p-2.5 rounded-full bg-white text-[#2D4A2D] hover:bg-[#EAF1E8] border border-[#2D4A2D]/10 transition-colors relative"
+              className="p-2 sm:p-2.5 rounded-full bg-white text-[#2D4A2D] hover:bg-[#EAF1E8] border border-[#2D4A2D]/10 transition-colors relative cursor-pointer"
               title="Shopping Cart"
             >
               <ShoppingBag className="w-4 h-4 text-[#466B45]" />
@@ -161,9 +149,9 @@ export const Navbar: React.FC<NavbarProps> = ({
             {/* Book A Table Primary CTA */}
             <button
               onClick={onOpenReservation}
-              className="btn-flavoria-green text-sm px-4 py-2 sm:px-5 sm:py-2.5 shadow-md flex items-center gap-2"
+              className="btn-flavoria-green text-xs sm:text-sm px-3 py-2 sm:px-5 sm:py-2.5 shadow-md flex items-center gap-1.5 sm:gap-2 whitespace-nowrap cursor-pointer shrink-0"
             >
-              <Calendar className="w-4 h-4" />
+              <Calendar className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
               <span>Book A Table</span>
             </button>
           </div>

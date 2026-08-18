@@ -20,6 +20,10 @@ yarn-error.log*
 .env.local
 .env.*.local
 
+# Raw asset archives
+all assets/
+*.zip
+
 # IDE
 .vscode/
 .idea/

@@ -1,4 +1,5 @@
-export type BroadCategory = 'ITALIAN' | 'ASIAN';
+export type MainCategory = 'SIGNATURE' | 'MEXICAN' | 'ITALIAN' | 'ASIAN' | 'BEVERAGES' | 'DESSERTS';
+export type BroadCategory = MainCategory;
 
 export interface Variant {
   id: string;
@@ -15,8 +16,9 @@ export interface Addon {
 export interface MenuItem {
   id: string;
   name: string;
-  broadCategory: BroadCategory;
-  category: string; // e.g., "PIZZA", "SUSHI", "BAO", "PASTA"
+  mainCategory: MainCategory;
+  category: string; // Subcategory / item group e.g. "Dim Sums", "Baos", "Noodles", "Sushi", "Thin Crust Pizzas", "Burrito Bowls", "Sourdough Burgers", "Beverages", "Desserts"
+  broadCategory?: BroadCategory;
   isVeg: boolean;
   price: number;
   description: string;
