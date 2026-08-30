@@ -25,8 +25,8 @@ export const useMenuStore = create<MenuState>()(
       },
     }),
     {
-      name: 'panfire-menu-inventory-v2',
-      version: 2,
+      name: 'panfire-menu-inventory-v3',
+      version: 3,
     }
   )
 );

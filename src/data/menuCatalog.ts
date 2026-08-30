@@ -704,6 +704,48 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     spicyLevel: 1
   },
 
+  
+  // --- ADDITIONAL MEXICAN BURGERS & WRAPS ---
+  {
+    id: "mex-brg-4",
+    name: "Smash Veggie Cheese Burger",
+    mainCategory: "MEXICAN",
+    category: "Burgers",
+    broadCategory: "MEXICAN",
+    isVeg: true,
+    price: 320,
+    description: "Golden smashed potato & mozzarella patty topped with melted cheddar, gherkins, fresh lettuce and chipotle cocktail sauce.",
+    imagePath: "/assets/burgers/smash-veggie-cheese-burger.avif",
+    isAvailable: true,
+    spicyLevel: 1
+  },
+  {
+    id: "mex-brg-5",
+    name: "Smash Chicken Cheese Burger",
+    mainCategory: "MEXICAN",
+    category: "Burgers",
+    broadCategory: "MEXICAN",
+    isVeg: false,
+    price: 360,
+    description: "Tender minced chicken patty smashed on a scorching skillet with gooey melted cheese, caramelized onions and spicy mayo.",
+    imagePath: "/assets/burgers/smash-chicken-cheese-burger.avif",
+    isAvailable: true,
+    spicyLevel: 1
+  },
+  {
+    id: "mex-wrp-6",
+    name: "Spicy Grilled Paneer Wrap",
+    mainCategory: "MEXICAN",
+    category: "Burrito Wraps",
+    broadCategory: "MEXICAN",
+    isVeg: true,
+    price: 330,
+    description: "Smoky grilled paneer slices, Mexican fiesta rice, pinto beans, guacamole, and cheddar cheese wrapped tight.",
+    imagePath: "/assets/burrito-wraps/spicy-grilled-paneer-burrito-bowl.avif",
+    isAvailable: true,
+    spicyLevel: 2
+  },
+
   // =========================================================================
   // 3. ITALIAN CUISINE
   // =========================================================================
@@ -1088,6 +1130,503 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     price: 445,
     description: 'Wild rocket leaves, cherry tomatoes, creamy burrata and basil pesto in honey-balsamic dressing.',
     imagePath: '/assets/salad/rucola-salad.avif',
+    isAvailable: true,
+    spicyLevel: 0
+  },
+
+  
+  // --- ADDITIONAL ITALIAN THIN CRUST PIZZAS ---
+  {
+    id: "it-piz-11",
+    name: "Crispy Bacon & Mozzarella Pizza",
+    mainCategory: "ITALIAN",
+    category: "Thin Crust Pizzas",
+    broadCategory: "ITALIAN",
+    isVeg: false,
+    price: 560,
+    description: "Smoky crispy bacon strips, caramelized onions, San Marzano tomato sauce and fior di latte mozzarella.",
+    imagePath: "/assets/pizza/bacon-pizza.avif",
+    variants: [
+      { id: "v-bcn-10", name: "10 inch Regular", price: 560 },
+      { id: "v-bcn-12", name: "12 inch Large", price: 760 }
+    ],
+    isAvailable: true,
+    spicyLevel: 0
+  },
+  {
+    id: "it-piz-12",
+    name: "Makhni Butter Chicken Pizza",
+    mainCategory: "ITALIAN",
+    category: "Thin Crust Pizzas",
+    broadCategory: "ITALIAN",
+    isVeg: false,
+    price: 560,
+    description: "Rich velvety makhni sauce base, shredded butter chicken, pickled onions, green chili and mozzarella.",
+    imagePath: "/assets/pizza/butter-chicken-pizza.avif",
+    variants: [
+      { id: "v-bck-10", name: "10 inch Regular", price: 560 },
+      { id: "v-bck-12", name: "12 inch Large", price: 760 }
+    ],
+    isAvailable: true,
+    spicyLevel: 1
+  },
+  {
+    id: "it-piz-13",
+    name: "Makhni Butter Paneer Pizza",
+    mainCategory: "ITALIAN",
+    category: "Thin Crust Pizzas",
+    broadCategory: "ITALIAN",
+    isVeg: true,
+    price: 495,
+    description: "Buttery makhni gravy, roasted cottage cheese cubes, sliced capsicum, kasuri methi and mozzarella.",
+    imagePath: "/assets/pizza/butter-paneer-pizza.avif",
+    variants: [
+      { id: "v-bpn-10", name: "10 inch Regular", price: 495 },
+      { id: "v-bpn-12", name: "12 inch Large", price: 695 }
+    ],
+    isAvailable: true,
+    spicyLevel: 1
+  },
+  {
+    id: "it-piz-14",
+    name: "Chicken Ham Hawaiian Pizza",
+    mainCategory: "ITALIAN",
+    category: "Thin Crust Pizzas",
+    broadCategory: "ITALIAN",
+    isVeg: false,
+    price: 520,
+    description: "Smoked chicken ham, sweet caramelized pineapple chunks, mozzarella cheese and tangy tomato sauce.",
+    imagePath: "/assets/pizza/chicken-ham-hawaiian.avif",
+    variants: [
+      { id: "v-chh-10", name: "10 inch Regular", price: 520 },
+      { id: "v-chh-12", name: "12 inch Large", price: 720 }
+    ],
+    isAvailable: true,
+    spicyLevel: 0
+  },
+  {
+    id: "it-piz-15",
+    name: "Creamy Spinach & Wild Mushroom Pizza",
+    mainCategory: "ITALIAN",
+    category: "Thin Crust Pizzas",
+    broadCategory: "ITALIAN",
+    isVeg: true,
+    price: 495,
+    description: "Velvety garlic white sauce, sautéed baby spinach, wild mushrooms, ricotta and fior di latte mozzarella.",
+    imagePath: "/assets/pizza/creamy-spinach-mushroom.avif",
+    variants: [
+      { id: "v-csm-10", name: "10 inch Regular", price: 495 },
+      { id: "v-csm-12", name: "12 inch Large", price: 695 }
+    ],
+    isAvailable: true,
+    spicyLevel: 0
+  },
+  {
+    id: "it-piz-16",
+    name: "Grilled Chicken & Roasted Peppers Pizza",
+    mainCategory: "ITALIAN",
+    category: "Thin Crust Pizzas",
+    broadCategory: "ITALIAN",
+    isVeg: false,
+    price: 540,
+    description: "Herb grilled chicken, fire-roasted sweet bell peppers, red onions, tomato sauce and mozzarella.",
+    imagePath: "/assets/pizza/grilled-chicken-and-roasted-peppers.avif",
+    variants: [
+      { id: "v-grp-10", name: "10 inch Regular", price: 540 },
+      { id: "v-grp-12", name: "12 inch Large", price: 740 }
+    ],
+    isAvailable: true,
+    spicyLevel: 1
+  },
+  {
+    id: "it-piz-17",
+    name: "Grilled Chicken Spinach & Mushroom Pizza",
+    mainCategory: "ITALIAN",
+    category: "Thin Crust Pizzas",
+    broadCategory: "ITALIAN",
+    isVeg: false,
+    price: 560,
+    description: "Tender chicken slices, fresh baby spinach, sliced button mushrooms and bubbly mozzarella over tomato base.",
+    imagePath: "/assets/pizza/grilled-chicken-spinach-and-mushroom.avif",
+    variants: [
+      { id: "v-gcm-10", name: "10 inch Regular", price: 560 },
+      { id: "v-gcm-12", name: "12 inch Large", price: 760 }
+    ],
+    isAvailable: true,
+    spicyLevel: 0
+  },
+  {
+    id: "it-piz-18",
+    name: "Classic Hawaiian Pizza",
+    mainCategory: "ITALIAN",
+    category: "Thin Crust Pizzas",
+    broadCategory: "ITALIAN",
+    isVeg: false,
+    price: 510,
+    description: "Sweet pineapple chunks, savory ham, fior di latte mozzarella and San Marzano tomato sauce.",
+    imagePath: "/assets/pizza/hawaiian-pizza.avif",
+    variants: [
+      { id: "v-haw-10", name: "10 inch Regular", price: 510 },
+      { id: "v-haw-12", name: "12 inch Large", price: 710 }
+    ],
+    isAvailable: true,
+    spicyLevel: 0
+  },
+  {
+    id: "it-piz-19",
+    name: "Panfire Pollo Rustica Pizza",
+    mainCategory: "ITALIAN",
+    category: "Thin Crust Pizzas",
+    broadCategory: "ITALIAN",
+    isVeg: false,
+    price: 550,
+    description: "Slow cooked spicy chicken, kalamata olives, sundried tomatoes, red onions, garlic and mozzarella.",
+    imagePath: "/assets/pizza/panfire-pollo.avif",
+    variants: [
+      { id: "v-pol-10", name: "10 inch Regular", price: 550 },
+      { id: "v-pol-12", name: "12 inch Large", price: 750 }
+    ],
+    isAvailable: true,
+    spicyLevel: 1
+  },
+  {
+    id: "it-piz-20",
+    name: "Spicy Wild Mushroom Pizza",
+    mainCategory: "ITALIAN",
+    category: "Thin Crust Pizzas",
+    broadCategory: "ITALIAN",
+    isVeg: true,
+    price: 485,
+    description: "Chili-marinated portobello and button mushrooms, jalapeños, red paprika, tomato base and mozzarella.",
+    imagePath: "/assets/pizza/spicy-mushroom.avif",
+    variants: [
+      { id: "v-smh-10", name: "10 inch Regular", price: 485 },
+      { id: "v-smh-12", name: "12 inch Large", price: 685 }
+    ],
+    isAvailable: true,
+    spicyLevel: 2
+  },
+  {
+    id: "it-piz-21",
+    name: "Spicy Paneer Tikka Pizza",
+    mainCategory: "ITALIAN",
+    category: "Thin Crust Pizzas",
+    broadCategory: "ITALIAN",
+    isVeg: true,
+    price: 485,
+    description: "Spicy tandoori spiced paneer cubes, crisp capsicum, sliced red onions and mozzarella on classic tomato base.",
+    imagePath: "/assets/pizza/spicy-paneer.avif",
+    variants: [
+      { id: "v-spt-10", name: "10 inch Regular", price: 485 },
+      { id: "v-spt-12", name: "12 inch Large", price: 685 }
+    ],
+    isAvailable: true,
+    spicyLevel: 2
+  },
+
+  // --- ADDITIONAL ITALIAN DEEP DISH PIZZAS ---
+  {
+    id: "it-dpz-4",
+    name: "Chicago Deep Dish 4 Meat Feast",
+    mainCategory: "ITALIAN",
+    category: "Deep Dish Pizzas",
+    broadCategory: "ITALIAN",
+    isVeg: false,
+    price: 720,
+    description: "Two-inch deep butter crust loaded with spiced chicken sausage, pepperoni, grilled chicken, bacon, and rich mozzarella marinara.",
+    imagePath: "/assets/deep-dish-pizza/panfire-4-meat.avif",
+    isAvailable: true,
+    spicyLevel: 2
+  },
+  {
+    id: "it-dpz-5",
+    name: "Chicago Deep Dish Pepperoni Melt",
+    mainCategory: "ITALIAN",
+    category: "Deep Dish Pizzas",
+    broadCategory: "ITALIAN",
+    isVeg: false,
+    price: 695,
+    description: "A massive layer of chicken pepperoni slices smothered between half a pound of mozzarella and crushed tomato sauce.",
+    imagePath: "/assets/deep-dish-pizza/pepperoni-melt.avif",
+    isAvailable: true,
+    spicyLevel: 1
+  },
+
+  // --- ITALIAN INDIE CRUST PIZZAS ---
+  {
+    id: "it-ind-1",
+    name: "Indie Chicken Sausage Pizza",
+    mainCategory: "ITALIAN",
+    category: "Indie Crust Pizzas",
+    broadCategory: "ITALIAN",
+    isVeg: false,
+    price: 495,
+    description: "Crispy Indian crust topped with spicy sliced chicken sausage, bell peppers, onions and spiced tomato sauce.",
+    imagePath: "/assets/indie-crust-pizza/chicken-sausage.avif",
+    variants: [
+      { id: "v-ics-10", name: "10 inch Regular", price: 495 },
+      { id: "v-ics-12", name: "12 inch Large", price: 695 }
+    ],
+    isAvailable: true,
+    spicyLevel: 1
+  },
+  {
+    id: "it-ind-2",
+    name: "Indie Fully Loaded Chicken Pizza",
+    mainCategory: "ITALIAN",
+    category: "Indie Crust Pizzas",
+    broadCategory: "ITALIAN",
+    isVeg: false,
+    price: 545,
+    description: "Layered with spiced shredded chicken, chicken sausage, peri peri chicken and molten mozzarella.",
+    imagePath: "/assets/indie-crust-pizza/fully-loaded-chicken.avif",
+    variants: [
+      { id: "v-flc-10", name: "10 inch Regular", price: 545 },
+      { id: "v-flc-12", name: "12 inch Large", price: 745 }
+    ],
+    isAvailable: true,
+    spicyLevel: 2
+  },
+  {
+    id: "it-ind-3",
+    name: "Indie Mushroom Delight Pizza",
+    mainCategory: "ITALIAN",
+    category: "Indie Crust Pizzas",
+    broadCategory: "ITALIAN",
+    isVeg: true,
+    price: 465,
+    description: "Button mushrooms, roasted garlic, caramelized onions and herbs over spiced tomato cheese base.",
+    imagePath: "/assets/indie-crust-pizza/mushroom-delight.avif",
+    variants: [
+      { id: "v-imd-10", name: "10 inch Regular", price: 465 },
+      { id: "v-imd-12", name: "12 inch Large", price: 665 }
+    ],
+    isAvailable: true,
+    spicyLevel: 0
+  },
+  {
+    id: "it-ind-4",
+    name: "Indie Peri-Peri Paneer Pizza",
+    mainCategory: "ITALIAN",
+    category: "Indie Crust Pizzas",
+    broadCategory: "ITALIAN",
+    isVeg: true,
+    price: 475,
+    description: "Peri-peri spiced cottage cheese cubes, bell peppers, onions, red paprika and gooey mozzarella.",
+    imagePath: "/assets/indie-crust-pizza/peri-peri-paneer.avif",
+    variants: [
+      { id: "v-ppp-10", name: "10 inch Regular", price: 475 },
+      { id: "v-ppp-12", name: "12 inch Large", price: 675 }
+    ],
+    isAvailable: true,
+    spicyLevel: 2
+  },
+  {
+    id: "it-ind-5",
+    name: "Indie Tandoori Chicken Pizza",
+    mainCategory: "ITALIAN",
+    category: "Indie Crust Pizzas",
+    broadCategory: "ITALIAN",
+    isVeg: false,
+    price: 525,
+    description: "Clay-oven style tandoori spiced chicken pieces, pickled onions, green chilies and mozzarella.",
+    imagePath: "/assets/indie-crust-pizza/tandoori-chicken.avif",
+    variants: [
+      { id: "v-itc-10", name: "10 inch Regular", price: 525 },
+      { id: "v-itc-12", name: "12 inch Large", price: 725 }
+    ],
+    isAvailable: true,
+    spicyLevel: 2
+  },
+  {
+    id: "it-ind-6",
+    name: "Indie Veggie Delight Pizza",
+    mainCategory: "ITALIAN",
+    category: "Indie Crust Pizzas",
+    broadCategory: "ITALIAN",
+    isVeg: true,
+    price: 445,
+    description: "Golden corn, bell peppers, red onions, mushrooms and black olives over zesty tomato sauce.",
+    imagePath: "/assets/indie-crust-pizza/veggie-delight.avif",
+    variants: [
+      { id: "v-ivd-10", name: "10 inch Regular", price: 445 },
+      { id: "v-ivd-12", name: "12 inch Large", price: 645 }
+    ],
+    isAvailable: true,
+    spicyLevel: 0
+  },
+
+  // --- ADDITIONAL ITALIAN GARLIC BREADS ---
+  {
+    id: "it-gb-4",
+    name: "Asparagus & Burrata Garlic Bread",
+    mainCategory: "ITALIAN",
+    category: "Garlic Breads",
+    broadCategory: "ITALIAN",
+    isVeg: true,
+    price: 340,
+    description: "Crusty garlic baguette topped with grilled baby asparagus spears, creamy burrata and basil drizzle.",
+    imagePath: "/assets/garlic-bread/asparagus-burrata.avif",
+    isAvailable: true,
+    spicyLevel: 0
+  },
+  {
+    id: "it-gb-5",
+    name: "Bacon and Mushroom Garlic Bread",
+    mainCategory: "ITALIAN",
+    category: "Garlic Breads",
+    broadCategory: "ITALIAN",
+    isVeg: false,
+    price: 360,
+    description: "Artisanal garlic baguette baked with crispy bacon bits, sautéed wild mushrooms and molten mozzarella.",
+    imagePath: "/assets/garlic-bread/bacon-and-mushroom.avif",
+    isAvailable: true,
+    spicyLevel: 0
+  },
+  {
+    id: "it-gb-6",
+    name: "Grilled Chicken Garlic Bread",
+    mainCategory: "ITALIAN",
+    category: "Garlic Breads",
+    broadCategory: "ITALIAN",
+    isVeg: false,
+    price: 345,
+    description: "Roasted garlic loaf topped with herb grilled chicken chunks, jalapeños and bubbling melted cheese.",
+    imagePath: "/assets/garlic-bread/grilled-chicken.avif",
+    isAvailable: true,
+    spicyLevel: 1
+  },
+  {
+    id: "it-gb-7",
+    name: "Pepperoni Garlic Bread",
+    mainCategory: "ITALIAN",
+    category: "Garlic Breads",
+    broadCategory: "ITALIAN",
+    isVeg: false,
+    price: 360,
+    description: "Crispy garlic bread slathered in marinara, topped with savory pepperoni slices and mozzarella.",
+    imagePath: "/assets/garlic-bread/pepperoni.avif",
+    isAvailable: true,
+    spicyLevel: 1
+  },
+  {
+    id: "it-gb-8",
+    name: "Pesto Veggies Garlic Bread",
+    mainCategory: "ITALIAN",
+    category: "Garlic Breads",
+    broadCategory: "ITALIAN",
+    isVeg: true,
+    price: 320,
+    description: "Toasted baguette topped with Genovese basil pesto, sautéed zucchini, bell peppers and mozzarella.",
+    imagePath: "/assets/garlic-bread/pesto-veggies.avif",
+    isAvailable: true,
+    spicyLevel: 0
+  },
+  {
+    id: "it-gb-9",
+    name: "Vegetable & Cheese Garlic Bread",
+    mainCategory: "ITALIAN",
+    category: "Garlic Breads",
+    broadCategory: "ITALIAN",
+    isVeg: true,
+    price: 295,
+    description: "Classic garlic bread loaded with diced bell peppers, sweet corn, olives and gooey mozzarella.",
+    imagePath: "/assets/garlic-bread/vegetable-and-cheese-garlic-bread.avif",
+    isAvailable: true,
+    spicyLevel: 0
+  },
+
+  // --- ADDITIONAL ITALIAN NAPOLI SANDWICHES ---
+  {
+    id: "it-sdw-5",
+    name: "Bacon & Eggs Napoli Sandwich",
+    mainCategory: "ITALIAN",
+    category: "Sandwiches",
+    broadCategory: "ITALIAN",
+    isVeg: false,
+    price: 395,
+    description: "Crispy bacon, sunny-side fried egg, cheddar cheese and peppery wild rocket folded in hot pizza bread.",
+    imagePath: "/assets/napoli-sandwiches/bacon-and-eggs.avif",
+    isAvailable: true,
+    spicyLevel: 0
+  },
+  {
+    id: "it-sdw-6",
+    name: "Grilled Herb Chicken Napoli Sandwich",
+    mainCategory: "ITALIAN",
+    category: "Sandwiches",
+    broadCategory: "ITALIAN",
+    isVeg: false,
+    price: 385,
+    description: "Marinated grilled chicken breast, sliced tomatoes, iceberg lettuce and garlic aioli in wood-fired bread.",
+    imagePath: "/assets/napoli-sandwiches/grilled-chicken.avif",
+    isAvailable: true,
+    spicyLevel: 0
+  },
+  {
+    id: "it-sdw-7",
+    name: "Loaded Vegetables Napoli Sandwich",
+    mainCategory: "ITALIAN",
+    category: "Sandwiches",
+    broadCategory: "ITALIAN",
+    isVeg: true,
+    price: 345,
+    description: "Charred bell peppers, zucchini, sautéed mushrooms, mozzarella and balsamic glaze on rustic bread.",
+    imagePath: "/assets/napoli-sandwiches/loaded-vegetables-sandwich.avif",
+    isAvailable: true,
+    spicyLevel: 0
+  },
+  {
+    id: "it-sdw-8",
+    name: "Mushroom & Cheese Napoli Sandwich",
+    mainCategory: "ITALIAN",
+    category: "Sandwiches",
+    broadCategory: "ITALIAN",
+    isVeg: true,
+    price: 360,
+    description: "Wok-seared wild mushrooms with melted fontina and mozzarella cheese, truffle drizzle on hot crust.",
+    imagePath: "/assets/napoli-sandwiches/mushroom-and-cheese.avif",
+    isAvailable: true,
+    spicyLevel: 0
+  },
+  {
+    id: "it-sdw-9",
+    name: "Sundried Tomato & Pesto Napoli Sandwich",
+    mainCategory: "ITALIAN",
+    category: "Sandwiches",
+    broadCategory: "ITALIAN",
+    isVeg: true,
+    price: 365,
+    description: "Intense sundried tomatoes, creamy ricotta, fresh pesto and basil leaves on wood-fired Napoli bread.",
+    imagePath: "/assets/napoli-sandwiches/sundried-tomato-pesto.avif",
+    isAvailable: true,
+    spicyLevel: 0
+  },
+
+  // --- ADDITIONAL ITALIAN SALADS ---
+  {
+    id: "it-sal-4",
+    name: "Crisp Green Apple & Walnut Salad",
+    mainCategory: "ITALIAN",
+    category: "Salads",
+    broadCategory: "ITALIAN",
+    isVeg: true,
+    price: 340,
+    description: "Crisp sliced Granny Smith apples, candied walnuts, mixed garden greens, crumbled feta and honey mustard vinaigrette.",
+    imagePath: "/assets/salad/apple-salad.avif",
+    isAvailable: true,
+    spicyLevel: 0
+  },
+  {
+    id: "it-sal-5",
+    name: "Watermelon Feta & Mint Salad",
+    mainCategory: "ITALIAN",
+    category: "Salads",
+    broadCategory: "ITALIAN",
+    isVeg: true,
+    price: 330,
+    description: "Sweet chilled watermelon cubes, Greek feta cheese crumbles, fresh garden mint leaves and light balsamic glaze.",
+    imagePath: "/assets/salad/watermelon-salad.avif",
     isAvailable: true,
     spicyLevel: 0
   },
@@ -1628,6 +2167,485 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     ],
     isAvailable: true,
     spicyLevel: 2
+  },
+
+  
+  // --- ADDITIONAL ASIAN APPETISERS ---
+  {
+    id: "as-app-9",
+    name: "Chicken Katsu",
+    mainCategory: "ASIAN",
+    category: "Appetisers",
+    broadCategory: "ASIAN",
+    isVeg: false,
+    price: 380,
+    description: "Crispy panko-breaded chicken cutlet fried golden brown, served with savory Japanese tonkatsu dipping sauce and kewpie mayo.",
+    imagePath: "/assets/appetisers/chicken-katsu.avif",
+    isAvailable: true,
+    spicyLevel: 0
+  },
+  {
+    id: "as-app-10",
+    name: "Indonesian Chicken Satay",
+    mainCategory: "ASIAN",
+    category: "Appetisers",
+    broadCategory: "ASIAN",
+    isVeg: false,
+    price: 375,
+    description: "Skewered marinated chicken thighs flame-grilled and served with rich spiced peanut sauce and pickled cucumber relish.",
+    imagePath: "/assets/appetisers/chicken-satay.avif",
+    isAvailable: true,
+    spicyLevel: 1
+  },
+  {
+    id: "as-app-11",
+    name: "Honey Chilli Potato",
+    mainCategory: "ASIAN",
+    category: "Appetisers",
+    broadCategory: "ASIAN",
+    isVeg: true,
+    price: 280,
+    description: "Crispy fried potato fingers glazed in sweet and spicy chili honey garlic sauce, tossed with sesame seeds and spring onions.",
+    imagePath: "/assets/appetisers/chilli-potato.avif",
+    isAvailable: true,
+    spicyLevel: 1
+  },
+  {
+    id: "as-app-12",
+    name: "Cheese and Corn Cigar Rolls",
+    mainCategory: "ASIAN",
+    category: "Appetisers",
+    broadCategory: "ASIAN",
+    isVeg: true,
+    price: 310,
+    description: "Crispy golden pastry rolls stuffed with molten processed cheese, sweet corn kernels and herbs, served with sweet chili dip.",
+    imagePath: "/assets/appetisers/cigar-roll.avif",
+    isAvailable: true,
+    spicyLevel: 0
+  },
+  {
+    id: "as-app-13",
+    name: "Honey Chilli Cauliflower",
+    mainCategory: "ASIAN",
+    category: "Appetisers",
+    broadCategory: "ASIAN",
+    isVeg: true,
+    price: 295,
+    description: "Batter-fried crispy cauliflower florets tossed in a sticky sweet honey-chili glaze with scallions and roasted sesame.",
+    imagePath: "/assets/appetisers/honey-chilli-cauliflower.avif",
+    isAvailable: true,
+    spicyLevel: 1
+  },
+  {
+    id: "as-app-14",
+    name: "Hot Garlic Prawns",
+    mainCategory: "ASIAN",
+    category: "Appetisers",
+    broadCategory: "ASIAN",
+    isVeg: false,
+    price: 460,
+    description: "Succulent pan-seared tiger prawns wok-tossed in pungent fiery garlic chili sauce with crushed peppercorns and spring onions.",
+    imagePath: "/assets/appetisers/hot-garlic-prawn.avif",
+    isAvailable: true,
+    spicyLevel: 2
+  },
+  {
+    id: "as-app-15",
+    name: "Crispy Veg Manchurian",
+    mainCategory: "ASIAN",
+    category: "Appetisers",
+    broadCategory: "ASIAN",
+    isVeg: true,
+    price: 295,
+    description: "Minced vegetable dumplings crisp-fried and tossed in savory dark soy, ginger, garlic, and fresh green chili sauce.",
+    imagePath: "/assets/appetisers/manchurian.avif",
+    isAvailable: true,
+    spicyLevel: 1
+  },
+  {
+    id: "as-app-16",
+    name: "Crispy Shanghai Mushroom",
+    mainCategory: "ASIAN",
+    category: "Appetisers",
+    broadCategory: "ASIAN",
+    isVeg: true,
+    price: 330,
+    description: "Tender button mushrooms batter-fried to golden crispness, tossed in sweet-savory Shanghai spice glaze and scallions.",
+    imagePath: "/assets/appetisers/mushroom-shanghai.avif",
+    isAvailable: true,
+    spicyLevel: 1
+  },
+  {
+    id: "as-app-17",
+    name: "Wok Paneer with Bok Choy",
+    mainCategory: "ASIAN",
+    category: "Appetisers",
+    broadCategory: "ASIAN",
+    isVeg: true,
+    price: 340,
+    description: "Fresh cottage cheese cubes and crunchy Shanghai bok choy wok-tossed in fragrant light soya and crushed garlic.",
+    imagePath: "/assets/appetisers/paneer-bok-choy-appetiser.avif",
+    isAvailable: true,
+    spicyLevel: 1
+  },
+  {
+    id: "as-app-18",
+    name: "Sautéed Asian Greens & Veggies",
+    mainCategory: "ASIAN",
+    category: "Appetisers",
+    broadCategory: "ASIAN",
+    isVeg: true,
+    price: 290,
+    description: "Fresh seasonal greens including broccoli, baby corn, bell peppers and snow peas tossed in aromatic sesame garlic oil.",
+    imagePath: "/assets/appetisers/sauteed-veggies.avif",
+    isAvailable: true,
+    spicyLevel: 0
+  },
+  {
+    id: "as-app-19",
+    name: "Thai Basil Paneer",
+    mainCategory: "ASIAN",
+    category: "Appetisers",
+    broadCategory: "ASIAN",
+    isVeg: true,
+    price: 335,
+    description: "Paneer cubes wok-seared with fresh holy basil, bird’s eye chili, sliced garlic, and sweet aromatic seasoning.",
+    imagePath: "/assets/appetisers/thai-basil-paneer.avif",
+    isAvailable: true,
+    spicyLevel: 2
+  },
+  {
+    id: "as-app-20",
+    name: "Veg Cheese Corn Rolls",
+    mainCategory: "ASIAN",
+    category: "Appetisers",
+    broadCategory: "ASIAN",
+    isVeg: true,
+    price: 310,
+    description: "Golden crunchy rolls filled with melted mozzarella, cheddar, sweet corn, and mild herbs served with scallion aioli.",
+    imagePath: "/assets/appetisers/veg-cheese-corn-roll.avif",
+    isAvailable: true,
+    spicyLevel: 0
+  },
+
+  // --- ADDITIONAL ASIAN BAOS ---
+  {
+    id: "as-bao-4",
+    name: "Teriyaki Chicken Bao",
+    mainCategory: "ASIAN",
+    category: "Baos",
+    broadCategory: "ASIAN",
+    isVeg: false,
+    price: 385,
+    description: "Glazed sweet teriyaki chicken thigh, pickled red onions, cucumber ribbons and toasted sesame in a fluffy steamed bao.",
+    imagePath: "/assets/bao/teriyaki-chicken-bao.avif",
+    isAvailable: true,
+    spicyLevel: 1
+  },
+
+  // --- ADDITIONAL ASIAN MOMOS & GYOZAS ---
+  {
+    id: "as-mom-7",
+    name: "Crispy Veg Wontons",
+    mainCategory: "ASIAN",
+    category: "Momos & Gyozas",
+    broadCategory: "ASIAN",
+    isVeg: true,
+    price: 295,
+    description: "Golden fried handmade wonton parcels stuffed with seasoned vegetables and water chestnuts, served with sweet chili sauce.",
+    imagePath: "/assets/momo-and-gyoza/wonton.avif",
+    isAvailable: true,
+    spicyLevel: 0
+  },
+
+  // --- ADDITIONAL ASIAN SUSHI ---
+  {
+    id: "as-sus-5",
+    name: "American California Chicken Sushi Roll",
+    mainCategory: "ASIAN",
+    category: "Sushi",
+    broadCategory: "ASIAN",
+    isVeg: false,
+    price: 440,
+    description: "Tender chicken, avocado, cucumber and toasted sesame seeds rolled in sushi rice with creamy Japanese mayo.",
+    imagePath: "/assets/sushi/american-california-chicken-sushi.avif",
+    variants: [
+      { id: "v-acc-4", name: "4 Pieces", price: 440 },
+      { id: "v-acc-8", name: "8 Pieces", price: 710 }
+    ],
+    isAvailable: true,
+    spicyLevel: 0
+  },
+  {
+    id: "as-sus-6",
+    name: "Crispy Spinach Sushi Roll",
+    mainCategory: "ASIAN",
+    category: "Sushi",
+    broadCategory: "ASIAN",
+    isVeg: true,
+    price: 390,
+    description: "Crispy flash-fried seasoned spinach, creamy avocado and tanuki flakes rolled with nori and spicy mayo.",
+    imagePath: "/assets/sushi/crispy-spinach-sushi.avif",
+    variants: [
+      { id: "v-css-4", name: "4 Pieces", price: 390 },
+      { id: "v-css-8", name: "8 Pieces", price: 640 }
+    ],
+    isAvailable: true,
+    spicyLevel: 1
+  },
+  {
+    id: "as-sus-7",
+    name: "Rainbow Uramaki Sushi Roll",
+    mainCategory: "ASIAN",
+    category: "Sushi",
+    broadCategory: "ASIAN",
+    isVeg: true,
+    price: 420,
+    description: "Vibrant sushi roll wrapped with colorful slices of avocado, bell peppers, cucumber and pickled radish.",
+    imagePath: "/assets/sushi/rainbow-sushi.avif",
+    variants: [
+      { id: "v-rbw-4", name: "4 Pieces", price: 420 },
+      { id: "v-rbw-8", name: "8 Pieces", price: 690 }
+    ],
+    isAvailable: true,
+    spicyLevel: 0
+  },
+  {
+    id: "as-sus-8",
+    name: "Teriyaki Chicken Sushi Roll",
+    mainCategory: "ASIAN",
+    category: "Sushi",
+    broadCategory: "ASIAN",
+    isVeg: false,
+    price: 440,
+    description: "Glazed sweet-savory teriyaki chicken strips, crisp cucumber and scallions topped with toasted sesame.",
+    imagePath: "/assets/sushi/teriyaki-chicken-sushi.avif",
+    variants: [
+      { id: "v-tcs-4", name: "4 Pieces", price: 440 },
+      { id: "v-tcs-8", name: "8 Pieces", price: 710 }
+    ],
+    isAvailable: true,
+    spicyLevel: 1
+  },
+
+  // --- ADDITIONAL ASIAN NOODLES ---
+  {
+    id: "as-ndl-7",
+    name: "American Crispy Chopsuey",
+    mainCategory: "ASIAN",
+    category: "Noodles",
+    broadCategory: "ASIAN",
+    isVeg: true,
+    price: 340,
+    description: "Bed of ultra-crisp fried noodles topped with sweet and sour tangy vegetable glaze, pineapple, and crunchy bell peppers.",
+    imagePath: "/assets/noodles/chopsuey.avif",
+    variants: [
+      { id: "v-chp-veg", name: "Vegetarian", price: 340 },
+      { id: "v-chp-chk", name: "Chicken & Egg", price: 390 }
+    ],
+    isAvailable: true,
+    spicyLevel: 1
+  },
+  {
+    id: "as-ndl-8",
+    name: "Signature Oriental Noodle Bowl",
+    mainCategory: "ASIAN",
+    category: "Noodles",
+    broadCategory: "ASIAN",
+    isVeg: true,
+    price: 360,
+    description: "Wok tossed noodles combined with exotic vegetables, shiitake mushrooms, and rich five-spice soy reduction.",
+    imagePath: "/assets/noodles/oriental-bowl.avif",
+    variants: [
+      { id: "v-ont-veg", name: "Vegetarian", price: 360 },
+      { id: "v-ont-chk", name: "Chicken", price: 410 }
+    ],
+    isAvailable: true,
+    spicyLevel: 1
+  },
+  {
+    id: "as-ndl-9",
+    name: "Cantonese Pan-Fried Noodles",
+    mainCategory: "ASIAN",
+    category: "Noodles",
+    broadCategory: "ASIAN",
+    isVeg: true,
+    price: 350,
+    description: "Crispy-bottomed noodles smothered in a rich savory Cantonese garlic gravy with seasonal Asian greens.",
+    imagePath: "/assets/noodles/pan-fried-noodles.avif",
+    variants: [
+      { id: "v-pfn-veg", name: "Vegetarian", price: 350 },
+      { id: "v-pfn-chk", name: "Chicken", price: 400 }
+    ],
+    isAvailable: true,
+    spicyLevel: 1
+  },
+  {
+    id: "as-ndl-10",
+    name: "Singaporean Hakka Noodles",
+    mainCategory: "ASIAN",
+    category: "Noodles",
+    broadCategory: "ASIAN",
+    isVeg: true,
+    price: 295,
+    description: "Thin noodles stir-fried with fragrant mild curry spices, shredded cabbage, carrots, bell peppers and spring onion.",
+    imagePath: "/assets/noodles/singaporean-hakka-noodles.avif",
+    variants: [
+      { id: "v-sgn-veg", name: "Vegetarian", price: 295 },
+      { id: "v-sgn-chk", name: "Chicken", price: 345 }
+    ],
+    isAvailable: true,
+    spicyLevel: 1
+  },
+  {
+    id: "as-ndl-11",
+    name: "Traditional Himalayan Thukpa",
+    mainCategory: "ASIAN",
+    category: "Noodles",
+    broadCategory: "ASIAN",
+    isVeg: true,
+    price: 320,
+    description: "Hearty and comforting Himalayan noodle soup infused with ginger, garlic, cilantro, aromatic mountain spices and greens.",
+    imagePath: "/assets/noodles/thukpa.avif",
+    variants: [
+      { id: "v-thk-veg", name: "Vegetarian", price: 320 },
+      { id: "v-thk-chk", name: "Tender Chicken", price: 370 }
+    ],
+    isAvailable: true,
+    spicyLevel: 1
+  },
+
+  // --- ADDITIONAL ASIAN RICE BOWLS ---
+  {
+    id: "as-ric-5",
+    name: "Chilli Mushroom Rice Bowl",
+    mainCategory: "ASIAN",
+    category: "Rice Bowls",
+    broadCategory: "ASIAN",
+    isVeg: true,
+    price: 340,
+    description: "Wok-tossed button mushrooms in spicy chili garlic soy gravy served over fragrant eggless fried rice.",
+    imagePath: "/assets/rice-bowls/chilli-mushroom-rice-bowl.avif",
+    isAvailable: true,
+    spicyLevel: 2
+  },
+  {
+    id: "as-ric-6",
+    name: "Chilli Prawn Rice Bowl",
+    mainCategory: "ASIAN",
+    category: "Rice Bowls",
+    broadCategory: "ASIAN",
+    isVeg: false,
+    price: 420,
+    description: "Juicy tiger prawns cooked in spicy dark soya and chili garlic gravy over wok-tossed fried rice.",
+    imagePath: "/assets/rice-bowls/chilli-prawn-rice-bowl.avif",
+    isAvailable: true,
+    spicyLevel: 2
+  },
+  {
+    id: "as-ric-7",
+    name: "Japanese Katsu Chicken Rice Bowl",
+    mainCategory: "ASIAN",
+    category: "Rice Bowls",
+    broadCategory: "ASIAN",
+    isVeg: false,
+    price: 395,
+    description: "Panko breaded crispy chicken cutlet served over steamed Japanese rice with rich tonkatsu curry sauce and sesame.",
+    imagePath: "/assets/rice-bowls/katsu-chickwn-rice-bowl.avif",
+    isAvailable: true,
+    spicyLevel: 1
+  },
+  {
+    id: "as-ric-8",
+    name: "Korean Kimchi Fried Rice Bowl",
+    mainCategory: "ASIAN",
+    category: "Rice Bowls",
+    broadCategory: "ASIAN",
+    isVeg: true,
+    price: 345,
+    description: "Spicy fermented napa cabbage kimchi wok-tossed with Jasmine rice, gochujang, sesame oil, and toasted nori strips.",
+    imagePath: "/assets/rice-bowls/kimchi-pickle-rice-bowl.avif",
+    isAvailable: true,
+    spicyLevel: 2
+  },
+  {
+    id: "as-ric-9",
+    name: "Holy Basil Paneer Krapow Bowl",
+    mainCategory: "ASIAN",
+    category: "Rice Bowls",
+    broadCategory: "ASIAN",
+    isVeg: true,
+    price: 345,
+    description: "Cottage cheese wok-tossed with fresh holy basil, bird’s eye chili, and garlic served with aromatic Jasmine rice.",
+    imagePath: "/assets/rice-bowls/paneer-karpow.avif",
+    isAvailable: true,
+    spicyLevel: 2
+  },
+  {
+    id: "as-ric-10",
+    name: "Thai Pineapple & Egg Fried Rice",
+    mainCategory: "ASIAN",
+    category: "Rice Bowls",
+    broadCategory: "ASIAN",
+    isVeg: false,
+    price: 360,
+    description: "Jasmine rice stir-fried with sweet pineapple chunks, scrambled farm eggs, cashew nuts, raisins, and mild curry notes.",
+    imagePath: "/assets/rice-bowls/thai-pineapple-n-egg-fried-rice.avif",
+    isAvailable: true,
+    spicyLevel: 0
+  },
+
+  // --- ADDITIONAL ASIAN SOUPS ---
+  {
+    id: "as-sop-4",
+    name: "Classic Hot & Sour Soup",
+    mainCategory: "ASIAN",
+    category: "Soups",
+    broadCategory: "ASIAN",
+    isVeg: true,
+    price: 240,
+    description: "Spicy and tangy thick soup packed with shredded wood ear mushrooms, bamboo shoots, tofu, and red chili vinegar.",
+    imagePath: "/assets/soups/hot-n-sour-soup.avif",
+    variants: [
+      { id: "v-hns-veg", name: "Vegetarian", price: 240 },
+      { id: "v-hns-chk", name: "Chicken", price: 280 }
+    ],
+    isAvailable: true,
+    spicyLevel: 2
+  },
+  {
+    id: "as-sop-5",
+    name: "Zesty Lemon Coriander Soup",
+    mainCategory: "ASIAN",
+    category: "Soups",
+    broadCategory: "ASIAN",
+    isVeg: true,
+    price: 240,
+    description: "Clear and refreshing vegetable broth packed with fresh coriander leaves, crushed black pepper, and squeezed lemon juice.",
+    imagePath: "/assets/soups/lemon-coriander-soup.avif",
+    variants: [
+      { id: "v-lmc-veg", name: "Vegetarian", price: 240 },
+      { id: "v-lmc-chk", name: "Chicken", price: 280 }
+    ],
+    isAvailable: true,
+    spicyLevel: 1
+  },
+  {
+    id: "as-sop-6",
+    name: "Cream Style Sweet Corn Soup",
+    mainCategory: "ASIAN",
+    category: "Soups",
+    broadCategory: "ASIAN",
+    isVeg: true,
+    price: 240,
+    description: "Classic comforting soup with sweet crushed corn kernels, mild scallions, and light seasoning.",
+    imagePath: "/assets/soups/sweet-corn-soup.avif",
+    variants: [
+      { id: "v-swc-veg", name: "Vegetarian", price: 240 },
+      { id: "v-swc-chk", name: "Chicken & Egg Drop", price: 280 }
+    ],
+    isAvailable: true,
+    spicyLevel: 0
   },
 
   // =========================================================================
