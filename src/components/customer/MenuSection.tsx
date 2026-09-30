@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useRef } from 'react';
-import { Search, Leaf, Sparkles, Filter } from 'lucide-react';
+import { Search, Sparkles, Filter } from 'lucide-react';
 import { INITIAL_MENU_ITEMS } from '../../data/menuCatalog';
 import { MenuItem, MainCategory } from '../../types';
 import { MenuItemCard } from './MenuItemCard';
@@ -14,7 +14,6 @@ interface MenuSectionProps {
 interface CategoryDef {
   id: MainCategory;
   label: string;
-  icon: string;
   badge?: string;
 }
 
@@ -26,14 +25,14 @@ export const MenuSection: React.FC<MenuSectionProps> = ({
   const addItem = useCartStore((state) => state.addItem);
   const dishListRef = useRef<HTMLDivElement>(null);
 
-  // Exactly 6 primary categories, with Signature Dishes first!
+  // Primary categories in high-luxury phrasing
   const MAIN_CATEGORIES: CategoryDef[] = [
-    { id: 'SIGNATURE', label: 'Signature Dishes', icon: '⭐', badge: "Chef's Picks" },
-    { id: 'MEXICAN', label: 'Mexican', icon: '🌮' },
-    { id: 'ITALIAN', label: 'Italian', icon: '🍕' },
-    { id: 'ASIAN', label: 'Asian', icon: '🥢' },
-    { id: 'BEVERAGES', label: 'Beverages', icon: '🍹' },
-    { id: 'DESSERTS', label: 'Desserts', icon: '🍨' },
+    { id: 'SIGNATURE', label: 'Grand Signatures', badge: 'Chef Special' },
+    { id: 'ASIAN', label: 'Asian Mastery' },
+    { id: 'ITALIAN', label: 'Italian Wood-Fired' },
+    { id: 'MEXICAN', label: 'Mexican Sizzle' },
+    { id: 'BEVERAGES', label: 'Private Reserve Beverages' },
+    { id: 'DESSERTS', label: 'Artisanal Desserts' },
   ];
 
   const [selectedCategory, setSelectedCategory] = useState<MainCategory>('SIGNATURE');
@@ -42,7 +41,7 @@ export const MenuSection: React.FC<MenuSectionProps> = ({
   const [vegOnlyFilter, setVegOnlyFilter] = useState<boolean>(false);
   const [chefSpecialOnly, setChefSpecialOnly] = useState<boolean>(false);
 
-  // Get available subcategories for current active main category
+  // Subcategories for current main category
   const subcategories = useMemo(() => {
     const itemsInCat = INITIAL_MENU_ITEMS.filter((item) => item.mainCategory === selectedCategory);
     const setOfSubs = new Set<string>();
@@ -67,17 +66,9 @@ export const MenuSection: React.FC<MenuSectionProps> = ({
 
   const filteredItems = useMemo(() => {
     return INITIAL_MENU_ITEMS.filter((item) => {
-      // 1. Primary Category Filter
-      if (item.mainCategory !== selectedCategory) {
-        return false;
-      }
+      if (item.mainCategory !== selectedCategory) return false;
+      if (selectedSubcategory !== 'ALL' && item.category !== selectedSubcategory) return false;
 
-      // 2. Subcategory Filter
-      if (selectedSubcategory !== 'ALL' && item.category !== selectedSubcategory) {
-        return false;
-      }
-
-      // 3. Search Query Filter
       if (searchQuery.trim() !== '') {
         const query = searchQuery.toLowerCase();
         const matchName = item.name.toLowerCase().includes(query);
@@ -86,10 +77,7 @@ export const MenuSection: React.FC<MenuSectionProps> = ({
         if (!matchName && !matchDesc && !matchSub) return false;
       }
 
-      // 4. Veg filter
       if (vegOnlyFilter && !item.isVeg) return false;
-
-      // 5. Chef special filter
       if (chefSpecialOnly && !item.isChefSpecial) return false;
 
       return true;
@@ -99,36 +87,32 @@ export const MenuSection: React.FC<MenuSectionProps> = ({
   const currentCatInfo = MAIN_CATEGORIES.find((c) => c.id === selectedCategory);
 
   return (
-    <section id="menu" className="py-12 sm:py-16 bg-[#F2F7F1]/40 relative">
+    <section id="menu" className="py-20 sm:py-24 bg-[#08090B] relative border-t border-white/[0.06]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Main Grid: Left Column is Fixed/Sticky, Right Column Scrolls */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        {/* Section Header */}
+        <div className="mb-12 space-y-3">
+          <h2 className="font-serif-luxury text-3xl sm:text-5xl font-light text-white tracking-tight">
+            The Tasting Menu & Culinary Catalog
+          </h2>
+          <p className="text-slate-400 text-sm max-w-xl font-light leading-relaxed">
+            Every dish is an individual exploration of high-temperature wood fire, fresh hand-rolled dough, and heritage spices.
+          </p>
+        </div>
+
+        {/* Main Grid: Left Column Category Rail, Right Column Scrollable Dishes */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
           
           {/* ========================================================================= */}
-          {/* FIXED / STICKY LEFT PANE: Categories, Food Range, Headings, Filters */}
+          {/* LEFT PANE: Categories, Search, Filters */}
           {/* ========================================================================= */}
-          <div className="lg:col-span-4 xl:col-span-4 lg:sticky lg:top-24 space-y-6">
+          <div className="lg:col-span-4 lg:sticky lg:top-24 space-y-5">
             
-            {/* Title Header & Badge */}
-            <div className="space-y-2">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EAF1E8] text-[#2D4A2D] text-xs font-semibold border border-[#2D4A2D]/10 shadow-xs">
-                <Leaf className="w-3.5 h-3.5 text-[#466B45]" />
-                <span className="uppercase tracking-wider">CRAFT CULINARY CATALOG</span>
-              </div>
-              <h2 className="font-serif-luxury text-3xl sm:text-4xl font-bold text-[#2D4A2D] tracking-tight">
-                Explore Our Menu
-              </h2>
-              <p className="text-xs sm:text-sm text-[#5C6B5E] leading-relaxed">
-                Wood-fired baking, Mexican sizzle, Asian wok mastery, chilled beverages, and handcrafted desserts.
-              </p>
-            </div>
-
-            {/* Categories Navigation (Fixed Stays in Place) */}
-            <div className="bg-white p-4 rounded-3xl border border-[#2D4A2D]/10 shadow-sm space-y-3">
-              <div className="flex items-center justify-between px-2 text-xs font-bold text-[#2D4A2D] uppercase tracking-wider">
-                <span>Categories</span>
-                <span className="text-[10px] text-[#5C6B5E] font-normal">{INITIAL_MENU_ITEMS.length} dishes</span>
+            {/* Categories Navigation */}
+            <div className="bg-[#0E1015]/90 backdrop-blur-xl p-4 sm:p-5 rounded-2xl border border-white/[0.08] shadow-2xl space-y-2">
+              <div className="flex items-center justify-between px-2 text-[11px] font-mono-luxury uppercase tracking-[0.2em] text-[#E5C07B] mb-3">
+                <span>Collections</span>
+                <span className="text-slate-400">{INITIAL_MENU_ITEMS.length} Offerings</span>
               </div>
               
               <div className="space-y-1.5">
@@ -139,25 +123,18 @@ export const MenuSection: React.FC<MenuSectionProps> = ({
                     <button
                       key={cat.id}
                       onClick={() => handleCategoryChange(cat.id)}
-                      className={`w-full px-3.5 py-2.5 rounded-2xl text-xs sm:text-sm font-semibold transition-all duration-200 flex items-center justify-between cursor-pointer ${
+                      className={`w-full px-4 py-3 rounded-xl text-xs font-mono-luxury uppercase tracking-wider transition-all duration-200 flex items-center justify-between cursor-pointer border ${
                         isActive
-                          ? 'bg-[#2D4A2D] text-white shadow-md font-bold'
-                          : 'text-[#2D4A2D] hover:bg-[#EAF1E8] hover:text-[#2D4A2D]'
+                          ? 'bg-[#181B24] border-[#D4AF37]/50 text-white shadow-[0_0_15px_rgba(212,175,55,0.15)] font-semibold'
+                          : 'border-transparent text-slate-400 hover:text-white hover:bg-white/[0.04]'
                       }`}
                     >
                       <div className="flex items-center gap-2.5">
-                        <span className="text-base">{cat.icon}</span>
+                        <span className={`w-1.5 h-1.5 rounded-full ${isActive ? 'bg-[#D4AF37]' : 'bg-transparent'}`} />
                         <span>{cat.label}</span>
-                        {cat.badge && (
-                          <span className={`text-[9px] px-1.5 py-0.5 rounded-full font-bold uppercase ${
-                            isActive ? 'bg-[#D97706] text-white' : 'bg-amber-100 text-amber-800'
-                          }`}>
-                            {cat.badge}
-                          </span>
-                        )}
                       </div>
-                      <span className={`text-xs px-2 py-0.5 rounded-full ${
-                        isActive ? 'bg-white/20 text-white' : 'bg-gray-100 text-[#5C6B5E]'
+                      <span className={`text-[11px] px-2 py-0.5 rounded-md ${
+                        isActive ? 'bg-[#D4AF37]/20 text-[#E5C07B]' : 'bg-white/[0.04] text-slate-400'
                       }`}>
                         {catItemCount}
                       </span>
@@ -168,53 +145,53 @@ export const MenuSection: React.FC<MenuSectionProps> = ({
             </div>
 
             {/* Search and Filters Box */}
-            <div className="bg-white p-4 rounded-3xl border border-[#2D4A2D]/10 shadow-sm space-y-3">
+            <div className="bg-[#0E1015]/90 backdrop-blur-xl p-4 sm:p-5 rounded-2xl border border-white/[0.08] shadow-2xl space-y-4">
               
               {/* Search Input */}
               <div className="relative">
-                <Search className="w-4 h-4 text-[#5C6B5E] absolute left-3.5 top-3" />
+                <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5" />
                 <input
                   type="text"
                   placeholder={`Search ${currentCatInfo?.label}...`}
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-10 pr-3 py-2 rounded-xl bg-[#F9F8F3] border border-[#2D4A2D]/10 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#466B45] text-[#2D4A2D]"
+                  className="w-full pl-10 pr-3 py-2.5 rounded-xl bg-white/[0.04] border border-white/[0.08] text-xs font-mono-luxury focus:outline-none focus:border-[#D4AF37]/60 text-white placeholder-slate-500 transition-colors"
                 />
               </div>
 
               {/* Filter Toggles */}
-              <div className="flex items-center gap-2 pt-1">
+              <div className="flex items-center gap-2">
                 <button
                   onClick={() => setVegOnlyFilter(!vegOnlyFilter)}
-                  className={`flex-1 py-2 px-3 rounded-xl text-xs font-semibold flex items-center justify-center gap-1.5 transition-all cursor-pointer ${
+                  className={`flex-1 py-2 px-3 rounded-xl text-xs font-mono-luxury uppercase tracking-wider flex items-center justify-center gap-2 transition-all cursor-pointer border ${
                     vegOnlyFilter
-                      ? 'bg-emerald-700 text-white shadow-sm'
-                      : 'bg-[#F9F8F3] text-[#2D4A2D] hover:bg-[#EAF1E8] border border-[#2D4A2D]/10'
+                      ? 'bg-emerald-950/80 border-emerald-500/60 text-emerald-300'
+                      : 'bg-white/[0.03] border-white/[0.08] text-slate-400 hover:text-white'
                   }`}
                 >
                   <span className="w-2 h-2 rounded-full bg-emerald-400" />
-                  <span>Veg Only</span>
+                  <span>Vegetarian</span>
                 </button>
 
                 <button
                   onClick={() => setChefSpecialOnly(!chefSpecialOnly)}
-                  className={`flex-1 py-2 px-3 rounded-xl text-xs font-semibold flex items-center justify-center gap-1.5 transition-all cursor-pointer ${
+                  className={`flex-1 py-2 px-3 rounded-xl text-xs font-mono-luxury uppercase tracking-wider flex items-center justify-center gap-2 transition-all cursor-pointer border ${
                     chefSpecialOnly
-                      ? 'bg-[#D97706] text-white shadow-sm'
-                      : 'bg-[#F9F8F3] text-[#2D4A2D] hover:bg-[#FEF3C7] border border-[#2D4A2D]/10'
+                      ? 'bg-[#D4AF37]/20 border-[#D4AF37] text-[#E5C07B]'
+                      : 'bg-white/[0.03] border-white/[0.08] text-slate-400 hover:text-white'
                   }`}
                 >
-                  <Sparkles className="w-3 h-3 text-amber-500" />
-                  <span>Chef's Choice</span>
+                  <Sparkles className="w-3 h-3 text-[#D4AF37]" />
+                  <span>Chef Choice</span>
                 </button>
               </div>
 
-              {/* Subcategories Food Range Filter Chips */}
+              {/* Subcategories Filter Chips */}
               {subcategories.length > 2 && (
-                <div className="pt-2 border-t border-gray-100">
-                  <div className="text-[10px] font-bold text-[#5C6B5E] uppercase tracking-wider mb-2 flex items-center gap-1">
-                    <Filter className="w-3 h-3" />
-                    <span>Food Range / Types</span>
+                <div className="pt-3 border-t border-white/[0.06]">
+                  <div className="text-[10px] font-mono-luxury uppercase tracking-[0.16em] text-slate-400 mb-2.5 flex items-center gap-1.5">
+                    <Filter className="w-3 h-3 text-[#D4AF37]" />
+                    <span>Course Subcategory</span>
                   </div>
                   <div className="flex flex-wrap gap-1.5 max-h-36 overflow-y-auto pr-1">
                     {subcategories.map((sub) => {
@@ -223,13 +200,13 @@ export const MenuSection: React.FC<MenuSectionProps> = ({
                         <button
                           key={sub}
                           onClick={() => handleSubcategoryChange(sub)}
-                          className={`px-2.5 py-1 rounded-lg text-xs font-medium whitespace-nowrap transition-all cursor-pointer ${
+                          className={`px-3 py-1.5 rounded-lg text-[11px] font-mono-luxury whitespace-nowrap transition-all cursor-pointer border ${
                             isSubActive
-                              ? 'bg-[#466B45] text-white shadow-xs font-semibold'
-                              : 'bg-[#F9F8F3] text-[#5C6B5E] hover:text-[#2D4A2D] hover:bg-[#EAF1E8] border border-[#2D4A2D]/10'
+                              ? 'bg-[#D4AF37] text-black border-[#D4AF37] font-semibold'
+                              : 'bg-white/[0.04] text-slate-400 hover:text-white border-white/[0.06]'
                           }`}
                         >
-                          {sub === 'ALL' ? 'All Types' : sub}
+                          {sub === 'ALL' ? 'All Courses' : sub}
                         </button>
                       );
                     })}
@@ -242,15 +219,15 @@ export const MenuSection: React.FC<MenuSectionProps> = ({
           </div>
 
           {/* ========================================================================= */}
-          {/* SCROLLABLE RIGHT PANE: Dish Listing (One dish per row, only dishes scroll) */}
+          {/* RIGHT PANE: Dish Listing */}
           {/* ========================================================================= */}
-          <div className="lg:col-span-8 xl:col-span-8 space-y-4">
+          <div className="lg:col-span-8 space-y-4">
             
-            {/* Top Stats Bar */}
-            <div className="flex items-center justify-between px-2">
-              <p className="text-xs font-bold text-[#2D4A2D]">
-                Showing {filteredItems.length} {filteredItems.length === 1 ? 'dish' : 'dishes'} in{' '}
-                <span className="text-[#466B45]">{currentCatInfo?.label}</span>
+            {/* Top Status Bar */}
+            <div className="flex items-center justify-between px-2 py-1">
+              <p className="text-xs font-mono-luxury text-slate-400">
+                Displaying <span className="text-white font-medium">{filteredItems.length}</span> creations in{' '}
+                <span className="text-[#E5C07B]">{currentCatInfo?.label}</span>
                 {selectedSubcategory !== 'ALL' && ` (${selectedSubcategory})`}
               </p>
               {(searchQuery || vegOnlyFilter || chefSpecialOnly || selectedSubcategory !== 'ALL') && (
@@ -261,23 +238,22 @@ export const MenuSection: React.FC<MenuSectionProps> = ({
                     setVegOnlyFilter(false);
                     setChefSpecialOnly(false);
                   }}
-                  className="text-xs text-[#466B45] hover:text-[#2D4A2D] font-semibold underline cursor-pointer"
+                  className="text-xs font-mono-luxury text-[#E5C07B] hover:underline cursor-pointer"
                 >
-                  Reset filters
+                  Clear filters
                 </button>
               )}
             </div>
 
-            {/* Scrollable Container with Single-Dish-Per-Row Layout */}
+            {/* Scrollable Container */}
             <div
               ref={dishListRef}
               className="space-y-4 max-h-[calc(100vh-140px)] min-h-[500px] overflow-y-auto pr-1 sm:pr-2 rounded-2xl scroll-smooth"
-              style={{ scrollbarWidth: 'thin', scrollbarColor: '#466B45 #F2F7F1' }}
             >
               {filteredItems.length === 0 ? (
-                <div className="text-center py-16 bg-white rounded-3xl border border-dashed border-[#2D4A2D]/20">
-                  <p className="text-lg font-bold text-[#2D4A2D]">No dishes found</p>
-                  <p className="text-xs text-[#5C6B5E] mt-1">Try adjusting your search query or reset filters.</p>
+                <div className="text-center py-20 bg-[#0E1015]/80 rounded-2xl border border-dashed border-white/[0.1]">
+                  <p className="text-base font-serif-luxury text-white">No creations found matching criteria</p>
+                  <p className="text-xs font-mono-luxury text-slate-400 mt-1">Please refine your search or clear active filters.</p>
                   <button
                     onClick={() => {
                       setSearchQuery('');
@@ -285,7 +261,7 @@ export const MenuSection: React.FC<MenuSectionProps> = ({
                       setVegOnlyFilter(false);
                       setChefSpecialOnly(false);
                     }}
-                    className="mt-4 btn-flavoria-green text-xs px-4 py-2 cursor-pointer"
+                    className="mt-5 btn-luxury-outline text-xs px-5 py-2 cursor-pointer font-mono-luxury"
                   >
                     Reset Filters
                   </button>
@@ -314,4 +290,3 @@ export const MenuSection: React.FC<MenuSectionProps> = ({
 };
 
 export default MenuSection;
-

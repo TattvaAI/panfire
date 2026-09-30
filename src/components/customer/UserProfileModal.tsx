@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-import { X, User, Phone, MapPin, Mail, Save, Heart, ShoppingBag } from 'lucide-react';
-import { Order } from '../../types';
+import { X, Check } from 'lucide-react';
 import { useUserStore } from '../../store/useUserStore';
-import { useOrderStore } from '../../store/useOrderStore';
 
 interface UserProfileModalProps {
   onClose: () => void;
@@ -10,7 +8,6 @@ interface UserProfileModalProps {
 
 export const UserProfileModal: React.FC<UserProfileModalProps> = ({ onClose }) => {
   const { user, setUser } = useUserStore();
-  const orders = useOrderStore((state) => state.orders);
 
   const [formData, setFormData] = useState({
     fullName: user?.fullName || '',
@@ -34,142 +31,143 @@ export const UserProfileModal: React.FC<UserProfileModalProps> = ({ onClose }) =
       });
     }
     setSaved(true);
-    setTimeout(() => setSaved(false), 3000);
+    setTimeout(() => {
+      setSaved(false);
+      onClose();
+    }, 800);
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fade-in">
-      <div className="bg-[#FBF9F4] w-full max-w-lg rounded-3xl overflow-hidden shadow-2xl border border-[#2D4A2D]/15 relative">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-[#161412]/80 backdrop-blur-none animate-fade-in">
+      <div 
+        className="bg-[#F3ECDD] text-[#161412] w-full max-w-lg border-[1.5px] border-[#161412] hard-shadow-lg flex flex-col max-h-[92vh] overflow-hidden"
+        role="dialog"
+        aria-modal="true"
+      >
         
         {/* Header */}
-        <div className="bg-[#2D4A2D] text-white p-6 relative">
+        <div className="p-4 sm:p-6 border-b-[1.5px] border-[#161412] flex items-start justify-between gap-4 bg-[#F3ECDD]">
+          <div>
+            <span className="font-mono text-xs uppercase tracking-widest text-[#C8371A] font-bold block mb-1">
+              [00] // Order Information
+            </span>
+            <h3 className="font-headline text-2xl sm:text-3xl font-black text-[#161412] tracking-tight">
+              Contact & Address
+            </h3>
+            <p className="font-sans text-xs text-[#8A8378] mt-1">
+              Used for delivery dispatch, table orders, and receipt SMS.
+            </p>
+          </div>
+
           <button
             onClick={onClose}
-            className="absolute top-5 right-5 p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
+            className="w-8 h-8 border-[1.5px] border-[#161412] bg-[#F3ECDD] hover:bg-[#161412] hover:text-[#F3ECDD] flex items-center justify-center transition-colors cursor-pointer shrink-0"
+            aria-label="Close"
           >
-            <X className="w-5 h-5" />
+            <X className="w-4 h-4" />
           </button>
-          <div className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-full bg-white/15 flex items-center justify-center font-bold text-xl">
-              {formData.fullName ? formData.fullName.charAt(0).toUpperCase() : <User className="w-6 h-6" />}
-            </div>
-            <div>
-              <h3 className="font-serif-luxury text-2xl font-bold">Customer Profile</h3>
-              <p className="text-xs text-white/80">Manage delivery address & account info</p>
-            </div>
-          </div>
         </div>
 
-        {/* Content */}
-        <div className="p-6 sm:p-8 space-y-6 text-xs sm:text-sm">
+        {/* Content Form */}
+        <div className="p-4 sm:p-6 overflow-y-auto space-y-4 flex-1 bg-[#F3ECDD]">
           <form onSubmit={handleSave} className="space-y-4">
+            
+            {/* Full Name */}
             <div>
-              <label className="block text-[#2D4A2D] font-semibold mb-1">Full Name</label>
-              <div className="relative">
-                <User className="w-4 h-4 text-[#5C6B5E] absolute left-3 top-3" />
+              <label className="font-mono text-xs font-bold uppercase text-[#161412] block mb-1">
+                Full Name
+              </label>
+              <input
+                type="text"
+                required
+                placeholder="e.g. Alex Vance"
+                value={formData.fullName}
+                onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+                className="w-full p-2.5 bg-transparent border-[1.5px] border-[#161412] font-sans text-sm text-[#161412] placeholder-[#8A8378] focus:outline-none focus:bg-[#161412]/5"
+              />
+            </div>
+
+            {/* Phone & Email */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div>
+                <label className="font-mono text-xs font-bold uppercase text-[#161412] block mb-1">
+                  Phone Number
+                </label>
                 <input
-                  type="text"
+                  type="tel"
                   required
-                  placeholder="Enter full name"
-                  value={formData.fullName}
-                  onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                  className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-[#2D4A2D]/15 bg-white focus:outline-none focus:ring-2 focus:ring-[#466B45] text-[#2D4A2D]"
+                  placeholder="+91 98100 12345"
+                  value={formData.phone}
+                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                  className="w-full p-2.5 bg-transparent border-[1.5px] border-[#161412] font-mono text-sm text-[#161412] placeholder-[#8A8378] focus:outline-none focus:bg-[#161412]/5"
+                />
+              </div>
+
+              <div>
+                <label className="font-mono text-xs font-bold uppercase text-[#161412] block mb-1">
+                  Email (Optional)
+                </label>
+                <input
+                  type="email"
+                  placeholder="alex@example.com"
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  className="w-full p-2.5 bg-transparent border-[1.5px] border-[#161412] font-mono text-sm text-[#161412] placeholder-[#8A8378] focus:outline-none focus:bg-[#161412]/5"
                 />
               </div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label className="block text-[#2D4A2D] font-semibold mb-1">Phone Number</label>
-                <div className="relative">
-                  <Phone className="w-4 h-4 text-[#5C6B5E] absolute left-3 top-3" />
-                  <input
-                    type="tel"
-                    required
-                    placeholder="+91 98765 43210"
-                    value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-[#2D4A2D]/15 bg-white focus:outline-none focus:ring-2 focus:ring-[#466B45] text-[#2D4A2D]"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-[#2D4A2D] font-semibold mb-1">Email Address</label>
-                <div className="relative">
-                  <Mail className="w-4 h-4 text-[#5C6B5E] absolute left-3 top-3" />
-                  <input
-                    type="email"
-                    placeholder="user@example.com"
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-[#2D4A2D]/15 bg-white focus:outline-none focus:ring-2 focus:ring-[#466B45] text-[#2D4A2D]"
-                  />
-                </div>
-              </div>
-            </div>
-
+            {/* Address */}
             <div>
-              <label className="block text-[#2D4A2D] font-semibold mb-1">Delivery Address</label>
-              <div className="relative">
-                <MapPin className="w-4 h-4 text-[#5C6B5E] absolute left-3 top-3" />
-                <input
-                  type="text"
-                  required
-                  placeholder="Flat / Building, Street, Area"
-                  value={formData.address}
-                  onChange={(e) => setFormData({ ...formData, address: e.target.value })}
-                  className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-[#2D4A2D]/15 bg-white focus:outline-none focus:ring-2 focus:ring-[#466B45] text-[#2D4A2D]"
-                />
-              </div>
+              <label className="font-mono text-xs font-bold uppercase text-[#161412] block mb-1">
+                Delivery Address
+              </label>
+              <textarea
+                rows={2}
+                required
+                placeholder="House / Flat No., Building, Street Name, Area..."
+                value={formData.address}
+                onChange={(e) => setFormData({ ...formData, address: e.target.value })}
+                className="w-full p-2.5 bg-transparent border-[1.5px] border-[#161412] font-sans text-sm text-[#161412] placeholder-[#8A8378] focus:outline-none focus:bg-[#161412]/5"
+              />
             </div>
 
-            <div className="flex items-center justify-between pt-2">
-              {saved ? (
-                <span className="text-emerald-700 font-semibold text-xs">✓ Profile saved!</span>
-              ) : (
-                <span className="text-[#5C6B5E] text-xs">Updated in real-time</span>
-              )}
+            {/* Landmark */}
+            <div>
+              <label className="font-mono text-xs font-bold uppercase text-[#161412] block mb-1">
+                Landmark / Delivery Instructions
+              </label>
+              <input
+                type="text"
+                placeholder="e.g. Near Metro Gate 3, Ring doorbell"
+                value={formData.landmark}
+                onChange={(e) => setFormData({ ...formData, landmark: e.target.value })}
+                className="w-full p-2.5 bg-transparent border-[1.5px] border-[#161412] font-sans text-sm text-[#161412] placeholder-[#8A8378] focus:outline-none focus:bg-[#161412]/5"
+              />
+            </div>
 
+            <div className="pt-2">
               <button
                 type="submit"
-                className="btn-flavoria-green text-xs px-5 py-2.5"
+                className="w-full py-3 bg-[#161412] hover:bg-[#C8371A] text-[#F3ECDD] border-[1.5px] border-[#161412] hard-shadow-sm hover:hard-shadow font-mono text-xs sm:text-sm font-bold uppercase tracking-wider transition-all active:translate-x-[1px] active:translate-y-[1px] cursor-pointer flex items-center justify-center gap-2"
               >
-                <Save className="w-4 h-4" />
-                <span>Save Profile</span>
+                {saved ? (
+                  <>
+                    <Check className="w-4 h-4 text-[#F3ECDD]" />
+                    <span>Saved Successfully</span>
+                  </>
+                ) : (
+                  <span>Save Information →</span>
+                )}
               </button>
             </div>
+
           </form>
-
-          {/* Past Order History Section */}
-          <div className="pt-4 border-t border-[#2D4A2D]/10">
-            <h4 className="font-bold text-[#2D4A2D] text-sm mb-3 flex items-center gap-2">
-              <ShoppingBag className="w-4 h-4 text-[#466B45]" />
-              <span>Past Orders History</span>
-            </h4>
-
-            {orders.length === 0 ? (
-              <p className="text-xs text-[#5C6B5E]">No previous orders recorded.</p>
-            ) : (
-              <div className="space-y-2 max-h-36 overflow-y-auto">
-                {orders.map((ord: Order) => (
-                  <div key={ord.id} className="p-3 bg-white rounded-xl border border-gray-200 flex justify-between items-center text-xs">
-                    <div>
-                      <span className="font-bold text-[#2D4A2D]">#{ord.id}</span>
-                      <p className="text-[10px] text-[#5C6B5E]">{ord.placedAt}</p>
-                    </div>
-                    <div className="text-right">
-                      <span className="font-bold text-[#466B45]">₹{ord.totalAmount}</span>
-                      <span className="block text-[10px] uppercase font-bold text-amber-600">{ord.status}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
         </div>
 
       </div>
     </div>
   );
 };
+
+export default UserProfileModal;

@@ -15,6 +15,11 @@ export const EmberCanvas: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
+    // Check prefers-reduced-motion
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      return;
+    }
+
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
@@ -24,35 +29,26 @@ export const EmberCanvas: React.FC = () => {
     let width = (canvas.width = window.innerWidth);
     let height = (canvas.height = window.innerHeight);
 
-    let mouseX = width / 2;
-    let mouseY = height / 2;
-
     const handleResize = () => {
       if (!canvas) return;
       width = canvas.width = window.innerWidth;
       height = canvas.height = window.innerHeight;
     };
 
-    const handleMouseMove = (e: MouseEvent) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-    };
-
     window.addEventListener('resize', handleResize);
-    window.addEventListener('mousemove', handleMouseMove);
 
-    const colors = ['#ff4d00', '#ff8c00', '#ffaa00', '#ff2200', '#ffffff'];
-    const particleCount = 60;
+    const colors = ['#D4AF37', '#E5C07B', '#C5A880', '#E08A3C', '#F5E6CC'];
+    const particleCount = 45;
     const particles: Particle[] = [];
 
     const createParticle = (): Particle => ({
       x: Math.random() * width,
-      y: height + Math.random() * 40,
-      size: Math.random() * 2.2 + 0.8,
-      speedY: Math.random() * 1.5 + 0.4,
-      speedX: (Math.random() - 0.5) * 0.6,
-      opacity: Math.random() * 0.8 + 0.2,
-      fadeSpeed: Math.random() * 0.006 + 0.002,
+      y: height + Math.random() * 30,
+      size: Math.random() * 1.6 + 0.6,
+      speedY: Math.random() * 0.9 + 0.3,
+      speedX: (Math.random() - 0.5) * 0.4,
+      opacity: Math.random() * 0.45 + 0.1,
+      fadeSpeed: Math.random() * 0.004 + 0.001,
       color: colors[Math.floor(Math.random() * colors.length)],
     });
 
@@ -65,14 +61,6 @@ export const EmberCanvas: React.FC = () => {
     const render = () => {
       ctx.clearRect(0, 0, width, height);
 
-      // Subtle mouse magnetic glow
-      const grad = ctx.createRadialGradient(mouseX, mouseY, 0, mouseX, mouseY, 400);
-      grad.addColorStop(0, 'rgba(255, 77, 0, 0.04)');
-      grad.addColorStop(1, 'rgba(0, 0, 0, 0)');
-      ctx.fillStyle = grad;
-      ctx.fillRect(0, 0, width, height);
-
-      // Render embers
       particles.forEach((p, index) => {
         p.y -= p.speedY;
         p.x += p.speedX;
@@ -86,7 +74,7 @@ export const EmberCanvas: React.FC = () => {
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
         ctx.fillStyle = p.color;
         ctx.globalAlpha = Math.max(0, p.opacity);
-        ctx.shadowBlur = 10;
+        ctx.shadowBlur = 6;
         ctx.shadowColor = p.color;
         ctx.fill();
         ctx.shadowBlur = 0;
@@ -99,7 +87,6 @@ export const EmberCanvas: React.FC = () => {
 
     return () => {
       window.removeEventListener('resize', handleResize);
-      window.removeEventListener('mousemove', handleMouseMove);
       cancelAnimationFrame(animationFrameId);
     };
   }, []);
@@ -107,7 +94,7 @@ export const EmberCanvas: React.FC = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 pointer-events-none z-0 opacity-70"
+      className="fixed inset-0 pointer-events-none z-0 opacity-40"
     />
   );
 };

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Calendar, Clock, Users, Utensils, CheckCircle2, Sparkles, Phone, Mail, User } from 'lucide-react';
+import { X, Check } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 interface TableReservationModalProps {
@@ -7,233 +7,237 @@ interface TableReservationModalProps {
   onClose: () => void;
 }
 
-export const TableReservationModal: React.FC<TableReservationModalProps> = ({ isOpen, onClose }) => {
+export const TableReservationModal: React.FC<TableReservationModalProps> = ({
+  isOpen,
+  onClose,
+}) => {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    email: '',
     guests: '2 Guests',
     date: new Date().toISOString().split('T')[0],
-    time: '7:30 PM',
-    seating: 'Indoor Dining',
-    notes: '',
+    time: '8:00 PM',
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [bookingId, setBookingId] = useState('');
 
+  const timeSlots = ['12:30 PM', '1:30 PM', '7:00 PM', '8:00 PM', '9:15 PM'];
+  const partySizes = ['1 Guest', '2 Guests', '4 Guests', '6 Guests', '8+ Guests'];
+
   if (!isOpen) return null;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const newId = `RES-${Math.floor(100000 + Math.random() * 900000)}`;
+    if (!formData.name.trim() || !formData.phone.trim()) return;
+
+    const newId = `PF-RES-${Math.floor(100000 + Math.random() * 900000)}`;
     setBookingId(newId);
     setIsSubmitted(true);
-    confetti({
-      particleCount: 80,
-      spread: 70,
-      origin: { y: 0.6 },
-      colors: ['#466B45', '#2D4A2D', '#D97706', '#EAF1E8'],
-    });
+    try {
+      confetti({
+        particleCount: 50,
+        spread: 50,
+        origin: { y: 0.6 },
+        colors: ['#C8371A', '#161412', '#F3ECDD'],
+      });
+    } catch (e) {
+      // fallback
+    }
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fade-in">
-      <div className="bg-[#FBF9F4] w-full max-w-xl rounded-3xl overflow-hidden shadow-2xl border border-[#2D4A2D]/15 relative">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-[#161412]/80 backdrop-blur-none">
+      <div 
+        className="bg-[#F3ECDD] text-[#161412] w-full max-w-lg border-[1.5px] border-[#161412] hard-shadow-lg flex flex-col max-h-[92vh] overflow-hidden"
+        role="dialog"
+        aria-modal="true"
+      >
         
         {/* Header */}
-        <div className="bg-[#2D4A2D] text-white p-6 relative">
+        <div className="p-4 sm:p-6 border-b-[1.5px] border-[#161412] flex items-start justify-between gap-4 bg-[#F3ECDD]">
+          <div>
+            <span className="font-mono text-xs uppercase tracking-widest text-[#C8371A] font-bold block mb-1">
+              Table Reservation // One Seating Style
+            </span>
+            <h3 className="font-headline text-2xl sm:text-3xl font-black text-[#161412] tracking-tight">
+              Reserve a Table
+            </h3>
+            <p className="font-sans text-xs text-[#8A8378] mt-1">
+              40 seats around the hearth. Table held for 15 minutes past reservation.
+            </p>
+          </div>
+
           <button
             onClick={onClose}
-            className="absolute top-5 right-5 p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
+            className="w-8 h-8 border-[1.5px] border-[#161412] bg-[#F3ECDD] hover:bg-[#161412] hover:text-[#F3ECDD] flex items-center justify-center transition-colors cursor-pointer shrink-0"
+            aria-label="Close"
           >
-            <X className="w-5 h-5" />
+            <X className="w-4 h-4" />
           </button>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 text-white text-xs font-semibold mb-2">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>Table Reservation</span>
-          </div>
-          <h3 className="font-serif-luxury text-2xl sm:text-3xl font-bold">
-            Book Your Table
-          </h3>
-          <p className="text-white/80 text-xs mt-1">
-            Reserve a memorable dining experience at PanFire (Asian • Italian • Mexican)
-          </p>
         </div>
 
         {/* Content */}
-        <div className="p-6 sm:p-8">
+        <div className="p-4 sm:p-6 overflow-y-auto space-y-5 flex-1 bg-[#F3ECDD]">
           {isSubmitted ? (
-            <div className="text-center py-6 space-y-4">
-              <div className="w-16 h-16 bg-[#EAF1E8] text-[#466B45] rounded-full flex items-center justify-center mx-auto shadow-inner">
-                <CheckCircle2 className="w-10 h-10" />
-              </div>
-              <h4 className="font-serif-luxury text-2xl font-bold text-[#2D4A2D]">
-                Reservation Confirmed!
-              </h4>
-              <p className="text-sm text-[#5C6B5E]">
-                Thank you <span className="font-semibold text-[#2D4A2D]">{formData.name}</span>. We look forward to hosting you!
-              </p>
-
-              <div className="bg-white p-5 rounded-2xl border border-[#2D4A2D]/10 text-left max-w-md mx-auto space-y-2 text-xs text-[#2D4A2D]">
-                <div className="flex justify-between border-b border-gray-100 pb-2">
-                  <span className="text-[#5C6B5E]">Booking ID:</span>
-                  <span className="font-bold text-[#466B45]">{bookingId}</span>
+            <div className="space-y-5">
+              <div className="border-[1.5px] border-[#161412] bg-[#161412] text-[#F3ECDD] p-4 flex items-center justify-between">
+                <div>
+                  <span className="font-mono text-xs text-[#C8371A] font-bold uppercase block">
+                    Confirmed
+                  </span>
+                  <span className="font-headline text-xl font-bold">
+                    {formData.name}
+                  </span>
                 </div>
-                <div className="flex justify-between">
-                  <span className="text-[#5C6B5E]">Date & Time:</span>
-                  <span className="font-semibold">{formData.date} at {formData.time}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-[#5C6B5E]">Party Size:</span>
-                  <span className="font-semibold">{formData.guests}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-[#5C6B5E]">Seating Area:</span>
-                  <span className="font-semibold">{formData.seating}</span>
-                </div>
+                <span className="font-mono text-sm font-bold bg-[#C8371A] text-[#F3ECDD] px-2.5 py-1">
+                  {bookingId}
+                </span>
               </div>
 
-              <div className="pt-4">
-                <button
-                  onClick={() => {
-                    setIsSubmitted(false);
-                    onClose();
-                  }}
-                  className="btn-flavoria-green text-sm px-6 py-2.5"
-                >
-                  Done & Close
-                </button>
+              <div className="border-[1.5px] border-[#161412] p-4 font-mono text-xs space-y-2 bg-[#F3ECDD]">
+                <div className="flex justify-between border-b border-[#161412]/20 pb-1.5">
+                  <span className="text-[#8A8378]">Date:</span>
+                  <span className="font-bold text-[#161412]">{formData.date}</span>
+                </div>
+                <div className="flex justify-between border-b border-[#161412]/20 pb-1.5">
+                  <span className="text-[#8A8378]">Time:</span>
+                  <span className="font-bold text-[#161412]">{formData.time}</span>
+                </div>
+                <div className="flex justify-between border-b border-[#161412]/20 pb-1.5">
+                  <span className="text-[#8A8378]">Party Size:</span>
+                  <span className="font-bold text-[#161412]">{formData.guests}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-[#8A8378]">Table Type:</span>
+                  <span className="font-bold text-[#161412]">Standard Hearth</span>
+                </div>
               </div>
+
+              <button
+                onClick={() => {
+                  setIsSubmitted(false);
+                  onClose();
+                }}
+                className="w-full py-3 bg-[#161412] hover:bg-[#C8371A] text-[#F3ECDD] border-[1.5px] border-[#161412] hard-shadow-sm font-mono text-xs font-bold uppercase tracking-wider transition-all cursor-pointer"
+              >
+                Close Window
+              </button>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-4 text-xs sm:text-sm">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-[#2D4A2D] font-semibold mb-1">Full Name</label>
-                  <div className="relative">
-                    <User className="w-4 h-4 text-[#5C6B5E] absolute left-3 top-3" />
-                    <input
-                      type="text"
-                      required
-                      placeholder="Your Name"
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-[#2D4A2D]/15 bg-white focus:outline-none focus:ring-2 focus:ring-[#466B45] text-[#2D4A2D]"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-[#2D4A2D] font-semibold mb-1">Phone Number</label>
-                  <div className="relative">
-                    <Phone className="w-4 h-4 text-[#5C6B5E] absolute left-3 top-3" />
-                    <input
-                      type="tel"
-                      required
-                      placeholder="+91 78142 19191"
-                      value={formData.phone}
-                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-[#2D4A2D]/15 bg-white focus:outline-none focus:ring-2 focus:ring-[#466B45] text-[#2D4A2D]"
-                    />
-                  </div>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <div>
-                  <label className="block text-[#2D4A2D] font-semibold mb-1">Guests</label>
-                  <div className="relative">
-                    <Users className="w-4 h-4 text-[#5C6B5E] absolute left-3 top-3" />
-                    <select
-                      value={formData.guests}
-                      onChange={(e) => setFormData({ ...formData, guests: e.target.value })}
-                      className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-[#2D4A2D]/15 bg-white focus:outline-none focus:ring-2 focus:ring-[#466B45] text-[#2D4A2D]"
-                    >
-                      <option>1 Guest</option>
-                      <option>2 Guests</option>
-                      <option>3 Guests</option>
-                      <option>4 Guests</option>
-                      <option>6 Guests</option>
-                      <option>8+ Guests</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-[#2D4A2D] font-semibold mb-1">Date</label>
-                  <div className="relative">
-                    <Calendar className="w-4 h-4 text-[#5C6B5E] absolute left-3 top-3" />
-                    <input
-                      type="date"
-                      required
-                      value={formData.date}
-                      onChange={(e) => setFormData({ ...formData, date: e.target.value })}
-                      className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-[#2D4A2D]/15 bg-white focus:outline-none focus:ring-2 focus:ring-[#466B45] text-[#2D4A2D]"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-[#2D4A2D] font-semibold mb-1">Time Slot</label>
-                  <div className="relative">
-                    <Clock className="w-4 h-4 text-[#5C6B5E] absolute left-3 top-3" />
-                    <select
-                      value={formData.time}
-                      onChange={(e) => setFormData({ ...formData, time: e.target.value })}
-                      className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-[#2D4A2D]/15 bg-white focus:outline-none focus:ring-2 focus:ring-[#466B45] text-[#2D4A2D]"
-                    >
-                      <option>12:30 PM</option>
-                      <option>2:00 PM</option>
-                      <option>7:00 PM</option>
-                      <option>7:30 PM</option>
-                      <option>8:30 PM</option>
-                      <option>9:30 PM</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-
+            <form onSubmit={handleSubmit} className="space-y-4">
+              
+              {/* Date */}
               <div>
-                <label className="block text-[#2D4A2D] font-semibold mb-1">Seating Area</label>
-                <div className="grid grid-cols-3 gap-2">
-                  {['Indoor Dining', 'Outdoor Terrace', "Chef's Table"].map((area) => (
+                <label className="font-mono text-xs font-bold uppercase text-[#161412] block mb-1">
+                  Date
+                </label>
+                <input
+                  type="date"
+                  required
+                  value={formData.date}
+                  onChange={(e) => setFormData({ ...formData, date: e.target.value })}
+                  className="w-full p-2.5 bg-transparent border-[1.5px] border-[#161412] font-mono text-sm text-[#161412] focus:outline-none focus:bg-[#161412]/5"
+                />
+              </div>
+
+              {/* Time */}
+              <div>
+                <label className="font-mono text-xs font-bold uppercase text-[#161412] block mb-1">
+                  Seating Time
+                </label>
+                <div className="grid grid-cols-3 sm:grid-cols-5 gap-1.5">
+                  {timeSlots.map((slot) => (
                     <button
+                      key={slot}
                       type="button"
-                      key={area}
-                      onClick={() => setFormData({ ...formData, seating: area })}
-                      className={`py-2 px-3 rounded-xl border text-xs font-semibold transition-all ${
-                        formData.seating === area
-                          ? 'border-[#466B45] bg-[#EAF1E8] text-[#2D4A2D]'
-                          : 'border-gray-200 bg-white text-[#5C6B5E] hover:bg-gray-50'
+                      onClick={() => setFormData({ ...formData, time: slot })}
+                      className={`py-2 px-1 text-[11px] font-mono font-bold text-center border-[1.5px] border-[#161412] transition-colors cursor-pointer ${
+                        formData.time === slot
+                          ? 'bg-[#161412] text-[#F3ECDD]'
+                          : 'bg-[#F3ECDD] text-[#161412] hover:bg-[#161412]/10'
                       }`}
                     >
-                      {area}
+                      {slot}
                     </button>
                   ))}
                 </div>
               </div>
 
+              {/* Party Size */}
               <div>
-                <label className="block text-[#2D4A2D] font-semibold mb-1">Special Requests (Optional)</label>
-                <textarea
-                  rows={2}
-                  placeholder="Anniversary celebration, dietary requirements, high chair needed..."
-                  value={formData.notes}
-                  onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
-                  className="w-full p-3 rounded-xl border border-[#2D4A2D]/15 bg-white focus:outline-none focus:ring-2 focus:ring-[#466B45] text-[#2D4A2D]"
-                />
+                <label className="font-mono text-xs font-bold uppercase text-[#161412] block mb-1">
+                  Party Size
+                </label>
+                <div className="grid grid-cols-3 sm:grid-cols-5 gap-1.5">
+                  {partySizes.map((size) => (
+                    <button
+                      key={size}
+                      type="button"
+                      onClick={() => setFormData({ ...formData, guests: size })}
+                      className={`py-2 px-1 text-[11px] font-mono font-bold text-center border-[1.5px] border-[#161412] transition-colors cursor-pointer ${
+                        formData.guests === size
+                          ? 'bg-[#C8371A] text-[#F3ECDD]'
+                          : 'bg-[#F3ECDD] text-[#161412] hover:bg-[#161412]/10'
+                      }`}
+                    >
+                      {size}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Table Type: Fixed single table type */}
+              <div>
+                <label className="font-mono text-xs font-bold uppercase text-[#161412] block mb-1">
+                  Table Type
+                </label>
+                <div className="p-2 border-[1.5px] border-[#161412] bg-[#161412]/5 font-mono text-xs font-bold text-[#161412] flex items-center justify-between">
+                  <span>Standard Dining Table (Indoor Hearth)</span>
+                  <span className="text-[#C8371A]">[ONLY OPTION]</span>
+                </div>
+              </div>
+
+              {/* Name & Phone */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div>
+                  <label className="font-mono text-xs font-bold uppercase text-[#161412] block mb-1">
+                    Your Name
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    placeholder="e.g. Maya Sen"
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    className="w-full p-2.5 bg-transparent border-[1.5px] border-[#161412] font-sans text-sm text-[#161412] placeholder-[#8A8378] focus:outline-none focus:bg-[#161412]/5"
+                  />
+                </div>
+
+                <div>
+                  <label className="font-mono text-xs font-bold uppercase text-[#161412] block mb-1">
+                    Phone
+                  </label>
+                  <input
+                    type="tel"
+                    required
+                    placeholder="e.g. +91 98100 12345"
+                    value={formData.phone}
+                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    className="w-full p-2.5 bg-transparent border-[1.5px] border-[#161412] font-mono text-sm text-[#161412] placeholder-[#8A8378] focus:outline-none focus:bg-[#161412]/5"
+                  />
+                </div>
               </div>
 
               <div className="pt-2">
                 <button
                   type="submit"
-                  className="w-full btn-flavoria-green justify-center py-3 text-sm"
+                  className="w-full py-3 bg-[#C8371A] hover:bg-[#161412] text-[#F3ECDD] border-[1.5px] border-[#161412] hard-shadow-sm hover:hard-shadow font-mono text-xs sm:text-sm font-bold uppercase tracking-wider transition-all active:translate-x-[1px] active:translate-y-[1px] cursor-pointer"
                 >
-                  <Calendar className="w-4 h-4" />
-                  <span>Confirm Table Reservation</span>
+                  Confirm Reservation →
                 </button>
               </div>
+
             </form>
           )}
         </div>
@@ -242,3 +246,5 @@ export const TableReservationModal: React.FC<TableReservationModalProps> = ({ is
     </div>
   );
 };
+
+export default TableReservationModal;

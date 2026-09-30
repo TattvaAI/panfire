@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Trash2, Plus, Minus, ArrowRight, ShoppingBag, CheckCircle2, Ticket } from 'lucide-react';
+import { X, Trash2, Plus, Minus, ShoppingBag, ArrowRight } from 'lucide-react';
 import { useCartStore } from '../../store/useCartStore';
 import { useOrderStore } from '../../store/useOrderStore';
 import { useUserStore } from '../../store/useUserStore';
@@ -22,39 +22,48 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
   const { placeOrder } = useOrderStore();
   const user = useUserStore((state) => state.user);
 
-  const [orderType, setOrderType] = useState<'DELIVERY' | 'PICKUP'>('DELIVERY');
+  const [orderType, setOrderType] = useState<'DELIVERY' | 'DINE_IN'>('DELIVERY');
   const [promoCode, setPromoCode] = useState<string>('');
   const [discountApplied, setDiscountApplied] = useState<boolean>(false);
-  const [tipAmount, setTipAmount] = useState<number>(30);
   const [specialInstructions, setSpecialInstructions] = useState<string>('');
 
   if (!isOpen) return null;
 
   const subtotal = getSubtotal();
   const discount = discountApplied ? Math.round(subtotal * 0.2) : 0;
-  const deliveryFee = orderType === 'DELIVERY' ? 45 : 0;
+  const deliveryFee = orderType === 'DELIVERY' ? 49 : 0;
   const taxes = Math.round((subtotal - discount) * 0.05);
-  const totalAmount = Math.max(0, subtotal - discount + deliveryFee + taxes + tipAmount);
+  const totalAmount = Math.max(0, subtotal - discount + deliveryFee + taxes);
 
   const handleApplyPromo = () => {
-    if (promoCode.trim().toUpperCase() === 'FLAVORIA20') {
+    const code = promoCode.trim().toUpperCase();
+    if (code === 'PANFIRE20') {
       setDiscountApplied(true);
-      confetti({ particleCount: 40, spread: 50, origin: { y: 0.7 } });
+      try {
+        confetti({
+          particleCount: 40,
+          spread: 50,
+          origin: { y: 0.7 },
+          colors: ['#C8371A', '#161412', '#F3ECDD'],
+        });
+      } catch (e) {
+        // fallback
+      }
     } else {
-      alert('Invalid Promo Code. Try "FLAVORIA20"');
+      alert('Invalid coupon code. Try "PANFIRE20" for 20% off.');
     }
   };
 
   const handleCheckout = () => {
-    if (!user) {
-      alert('Please fill out your profile details before placing an order.');
+    if (!user || !user.fullName || !user.phone || !user.address) {
+      alert('Please fill your contact and address details to complete the order.');
       onOpenProfile();
       return;
     }
 
     if (items.length === 0) return;
 
-    const newOrder = placeOrder(
+    placeOrder(
       user,
       items,
       subtotal,
@@ -65,194 +74,269 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
     );
 
     clearCart();
-    confetti({
-      particleCount: 100,
-      spread: 80,
-      origin: { y: 0.5 },
-      colors: ['#466B45', '#2D4A2D', '#D97706'],
-    });
+    try {
+      confetti({
+        particleCount: 60,
+        spread: 60,
+        origin: { y: 0.5 },
+        colors: ['#C8371A', '#161412', '#F3ECDD'],
+      });
+    } catch (e) {
+      // fallback
+    }
 
     onClose();
     onOpenTracker();
   };
 
   return (
-    <div className="fixed inset-0 z-50 overflow-hidden bg-black/60 backdrop-blur-sm animate-fade-in">
-      <div className="absolute inset-y-0 right-0 max-w-full flex pl-10">
-        <div className="w-screen max-w-md bg-[#FBF9F4] shadow-2xl flex flex-col border-l border-[#2D4A2D]/10">
+    <div className="fixed inset-0 z-50 overflow-hidden bg-[#161412]/80 backdrop-blur-none animate-fade-in">
+      <div className="absolute inset-y-0 right-0 max-w-full flex">
+        <div className="w-screen max-w-md bg-[#F3ECDD] text-[#161412] border-l-[1.5px] border-[#161412] hard-shadow-lg flex flex-col h-full">
           
           {/* Header */}
-          <div className="p-6 bg-[#2D4A2D] text-white flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
-                <ShoppingBag className="w-5 h-5" />
+          <div className="p-4 sm:p-5 border-b-[1.5px] border-[#161412] flex items-center justify-between bg-[#F3ECDD]">
+            <div>
+              <div className="font-mono text-xs font-bold uppercase tracking-widest text-[#C8371A]">
+                [ORDER TICKET]
               </div>
-              <div>
-                <h3 className="font-serif-luxury text-xl font-bold">Your Order Cart</h3>
-                <p className="text-xs text-white/75">{items.length} items in cart</p>
-              </div>
+              <h3 className="font-headline text-2xl font-black text-[#161412] tracking-tight">
+                Your Selection
+              </h3>
             </div>
 
-            <button
-              onClick={onClose}
-              className="p-2 rounded-full hover:bg-white/10 transition-colors"
-            >
-              <X className="w-5 h-5 text-white" />
-            </button>
+            <div className="flex items-center gap-3">
+              <span className="font-mono text-xs font-bold px-2 py-1 border-[1.5px] border-[#161412] bg-[#161412] text-[#F3ECDD]">
+                {items.length} {items.length === 1 ? 'ITEM' : 'ITEMS'}
+              </span>
+              <button
+                onClick={onClose}
+                className="w-8 h-8 border-[1.5px] border-[#161412] bg-[#F3ECDD] hover:bg-[#161412] hover:text-[#F3ECDD] flex items-center justify-center transition-colors cursor-pointer"
+                aria-label="Close cart"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
           </div>
 
-          {/* Delivery / Pickup Switch */}
-          <div className="p-4 bg-white border-b border-gray-100 flex gap-2">
+          {/* Order Type Toggle: Dine-in vs Takeaway/Delivery */}
+          <div className="p-3 border-b-[1.5px] border-[#161412] bg-[#F3ECDD] grid grid-cols-2 gap-2">
             <button
               onClick={() => setOrderType('DELIVERY')}
-              className={`flex-1 py-2 rounded-xl text-xs font-bold transition-all ${
+              className={`py-2 px-3 border-[1.5px] border-[#161412] font-mono text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer text-center ${
                 orderType === 'DELIVERY'
-                  ? 'bg-[#EAF1E8] text-[#2D4A2D] border border-[#466B45]'
-                  : 'bg-gray-50 text-gray-500'
+                  ? 'bg-[#161412] text-[#F3ECDD] hard-shadow-sm'
+                  : 'bg-[#F3ECDD] text-[#161412] hover:bg-[#161412]/5'
               }`}
             >
-              🚀 Home Delivery
+              Takeaway / Delivery
             </button>
             <button
-              onClick={() => setOrderType('PICKUP')}
-              className={`flex-1 py-2 rounded-xl text-xs font-bold transition-all ${
-                orderType === 'PICKUP'
-                  ? 'bg-[#EAF1E8] text-[#2D4A2D] border border-[#466B45]'
-                  : 'bg-gray-50 text-gray-500'
+              onClick={() => setOrderType('DINE_IN')}
+              className={`py-2 px-3 border-[1.5px] border-[#161412] font-mono text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer text-center ${
+                orderType === 'DINE_IN'
+                  ? 'bg-[#161412] text-[#F3ECDD] hard-shadow-sm'
+                  : 'bg-[#F3ECDD] text-[#161412] hover:bg-[#161412]/5'
               }`}
             >
-              🛍️ Store Pickup
+              Dine-In Table
             </button>
           </div>
 
-          {/* Cart Item List */}
-          <div className="flex-1 overflow-y-auto p-6 space-y-4">
+          {/* Customer Dispatch Bar */}
+          <div className="px-4 py-2.5 bg-[#161412]/5 border-b-[1.5px] border-[#161412] flex items-center justify-between text-xs font-mono">
+            <div className="truncate pr-2">
+              {user && user.fullName ? (
+                <span className="text-[#161412]">
+                  <strong className="font-bold">{user.fullName}</strong> • {user.phone}
+                </span>
+              ) : (
+                <span className="text-[#8A8378]">No contact details set</span>
+              )}
+            </div>
+            <button
+              onClick={onOpenProfile}
+              className="text-[#C8371A] hover:underline font-bold uppercase tracking-wider shrink-0 cursor-pointer text-[11px]"
+            >
+              {user && user.fullName ? '[EDIT]' : '[+ SET DETAILS]'}
+            </button>
+          </div>
+
+          {/* Cart Items List */}
+          <div className="flex-1 overflow-y-auto p-4 space-y-3 bg-[#F3ECDD]">
             {items.length === 0 ? (
-              <div className="text-center py-16 space-y-3">
-                <div className="w-16 h-16 rounded-full bg-[#EAF1E8] text-[#466B45] flex items-center justify-center mx-auto">
-                  <ShoppingBag className="w-8 h-8" />
+              <div className="text-center py-20 px-4">
+                <div className="w-12 h-12 border-[1.5px] border-[#161412] bg-[#F3ECDD] text-[#161412] flex items-center justify-center mx-auto mb-3 hard-shadow-sm">
+                  <ShoppingBag className="w-5 h-5" />
                 </div>
-                <h4 className="font-bold text-[#2D4A2D] text-lg">Your Cart is Empty</h4>
-                <p className="text-xs text-[#5C6B5E]">Explore our menu and add your favorite dishes!</p>
+                <h4 className="font-headline text-xl font-bold text-[#161412]">Your ticket is empty</h4>
+                <p className="font-sans text-xs text-[#8A8378] mt-1 max-w-xs mx-auto">
+                  Pick wood-fired pizzas, dim sums, or noodle bowls from the menu.
+                </p>
               </div>
             ) : (
               items.map((cartItem) => (
                 <div
                   key={cartItem.cartId}
-                  className="p-4 rounded-2xl bg-white border border-[#2D4A2D]/10 flex gap-4 items-center shadow-xs"
+                  className="p-3 border-[1.5px] border-[#161412] bg-[#F3ECDD] hard-shadow-sm space-y-2"
                 >
-                  <img
-                    src={cartItem.menuItem.imagePath}
-                    alt={cartItem.menuItem.name}
-                    className="w-16 h-16 rounded-xl object-cover bg-[#EAF1E8] shrink-0"
-                  />
+                  <div className="flex items-start justify-between gap-2">
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-2">
+                        {/* Dietary dot */}
+                        <span
+                          className={`w-3 h-3 border-[1.5px] flex items-center justify-center shrink-0 ${
+                            cartItem.menuItem.isVeg
+                              ? 'border-emerald-700'
+                              : 'border-[#C8371A]'
+                          }`}
+                          title={cartItem.menuItem.isVeg ? 'Vegetarian' : 'Non-Vegetarian'}
+                        >
+                          <span
+                            className={`w-1.5 h-1.5 rounded-full ${
+                              cartItem.menuItem.isVeg
+                                ? 'bg-emerald-700'
+                                : 'bg-[#C8371A]'
+                            }`}
+                          />
+                        </span>
+                        <p className="font-sans text-sm font-bold text-[#161412] truncate">
+                          {cartItem.menuItem.name}
+                        </p>
+                      </div>
 
-                  <div className="flex-1 min-w-0">
-                    <h5 className="font-bold text-xs text-[#2D4A2D] truncate">
-                      {cartItem.menuItem.name}
-                    </h5>
-                    {cartItem.selectedVariant && (
-                      <p className="text-[11px] text-[#466B45]">
-                        {cartItem.selectedVariant.name}
-                      </p>
-                    )}
-                    <p className="font-bold text-sm text-[#2D4A2D] mt-1">
+                      {cartItem.selectedVariant && (
+                        <p className="font-mono text-xs text-[#C8371A] font-bold mt-0.5">
+                          [ {cartItem.selectedVariant.name.toUpperCase()} ]
+                        </p>
+                      )}
+
+                      {cartItem.selectedAddons && cartItem.selectedAddons.length > 0 && (
+                        <p className="font-mono text-[10px] text-[#8A8378] mt-0.5 truncate">
+                          + {cartItem.selectedAddons.map((a) => a.name).join(', ')}
+                        </p>
+                      )}
+
+                      {cartItem.itemNotes && (
+                        <p className="font-sans text-[11px] text-[#8A8378] italic mt-0.5 truncate">
+                          Note: {cartItem.itemNotes}
+                        </p>
+                      )}
+                    </div>
+
+                    <button
+                      onClick={() => removeItem(cartItem.cartId)}
+                      className="p-1 text-[#8A8378] hover:text-[#C8371A] transition-colors cursor-pointer shrink-0"
+                      title="Remove item"
+                    >
+                      <Trash2 className="w-4 h-4" />
+                    </button>
+                  </div>
+
+                  {/* Quantity & Price Row */}
+                  <div className="flex items-center justify-between pt-1 border-t border-[#161412]/15">
+                    {/* Stepper */}
+                    <div className="flex items-center border-[1.5px] border-[#161412] bg-[#F3ECDD]">
+                      <button
+                        onClick={() => updateQuantity(cartItem.cartId, cartItem.quantity - 1)}
+                        className="w-6 h-6 flex items-center justify-center hover:bg-[#161412] hover:text-[#F3ECDD] transition-colors cursor-pointer text-xs"
+                      >
+                        <Minus className="w-3 h-3" />
+                      </button>
+                      <span className="font-mono text-xs font-bold px-2.5 text-center text-[#161412]">
+                        {cartItem.quantity}
+                      </span>
+                      <button
+                        onClick={() => updateQuantity(cartItem.cartId, cartItem.quantity + 1)}
+                        className="w-6 h-6 flex items-center justify-center hover:bg-[#161412] hover:text-[#F3ECDD] transition-colors cursor-pointer text-xs"
+                      >
+                        <Plus className="w-3 h-3" />
+                      </button>
+                    </div>
+
+                    <span className="font-mono font-bold text-sm text-[#161412]">
                       ₹{cartItem.totalItemPrice}
-                    </p>
-                  </div>
-
-                  <div className="flex items-center gap-2 bg-[#F9F8F3] px-2 py-1 rounded-xl border border-gray-200">
-                    <button
-                      onClick={() => updateQuantity(cartItem.cartId, cartItem.quantity - 1)}
-                      className="text-gray-500 hover:text-black p-0.5"
-                    >
-                      <Minus className="w-3.5 h-3.5" />
-                    </button>
-                    <span className="text-xs font-bold text-[#2D4A2D] w-4 text-center">
-                      {cartItem.quantity}
                     </span>
-                    <button
-                      onClick={() => updateQuantity(cartItem.cartId, cartItem.quantity + 1)}
-                      className="text-gray-500 hover:text-black p-0.5"
-                    >
-                      <Plus className="w-3.5 h-3.5" />
-                    </button>
                   </div>
-
-                  <button
-                    onClick={() => removeItem(cartItem.cartId)}
-                    className="text-red-400 hover:text-red-600 p-1"
-                  >
-                    <Trash2 className="w-4 h-4" />
-                  </button>
                 </div>
               ))
             )}
 
-            {/* Promo Code Entry */}
+            {/* Special Instructions Textarea */}
             {items.length > 0 && (
               <div className="pt-2">
-                <div className="flex items-center gap-2">
-                  <div className="relative flex-1">
-                    <Ticket className="w-4 h-4 text-[#D97706] absolute left-3 top-3" />
-                    <input
-                      type="text"
-                      placeholder="Promo Code (FLAVORIA20)"
-                      value={promoCode}
-                      onChange={(e) => setPromoCode(e.target.value)}
-                      className="w-full pl-9 pr-3 py-2 rounded-xl bg-white border border-[#2D4A2D]/15 text-xs text-[#2D4A2D] focus:outline-none"
-                    />
-                  </div>
-                  <button
-                    onClick={handleApplyPromo}
-                    className="px-4 py-2 bg-[#D97706] text-white text-xs font-bold rounded-xl hover:bg-[#B45309]"
-                  >
-                    Apply
-                  </button>
-                </div>
-                {discountApplied && (
-                  <p className="text-[11px] text-emerald-700 font-semibold mt-1">
-                    ✓ 20% Voucher Applied Successfully!
-                  </p>
-                )}
+                <label className="font-mono text-xs font-bold uppercase text-[#161412] block mb-1">
+                  Kitchen Notes
+                </label>
+                <textarea
+                  rows={2}
+                  value={specialInstructions}
+                  onChange={(e) => setSpecialInstructions(e.target.value)}
+                  placeholder="e.g. Extra well-done crust, sauce on the side..."
+                  className="w-full p-2.5 bg-transparent border-[1.5px] border-[#161412] font-sans text-xs text-[#161412] placeholder-[#8A8378] focus:outline-none focus:bg-[#161412]/5"
+                />
               </div>
             )}
           </div>
 
-          {/* Footer Summary & Checkout */}
+          {/* Footer Calculation & Checkout */}
           {items.length > 0 && (
-            <div className="p-6 bg-white border-t border-gray-100 space-y-3">
-              <div className="space-y-1.5 text-xs text-[#5C6B5E]">
+            <div className="p-4 sm:p-5 border-t-[1.5px] border-[#161412] bg-[#F3ECDD] space-y-3">
+              
+              {/* Coupon Code Input */}
+              <div className="flex gap-2">
+                <input
+                  type="text"
+                  placeholder="Coupon (try PANFIRE20)"
+                  value={promoCode}
+                  onChange={(e) => setPromoCode(e.target.value)}
+                  disabled={discountApplied}
+                  className="flex-1 px-3 py-2 bg-transparent border-[1.5px] border-[#161412] font-mono text-xs uppercase text-[#161412] placeholder-[#8A8378] focus:outline-none focus:bg-[#161412]/5 disabled:opacity-50"
+                />
+                <button
+                  onClick={handleApplyPromo}
+                  disabled={discountApplied}
+                  className="px-3 py-2 bg-[#161412] text-[#F3ECDD] border-[1.5px] border-[#161412] font-mono text-xs font-bold uppercase tracking-wider hover:bg-[#C8371A] transition-colors disabled:opacity-40 cursor-pointer"
+                >
+                  {discountApplied ? 'Applied' : 'Apply'}
+                </button>
+              </div>
+
+              {/* Price Breakdown Receipt */}
+              <div className="space-y-1.5 font-mono text-xs text-[#161412] border-t border-[#161412]/20 pt-2.5">
                 <div className="flex justify-between">
-                  <span>Subtotal</span>
-                  <span className="font-semibold text-[#2D4A2D]">₹{subtotal}</span>
+                  <span className="text-[#8A8378]">Item Subtotal</span>
+                  <span className="font-bold">₹{subtotal}</span>
                 </div>
                 {discountApplied && (
-                  <div className="flex justify-between text-emerald-700">
-                    <span>Voucher Discount (20%)</span>
-                    <span>-₹{discount}</span>
+                  <div className="flex justify-between text-[#C8371A]">
+                    <span>Discount (20% Off)</span>
+                    <span className="font-bold">-₹{discount}</span>
                   </div>
                 )}
                 <div className="flex justify-between">
-                  <span>Delivery Fee</span>
-                  <span>₹{deliveryFee}</span>
+                  <span className="text-[#8A8378]">
+                    {orderType === 'DELIVERY' ? 'Delivery Fee' : 'Packaging & Service'}
+                  </span>
+                  <span className="font-bold">{deliveryFee === 0 ? '₹0 (Free)' : `₹${deliveryFee}`}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span>Taxes (5%)</span>
-                  <span>₹{taxes}</span>
+                  <span className="text-[#8A8378]">GST (5%)</span>
+                  <span className="font-bold">₹{taxes}</span>
                 </div>
-                <div className="flex justify-between pt-2 border-t border-gray-100 font-serif-luxury font-bold text-lg text-[#2D4A2D]">
-                  <span>Total Amount</span>
-                  <span className="text-[#466B45]">₹{totalAmount}</span>
+                <div className="flex justify-between border-t-[1.5px] border-[#161412] pt-2 text-sm font-bold">
+                  <span className="font-headline text-base font-black">Total to Pay</span>
+                  <span className="font-mono text-base text-[#C8371A]">₹{totalAmount}</span>
                 </div>
               </div>
 
+              {/* Checkout Button */}
               <button
                 onClick={handleCheckout}
-                className="w-full btn-flavoria-green justify-center py-3 text-sm font-bold shadow-lg"
+                className="w-full py-3.5 px-4 bg-[#C8371A] hover:bg-[#161412] text-[#F3ECDD] border-[1.5px] border-[#161412] hard-shadow hover:hard-shadow-lg font-mono text-xs sm:text-sm font-bold uppercase tracking-widest flex items-center justify-between transition-all active:translate-x-[1px] active:translate-y-[1px] cursor-pointer"
               >
-                <span>Confirm & Place Order</span>
-                <ArrowRight className="w-4 h-4" />
+                <span>Confirm Order →</span>
+                <span className="font-mono text-sm">₹{totalAmount}</span>
               </button>
             </div>
           )}
@@ -262,3 +346,5 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
     </div>
   );
 };
+
+export default CartDrawer;

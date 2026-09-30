@@ -8,8 +8,11 @@ interface PortalState {
   toggleView: () => void;
 }
 
+const isStaffRoute = typeof window !== 'undefined' && 
+  (window.location.pathname.startsWith('/staff') || window.location.hash.includes('staff'));
+
 export const usePortalStore = create<PortalState>((set) => ({
-  currentView: 'CUSTOMER',
+  currentView: isStaffRoute ? 'ADMIN' : 'CUSTOMER',
   setView: (currentView) => set({ currentView }),
   toggleView: () =>
     set((state) => ({

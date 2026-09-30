@@ -1,135 +1,74 @@
-import React, { useState } from 'react';
-import { Leaf, Phone, Mail, MapPin, Instagram, Facebook, Twitter, ArrowRight, Heart } from 'lucide-react';
+import React from 'react';
+import { usePortalStore } from '../../store/usePortalStore';
 
 export const Footer: React.FC = () => {
-  const [email, setEmail] = useState('');
-  const [subscribed, setSubscribed] = useState(false);
-
-  const handleSubscribe = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email.trim()) {
-      setSubscribed(true);
-      setTimeout(() => setSubscribed(false), 4000);
-      setEmail('');
-    }
-  };
+  const setView = usePortalStore((state) => state.setView);
 
   return (
-    <footer className="relative bg-[#2D4A2D] text-white pt-16 pb-12 overflow-hidden rounded-t-[3rem]">
-      
-      {/* Top Background Glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-32 bg-[#466B45]/20 blur-3xl pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <footer className="bg-[#161412] text-[#F3ECDD] pt-16 sm:pt-24 border-t-[1.5px] border-[#161412] relative overflow-hidden select-none">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Main Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-white/10">
+        {/* Top Row: Links and Blunt Philosophy */}
+        <div className="flex flex-col md:flex-row md:items-start justify-between gap-8 pb-12 border-b-[1.5px] border-[#F3ECDD]/15">
           
-          {/* Col 1: Brand Info */}
-          <div className="lg:col-span-2 space-y-4">
-            <a href="#hero" className="flex items-center gap-2.5">
-              <div className="w-10 h-10 rounded-full bg-white text-[#2D4A2D] flex items-center justify-center shadow-md">
-                <Leaf className="w-5 h-5" />
-              </div>
-              <div>
-                <span className="font-serif-luxury text-2xl font-bold tracking-tight text-white block leading-none">
-                  PanFire
-                </span>
-                <span className="text-[10px] tracking-widest uppercase font-semibold text-white/70 block mt-0.5">
-                  Asian. Italian. Mexican
-                </span>
-              </div>
+          {/* Brand Philosophy */}
+          <div className="max-w-md space-y-3">
+            <span className="font-mono text-xs uppercase tracking-widest text-[#C8371A] font-bold block">
+              PanFire Pizzeria & Asian Small Plates
+            </span>
+            <p className="font-sans text-sm sm:text-base text-[#8A8378] leading-relaxed">
+              48-hour cold-fermented sourdough pizza baked on volcanic stone at 450°C. Handcrafted dim sum, wok noodles, and street bites with zero shortcuts.
+            </p>
+          </div>
+
+          {/* 3-4 Direct Text Links */}
+          <nav className="flex flex-wrap items-center gap-6 sm:gap-10 font-mono text-xs sm:text-sm font-bold uppercase tracking-wider">
+            <a
+              href="#menu"
+              className="text-[#F3ECDD] hover:text-[#C8371A] transition-colors"
+            >
+              Menu
             </a>
 
-            <p className="text-xs sm:text-sm text-white/80 max-w-sm leading-relaxed">
-              Experience handcrafted Neapolitan wood-fired pizzas, sizzling Mexican burrito bowls & burgers, and authentic Asian dim sums, baos, and craft sushi.
-            </p>
+            <a
+              href="#booking"
+              className="text-[#F3ECDD] hover:text-[#C8371A] transition-colors"
+            >
+              Book Table
+            </a>
 
-            {/* Newsletter Input Form */}
-            <div className="pt-2">
-              <p className="text-xs font-semibold text-white mb-2">Sign up for secret menu specials & exclusive invites:</p>
-              <form onSubmit={handleSubscribe} className="flex items-center max-w-sm">
-                <input
-                  type="email"
-                  required
-                  placeholder="Enter your email address"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="w-full px-4 py-2.5 rounded-l-full bg-white/10 text-white placeholder-white/50 text-xs focus:outline-none focus:bg-white/20 border border-white/20"
-                />
-                <button
-                  type="submit"
-                  className="bg-[#D97706] hover:bg-[#B45309] text-white px-5 py-2.5 rounded-r-full text-xs font-bold transition-all shrink-0 cursor-pointer"
-                >
-                  {subscribed ? 'Subscribed!' : 'Sign Up'}
-                </button>
-              </form>
-            </div>
-          </div>
+            <a
+              href="#location"
+              className="text-[#F3ECDD] hover:text-[#C8371A] transition-colors"
+            >
+              Hours & Location
+            </a>
 
-          {/* Col 2: Quick Links */}
-          <div className="space-y-3">
-            <h4 className="font-serif-luxury font-bold text-lg text-white">Navigation</h4>
-            <ul className="space-y-2 text-xs text-white/75">
-              <li><a href="#hero" className="hover:text-white transition-colors">Home</a></li>
-              <li><a href="#menu" className="hover:text-white transition-colors">Full Food Catalog</a></li>
-              <li><a href="#gallery" className="hover:text-white transition-colors">Kitchen Gallery</a></li>
-            </ul>
-          </div>
-
-          {/* Col 3: 6 Menu Categories */}
-          <div className="space-y-3">
-            <h4 className="font-serif-luxury font-bold text-lg text-white">Menu Categories</h4>
-            <ul className="space-y-2 text-xs text-white/75">
-              <li><a href="#menu" className="hover:text-white transition-colors">1. Signature Dishes</a></li>
-              <li><a href="#menu" className="hover:text-white transition-colors">2. Mexican</a></li>
-              <li><a href="#menu" className="hover:text-white transition-colors">3. Italian</a></li>
-              <li><a href="#menu" className="hover:text-white transition-colors">4. Asian</a></li>
-              <li><a href="#menu" className="hover:text-white transition-colors">5. Beverages</a></li>
-              <li><a href="#menu" className="hover:text-white transition-colors">6. Desserts</a></li>
-            </ul>
-          </div>
-
-          {/* Col 4: Opening Hours & Contact */}
-          <div className="space-y-3">
-            <h4 className="font-serif-luxury font-bold text-lg text-white">Contact & Location</h4>
-            <div className="space-y-2.5 text-xs text-white/75">
-              <p className="flex items-start gap-2">
-                <MapPin className="w-4 h-4 text-[#D97706] shrink-0 mt-0.5" />
-                <span>PanFire Kitchen, New Chandigarh, Punjab</span>
-              </p>
-              <p className="flex items-center gap-2">
-                <Phone className="w-4 h-4 text-[#D97706] shrink-0" />
-                <a href="tel:+917814219191" className="hover:text-white transition-colors font-medium">
-                  +91 78142 19191
-                </a>
-              </p>
-              <p className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-[#D97706] shrink-0" />
-                <a href="mailto:panfirenewchandigarh@gmail.com" className="hover:text-white transition-colors break-all">
-                  panfirenewchandigarh@gmail.com
-                </a>
-              </p>
-              <div className="pt-2">
-                <p className="font-bold text-white">Opening Hours:</p>
-                <p>Mon - Sun: 11:30 AM - 11:30 PM</p>
-              </div>
-            </div>
-          </div>
+            <button
+              onClick={() => setView('ADMIN')}
+              className="text-[#8A8378] hover:text-[#F3ECDD] transition-colors cursor-pointer"
+            >
+              Staff POS
+            </button>
+          </nav>
 
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-white/60 gap-4">
-          <p>© {new Date().getFullYear()} PanFire (Asian • Italian • Mexican). All rights reserved.</p>
-          <div className="flex items-center gap-4">
-            <span className="hover:text-white cursor-pointer">Privacy Policy</span>
-            <span className="hover:text-white cursor-pointer">Terms of Service</span>
-            <span className="hover:text-white cursor-pointer">Contact Us</span>
-          </div>
+        {/* Middle Metadata Row */}
+        <div className="py-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 font-mono text-[11px] text-[#8A8378] uppercase">
+          <span>© 2026 PANFIRE PIZZERIA & SMALL PLATES. ALL RIGHTS RESERVED.</span>
+          <span>WOOD-FIRED • SAN MARZANO • 450°C STONE HEARTH</span>
         </div>
 
       </div>
+
+      {/* Huge Cropped Wordmark Bleeding Off The Bottom Edge */}
+      <div className="w-full overflow-hidden leading-none pointer-events-none mt-8 sm:mt-12 select-none -mb-3 sm:-mb-6 md:-mb-10">
+        <span className="font-headline text-[clamp(5.5rem,21vw,23rem)] font-black tracking-tighter text-[#F3ECDD]/[0.07] block text-center sm:text-left uppercase whitespace-nowrap">
+          PANFIRE
+        </span>
+      </div>
+
     </footer>
   );
 };

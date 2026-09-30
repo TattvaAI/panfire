@@ -1,6 +1,5 @@
 import React from 'react';
-import { X, Clock, CheckCircle2, Truck, UtensilsCrossed, Package } from 'lucide-react';
-import { CartItem } from '../../types';
+import { X, Check, Flame, Box, Bike } from 'lucide-react';
 import { useOrderStore } from '../../store/useOrderStore';
 
 interface OrderTrackerModalProps {
@@ -14,25 +13,27 @@ export const OrderTrackerModal: React.FC<OrderTrackerModalProps> = ({ onClose })
 
   if (!activeOrder) {
     return (
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fade-in">
-        <div className="bg-[#FBF9F4] w-full max-w-md p-8 rounded-3xl text-center relative border border-[#2D4A2D]/15 shadow-2xl">
+      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#161412]/80 backdrop-blur-none animate-fade-in">
+        <div className="bg-[#F3ECDD] text-[#161412] w-full max-w-md p-6 border-[1.5px] border-[#161412] hard-shadow-lg text-center relative">
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 p-2 rounded-full hover:bg-gray-100 text-gray-500"
+            className="absolute top-4 right-4 w-8 h-8 border-[1.5px] border-[#161412] bg-[#F3ECDD] hover:bg-[#161412] hover:text-[#F3ECDD] flex items-center justify-center transition-colors cursor-pointer"
           >
-            <X className="w-5 h-5" />
+            <X className="w-4 h-4" />
           </button>
 
-          <div className="w-16 h-16 rounded-full bg-[#EAF1E8] text-[#466B45] flex items-center justify-center mx-auto mb-4">
-            <UtensilsCrossed className="w-8 h-8" />
+          <div className="w-12 h-12 border-[1.5px] border-[#161412] bg-[#161412] text-[#F3ECDD] flex items-center justify-center mx-auto mb-3 hard-shadow-sm">
+            <Flame className="w-6 h-6 text-[#C8371A]" />
           </div>
 
-          <h3 className="font-serif-luxury text-2xl font-bold text-[#2D4A2D]">No Active Order</h3>
-          <p className="text-xs text-[#5C6B5E] mt-1">Place an order from our menu to track real-time delivery status.</p>
+          <h3 className="font-headline text-2xl font-bold text-[#161412]">No Active Order</h3>
+          <p className="font-sans text-xs text-[#8A8378] mt-2 max-w-xs mx-auto">
+            Place an order from the menu to track preparation at the hearth and live dispatch.
+          </p>
 
           <button
             onClick={onClose}
-            className="mt-6 btn-flavoria-green text-xs px-6 py-2.5"
+            className="mt-6 w-full py-2.5 bg-[#161412] text-[#F3ECDD] border-[1.5px] border-[#161412] font-mono text-xs font-bold uppercase tracking-wider hover:bg-[#C8371A] transition-colors cursor-pointer"
           >
             Explore Menu
           </button>
@@ -42,81 +43,111 @@ export const OrderTrackerModal: React.FC<OrderTrackerModalProps> = ({ onClose })
   }
 
   const steps = [
-    { label: 'Order Placed', icon: <Package className="w-5 h-5" />, done: true },
-    { label: 'Kitchen Preparing', icon: <UtensilsCrossed className="w-5 h-5" />, done: activeOrder.status !== 'PENDING' },
-    { label: 'Out for Delivery', icon: <Truck className="w-5 h-5" />, done: activeOrder.status === 'OUT_FOR_DELIVERY' || activeOrder.status === 'DELIVERED' },
-    { label: 'Delivered', icon: <CheckCircle2 className="w-5 h-5" />, done: activeOrder.status === 'DELIVERED' },
+    { label: 'Order Received', desc: 'Logged in the kitchen queue', done: true },
+    { label: 'In the Wood Hearth', desc: 'Baking at 450°C on volcanic stone', done: activeOrder.status !== 'PENDING' },
+    { label: 'Boxed & Sealed', desc: 'Inspected hot at pass station', done: activeOrder.status === 'OUT_FOR_DELIVERY' || activeOrder.status === 'DELIVERED' },
+    { label: 'Delivered / Handed Over', desc: 'Enjoy immediately while hot', done: activeOrder.status === 'DELIVERED' },
   ];
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fade-in">
-      <div className="bg-[#FBF9F4] w-full max-w-lg rounded-3xl overflow-hidden shadow-2xl border border-[#2D4A2D]/15 relative">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-[#161412]/80 backdrop-blur-none animate-fade-in">
+      <div className="bg-[#F3ECDD] text-[#161412] w-full max-w-lg border-[1.5px] border-[#161412] hard-shadow-lg overflow-hidden flex flex-col max-h-[92vh]">
         
         {/* Header */}
-        <div className="bg-[#2D4A2D] text-white p-6 relative">
+        <div className="p-4 sm:p-6 border-b-[1.5px] border-[#161412] flex items-start justify-between bg-[#F3ECDD]">
+          <div>
+            <div className="font-mono text-xs font-bold uppercase tracking-widest text-[#C8371A] mb-1">
+              [LIVE ORDER TRACKER]
+            </div>
+            <h3 className="font-headline text-2xl sm:text-3xl font-black text-[#161412] tracking-tight">
+              Order #{activeOrder.id}
+            </h3>
+            <p className="font-mono text-xs text-[#8A8378] mt-1">
+              Estimated Ready: <strong className="text-[#161412]">20 - 30 Minutes</strong>
+            </p>
+          </div>
+
           <button
             onClick={onClose}
-            className="absolute top-5 right-5 p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
+            className="w-8 h-8 border-[1.5px] border-[#161412] bg-[#F3ECDD] hover:bg-[#161412] hover:text-[#F3ECDD] flex items-center justify-center transition-colors cursor-pointer shrink-0"
+            aria-label="Close modal"
           >
-            <X className="w-5 h-5" />
+            <X className="w-4 h-4" />
           </button>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 text-white text-xs font-semibold mb-2">
-            <Clock className="w-3.5 h-3.5" />
-            <span>Real-Time Tracker</span>
-          </div>
-          <h3 className="font-serif-luxury text-2xl font-bold">
-            Order #{activeOrder.id}
-          </h3>
-          <p className="text-xs text-white/80 mt-1">
-            Estimated Delivery Time: <span className="font-bold text-amber-300">~25-35 Minutes</span>
-          </p>
         </div>
 
-        {/* Status Timeline */}
-        <div className="p-6 sm:p-8 space-y-6">
-          <div className="relative border-l-2 border-[#466B45]/30 ml-4 space-y-8 pl-6">
+        {/* Content */}
+        <div className="p-4 sm:p-6 overflow-y-auto space-y-6 flex-1 bg-[#F3ECDD]">
+          
+          {/* Timeline steps */}
+          <div className="space-y-4">
             {steps.map((step, idx) => (
-              <div key={idx} className="relative flex items-center gap-4">
+              <div key={idx} className="flex items-start gap-3.5">
                 <div
-                  className={`absolute -left-[35px] w-8 h-8 rounded-full flex items-center justify-center border-2 transition-all ${
+                  className={`w-7 h-7 border-[1.5px] border-[#161412] flex items-center justify-center shrink-0 font-mono text-xs font-bold ${
                     step.done
-                      ? 'bg-[#466B45] border-[#466B45] text-white shadow-md'
-                      : 'bg-white border-gray-300 text-gray-400'
+                      ? 'bg-[#161412] text-[#F3ECDD]'
+                      : 'bg-[#F3ECDD] text-[#8A8378] opacity-50'
                   }`}
                 >
-                  {step.icon}
+                  {step.done ? <Check className="w-4 h-4 text-[#F3ECDD]" /> : idx + 1}
                 </div>
 
-                <div>
-                  <h5 className={`font-bold text-sm ${step.done ? 'text-[#2D4A2D]' : 'text-gray-400'}`}>
-                    {step.label}
-                  </h5>
-                  <p className="text-[11px] text-[#5C6B5E]">
-                    {step.done ? 'Completed' : 'Pending...'}
+                <div className="flex-1">
+                  <div className="flex items-center justify-between">
+                    <h5 className={`font-mono text-xs uppercase font-bold tracking-wider ${step.done ? 'text-[#161412]' : 'text-[#8A8378]'}`}>
+                      {step.label}
+                    </h5>
+                    <span className="font-mono text-[10px] uppercase font-bold text-[#8A8378]">
+                      {step.done ? '[DONE]' : '[PENDING]'}
+                    </span>
+                  </div>
+                  <p className="font-sans text-xs text-[#8A8378] mt-0.5">
+                    {step.desc}
                   </p>
                 </div>
               </div>
             ))}
           </div>
 
-          {/* Order Summary Box */}
-          <div className="bg-white p-4 rounded-2xl border border-gray-200 text-xs space-y-2">
-            <div className="flex justify-between font-bold text-[#2D4A2D]">
-              <span>Items Ordered ({activeOrder.items.length})</span>
-              <span>Total: ₹{activeOrder.totalAmount}</span>
+          {/* Order Snapshot Receipt */}
+          <div className="border-[1.5px] border-[#161412] p-4 bg-[#161412]/5 space-y-2 font-mono text-xs">
+            <div className="font-bold uppercase tracking-wider text-[#161412] border-b border-[#161412]/15 pb-1 flex justify-between">
+              <span>Items ({activeOrder.items.length})</span>
+              <span className="text-[#C8371A]">₹{activeOrder.totalAmount}</span>
             </div>
-            <div className="space-y-1 text-gray-600 max-h-28 overflow-y-auto">
-              {activeOrder.items.map((i: CartItem) => (
-                <div key={i.cartId} className="flex justify-between">
-                  <span>{i.quantity}x {i.menuItem.name}</span>
-                  <span>₹{i.totalItemPrice}</span>
+
+            <div className="space-y-1 pt-1">
+              {activeOrder.items.map((item, i) => (
+                <div key={i} className="flex justify-between text-[#161412]">
+                  <span className="truncate pr-2">
+                    {item.quantity}x {item.menuItem.name} {item.selectedVariant ? `(${item.selectedVariant.name})` : ''}
+                  </span>
+                  <span className="font-bold shrink-0">₹{item.totalItemPrice}</span>
                 </div>
               ))}
             </div>
+
+            <div className="border-t border-[#161412]/15 pt-2 text-[#8A8378] text-[11px]">
+              <div><strong>Recipient:</strong> {activeOrder.user.fullName} ({activeOrder.user.phone})</div>
+              {activeOrder.user.address && (
+                <div className="truncate"><strong>Address:</strong> {activeOrder.user.address}</div>
+              )}
+            </div>
           </div>
+
+          {/* Action button */}
+          <button
+            onClick={onClose}
+            className="w-full py-3 bg-[#161412] hover:bg-[#C8371A] text-[#F3ECDD] border-[1.5px] border-[#161412] hard-shadow font-mono text-xs uppercase font-bold tracking-wider transition-all cursor-pointer"
+          >
+            Keep Exploring Menu →
+          </button>
         </div>
 
       </div>
     </div>
   );
 };
+
+export default OrderTrackerModal;

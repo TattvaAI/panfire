@@ -1,10 +1,23 @@
-export type MainCategory = 'SIGNATURE' | 'MEXICAN' | 'ITALIAN' | 'ASIAN' | 'BEVERAGES' | 'DESSERTS';
-export type BroadCategory = MainCategory;
+export type MainCategory =
+  | 'SOUPS_SALADS'
+  | 'DIMSUM_BAOS'
+  | 'APPETIZERS_STARTERS'
+  | 'PIZZAS_CALZONES'
+  | 'MAINS_PASTAS_WOK'
+  | 'MEXICAN_STREET'
+  | 'BEVERAGES_DESSERTS'
+  | 'SIGNATURE'
+  | 'MEXICAN'
+  | 'ITALIAN'
+  | 'ASIAN'
+  | 'BEVERAGES'
+  | 'DESSERTS';
 
 export interface Variant {
   id: string;
   name: string;
   price: number;
+  isVeg?: boolean;
 }
 
 export interface Addon {
@@ -16,18 +29,36 @@ export interface Addon {
 export interface MenuItem {
   id: string;
   name: string;
-  mainCategory: MainCategory;
-  category: string; // Subcategory / item group e.g. "Dim Sums", "Baos", "Noodles", "Sushi", "Thin Crust Pizzas", "Burrito Bowls", "Sourdough Burgers", "Beverages", "Desserts"
-  broadCategory?: BroadCategory;
+  mainCategory?: MainCategory | string;
+  category: string;
   isVeg: boolean;
   price: number;
+  basePrice?: number;
   description: string;
   imagePath: string;
   variants?: Variant[];
   addons?: Addon[];
   isAvailable: boolean;
   isChefSpecial?: boolean;
-  spicyLevel?: number; // 0 (mild) to 3 (very spicy)
+  isBestseller?: boolean;
+  spicyLevel?: number;
+  hasVariants?: boolean;
+  broadCategory?: string;
+}
+
+export interface SubcategoryGroupData {
+  id: string;
+  title: string;
+  isVegSection?: boolean;
+  items: MenuItem[];
+}
+
+export interface CategoryAccordionData {
+  id: string;
+  title: string;
+  description?: string;
+  badge?: string;
+  subcategories: SubcategoryGroupData[];
 }
 
 export interface UserProfile {
@@ -54,7 +85,7 @@ export interface CartItem {
 export type OrderStatus = 'PENDING' | 'PREPARING' | 'OUT_FOR_DELIVERY' | 'DELIVERED' | 'CANCELLED';
 
 export interface Order {
-  id: string; // PF-XXXX format
+  id: string;
   user: UserProfile;
   items: CartItem[];
   subtotal: number;

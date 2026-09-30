@@ -20,11 +20,13 @@ import {
 } from 'lucide-react';
 import { useOrderStore } from '../../store/useOrderStore';
 import { useMenuStore } from '../../store/useMenuStore';
+import { usePortalStore } from '../../store/usePortalStore';
 import { Order, OrderStatus } from '../../types';
 
 export const AdminDashboard: React.FC = () => {
   const { orders, updateOrderStatus, hasNewOrderAlert, clearNewOrderAlert } = useOrderStore();
   const { menuItems, toggleItemAvailability } = useMenuStore();
+  const setView = usePortalStore((state) => state.setView);
 
   const [activeTab, setActiveTab] = useState<'LIVE_ORDERS' | 'INVENTORY' | 'ANALYTICS'>('LIVE_ORDERS');
   const [selectedOrder, setSelectedOrder] = useState<Order | null>(null);
@@ -65,51 +67,51 @@ export const AdminDashboard: React.FC = () => {
   );
 
   return (
-    <div className="min-h-screen bg-[#FBF9F4] text-[#2D4A2D] pt-24 pb-12 p-4 md:p-8 space-y-8 z-10 relative">
+    <div className="min-h-screen bg-[#161412] text-[#F3ECDD] pt-8 pb-12 p-4 md:p-8 space-y-6 z-10 relative">
       
       {/* Top Admin Header */}
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-4 bg-white p-6 rounded-3xl border border-[#2D4A2D]/10 shadow-sm">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-4 bg-[#161412] p-5 sm:p-6 border-[1.5px] border-[#F3ECDD]/20 hard-shadow">
         <div className="flex items-center gap-4">
-          <div className="p-3.5 rounded-2xl bg-amber-500/20 text-amber-400 border border-amber-500/30">
-            <Flame className="w-7 h-7 fill-amber-400" />
+          <div className="w-12 h-12 bg-[#C8371A] text-[#F3ECDD] border-[1.5px] border-[#F3ECDD] flex items-center justify-center font-bold font-mono">
+            POS
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <h1 className="text-2xl font-extrabold font-['Outfit'] text-white">PanFire HQ Command Center</h1>
-              <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 text-[10px] font-bold border border-emerald-500/30 animate-pulse">
-                Live Backend Online
+              <h1 className="font-headline text-2xl font-black text-[#F3ECDD]">PanFire Kitchen POS</h1>
+              <span className="px-2 py-0.5 bg-emerald-950 text-emerald-400 text-[10px] font-mono font-bold border border-emerald-700">
+                LIVE
               </span>
             </div>
-            <p className="text-xs text-slate-400">Monitor incoming orders, inspect customer contact details, & control menu stock</p>
+            <p className="font-mono text-xs text-[#8A8378]">Kitchen pass & order dispatch terminal</p>
           </div>
         </div>
 
-        {/* Tab Switcher & Sound Control */}
-        <div className="flex items-center gap-3 w-full md:w-auto">
-          <div className="flex bg-white/[0.05] p-1 rounded-2xl border border-white/10 text-xs font-bold">
+        {/* Tab Switcher & Exit Button */}
+        <div className="flex flex-wrap items-center gap-3 w-full md:w-auto">
+          <div className="flex border-[1.5px] border-[#F3ECDD]/20 bg-[#161412] text-xs font-mono font-bold">
             <button
               onClick={() => setActiveTab('LIVE_ORDERS')}
-              className={`px-4 py-2 rounded-xl transition-all ${
-                activeTab === 'LIVE_ORDERS' ? 'bg-amber-500 text-black shadow-md' : 'text-slate-400 hover:text-white'
+              className={`px-3 py-1.5 transition-colors cursor-pointer ${
+                activeTab === 'LIVE_ORDERS' ? 'bg-[#F3ECDD] text-[#161412]' : 'text-[#8A8378] hover:text-[#F3ECDD]'
               }`}
             >
-              Live Orders ({pendingOrders.length + preparingOrders.length})
+              Orders ({pendingOrders.length + preparingOrders.length})
             </button>
             <button
               onClick={() => setActiveTab('INVENTORY')}
-              className={`px-4 py-2 rounded-xl transition-all ${
-                activeTab === 'INVENTORY' ? 'bg-amber-500 text-black shadow-md' : 'text-slate-400 hover:text-white'
+              className={`px-3 py-1.5 transition-colors cursor-pointer border-l-[1.5px] border-[#F3ECDD]/20 ${
+                activeTab === 'INVENTORY' ? 'bg-[#F3ECDD] text-[#161412]' : 'text-[#8A8378] hover:text-[#F3ECDD]'
               }`}
             >
-              Menu Stock ({menuItems.filter(i => !i.isAvailable).length} Sold Out)
+              Stock ({menuItems.filter(i => !i.isAvailable).length} Out)
             </button>
             <button
               onClick={() => setActiveTab('ANALYTICS')}
-              className={`px-4 py-2 rounded-xl transition-all ${
-                activeTab === 'ANALYTICS' ? 'bg-amber-500 text-black shadow-md' : 'text-slate-400 hover:text-white'
+              className={`px-3 py-1.5 transition-colors cursor-pointer border-l-[1.5px] border-[#F3ECDD]/20 ${
+                activeTab === 'ANALYTICS' ? 'bg-[#F3ECDD] text-[#161412]' : 'text-[#8A8378] hover:text-[#F3ECDD]'
               }`}
             >
-              Analytics
+              Sales
             </button>
           </div>
 
@@ -118,10 +120,17 @@ export const AdminDashboard: React.FC = () => {
               setIsSoundMuted(!isSoundMuted);
               if (isSoundMuted) triggerAudioChime();
             }}
-            className="p-2.5 rounded-xl bg-white/[0.05] border border-white/10 text-slate-300 hover:text-white transition-colors"
+            className="p-2 border-[1.5px] border-[#F3ECDD]/20 bg-[#161412] text-[#8A8378] hover:text-[#F3ECDD] transition-colors cursor-pointer"
             title="Toggle Order Chime Sound"
           >
-            {isSoundMuted ? <VolumeX className="w-5 h-5 text-red-400" /> : <Volume2 className="w-5 h-5 text-emerald-400" />}
+            {isSoundMuted ? <VolumeX className="w-4 h-4 text-[#C8371A]" /> : <Volume2 className="w-4 h-4 text-emerald-400" />}
+          </button>
+
+          <button
+            onClick={() => setView('CUSTOMER')}
+            className="px-3.5 py-1.5 bg-[#C8371A] hover:bg-[#F3ECDD] hover:text-[#161412] text-[#F3ECDD] border-[1.5px] border-[#F3ECDD]/30 font-mono text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer"
+          >
+            ← Back to Site
           </button>
         </div>
 
@@ -401,7 +410,7 @@ export const AdminDashboard: React.FC = () => {
                         <p className="text-[10px] text-amber-300 italic">Note: "{item.itemNotes}"</p>
                       )}
                     </div>
-                    <span className="font-bold text-amber-400 font-['Outfit']">${item.totalItemPrice}</span>
+                    <span className="font-bold text-amber-400 font-mono-luxury">₹{item.totalItemPrice}</span>
                   </div>
                 ))}
               </div>
@@ -411,7 +420,7 @@ export const AdminDashboard: React.FC = () => {
             <div className="pt-4 border-t border-white/10 flex items-center justify-between">
               <div>
                 <span className="text-xs text-slate-400">Total Order Payload:</span>
-                <p className="text-2xl font-extrabold text-amber-400 font-['Outfit']">${selectedOrder.totalAmount}</p>
+                <p className="text-2xl font-extrabold text-amber-400 font-mono-luxury">₹{selectedOrder.totalAmount}</p>
               </div>
               <button
                 onClick={() => setSelectedOrder(null)}
@@ -441,7 +450,7 @@ const OrderKanbanCard: React.FC<OrderKanbanCardProps> = ({ order, onSelect, onAd
   return (
     <div className="glass-card p-4 rounded-2xl border border-white/10 space-y-3 relative group hover:border-amber-500/40 transition-all">
       <div className="flex items-center justify-between text-xs">
-        <span className="font-extrabold text-amber-400 font-['Outfit']">{order.id}</span>
+        <span className="font-extrabold text-amber-400 font-mono-luxury">{order.id}</span>
         <span className="text-[10px] text-slate-400">
           {new Date(order.placedAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
         </span>
@@ -458,7 +467,7 @@ const OrderKanbanCard: React.FC<OrderKanbanCardProps> = ({ order, onSelect, onAd
       </div>
 
       <div className="pt-2 border-t border-white/10 flex items-center justify-between">
-        <span className="text-xs font-bold text-white font-['Outfit']">${order.totalAmount}</span>
+        <span className="text-xs font-bold text-white font-mono-luxury">₹{order.totalAmount}</span>
 
         {onAdvance && advanceLabel && (
           <button
