@@ -25,7 +25,7 @@ export const RESTAURANT_MENU_ACCORDIONS: CategoryAccordionData[] = [
             isAvailable: true,
             hasVariants: true,
             variants: [
-              { id: 'veg', name: 'Vegetarian', price: 175, isVeg: true },
+              { id: 'veg', name: 'Veg', price: 175, isVeg: true },
               { id: 'chicken', name: 'Chicken', price: 225, isVeg: false },
               { id: 'prawn', name: 'Prawn', price: 295, isVeg: false },
             ],
@@ -46,7 +46,7 @@ export const RESTAURANT_MENU_ACCORDIONS: CategoryAccordionData[] = [
             isAvailable: true,
             hasVariants: true,
             variants: [
-              { id: 'veg', name: 'Vegetarian', price: 215, isVeg: true },
+              { id: 'veg', name: 'Veg', price: 215, isVeg: true },
               { id: 'chicken', name: 'Chicken', price: 275, isVeg: false },
               { id: 'prawn', name: 'Prawn', price: 345, isVeg: false },
             ],
@@ -63,7 +63,7 @@ export const RESTAURANT_MENU_ACCORDIONS: CategoryAccordionData[] = [
             isAvailable: true,
             hasVariants: true,
             variants: [
-              { id: 'veg', name: 'Vegetarian', price: 145, isVeg: true },
+              { id: 'veg', name: 'Veg', price: 145, isVeg: true },
               { id: 'chicken', name: 'Chicken', price: 195, isVeg: false },
               { id: 'prawn', name: 'Prawn', price: 295, isVeg: false },
             ],
@@ -80,7 +80,7 @@ export const RESTAURANT_MENU_ACCORDIONS: CategoryAccordionData[] = [
             isAvailable: true,
             hasVariants: true,
             variants: [
-              { id: 'veg', name: 'Vegetarian', price: 175, isVeg: true },
+              { id: 'veg', name: 'Veg', price: 175, isVeg: true },
               { id: 'chicken', name: 'Chicken', price: 225, isVeg: false },
               { id: 'prawn', name: 'Prawn', price: 295, isVeg: false },
             ],
@@ -97,7 +97,7 @@ export const RESTAURANT_MENU_ACCORDIONS: CategoryAccordionData[] = [
             isAvailable: true,
             hasVariants: true,
             variants: [
-              { id: 'veg', name: 'Vegetarian', price: 175, isVeg: true },
+              { id: 'veg', name: 'Veg', price: 175, isVeg: true },
               { id: 'chicken', name: 'Chicken', price: 225, isVeg: false },
               { id: 'prawn', name: 'Prawn', price: 295, isVeg: false },
             ],
@@ -114,7 +114,7 @@ export const RESTAURANT_MENU_ACCORDIONS: CategoryAccordionData[] = [
             isAvailable: true,
             hasVariants: true,
             variants: [
-              { id: 'veg', name: 'Vegetarian', price: 145, isVeg: true },
+              { id: 'veg', name: 'Veg', price: 145, isVeg: true },
               { id: 'chicken', name: 'Chicken', price: 195, isVeg: false },
               { id: 'prawn', name: 'Prawn', price: 295, isVeg: false },
             ],
@@ -219,7 +219,7 @@ export const RESTAURANT_MENU_ACCORDIONS: CategoryAccordionData[] = [
     subcategories: [
       {
         id: 'veg-dimsum',
-        title: 'Veg Dim Sum (4 Items)',
+        title: 'Veg Dim Sum',
         isVegSection: true,
         items: [
           {
@@ -269,7 +269,7 @@ export const RESTAURANT_MENU_ACCORDIONS: CategoryAccordionData[] = [
       },
       {
         id: 'non-veg-dimsum',
-        title: 'Non-Veg Dim Sum (2 Items)',
+        title: 'Non-Veg Dim Sum',
         isVegSection: false,
         items: [
           {

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { X, Check, Calendar, CheckCircle } from 'lucide-react';
 import confetti from 'canvas-confetti';
+import { useReservationStore } from '../../store/useReservationStore';
 
 interface TableReservationModalProps {
   isOpen: boolean;
@@ -11,6 +12,7 @@ export const TableReservationModal: React.FC<TableReservationModalProps> = ({
   isOpen,
   onClose,
 }) => {
+  const addReservation = useReservationStore((state) => state.addReservation);
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -33,6 +35,17 @@ export const TableReservationModal: React.FC<TableReservationModalProps> = ({
 
     const newId = `PF-RES-${Math.floor(100000 + Math.random() * 900000)}`;
     setBookingId(newId);
+    addReservation({
+      id: newId,
+      name: formData.name.trim(),
+      phone: formData.phone.trim(),
+      guests: formData.guests,
+      date: formData.date,
+      time: formData.time,
+      seating: 'Standard Hearth Dining Table',
+      status: 'CONFIRMED',
+      createdAt: new Date().toISOString(),
+    });
     setIsSubmitted(true);
     try {
       confetti({

@@ -71,12 +71,27 @@ export interface UserProfile {
   createdAt: string;
 }
 
+export interface CartPayloadItem {
+  itemId: string;
+  itemName: string;
+  selectedVariant?: Variant;
+  basePrice: number;
+  finalPrice: number;
+  quantity: number;
+}
+
 export interface CartItem {
   cartId: string;
   menuItem: MenuItem;
+  // Standardized Cart Payload Fields: { itemId, itemName, selectedVariant, basePrice, finalPrice, quantity }
+  itemId: string;
+  itemName: string;
   selectedVariant?: Variant;
-  selectedAddons: Addon[];
+  basePrice: number;
+  finalPrice: number;
   quantity: number;
+  // Extended metadata
+  selectedAddons: Addon[];
   itemNotes?: string;
   unitPrice: number;
   totalItemPrice: number;
@@ -97,3 +112,18 @@ export interface Order {
   estimatedTimeMinutes: number;
   specialInstructions?: string;
 }
+
+export type ReservationStatus = 'CONFIRMED' | 'SEATED' | 'COMPLETED' | 'CANCELLED';
+
+export interface Reservation {
+  id: string;
+  name: string;
+  phone: string;
+  guests: string;
+  date: string;
+  time: string;
+  seating: string;
+  status: ReservationStatus;
+  createdAt: string;
+}
+

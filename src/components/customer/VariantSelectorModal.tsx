@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { X, Check, Plus, Minus } from 'lucide-react';
 import { MenuItem, Variant, Addon } from '../../types';
 import { useCartStore } from '../../store/useCartStore';
@@ -24,7 +24,15 @@ export const VariantSelectorModal: React.FC<VariantSelectorModalProps> = ({
   const [quantity, setQuantity] = useState<number>(1);
   const [instructions, setInstructions] = useState<string>('');
 
-  const basePrice = selectedVariant ? selectedVariant.price : item.price;
+  // Sync state whenever selected item changes
+  useEffect(() => {
+    setSelectedVariant(item?.variants && item.variants.length > 0 ? item.variants[0] : undefined);
+    setSelectedAddons([]);
+    setQuantity(1);
+    setInstructions('');
+  }, [item?.id]);
+
+  const basePrice = selectedVariant ? selectedVariant.price : (item.basePrice || item.price);
   const addonsPrice = selectedAddons.reduce((sum, a) => sum + a.price, 0);
   const unitPrice = basePrice + addonsPrice;
   const finalPrice = unitPrice * quantity;
@@ -93,19 +101,20 @@ export const VariantSelectorModal: React.FC<VariantSelectorModalProps> = ({
 
         {/* Scrollable Options */}
         <div className="p-5 overflow-y-auto space-y-6 flex-1 bg-stone-50/50">
-          {/* Variant Selection (Size or Protein Style) */}
+          {/* Variant Selection (Size or Protein Style: Veg, Chicken, Prawn) */}
           {item.variants && item.variants.length > 0 && (
             <div className="bg-white p-4 rounded-xl border border-stone-200/80 shadow-xs space-y-3">
               <div className="flex justify-between items-center">
                 <label className="text-xs font-bold uppercase tracking-wider text-stone-700">
-                  Select Preparation / Size
+                  Select Protein / Preparation Option
                 </label>
-                <span className="text-[11px] text-stone-400">Required</span>
+                <span className="text-[11px] text-stone-400 font-semibold">1 Option Required</span>
               </div>
 
               <div className="space-y-2">
                 {item.variants.map((v) => {
                   const isSelected = selectedVariant?.id === v.id;
+                  const priceDiff = v.price - (item.basePrice || item.price);
                   return (
                     <label
                       key={v.id}
@@ -126,11 +135,32 @@ export const VariantSelectorModal: React.FC<VariantSelectorModalProps> = ({
                         >
                           {isSelected && <Check className="w-2.5 h-2.5 stroke-[3]" />}
                         </div>
-                        <span className="text-sm">{v.name}</span>
+                        {/* Dietary dot next to variant if specified */}
+                        {v.isVeg !== undefined && (
+                          <span
+                            className={`w-3 h-3 border-[1.5px] flex items-center justify-center shrink-0 ${
+                              v.isVeg ? 'border-emerald-600' : 'border-[#C8371A]'
+                            }`}
+                          >
+                            <span
+                              className={`w-1.5 h-1.5 rounded-full ${
+                                v.isVeg ? 'bg-emerald-600' : 'bg-[#C8371A]'
+                              }`}
+                            />
+                          </span>
+                        )}
+                        <span className="text-sm font-bold">{v.name}</span>
                       </div>
-                      <span className="text-sm font-bold text-stone-900">
-                        ₹{v.price}
-                      </span>
+                      <div className="text-right">
+                        <span className="text-sm font-bold text-stone-900">
+                          ₹{v.price}
+                        </span>
+                        {priceDiff > 0 && (
+                          <span className="text-[11px] text-stone-400 block font-mono">
+                            (+₹{priceDiff})
+                          </span>
+                        )}
+                      </div>
                     </label>
                   );
                 })}

@@ -1,4 +1,5 @@
 import React from 'react';
+import { ChevronDown, Sparkles } from 'lucide-react';
 import { CategoryAccordionData, MenuItem } from '../../types';
 import { SubcategoryGroup } from './SubcategoryGroup';
 
@@ -9,9 +10,6 @@ interface CategoryAccordionProps {
   onCustomise: (item: MenuItem) => void;
   onQuickAdd: (item: MenuItem) => void;
   index: number;
-  onHoverItem?: (item: MenuItem, e: React.MouseEvent) => void;
-  onMouseMoveItem?: (e: React.MouseEvent) => void;
-  onLeaveItem?: () => void;
 }
 
 export const CategoryAccordion: React.FC<CategoryAccordionProps> = ({
@@ -21,103 +19,106 @@ export const CategoryAccordion: React.FC<CategoryAccordionProps> = ({
   onCustomise,
   onQuickAdd,
   index,
-  onHoverItem,
-  onMouseMoveItem,
-  onLeaveItem,
 }) => {
   const totalItemCount = category.subcategories.reduce(
     (sum, sub) => sum + sub.items.length,
     0
   );
 
-  const paddedIndex = String(index + 1).padStart(2, '0');
-
   return (
     <div
       id={`category-${category.id}`}
-      className="border-[1.5px] border-[#161412] bg-[#F3ECDD] mb-6 overflow-hidden transition-all duration-200 w-full"
+      className={`rounded-2xl border transition-all duration-300 overflow-hidden mb-5 ${
+        isOpen
+          ? 'bg-white border-stone-300 shadow-sm'
+          : 'bg-white/80 hover:bg-white border-stone-200/90 shadow-2xs'
+      }`}
     >
-      {/* Editorial Header Button */}
+      {/* Category Accordion Header Button */}
       <button
+        type="button"
         onClick={onToggle}
-        className={`w-full p-3.5 sm:p-6 flex items-center justify-between text-left transition-colors cursor-pointer select-none border-b-[1.5px] gap-2 ${
-          isOpen
-            ? 'bg-[#161412] text-[#F3ECDD] border-[#161412]'
-            : 'bg-[#F3ECDD] text-[#161412] hover:bg-[#161412]/5 border-transparent'
-        }`}
+        className="w-full p-4 sm:p-5 flex items-center justify-between text-left transition-colors cursor-pointer select-none gap-3 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-emerald-700/50"
         aria-expanded={isOpen}
+        aria-controls={`accordion-content-${category.id}`}
       >
-        <div className="flex items-baseline gap-2 sm:gap-5 flex-1 min-w-0 pr-2">
-          {/* Index Number */}
-          <span className={`font-mono text-xs sm:text-sm font-bold shrink-0 ${
-            isOpen ? 'text-[#C8371A]' : 'text-[#8A8378]'
-          }`}>
-            [{paddedIndex}]
-          </span>
+        <div className="flex-1 min-w-0 pr-2">
+          <div className="flex items-center gap-2.5 flex-wrap mb-1">
+            {/* Category Index Number */}
+            <span className="font-mono text-xs font-bold text-stone-600">
+              0{index + 1}
+            </span>
 
-          {/* Title */}
-          <h3 className={`font-headline text-lg sm:text-3xl lg:text-4xl font-bold tracking-tight uppercase truncate ${
-            isOpen ? 'text-[#F3ECDD]' : 'text-[#161412]'
-          }`}>
-            {category.title}
-          </h3>
+            {/* Category Title */}
+            <h3 className="font-serif-clean text-lg sm:text-xl md:text-2xl font-black text-stone-900 tracking-tight">
+              {category.title}
+            </h3>
 
-          {/* Total Count */}
-          <span className={`hidden md:inline-block font-mono text-xs uppercase tracking-wider font-semibold shrink-0 ${
-            isOpen ? 'text-[#8A8378]' : 'text-[#8A8378]'
-          }`}>
-            ({totalItemCount} {totalItemCount === 1 ? 'dish' : 'dishes'})
-          </span>
+            {/* Total Dish Count Pill */}
+            <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-stone-100 text-stone-600 font-sans">
+              {totalItemCount} {totalItemCount === 1 ? 'dish' : 'dishes'}
+            </span>
+
+            {/* Optional Badge */}
+            {category.badge && (
+              <span className="inline-flex items-center gap-1 text-[11px] font-bold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200/70">
+                <Sparkles className="w-2.5 h-2.5 text-emerald-600" />
+                <span>{category.badge}</span>
+              </span>
+            )}
+          </div>
+
+          {/* Category Description */}
+          {category.description && (
+            <p className="text-xs sm:text-sm text-stone-500 line-clamp-1 sm:line-clamp-none font-normal">
+              {category.description}
+            </p>
+          )}
         </div>
 
-        {/* Toggle Indicator */}
-        <div className="flex items-center gap-2 sm:gap-3 shrink-0">
-          {category.badge && (
-            <span className={`hidden md:inline-block font-mono text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 border-[1.5px] ${
-              isOpen
-                ? 'border-[#C8371A] text-[#C8371A] bg-transparent'
-                : 'border-[#161412] text-[#161412] bg-transparent'
-            }`}>
-              {category.badge}
-            </span>
-          )}
-
+        {/* Accordion Toggle Indicator (Rotating Chevron Icon) */}
+        <div className="shrink-0 flex items-center gap-2">
+          <span className="hidden sm:inline text-xs font-semibold text-stone-400">
+            {isOpen ? 'Collapse' : 'Expand'}
+          </span>
           <div
-            className={`w-6 h-6 sm:w-8 sm:h-8 border-[1.5px] flex items-center justify-center font-mono text-xs sm:text-base font-bold transition-all ${
+            className={`w-8 h-8 rounded-full border flex items-center justify-center transition-all duration-300 ${
               isOpen
-                ? 'border-[#F3ECDD] text-[#F3ECDD] bg-[#C8371A]'
-                : 'border-[#161412] text-[#161412] bg-[#F3ECDD]'
+                ? 'border-emerald-700/30 bg-emerald-50 text-emerald-800'
+                : 'border-stone-200 bg-stone-50 text-stone-500 hover:border-stone-300'
             }`}
           >
-            {isOpen ? '−' : '+'}
+            <ChevronDown
+              className={`w-4 h-4 transition-transform duration-300 ease-out ${
+                isOpen ? 'rotate-180' : 'rotate-0'
+              }`}
+            />
           </div>
         </div>
       </button>
 
-      {/* Accordion Content */}
-      {isOpen && (
-        <div className="p-3.5 sm:p-7 bg-[#F3ECDD] w-full">
-          {category.description && (
-            <p className="font-sans text-xs sm:text-base text-[#8A8378] mb-5 sm:mb-6 max-w-3xl border-l-2 border-[#C8371A] pl-3 py-0.5">
-              {category.description}
-            </p>
-          )}
-
-          <div className="space-y-6 w-full">
+      {/* Smooth Slide-down Content Container (CSS Grid Transition) */}
+      <div
+        id={`accordion-content-${category.id}`}
+        role="region"
+        aria-labelledby={`category-${category.id}`}
+        className={`grid transition-[grid-template-rows,opacity] duration-300 ease-in-out ${
+          isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0 pointer-events-none'
+        }`}
+      >
+        <div className="overflow-hidden">
+          <div className="p-4 sm:p-6 pt-2 border-t border-stone-100 bg-[#FAFAF7]/50 space-y-6">
             {category.subcategories.map((subgroup) => (
               <SubcategoryGroup
                 key={subgroup.id}
                 group={subgroup}
                 onCustomise={onCustomise}
                 onQuickAdd={onQuickAdd}
-                onHoverItem={onHoverItem}
-                onMouseMoveItem={onMouseMoveItem}
-                onLeaveItem={onLeaveItem}
               />
             ))}
           </div>
         </div>
-      )}
+      </div>
     </div>
   );
 };

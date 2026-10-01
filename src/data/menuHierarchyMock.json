@@ -1,0 +1,257 @@
+{
+  "menuHierarchy": [
+    {
+      "id": "soups-salads",
+      "title": "Soups & Salads",
+      "description": "Aromatic Asian broths with your choice of protein and garden-fresh handcrafted salads.",
+      "badge": "Popular",
+      "subcategories": [
+        {
+          "id": "asian-soups",
+          "title": "Asian Broths & Soups",
+          "isVegSection": true,
+          "items": [
+            {
+              "id": "soup-manchow",
+              "name": "Classic Manchow Soup",
+              "category": "Soups",
+              "isVeg": true,
+              "basePrice": 175,
+              "price": 175,
+              "description": "Spicy and tangy dark soya broth infused with minced ginger, garlic, fresh coriander, topped with crunchy fried noodles.",
+              "imagePath": "/assets/soups/manchow-soup.avif",
+              "hasVariants": true,
+              "variants": [
+                { "id": "veg", "name": "Veg", "price": 175, "isVeg": true },
+                { "id": "chicken", "name": "Chicken", "price": 225, "isVeg": false },
+                { "id": "prawn", "name": "Prawn", "price": 295, "isVeg": false }
+              ]
+            },
+            {
+              "id": "soup-tom-kha",
+              "name": "Tom Kha Coconut Soup",
+              "category": "Soups",
+              "isVeg": true,
+              "basePrice": 215,
+              "price": 215,
+              "description": "Velvety Thai coconut milk soup simmered with fresh galangal, fragrant lemongrass, kaffir lime leaves, and bird eye chilli.",
+              "imagePath": "/assets/soups/tom-kha-soup.avif",
+              "hasVariants": true,
+              "variants": [
+                { "id": "veg", "name": "Veg", "price": 215, "isVeg": true },
+                { "id": "chicken", "name": "Chicken", "price": 275, "isVeg": false },
+                { "id": "prawn", "name": "Prawn", "price": 345, "isVeg": false }
+              ]
+            },
+            {
+              "id": "soup-sweet-corn",
+              "name": "Sweet Corn Soup",
+              "category": "Soups",
+              "isVeg": true,
+              "basePrice": 145,
+              "price": 145,
+              "description": "Classic comforting soup with cream-style sweet corn pearls, white pepper, and finely diced spring greens.",
+              "imagePath": "/assets/soups/sweet-corn-soup.avif",
+              "hasVariants": true,
+              "variants": [
+                { "id": "veg", "name": "Veg", "price": 145, "isVeg": true },
+                { "id": "chicken", "name": "Chicken", "price": 195, "isVeg": false },
+                { "id": "prawn", "name": "Prawn", "price": 295, "isVeg": false }
+              ]
+            },
+            {
+              "id": "soup-hot-sour",
+              "name": "Hot & Sour Soup",
+              "category": "Soups",
+              "isVeg": true,
+              "basePrice": 175,
+              "price": 175,
+              "description": "Traditional peppery Beijing broth spiked with black vinegar, bamboo shoots, wood-ear mushrooms, and red chilli oil.",
+              "imagePath": "/assets/soups/hot-n-sour-soup.avif",
+              "hasVariants": true,
+              "variants": [
+                { "id": "veg", "name": "Veg", "price": 175, "isVeg": true },
+                { "id": "chicken", "name": "Chicken", "price": 225, "isVeg": false },
+                { "id": "prawn", "name": "Prawn", "price": 295, "isVeg": false }
+              ]
+            },
+            {
+              "id": "soup-tom-yum",
+              "name": "Tom Yum Clear Soup",
+              "category": "Soups",
+              "isVeg": true,
+              "basePrice": 175,
+              "price": 175,
+              "description": "Fiery and tart Siamese broth with crushed lemongrass, kaffir lime, button mushrooms, and fresh Thai basil.",
+              "imagePath": "/assets/soups/tom-yum-soup.avif",
+              "hasVariants": true,
+              "variants": [
+                { "id": "veg", "name": "Veg", "price": 175, "isVeg": true },
+                { "id": "chicken", "name": "Chicken", "price": 225, "isVeg": false },
+                { "id": "prawn", "name": "Prawn", "price": 295, "isVeg": false }
+              ]
+            },
+            {
+              "id": "soup-lemon-coriander",
+              "name": "Lemon Coriander Broth",
+              "category": "Soups",
+              "isVeg": true,
+              "basePrice": 145,
+              "price": 145,
+              "description": "Refreshing clear broth infused with fresh zesty lemon juice, crushed coriander stems, and tender garden vegetables.",
+              "imagePath": "/assets/soups/lemon-coriander-soup.avif",
+              "hasVariants": true,
+              "variants": [
+                { "id": "veg", "name": "Veg", "price": 145, "isVeg": true },
+                { "id": "chicken", "name": "Chicken", "price": 195, "isVeg": false },
+                { "id": "prawn", "name": "Prawn", "price": 295, "isVeg": false }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dimsum-baos",
+      "title": "Dim Sum, Baos & Momos",
+      "description": "Handcrafted dim sums steamed in traditional bamboo baskets, fluffy pillowy bao buns, and crisp pan-fried gyozas.",
+      "badge": "Signature",
+      "subcategories": [
+        {
+          "id": "veg-dimsum",
+          "title": "Veg Dim Sum",
+          "isVegSection": true,
+          "items": [
+            {
+              "id": "dimsum-spicy-cheesy-veg",
+              "name": "Spicy Cheesy Dim Sum",
+              "category": "Dim Sum",
+              "isVeg": true,
+              "price": 370,
+              "basePrice": 370,
+              "description": "Translucent crystal skins filled with molten cheese, sweet corn, bird eye chillies, and aromatic herbs.",
+              "imagePath": "/assets/dim-sums/spicy-cheesy-dimsum.avif",
+              "hasVariants": false
+            },
+            {
+              "id": "dimsum-mushroom-cream-cheese",
+              "name": "Mushroom & Cream Cheese Dim Sum",
+              "category": "Dim Sum",
+              "isVeg": true,
+              "price": 340,
+              "basePrice": 340,
+              "description": "Shiitake and button mushrooms folded with Philadelphia cream cheese and white truffle essence.",
+              "imagePath": "/assets/dim-sums/mushroom-cream-cheese-dim-sum.avif",
+              "hasVariants": false
+            },
+            {
+              "id": "dimsum-spinach-cream-cheese",
+              "name": "Spinach & Cream Cheese Dim Sum",
+              "category": "Dim Sum",
+              "isVeg": true,
+              "price": 340,
+              "basePrice": 340,
+              "description": "Delicate emerald dumpling packed with baby spinach, sweet corn, garlic confit, and silky cream cheese.",
+              "imagePath": "/assets/dim-sums/spinach-and-cream-cheese-dim-sum.avif",
+              "hasVariants": false
+            },
+            {
+              "id": "dimsum-paneer-bok-choy",
+              "name": "Paneer & Bok Choy Dim Sum",
+              "category": "Dim Sum",
+              "isVeg": true,
+              "price": 340,
+              "basePrice": 340,
+              "description": "Fresh hand-pressed cottage cheese tossed with crunchy bok choy, scallions, and light toasted sesame.",
+              "imagePath": "/assets/dim-sums/paneer-bok-choy-dim-sum.avif",
+              "hasVariants": false
+            }
+          ]
+        },
+        {
+          "id": "non-veg-dimsum",
+          "title": "Non-Veg Dim Sum",
+          "isVegSection": false,
+          "items": [
+            {
+              "id": "dimsum-classic-chicken",
+              "name": "Classic Chicken Dim Sum",
+              "category": "Dim Sum",
+              "isVeg": false,
+              "price": 350,
+              "basePrice": 350,
+              "description": "Traditional Cantonese chicken dumplings seasoned with Shaoxing wine, spring onions, and roasted sesame oil.",
+              "imagePath": "/assets/dim-sums/classic-chicken-dim-sum.avif",
+              "hasVariants": false
+            },
+            {
+              "id": "dimsum-spicy-cheesy-chicken",
+              "name": "Spicy Cheesy Chicken Dim Sum",
+              "category": "Dim Sum",
+              "isVeg": false,
+              "price": 380,
+              "basePrice": 380,
+              "description": "Juicy spiced minced chicken enveloped with molten cheese core and Sichuan chilli drizzle.",
+              "imagePath": "/assets/dim-sums/spicy-cheesy-chicken-dim-sum.avif",
+              "hasVariants": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "appetizers-starters",
+      "title": "Appetizers & Small Plates",
+      "description": "Crisp Asian appetizers, wood-fired skewers, and sizzling wok-tossed starters.",
+      "subcategories": []
+    },
+    {
+      "id": "wood-fired-pizzas",
+      "title": "Wood-Fired Pizzas & Calzones",
+      "description": "Naturally fermented 48-hour sourdough pizzas baked at 450°C in our stone hearth oven.",
+      "badge": "Signature",
+      "subcategories": []
+    },
+    {
+      "id": "mains-wok",
+      "title": "Mains, Pastas & Wok Bowls",
+      "description": "Signature hand-pulled noodles, fried rice bowls, and comforting Italian pastas.",
+      "subcategories": []
+    },
+    {
+      "id": "mexican-street",
+      "title": "Mexican Street Tacos & Quesadillas",
+      "description": "Hand-pressed corn tacos, griddled quesadillas, and house salsa cruda.",
+      "subcategories": []
+    },
+    {
+      "id": "beverages-desserts",
+      "title": "Artisanal Beverages & Desserts",
+      "description": "Cold brews, botanical lemonades, and wood-fired baked desserts.",
+      "subcategories": []
+    }
+  ],
+  "sampleCartPayloads": [
+    {
+      "itemId": "soup-manchow",
+      "itemName": "Classic Manchow Soup",
+      "selectedVariant": {
+        "id": "chicken",
+        "name": "Chicken",
+        "price": 225,
+        "isVeg": false
+      },
+      "basePrice": 225,
+      "finalPrice": 450,
+      "quantity": 2
+    },
+    {
+      "itemId": "dimsum-spicy-cheesy-veg",
+      "itemName": "Spicy Cheesy Dim Sum",
+      "selectedVariant": null,
+      "basePrice": 370,
+      "finalPrice": 370,
+      "quantity": 1
+    }
+  ]
+}

@@ -16,19 +16,23 @@ import {
   TrendingUp,
   SlidersHorizontal,
   UserCheck,
-  RotateCcw
+  RotateCcw,
+  Lock,
 } from 'lucide-react';
 import { useOrderStore } from '../../store/useOrderStore';
 import { useMenuStore } from '../../store/useMenuStore';
 import { usePortalStore } from '../../store/usePortalStore';
+import { useReservationStore } from '../../store/useReservationStore';
 import { Order, OrderStatus } from '../../types';
 
 export const AdminDashboard: React.FC = () => {
   const { orders, updateOrderStatus, hasNewOrderAlert, clearNewOrderAlert } = useOrderStore();
   const { menuItems, toggleItemAvailability } = useMenuStore();
+  const { reservations, updateReservationStatus } = useReservationStore();
   const setView = usePortalStore((state) => state.setView);
+  const logoutStaff = usePortalStore((state) => state.logoutStaff);
 
-  const [activeTab, setActiveTab] = useState<'LIVE_ORDERS' | 'INVENTORY' | 'ANALYTICS'>('LIVE_ORDERS');
+  const [activeTab, setActiveTab] = useState<'LIVE_ORDERS' | 'RESERVATIONS' | 'INVENTORY' | 'ANALYTICS'>('LIVE_ORDERS');
   const [selectedOrder, setSelectedOrder] = useState<Order | null>(null);
   const [isSoundMuted, setIsSoundMuted] = useState(false);
   const [inventorySearch, setInventorySearch] = useState('');
@@ -98,6 +102,14 @@ export const AdminDashboard: React.FC = () => {
               Orders ({pendingOrders.length + preparingOrders.length})
             </button>
             <button
+              onClick={() => setActiveTab('RESERVATIONS')}
+              className={`px-3 py-1.5 transition-colors cursor-pointer border-l-[1.5px] border-[#F3ECDD]/20 ${
+                activeTab === 'RESERVATIONS' ? 'bg-[#F3ECDD] text-[#161412]' : 'text-[#8A8378] hover:text-[#F3ECDD]'
+              }`}
+            >
+              Bookings ({reservations.length})
+            </button>
+            <button
               onClick={() => setActiveTab('INVENTORY')}
               className={`px-3 py-1.5 transition-colors cursor-pointer border-l-[1.5px] border-[#F3ECDD]/20 ${
                 activeTab === 'INVENTORY' ? 'bg-[#F3ECDD] text-[#161412]' : 'text-[#8A8378] hover:text-[#F3ECDD]'
@@ -124,6 +136,15 @@ export const AdminDashboard: React.FC = () => {
             title="Toggle Order Chime Sound"
           >
             {isSoundMuted ? <VolumeX className="w-4 h-4 text-[#C8371A]" /> : <Volume2 className="w-4 h-4 text-emerald-400" />}
+          </button>
+
+          <button
+            onClick={logoutStaff}
+            className="px-3.5 py-1.5 bg-stone-800 hover:bg-stone-700 text-stone-300 border-[1.5px] border-[#F3ECDD]/20 font-mono text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer flex items-center gap-1.5"
+            title="Lock Terminal & Log Out"
+          >
+            <Lock className="w-3.5 h-3.5 text-stone-400" />
+            <span>Lock POS</span>
           </button>
 
           <button
@@ -251,7 +272,110 @@ export const AdminDashboard: React.FC = () => {
         </div>
       )}
 
-      {/* 2. MENU INVENTORY & STOCK CONTROLLER */}
+      {/* 2. TABLE RESERVATIONS LOG */}
+      {activeTab === 'RESERVATIONS' && (
+        <div className="max-w-7xl mx-auto space-y-6">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-white/10">
+            <div>
+              <h2 className="font-headline text-xl font-bold text-white">Table Reservations Log</h2>
+              <p className="font-mono text-xs text-stone-400">All hearth table bookings placed via online storefront</p>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="px-3 py-1.5 bg-emerald-950/80 text-emerald-400 border border-emerald-700/60 rounded-lg text-xs font-mono font-bold">
+                {reservations.filter((r) => r.status === 'CONFIRMED').length} Active Confirmed
+              </span>
+            </div>
+          </div>
+
+          {reservations.length === 0 ? (
+            <div className="text-center py-16 p-8 rounded-2xl bg-white/5 border border-white/10">
+              <Clock className="w-10 h-10 text-stone-500 mx-auto mb-3" />
+              <p className="text-sm font-bold text-white">No table reservations on record yet</p>
+              <p className="text-xs text-stone-400 mt-1">Bookings submitted on the website will instantly appear here.</p>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {reservations.map((res) => (
+                <div
+                  key={res.id}
+                  className="p-5 rounded-2xl bg-white/5 border border-white/10 space-y-4 hover:border-emerald-500/40 transition-all"
+                >
+                  <div className="flex items-center justify-between">
+                    <span className="font-mono text-xs font-bold text-emerald-400">{res.id}</span>
+                    <span
+                      className={`text-[10px] font-bold px-2 py-0.5 rounded font-mono uppercase tracking-wider ${
+                        res.status === 'CONFIRMED'
+                          ? 'bg-emerald-950 text-emerald-400 border border-emerald-700'
+                          : res.status === 'SEATED'
+                          ? 'bg-amber-950 text-amber-400 border border-amber-700'
+                          : 'bg-stone-800 text-stone-400 border border-stone-600'
+                      }`}
+                    >
+                      {res.status}
+                    </span>
+                  </div>
+
+                  <div>
+                    <h4 className="font-sans text-base font-bold text-white">{res.name}</h4>
+                    <a
+                      href={`tel:${res.phone}`}
+                      className="text-xs text-emerald-400 hover:underline flex items-center gap-1.5 mt-0.5"
+                    >
+                      <Phone className="w-3 h-3" />
+                      <span>{res.phone}</span>
+                    </a>
+                  </div>
+
+                  <div className="p-3 bg-black/40 rounded-xl border border-white/5 grid grid-cols-2 gap-2 text-xs font-mono">
+                    <div>
+                      <span className="text-stone-400 block text-[10px]">TIME:</span>
+                      <strong className="text-white">{res.time}</strong>
+                    </div>
+                    <div>
+                      <span className="text-stone-400 block text-[10px]">PARTY:</span>
+                      <strong className="text-white">{res.guests}</strong>
+                    </div>
+                    <div className="col-span-2">
+                      <span className="text-stone-400 block text-[10px]">SEATING:</span>
+                      <span className="text-stone-300">{res.seating}</span>
+                    </div>
+                  </div>
+
+                  {/* Status Action Buttons */}
+                  <div className="pt-2 border-t border-white/10 flex items-center justify-between gap-2">
+                    {res.status === 'CONFIRMED' && (
+                      <button
+                        onClick={() => updateReservationStatus(res.id, 'SEATED')}
+                        className="flex-1 py-1.5 px-3 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-xs font-bold transition-colors cursor-pointer"
+                      >
+                        Seat Table
+                      </button>
+                    )}
+                    {res.status === 'SEATED' && (
+                      <button
+                        onClick={() => updateReservationStatus(res.id, 'COMPLETED')}
+                        className="flex-1 py-1.5 px-3 bg-blue-600 hover:bg-blue-500 text-white rounded-xl text-xs font-bold transition-colors cursor-pointer"
+                      >
+                        Finish Dining
+                      </button>
+                    )}
+                    {res.status !== 'CANCELLED' && res.status !== 'COMPLETED' && (
+                      <button
+                        onClick={() => updateReservationStatus(res.id, 'CANCELLED')}
+                        className="py-1.5 px-3 bg-white/10 hover:bg-red-950 text-stone-400 hover:text-red-300 rounded-xl text-xs font-bold transition-colors cursor-pointer"
+                      >
+                        Cancel
+                      </button>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* 3. MENU INVENTORY & STOCK CONTROLLER */}
       {activeTab === 'INVENTORY' && (
         <div className="max-w-7xl mx-auto space-y-6">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 glass-panel p-4 rounded-2xl border border-white/10">

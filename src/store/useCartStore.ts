@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import { CartItem, MenuItem, Variant, Addon } from '../types';
+import { CartItem, MenuItem, Variant, Addon, CartPayloadItem } from '../types';
 
 interface CartState {
   items: CartItem[];
@@ -12,6 +12,7 @@ interface CartState {
   getTaxes: () => number;
   getDeliveryFee: () => number;
   getTotalAmount: () => number;
+  getCartPayload: () => CartPayloadItem[];
 }
 
 export const useCartStore = create<CartState>()(
@@ -19,7 +20,7 @@ export const useCartStore = create<CartState>()(
     (set, get) => ({
       items: [],
       addItem: (menuItem, variant, addons = [], quantity = 1, notes) => {
-        const basePrice = variant ? variant.price : menuItem.price;
+        const basePrice = variant ? variant.price : (menuItem.basePrice || menuItem.price);
         const addonsPrice = addons.reduce((sum, a) => sum + a.price, 0);
         const unitPrice = basePrice + addonsPrice;
         const totalItemPrice = unitPrice * quantity;
@@ -32,10 +33,12 @@ export const useCartStore = create<CartState>()(
           const updatedItems = [...get().items];
           const item = updatedItems[existingIndex];
           const newQty = item.quantity + quantity;
+          const updatedFinalPrice = item.unitPrice * newQty;
           updatedItems[existingIndex] = {
             ...item,
             quantity: newQty,
-            totalItemPrice: item.unitPrice * newQty,
+            finalPrice: updatedFinalPrice,
+            totalItemPrice: updatedFinalPrice,
             itemNotes: notes || item.itemNotes,
           };
           set({ items: updatedItems });
@@ -43,9 +46,15 @@ export const useCartStore = create<CartState>()(
           const newItem: CartItem = {
             cartId,
             menuItem,
+            // Standardized Cart Payload Fields: { itemId, itemName, selectedVariant, basePrice, finalPrice, quantity }
+            itemId: menuItem.id,
+            itemName: menuItem.name,
             selectedVariant: variant,
-            selectedAddons: addons,
+            basePrice,
+            finalPrice: totalItemPrice,
             quantity,
+            // Extended metadata
+            selectedAddons: addons,
             itemNotes: notes,
             unitPrice,
             totalItemPrice,
@@ -64,10 +73,12 @@ export const useCartStore = create<CartState>()(
         set({
           items: get().items.map(item => {
             if (item.cartId === cartId) {
+              const updatedFinalPrice = item.unitPrice * quantity;
               return {
                 ...item,
                 quantity,
-                totalItemPrice: item.unitPrice * quantity,
+                finalPrice: updatedFinalPrice,
+                totalItemPrice: updatedFinalPrice,
               };
             }
             return item;
@@ -86,6 +97,16 @@ export const useCartStore = create<CartState>()(
       },
       getTotalAmount: () => {
         return get().getSubtotal() + get().getTaxes() + get().getDeliveryFee();
+      },
+      getCartPayload: () => {
+        return get().items.map(item => ({
+          itemId: item.itemId,
+          itemName: item.itemName,
+          selectedVariant: item.selectedVariant,
+          basePrice: item.basePrice,
+          finalPrice: item.finalPrice,
+          quantity: item.quantity,
+        }));
       },
     }),
     {

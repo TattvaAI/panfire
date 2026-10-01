@@ -125,9 +125,16 @@ export const MenuItemCard: React.FC<MenuItemCardProps> = ({
         {item.hasVariants ? (
           <button
             onClick={handleAction}
-            className="px-3.5 sm:px-4 py-2 bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-300 rounded-xl text-xs sm:text-sm font-bold transition-colors cursor-pointer"
+            className="px-3.5 sm:px-4 py-1.5 sm:py-2 bg-emerald-50 hover:bg-emerald-100 text-[#1E2D24] border border-emerald-300 rounded-xl font-bold transition-all cursor-pointer flex flex-col items-center justify-center min-w-[76px] shadow-2xs"
+            title="Customise dish options"
           >
-            Customise +
+            <span className="text-xs sm:text-sm flex items-center gap-1">
+              <Plus className="w-3.5 h-3.5 text-emerald-700" />
+              <span>Add</span>
+            </span>
+            <span className="text-[9px] text-emerald-700/80 font-semibold tracking-wide uppercase">
+              Customise
+            </span>
           </button>
         ) : currentQuantity > 0 ? (
           <div className="flex items-center bg-[#1E2D24] text-white rounded-xl shadow-xs overflow-hidden">

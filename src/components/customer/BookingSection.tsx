@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { Calendar, CheckCircle, Clock, Users, MapPin } from 'lucide-react';
 import confetti from 'canvas-confetti';
+import { useReservationStore } from '../../store/useReservationStore';
 
 export const BookingSection: React.FC = () => {
+  const addReservation = useReservationStore((state) => state.addReservation);
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -21,8 +23,19 @@ export const BookingSection: React.FC = () => {
     e.preventDefault();
     if (!formData.name.trim() || !formData.phone.trim()) return;
 
-    const code = `PF-${Math.floor(100000 + Math.random() * 900000)}`;
+    const code = `PF-RES-${Math.floor(100000 + Math.random() * 900000)}`;
     setBookingRef(code);
+    addReservation({
+      id: code,
+      name: formData.name.trim(),
+      phone: formData.phone.trim(),
+      guests: formData.guests,
+      date: formData.date,
+      time: formData.time,
+      seating: 'Standard Hearth Dining Table',
+      status: 'CONFIRMED',
+      createdAt: new Date().toISOString(),
+    });
     setIsSubmitted(true);
 
     try {

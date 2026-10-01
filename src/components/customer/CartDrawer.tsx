@@ -333,12 +333,20 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                 </div>
               </div>
 
+              {/* Payment Method Badge */}
+              <div className="p-2.5 rounded-xl bg-emerald-50/70 border border-emerald-200/80 flex items-center justify-between text-xs">
+                <span className="text-emerald-950 font-semibold">Payment Method:</span>
+                <span className="font-bold text-emerald-800">
+                  {orderType === 'DELIVERY' ? 'Cash / UPI on Delivery' : 'Pay at Counter'}
+                </span>
+              </div>
+
               {/* Checkout Button */}
               <button
                 onClick={handleCheckout}
                 className="w-full py-3.5 px-4 bg-[#1E2D24] hover:bg-[#152019] text-white rounded-xl text-sm font-bold flex items-center justify-between shadow-xs transition-all cursor-pointer"
               >
-                <span>Confirm Order</span>
+                <span>Confirm & Place Order</span>
                 <span>₹{totalAmount}</span>
               </button>
             </div>

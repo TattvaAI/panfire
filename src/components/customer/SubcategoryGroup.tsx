@@ -15,52 +15,60 @@ export const SubcategoryGroup: React.FC<SubcategoryGroupProps> = ({
   group,
   onCustomise,
   onQuickAdd,
-  onHoverItem,
-  onMouseMoveItem,
-  onLeaveItem,
 }) => {
   if (!group.items || group.items.length === 0) return null;
 
   return (
-    <section className="mb-8 last:mb-0 w-full overflow-hidden">
+    <section className="mb-6 last:mb-0 w-full">
       {/* Subcategory Header */}
-      <div className="flex items-start justify-between gap-2 pb-2 mb-2 border-b-[1.5px] border-[#161412]">
-        <div className="flex items-center gap-2 min-w-0 flex-1">
+      <div className="flex items-center justify-between gap-3 pb-2.5 mb-3 border-b border-stone-200/90">
+        <div className="flex items-center gap-2.5 min-w-0">
+          {/* Standard Dietary Tag Badge (Veg / Non-Veg) */}
           {group.isVegSection !== undefined && (
             <span
-              className={`w-3.5 h-3.5 shrink-0 border-[1.5px] flex items-center justify-center ${
-                group.isVegSection ? 'border-[#2E7D32]' : 'border-[#C8371A]'
+              className={`w-4 h-4 rounded-xs shrink-0 border-[1.5px] flex items-center justify-center bg-white shadow-2xs ${
+                group.isVegSection ? 'border-emerald-600' : 'border-[#C8371A]'
               }`}
-              title={group.isVegSection ? 'Vegetarian Section' : 'Non-Vegetarian Section'}
+              title={group.isVegSection ? 'Vegetarian Selection' : 'Non-Vegetarian Selection'}
             >
               <span
-                className={`w-1.5 h-1.5 rounded-full ${
-                  group.isVegSection ? 'bg-[#2E7D32]' : 'bg-[#C8371A]'
+                className={`w-2 h-2 rounded-full ${
+                  group.isVegSection ? 'bg-emerald-600' : 'bg-[#C8371A]'
                 }`}
               />
             </span>
           )}
-          <h4 className="font-headline text-sm sm:text-lg font-bold tracking-tight text-[#161412] uppercase break-words leading-tight">
-            {group.title}
+
+          <h4 className="font-sans text-sm sm:text-base font-bold text-stone-800 tracking-tight flex items-center gap-2">
+            <span>{group.title}</span>
+            {group.isVegSection !== undefined && (
+              <span
+                className={`text-[10px] font-bold px-1.5 py-0.5 rounded uppercase tracking-wider ${
+                  group.isVegSection
+                    ? 'bg-emerald-50 text-emerald-800 border border-emerald-200/70'
+                    : 'bg-red-50 text-[#C8371A] border border-red-200/70'
+                }`}
+              >
+                {group.isVegSection ? 'Veg' : 'Non-Veg'}
+              </span>
+            )}
           </h4>
         </div>
 
-        <span className="font-mono text-[11px] sm:text-xs font-semibold text-[#8A8378] shrink-0 mt-0.5 whitespace-nowrap">
-          [{group.items.length}]
+        {/* Count Indicator */}
+        <span className="text-xs font-semibold text-stone-500 font-sans shrink-0">
+          {group.items.length} {group.items.length === 1 ? 'dish' : 'dishes'}
         </span>
       </div>
 
-      {/* Typographic Rows */}
-      <div className="divide-y-0 w-full">
+      {/* Dish Cards List */}
+      <div className="grid grid-cols-1 gap-3 sm:gap-3.5">
         {group.items.map((item) => (
           <MenuItemCard
             key={item.id}
             item={item}
             onCustomise={onCustomise}
             onQuickAdd={onQuickAdd}
-            onHoverItem={onHoverItem}
-            onMouseMoveItem={onMouseMoveItem}
-            onLeaveItem={onLeaveItem}
           />
         ))}
       </div>

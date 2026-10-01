@@ -12,12 +12,14 @@ import { UserProfileModal } from './components/customer/UserProfileModal';
 import { CartDrawer } from './components/customer/CartDrawer';
 import { OrderTrackerModal } from './components/customer/OrderTrackerModal';
 import { AdminDashboard } from './components/admin/AdminDashboard';
+import { StaffPasscodeGate } from './components/admin/StaffPasscodeGate';
 import { usePortalStore } from './store/usePortalStore';
 import { useSmoothScroll } from './hooks/useSmoothScroll';
 
 export function App() {
   useSmoothScroll();
   const currentView = usePortalStore((state) => state.currentView);
+  const isStaffAuthenticated = usePortalStore((state) => state.isStaffAuthenticated);
 
   const [isCartOpen, setIsCartOpen] = useState<boolean>(false);
   const [isProfileOpen, setIsProfileOpen] = useState<boolean>(false);
@@ -36,12 +38,14 @@ export function App() {
   return (
     <div className="min-h-screen bg-[#FAFAF7] text-stone-900 relative overflow-x-hidden selection:bg-[#1E2D24] selection:text-white font-sans antialiased">
       
-      {/* Modern Hospitality Navbar */}
-      <Navbar
-        onOpenCart={() => setIsCartOpen(true)}
-        onOpenReservation={handleOpenReservation}
-        onOpenTracker={() => setIsTrackerOpen(true)}
-      />
+      {/* Modern Hospitality Navbar (Visible for Customers & Logged-in Staff) */}
+      {currentView === 'CUSTOMER' && (
+        <Navbar
+          onOpenCart={() => setIsCartOpen(true)}
+          onOpenReservation={handleOpenReservation}
+          onOpenTracker={() => setIsTrackerOpen(true)}
+        />
+      )}
 
       {/* Main View: Customer Storefront or Staff POS */}
       {currentView === 'CUSTOMER' ? (
@@ -66,6 +70,10 @@ export function App() {
 
           {/* 7. Modern Hospitality Footer */}
           <Footer />
+        </main>
+      ) : !isStaffAuthenticated ? (
+        <main className="relative z-10">
+          <StaffPasscodeGate />
         </main>
       ) : (
         <main className="relative z-10 pt-16">

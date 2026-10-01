@@ -1,8 +1,8 @@
 import React, { useState, useMemo, useRef, useEffect } from 'react';
-import { Search, Utensils, Sparkles, Filter } from 'lucide-react';
+import { Search, Utensils, Sparkles, ChevronsUpDown, ChevronDown, ChevronUp } from 'lucide-react';
 import { RESTAURANT_MENU_ACCORDIONS } from '../../data/restaurantMenuData';
 import { CategoryAccordionData, MenuItem } from '../../types';
-import { MenuItemCard } from './MenuItemCard';
+import { CategoryAccordion } from './CategoryAccordion';
 import { VariantSelectorModal } from './VariantSelectorModal';
 import { useCartStore } from '../../store/useCartStore';
 
@@ -17,8 +17,13 @@ export const MenuContainer: React.FC = () => {
   // Customisation Modal State
   const [customisingItem, setCustomisingItem] = useState<MenuItem | null>(null);
 
-  // Refs for smooth scroll target
-  const categoryRefs = useRef<{ [key: string]: HTMLElement | null }>({});
+  // Accordion open/collapse states for top-level categories
+  const [openCategories, setOpenCategories] = useState<{ [id: string]: boolean }>(() => {
+    return RESTAURANT_MENU_ACCORDIONS.reduce(
+      (acc, cat) => ({ ...acc, [cat.id]: true }),
+      {}
+    );
+  });
 
   // Filtered categories and dishes
   const filteredCategories: CategoryAccordionData[] = useMemo(() => {
@@ -63,6 +68,17 @@ export const MenuContainer: React.FC = () => {
     });
   }, [searchQuery, dietaryFilter, activeCategoryId]);
 
+  // When search or dietary filter is active, automatically expand matching categories
+  useEffect(() => {
+    if (searchQuery.trim() || dietaryFilter !== 'all') {
+      const updated: { [id: string]: boolean } = {};
+      filteredCategories.forEach((cat) => {
+        updated[cat.id] = true;
+      });
+      setOpenCategories((prev) => ({ ...prev, ...updated }));
+    }
+  }, [searchQuery, dietaryFilter, filteredCategories]);
+
   // Total dish count
   const totalDishesCount = useMemo(() => {
     return RESTAURANT_MENU_ACCORDIONS.reduce(
@@ -71,16 +87,43 @@ export const MenuContainer: React.FC = () => {
     );
   }, []);
 
+  const toggleCategory = (catId: string) => {
+    setOpenCategories((prev) => ({
+      ...prev,
+      [catId]: !prev[catId],
+    }));
+  };
+
+  const expandAll = () => {
+    setOpenCategories(
+      RESTAURANT_MENU_ACCORDIONS.reduce((acc, cat) => ({ ...acc, [cat.id]: true }), {})
+    );
+  };
+
+  const collapseAll = () => {
+    setOpenCategories(
+      RESTAURANT_MENU_ACCORDIONS.reduce((acc, cat) => ({ ...acc, [cat.id]: false }), {})
+    );
+  };
+
+  const areAllExpanded = useMemo(() => {
+    return filteredCategories.every((cat) => openCategories[cat.id]);
+  }, [filteredCategories, openCategories]);
+
   const handleScrollToCategory = (catId: string) => {
     setActiveCategoryId(catId);
     if (catId === 'all') {
       const el = document.getElementById('menu-content');
       if (el) el.scrollIntoView({ behavior: 'smooth' });
     } else {
-      const el = categoryRefs.current[catId];
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+      // Ensure target category is open
+      setOpenCategories((prev) => ({ ...prev, [catId]: true }));
+      setTimeout(() => {
+        const el = document.getElementById(`category-${catId}`);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 60);
     }
   };
 
@@ -206,7 +249,7 @@ export const MenuContainer: React.FC = () => {
               </button>
 
               {/* Specific Categories */}
-              {RESTAURANT_MENU_ACCORDIONS.map((cat) => {
+              {RESTAURANT_MENU_ACCORDIONS.map((cat, idx) => {
                 const count = cat.subcategories.reduce((acc, sub) => acc + sub.items.length, 0);
                 const isActive = activeCategoryId === cat.id;
 
@@ -220,7 +263,10 @@ export const MenuContainer: React.FC = () => {
                         : 'text-stone-700 hover:bg-stone-50'
                     }`}
                   >
-                    <span className="truncate pr-2">{cat.title}</span>
+                    <span className="truncate pr-2">
+                      <span className="text-stone-400 mr-1.5 font-mono text-xs">0{idx + 1}</span>
+                      {cat.title}
+                    </span>
                     <span
                       className={`text-[11px] font-mono px-2 py-0.5 rounded-md shrink-0 ${
                         isActive
@@ -238,7 +284,31 @@ export const MenuContainer: React.FC = () => {
           </aside>
 
           {/* Right Column: Menu Sections & Dish Cards (8 Cols) */}
-          <div id="menu-content" className="lg:col-span-8 space-y-10">
+          <div id="menu-content" className="lg:col-span-8">
+            
+            {/* Accordion Controls Bar */}
+            <div className="flex items-center justify-between pb-3.5 mb-5 border-b border-stone-200/80">
+              <div className="flex items-center gap-2">
+                <span className="text-xs sm:text-sm font-bold text-stone-700">
+                  {filteredCategories.length} {filteredCategories.length === 1 ? 'Category' : 'Categories'}
+                </span>
+                <span className="text-stone-300">•</span>
+                <span className="text-xs text-stone-500 hidden sm:inline">
+                  Click category header to expand or collapse
+                </span>
+              </div>
+
+              <button
+                type="button"
+                onClick={areAllExpanded ? collapseAll : expandAll}
+                className="px-3 py-1.5 rounded-xl border border-stone-200 hover:border-stone-300 bg-white text-xs font-semibold text-stone-700 hover:text-stone-900 transition-colors cursor-pointer flex items-center gap-1.5 shadow-2xs"
+                title={areAllExpanded ? 'Collapse all category accordions' : 'Expand all category accordions'}
+              >
+                <ChevronsUpDown className="w-3.5 h-3.5 text-stone-500" />
+                <span>{areAllExpanded ? 'Collapse All' : 'Expand All'}</span>
+              </button>
+            </div>
+
             {filteredCategories.length === 0 ? (
               <div className="bg-white rounded-2xl border border-stone-200 p-12 text-center card-shadow">
                 <Utensils className="w-10 h-10 text-stone-300 mx-auto mb-3" />
@@ -258,55 +328,16 @@ export const MenuContainer: React.FC = () => {
                 </button>
               </div>
             ) : (
-              filteredCategories.map((category) => (
-                <div
+              filteredCategories.map((category, index) => (
+                <CategoryAccordion
                   key={category.id}
-                  ref={(el) => { categoryRefs.current[category.id] = el; }}
-                  className="space-y-5 scroll-mt-24"
-                >
-                  {/* Category Header */}
-                  <div className="border-b border-stone-200 pb-3 flex items-baseline justify-between">
-                    <div>
-                      <h3 className="font-serif-clean text-2xl sm:text-3xl font-black text-stone-900 tracking-tight">
-                        {category.title}
-                      </h3>
-                      {category.description && (
-                        <p className="text-xs sm:text-sm text-stone-500 mt-1">
-                          {category.description}
-                        </p>
-                      )}
-                    </div>
-                  </div>
-
-                  {/* Subcategories (e.g. Veg Dim Sum vs Non-Veg Dim Sum) */}
-                  <div className="space-y-6">
-                    {category.subcategories.map((subgroup) => (
-                      <div key={subgroup.id} className="space-y-3">
-                        <div className="flex items-center gap-2 pt-2">
-                          <span className="text-xs font-bold uppercase tracking-wider text-stone-600">
-                            {subgroup.title}
-                          </span>
-                          <span className="text-[11px] text-stone-400 font-mono">
-                            ({subgroup.items.length})
-                          </span>
-                        </div>
-
-                        {/* Dish Cards List */}
-                        <div className="grid grid-cols-1 gap-3.5">
-                          {subgroup.items.map((dish) => (
-                            <MenuItemCard
-                              key={dish.id}
-                              item={dish}
-                              onCustomise={(item) => setCustomisingItem(item)}
-                              onQuickAdd={(item) => addItem(item)}
-                            />
-                          ))}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-
-                </div>
+                  category={category}
+                  index={index}
+                  isOpen={Boolean(openCategories[category.id])}
+                  onToggle={() => toggleCategory(category.id)}
+                  onCustomise={(item) => setCustomisingItem(item)}
+                  onQuickAdd={(item) => addItem(item)}
+                />
               ))
             )}
           </div>

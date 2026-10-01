@@ -1,4 +1,5 @@
 import React from 'react';
+import { Lock } from 'lucide-react';
 import { usePortalStore } from '../../store/usePortalStore';
 
 export const Footer: React.FC = () => {
@@ -43,12 +44,6 @@ export const Footer: React.FC = () => {
             <a href="#location" className="hover:text-white transition-colors">
               Hours & Location
             </a>
-            <button
-              onClick={() => setView('ADMIN')}
-              className="text-stone-500 hover:text-stone-300 transition-colors text-xs font-mono cursor-pointer"
-            >
-              [Staff POS]
-            </button>
           </nav>
 
         </div>
@@ -56,7 +51,17 @@ export const Footer: React.FC = () => {
         {/* Bottom Row: Metadata & Copyright */}
         <div className="pt-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs text-stone-500 font-sans">
           <span>© 2026 PanFire Restaurant & Hospitality. All rights reserved.</span>
-          <span>Oak Wood Fired • 450°C Volcanic Hearth • Connaught Market</span>
+          <div className="flex items-center gap-3">
+            <span>Oak Wood Fired • 450°C Volcanic Hearth • Connaught Market</span>
+            <button
+              onClick={() => setView('ADMIN')}
+              className="text-stone-600 hover:text-stone-400 transition-colors p-1 rounded cursor-pointer"
+              title="Staff Terminal Access"
+              aria-label="Staff Terminal Access"
+            >
+              <Lock className="w-3 h-3" />
+            </button>
+          </div>
         </div>
 
       </div>
