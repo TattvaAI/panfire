@@ -1,33 +1,11 @@
-import React, { useEffect, useRef } from 'react';
-import gsap from 'gsap';
+import React from 'react';
+import { ArrowRight, Calendar, Sparkles, Flame } from 'lucide-react';
 
 interface HeroSectionProps {
   onOpenReservation?: () => void;
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenReservation }) => {
-  const headlineRef = useRef<HTMLDivElement>(null);
-  const imageRef = useRef<HTMLImageElement>(null);
-
-  useEffect(() => {
-    // Respect prefers-reduced-motion
-    if (typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      return;
-    }
-
-    if (imageRef.current) {
-      gsap.fromTo(
-        imageRef.current,
-        { scale: 1.08 },
-        {
-          scale: 1,
-          duration: 1.4,
-          ease: 'power2.out',
-        }
-      );
-    }
-  }, []);
-
   const scrollToMenu = () => {
     const el = document.getElementById('menu');
     if (el) {
@@ -36,94 +14,94 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenReservation }) =
   };
 
   return (
-    <section className="relative pt-20 sm:pt-32 pb-12 sm:pb-20 bg-[#F3ECDD] text-[#161412] overflow-x-hidden">
+    <section className="relative pt-24 sm:pt-32 pb-12 sm:pb-16 bg-[#FAFAF7] text-stone-900 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Asymmetric 12-Column Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-end">
+        {/* Main Grid: Copy Left, Visual Right */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           
-          {/* Main Headline & Statement - 8 Columns */}
-          <div ref={headlineRef} className="lg:col-span-8 space-y-4 sm:space-y-6">
+          {/* Left Column: Headlines & Call-to-actions (7 Cols) */}
+          <div className="lg:col-span-7 space-y-6">
             
-            <div className="font-mono text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-[#C8371A]">
-              Pizzeria & Asian Small Plates / 450°C
+            {/* Friendly Badge */}
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold">
+              <Flame className="w-3.5 h-3.5 text-[#C8371A]" />
+              <span>Wood-Fired Hearth & Asian Small Plates</span>
             </div>
 
-            {/* Hero Headline: fluid clamp tuned for all viewports without horizontal overflow */}
-            <h1 className="font-headline text-[clamp(1.85rem,6.5vw,7.5rem)] font-black tracking-[-0.035em] leading-[0.95] text-[#161412] break-words">
-              Hot Wood Fire. <br />
-              <span className="italic font-normal text-[#C8371A]">Blistered</span> Crust. <br />
-              Zero Shortcuts.
+            {/* Main Headline */}
+            <h1 className="font-serif-clean text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-stone-900 leading-[1.08]">
+              Wood-Fired Pizza. <br />
+              <span className="text-[#C8371A] font-serif-clean italic font-medium">Handcrafted</span> Asian Bites.
             </h1>
 
-            {/* Blunt, unpolished editorial copy (17-18px) */}
-            <p className="font-sans text-base sm:text-lg text-[#161412] max-w-2xl leading-relaxed font-medium pt-1">
-              48-hour cold-fermented sourdough pizza baked on hot volcanic stone in 90 seconds. Handcrafted dim sum, wok noodles, and street-style Mexican plates. Loud, simple, real.
+            {/* Welcoming Description */}
+            <p className="font-sans text-base sm:text-lg text-stone-600 max-w-xl leading-relaxed">
+              48-hour cold-fermented sourdough pizza baked on 450°C volcanic stone, alongside delicate dim sums, wok noodles, and street-style small plates. Made fresh to order with zero shortcuts.
             </p>
 
-            {/* Actions: One Primary CTA + One Text Link */}
-            <div className="flex items-center gap-5 sm:gap-8 pt-3 flex-wrap">
+            {/* Action Buttons */}
+            <div className="flex flex-wrap items-center gap-4 pt-2">
               <button
                 onClick={scrollToMenu}
-                className="px-6 py-3.5 sm:px-8 sm:py-4 bg-[#C8371A] text-[#F3ECDD] border-[1.5px] border-[#161412] hard-shadow hover:hard-shadow-lg active:translate-x-[2px] active:translate-y-[2px] font-sans font-bold text-sm sm:text-base uppercase tracking-wider transition-all cursor-pointer rounded-[2px]"
+                className="px-6 py-3.5 bg-[#1E2D24] hover:bg-[#152019] text-white rounded-xl text-sm sm:text-base font-bold flex items-center gap-2 shadow-sm hover:shadow-md transition-all cursor-pointer"
               >
-                Order now
+                <span>Explore Menu & Order</span>
+                <ArrowRight className="w-4 h-4" />
               </button>
 
               <button
                 onClick={onOpenReservation}
-                className="font-sans font-bold text-sm sm:text-base text-[#161412] hover:text-[#C8371A] underline underline-offset-8 decoration-[1.5px] uppercase tracking-wider transition-colors cursor-pointer"
+                className="px-6 py-3.5 bg-white hover:bg-stone-50 text-stone-800 border border-stone-300 hover:border-stone-500 rounded-xl text-sm sm:text-base font-semibold flex items-center gap-2 shadow-sm transition-all cursor-pointer"
               >
-                Book a table
+                <Calendar className="w-4 h-4 text-stone-600" />
+                <span>Reserve a Table</span>
               </button>
+            </div>
+
+            {/* Hearth Quick Highlights */}
+            <div className="grid grid-cols-3 gap-3 sm:gap-6 pt-4 border-t border-stone-200/80 max-w-lg">
+              <div>
+                <span className="block font-serif-clean text-xl sm:text-2xl font-black text-stone-900">450°C</span>
+                <span className="text-xs font-medium text-stone-500">Volcanic Stone Oven</span>
+              </div>
+              <div>
+                <span className="block font-serif-clean text-xl sm:text-2xl font-black text-stone-900">48h</span>
+                <span className="text-xs font-medium text-stone-500">Slow Cold Ferment</span>
+              </div>
+              <div>
+                <span className="block font-serif-clean text-xl sm:text-2xl font-black text-stone-900">90s</span>
+                <span className="text-xs font-medium text-stone-500">Blistered Crust Bake</span>
+              </div>
             </div>
 
           </div>
 
-          {/* Right Column: Concrete Specs Stamp - 4 Columns */}
-          <div className="lg:col-span-4 space-y-4">
-            <div className="border-[1.5px] border-[#161412] bg-[#F3ECDD] p-4 sm:p-5 hard-shadow rounded-[2px] mr-1 mb-1 sm:mr-0 sm:mb-0">
-              <span className="font-mono text-xs uppercase tracking-widest text-[#8A8378] block mb-2 font-bold">
-                Oven Specifications
-              </span>
-              <div className="space-y-2 text-xs sm:text-sm font-mono text-[#161412]">
-                <div className="flex justify-between border-b border-[#161412]/20 pb-1">
-                  <span>Hearth Temp</span>
-                  <span className="font-bold">450°C (842°F)</span>
+          {/* Right Column: Hero Visual (5 Cols) */}
+          <div className="lg:col-span-5">
+            <div className="relative rounded-2xl overflow-hidden border border-stone-200/80 bg-stone-100 card-shadow group">
+              <div className="aspect-[4/3] sm:aspect-[1/1] w-full overflow-hidden">
+                <img
+                  src="/images/hero-pizza-oven.avif"
+                  alt="Freshly baked wood-fired pizza from the stone hearth"
+                  className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-700"
+                  loading="eager"
+                />
+              </div>
+
+              {/* Floating Quality Badge */}
+              <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md px-4 py-3 rounded-xl border border-stone-200/80 shadow-md flex items-center justify-between">
+                <div>
+                  <h4 className="text-xs font-bold text-stone-900">Signature Hearth Margherita</h4>
+                  <p className="text-[11px] text-stone-500">San Marzano Sugo & Fresh Fior di Latte</p>
                 </div>
-                <div className="flex justify-between border-b border-[#161412]/20 pb-1">
-                  <span>Bake Time</span>
-                  <span className="font-bold">90 Seconds</span>
-                </div>
-                <div className="flex justify-between border-b border-[#161412]/20 pb-1">
-                  <span>Ferment</span>
-                  <span className="font-bold">48 Hours Cold</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Firewood</span>
-                  <span className="font-bold">Oak & Beech</span>
-                </div>
+                <span className="px-2.5 py-1 bg-emerald-100 text-emerald-800 text-[11px] font-bold rounded-lg">
+                  ₹445
+                </span>
               </div>
             </div>
           </div>
 
-        </div>
-
-        {/* Full-Bleed Pizza Leaving The Oven Image */}
-        <div className="mt-10 sm:mt-16 border-[1.5px] border-[#161412] bg-[#161412] overflow-hidden rounded-[2px] relative group">
-          <div className="h-[320px] sm:h-[500px] lg:h-[600px] w-full overflow-hidden">
-            <img
-              ref={imageRef}
-              src="/images/hero-pizza-oven.avif"
-              alt="Wood-fired pizza leaving the 450°C oven"
-              className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-700"
-              loading="eager"
-            />
-          </div>
-
-          <div className="absolute bottom-3 left-3 sm:bottom-6 sm:left-6 bg-[#161412] text-[#F3ECDD] px-3 py-1 sm:px-3.5 sm:py-1.5 border-[1.5px] border-[#F3ECDD] font-mono text-[10px] sm:text-xs font-bold uppercase tracking-widest">
-            Hearth 01 / Fresh from the fire
-          </div>
         </div>
 
       </div>

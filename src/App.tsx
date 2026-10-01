@@ -34,45 +34,46 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F3ECDD] text-[#161412] relative overflow-x-hidden selection:bg-[#C8371A] selection:text-[#F3ECDD] font-sans">
+    <div className="min-h-screen bg-[#FAFAF7] text-stone-900 relative overflow-x-hidden selection:bg-[#1E2D24] selection:text-white font-sans antialiased">
       
-      {/* Editorial Zine Navbar */}
+      {/* Modern Hospitality Navbar */}
       <Navbar
         onOpenCart={() => setIsCartOpen(true)}
         onOpenReservation={handleOpenReservation}
+        onOpenTracker={() => setIsTrackerOpen(true)}
       />
 
-      {/* Main View: Customer or Staff POS Admin */}
+      {/* Main View: Customer Storefront or Staff POS */}
       {currentView === 'CUSTOMER' ? (
         <main className="relative z-10">
-          {/* Phase 2: Editorial Hero Section */}
+          {/* 1. Hero Section */}
           <HeroSection onOpenReservation={handleOpenReservation} />
 
-          {/* Phase 2: Concrete Facts Marquee Strip */}
+          {/* 2. Refined Fact Strip */}
           <MarqueeStrip />
 
-          {/* Phase 3: Typographic Menu Section */}
+          {/* 3. The 2-Column Menu (Sticky Sidebar + Dish Cards) */}
           <MenuContainer />
 
-          {/* Phase 4: Story Section (1 blunt paragraph + 1 big photo detail) */}
+          {/* 4. Story & Hearth Craft */}
           <StorySection />
 
-          {/* Phase 4: Stark On-Page Booking Form */}
+          {/* 5. Clean Single-Table Booking Card */}
           <BookingSection />
 
-          {/* Phase 4: Hours & Location Section */}
+          {/* 6. Hours & Location */}
           <HoursLocationSection />
 
-          {/* Phase 4: Editorial Footer with Cropped Wordmark */}
+          {/* 7. Modern Hospitality Footer */}
           <Footer />
         </main>
       ) : (
-        <main className="relative z-10 pt-20">
+        <main className="relative z-10 pt-16">
           <AdminDashboard />
         </main>
       )}
 
-      {/* Table Reservation Modal (Alternative / Direct) */}
+      {/* Table Reservation Modal (Direct Popup) */}
       <TableReservationModal
         isOpen={isReservationOpen}
         onClose={() => setIsReservationOpen(false)}

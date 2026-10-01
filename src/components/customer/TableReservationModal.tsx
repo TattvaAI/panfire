@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Check } from 'lucide-react';
+import { X, Check, Calendar, CheckCircle } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 interface TableReservationModalProps {
@@ -39,7 +39,7 @@ export const TableReservationModal: React.FC<TableReservationModalProps> = ({
         particleCount: 50,
         spread: 50,
         origin: { y: 0.6 },
-        colors: ['#C8371A', '#161412', '#F3ECDD'],
+        colors: ['#1E2D24', '#C8371A', '#FFFFFF'],
       });
     } catch (e) {
       // fallback
@@ -47,30 +47,29 @@ export const TableReservationModal: React.FC<TableReservationModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-[#161412]/80 backdrop-blur-none">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs animate-fade-in">
       <div 
-        className="bg-[#F3ECDD] text-[#161412] w-full max-w-lg border-[1.5px] border-[#161412] hard-shadow-lg flex flex-col max-h-[92vh] overflow-hidden"
+        className="bg-white text-stone-900 w-full max-w-lg rounded-2xl border border-stone-200 modal-shadow flex flex-col max-h-[90vh] overflow-hidden"
         role="dialog"
         aria-modal="true"
       >
-        
         {/* Header */}
-        <div className="p-4 sm:p-6 border-b-[1.5px] border-[#161412] flex items-start justify-between gap-4 bg-[#F3ECDD]">
+        <div className="p-5 border-b border-stone-100 flex items-start justify-between gap-4 bg-white">
           <div>
-            <span className="font-mono text-xs uppercase tracking-widest text-[#C8371A] font-bold block mb-1">
-              Table Reservation // One Seating Style
+            <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded-md inline-block mb-1">
+              Table Reservation
             </span>
-            <h3 className="font-headline text-2xl sm:text-3xl font-black text-[#161412] tracking-tight">
+            <h3 className="font-sans text-xl sm:text-2xl font-bold text-stone-900">
               Reserve a Table
             </h3>
-            <p className="font-sans text-xs text-[#8A8378] mt-1">
-              40 seats around the hearth. Table held for 15 minutes past reservation.
+            <p className="text-xs text-stone-500 mt-0.5">
+              40 seats around our open wood hearth. Table held for 15 minutes.
             </p>
           </div>
 
           <button
             onClick={onClose}
-            className="w-8 h-8 border-[1.5px] border-[#161412] bg-[#F3ECDD] hover:bg-[#161412] hover:text-[#F3ECDD] flex items-center justify-center transition-colors cursor-pointer shrink-0"
+            className="w-8 h-8 rounded-full bg-stone-100 hover:bg-stone-200 text-stone-600 flex items-center justify-center transition-colors cursor-pointer shrink-0"
             aria-label="Close"
           >
             <X className="w-4 h-4" />
@@ -78,39 +77,41 @@ export const TableReservationModal: React.FC<TableReservationModalProps> = ({
         </div>
 
         {/* Content */}
-        <div className="p-4 sm:p-6 overflow-y-auto space-y-5 flex-1 bg-[#F3ECDD]">
+        <div className="p-5 sm:p-6 overflow-y-auto space-y-5 flex-1 bg-stone-50/30">
           {isSubmitted ? (
-            <div className="space-y-5">
-              <div className="border-[1.5px] border-[#161412] bg-[#161412] text-[#F3ECDD] p-4 flex items-center justify-between">
-                <div>
-                  <span className="font-mono text-xs text-[#C8371A] font-bold uppercase block">
-                    Confirmed
-                  </span>
-                  <span className="font-headline text-xl font-bold">
-                    {formData.name}
-                  </span>
-                </div>
-                <span className="font-mono text-sm font-bold bg-[#C8371A] text-[#F3ECDD] px-2.5 py-1">
-                  {bookingId}
-                </span>
+            <div className="space-y-5 text-center py-4">
+              <div className="w-12 h-12 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center mx-auto shadow-xs">
+                <CheckCircle className="w-6 h-6" />
               </div>
 
-              <div className="border-[1.5px] border-[#161412] p-4 font-mono text-xs space-y-2 bg-[#F3ECDD]">
-                <div className="flex justify-between border-b border-[#161412]/20 pb-1.5">
-                  <span className="text-[#8A8378]">Date:</span>
-                  <span className="font-bold text-[#161412]">{formData.date}</span>
+              <div>
+                <span className="text-xs font-bold uppercase tracking-wider text-emerald-700 block mb-1">
+                  Reservation Confirmed
+                </span>
+                <h4 className="font-serif-clean text-2xl font-bold text-stone-900">
+                  {formData.name}
+                </h4>
+                <p className="text-xs text-stone-500 mt-1 font-mono">
+                  Ref: <strong className="text-stone-900">{bookingId}</strong>
+                </p>
+              </div>
+
+              <div className="bg-white rounded-xl p-4 border border-stone-200 shadow-xs space-y-2 text-xs sm:text-sm text-left">
+                <div className="flex justify-between border-b border-stone-100 pb-1.5">
+                  <span className="text-stone-400">Date:</span>
+                  <span className="font-semibold text-stone-900">{formData.date}</span>
                 </div>
-                <div className="flex justify-between border-b border-[#161412]/20 pb-1.5">
-                  <span className="text-[#8A8378]">Time:</span>
-                  <span className="font-bold text-[#161412]">{formData.time}</span>
+                <div className="flex justify-between border-b border-stone-100 pb-1.5">
+                  <span className="text-stone-400">Time:</span>
+                  <span className="font-semibold text-stone-900">{formData.time}</span>
                 </div>
-                <div className="flex justify-between border-b border-[#161412]/20 pb-1.5">
-                  <span className="text-[#8A8378]">Party Size:</span>
-                  <span className="font-bold text-[#161412]">{formData.guests}</span>
+                <div className="flex justify-between border-b border-stone-100 pb-1.5">
+                  <span className="text-stone-400">Party Size:</span>
+                  <span className="font-semibold text-stone-900">{formData.guests}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-[#8A8378]">Table Type:</span>
-                  <span className="font-bold text-[#161412]">Standard Hearth</span>
+                  <span className="text-stone-400">Seating:</span>
+                  <span className="font-semibold text-stone-900">Standard Hearth</span>
                 </div>
               </div>
 
@@ -119,7 +120,7 @@ export const TableReservationModal: React.FC<TableReservationModalProps> = ({
                   setIsSubmitted(false);
                   onClose();
                 }}
-                className="w-full py-3 bg-[#161412] hover:bg-[#C8371A] text-[#F3ECDD] border-[1.5px] border-[#161412] hard-shadow-sm font-mono text-xs font-bold uppercase tracking-wider transition-all cursor-pointer"
+                className="w-full py-2.5 bg-[#1E2D24] text-white rounded-xl text-xs sm:text-sm font-semibold hover:bg-[#152019] transition-colors cursor-pointer"
               >
                 Close Window
               </button>
@@ -129,7 +130,7 @@ export const TableReservationModal: React.FC<TableReservationModalProps> = ({
               
               {/* Date */}
               <div>
-                <label className="font-mono text-xs font-bold uppercase text-[#161412] block mb-1">
+                <label className="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1.5">
                   Date
                 </label>
                 <input
@@ -137,13 +138,13 @@ export const TableReservationModal: React.FC<TableReservationModalProps> = ({
                   required
                   value={formData.date}
                   onChange={(e) => setFormData({ ...formData, date: e.target.value })}
-                  className="w-full p-2.5 bg-transparent border-[1.5px] border-[#161412] font-mono text-sm text-[#161412] focus:outline-none focus:bg-[#161412]/5"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-stone-200 bg-white text-stone-900 text-sm focus:outline-none focus:border-[#1E2D24] shadow-xs"
                 />
               </div>
 
               {/* Time */}
               <div>
-                <label className="font-mono text-xs font-bold uppercase text-[#161412] block mb-1">
+                <label className="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1.5">
                   Seating Time
                 </label>
                 <div className="grid grid-cols-3 sm:grid-cols-5 gap-1.5">
@@ -152,10 +153,10 @@ export const TableReservationModal: React.FC<TableReservationModalProps> = ({
                       key={slot}
                       type="button"
                       onClick={() => setFormData({ ...formData, time: slot })}
-                      className={`py-2 px-1 text-[11px] font-mono font-bold text-center border-[1.5px] border-[#161412] transition-colors cursor-pointer ${
+                      className={`py-2 px-1 text-xs font-semibold rounded-lg text-center transition-all cursor-pointer ${
                         formData.time === slot
-                          ? 'bg-[#161412] text-[#F3ECDD]'
-                          : 'bg-[#F3ECDD] text-[#161412] hover:bg-[#161412]/10'
+                          ? 'bg-[#1E2D24] text-white shadow-xs'
+                          : 'bg-white text-stone-700 hover:bg-stone-100 border border-stone-200'
                       }`}
                     >
                       {slot}
@@ -166,7 +167,7 @@ export const TableReservationModal: React.FC<TableReservationModalProps> = ({
 
               {/* Party Size */}
               <div>
-                <label className="font-mono text-xs font-bold uppercase text-[#161412] block mb-1">
+                <label className="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1.5">
                   Party Size
                 </label>
                 <div className="grid grid-cols-3 sm:grid-cols-5 gap-1.5">
@@ -175,10 +176,10 @@ export const TableReservationModal: React.FC<TableReservationModalProps> = ({
                       key={size}
                       type="button"
                       onClick={() => setFormData({ ...formData, guests: size })}
-                      className={`py-2 px-1 text-[11px] font-mono font-bold text-center border-[1.5px] border-[#161412] transition-colors cursor-pointer ${
+                      className={`py-2 px-1 text-xs font-semibold rounded-lg text-center transition-all cursor-pointer ${
                         formData.guests === size
-                          ? 'bg-[#C8371A] text-[#F3ECDD]'
-                          : 'bg-[#F3ECDD] text-[#161412] hover:bg-[#161412]/10'
+                          ? 'bg-[#1E2D24] text-white shadow-xs'
+                          : 'bg-white text-stone-700 hover:bg-stone-100 border border-stone-200'
                       }`}
                     >
                       {size}
@@ -187,21 +188,21 @@ export const TableReservationModal: React.FC<TableReservationModalProps> = ({
                 </div>
               </div>
 
-              {/* Table Type: Fixed single table type */}
+              {/* Fixed Table Type */}
               <div>
-                <label className="font-mono text-xs font-bold uppercase text-[#161412] block mb-1">
+                <label className="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1.5">
                   Table Type
                 </label>
-                <div className="p-2 border-[1.5px] border-[#161412] bg-[#161412]/5 font-mono text-xs font-bold text-[#161412] flex items-center justify-between">
+                <div className="px-3.5 py-2.5 rounded-xl border border-stone-200 bg-stone-100 text-stone-800 text-xs sm:text-sm font-medium flex items-center justify-between">
                   <span>Standard Dining Table (Indoor Hearth)</span>
-                  <span className="text-[#C8371A]">[ONLY OPTION]</span>
+                  <span className="text-[11px] font-bold text-stone-400">Fixed</span>
                 </div>
               </div>
 
               {/* Name & Phone */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
                 <div>
-                  <label className="font-mono text-xs font-bold uppercase text-[#161412] block mb-1">
+                  <label className="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1">
                     Your Name
                   </label>
                   <input
@@ -210,12 +211,12 @@ export const TableReservationModal: React.FC<TableReservationModalProps> = ({
                     placeholder="e.g. Maya Sen"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full p-2.5 bg-transparent border-[1.5px] border-[#161412] font-sans text-sm text-[#161412] placeholder-[#8A8378] focus:outline-none focus:bg-[#161412]/5"
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-stone-200 bg-white text-stone-900 text-sm placeholder-stone-400 focus:outline-none focus:border-[#1E2D24] shadow-xs"
                   />
                 </div>
 
                 <div>
-                  <label className="font-mono text-xs font-bold uppercase text-[#161412] block mb-1">
+                  <label className="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1">
                     Phone
                   </label>
                   <input
@@ -224,7 +225,7 @@ export const TableReservationModal: React.FC<TableReservationModalProps> = ({
                     placeholder="e.g. +91 98100 12345"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full p-2.5 bg-transparent border-[1.5px] border-[#161412] font-mono text-sm text-[#161412] placeholder-[#8A8378] focus:outline-none focus:bg-[#161412]/5"
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-stone-200 bg-white text-stone-900 text-sm placeholder-stone-400 focus:outline-none focus:border-[#1E2D24] shadow-xs"
                   />
                 </div>
               </div>
@@ -232,9 +233,9 @@ export const TableReservationModal: React.FC<TableReservationModalProps> = ({
               <div className="pt-2">
                 <button
                   type="submit"
-                  className="w-full py-3 bg-[#C8371A] hover:bg-[#161412] text-[#F3ECDD] border-[1.5px] border-[#161412] hard-shadow-sm hover:hard-shadow font-mono text-xs sm:text-sm font-bold uppercase tracking-wider transition-all active:translate-x-[1px] active:translate-y-[1px] cursor-pointer"
+                  className="w-full py-3 bg-[#1E2D24] hover:bg-[#152019] text-white rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider shadow-xs transition-all cursor-pointer"
                 >
-                  Confirm Reservation →
+                  Confirm Reservation
                 </button>
               </div>
 

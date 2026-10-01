@@ -2,25 +2,24 @@ import React from 'react';
 
 export const MarqueeStrip: React.FC = () => {
   const facts = [
-    'DOUGH RESTS 48 HOURS',
-    'OVEN HEATED TO 450°C',
-    '90 SECONDS IN THE FLAME',
-    'COLD-FERMENTED SOURDOUGH',
-    'WOK-CHARRED ASIAN PLATES',
-    'ZERO PRESERVATIVES',
+    '48-Hour Cold Fermented Dough',
+    'Volcanic Stone Hearth at 450°C',
+    '90-Second Wood-Fired Bake',
+    'Handcrafted Dim Sum & Baos',
+    'Wok-Fired Asian Small Plates',
+    'Pure Natural Ingredients',
   ];
 
   return (
-    <div className="w-full bg-[#161412] text-[#F3ECDD] border-y-[1.5px] border-[#161412] py-3 sm:py-3.5 overflow-hidden select-none">
+    <div className="w-full bg-[#181B18] text-stone-300 border-y border-stone-800 py-2.5 sm:py-3 overflow-hidden select-none">
       <div className="flex w-max animate-marquee">
-        {/* Render twice for continuous loop */}
         {[...facts, ...facts].map((fact, index) => (
           <div key={index} className="flex items-center">
-            <span className="font-mono text-xs sm:text-sm font-bold uppercase tracking-[0.2em] px-6 sm:px-8 whitespace-nowrap">
+            <span className="font-sans text-xs font-semibold uppercase tracking-wider px-6 sm:px-8 whitespace-nowrap text-stone-300">
               {fact}
             </span>
-            <span className="text-[#C8371A] text-lg font-black select-none">
-              /
+            <span className="text-[#C8371A] text-xs font-bold select-none">
+              •
             </span>
           </div>
         ))}

@@ -1,51 +1,61 @@
 import React from 'react';
+import { Flame, Clock, Sparkles } from 'lucide-react';
 
 export const StorySection: React.FC = () => {
   return (
-    <section id="story" className="py-16 sm:py-28 bg-[#F3ECDD] text-[#161412] border-t-[1.5px] border-[#161412]">
+    <section id="story" className="py-16 sm:py-24 bg-white text-stone-900 border-y border-stone-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Asymmetric 12-Column Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           
-          {/* Left Column: Big Detail Photo (Blistered Leopard Char) - 7 Columns */}
+          {/* Left Column: Big Detail Photo with Rounded Corners (7 Cols) */}
           <div className="lg:col-span-7">
-            <div className="border-[1.5px] border-[#161412] bg-[#161412] hard-shadow overflow-hidden relative group">
-              <div className="h-[360px] sm:h-[500px] lg:h-[560px] w-full overflow-hidden">
+            <div className="rounded-2xl overflow-hidden border border-stone-200 card-shadow relative group">
+              <div className="h-[340px] sm:h-[460px] lg:h-[500px] w-full overflow-hidden bg-stone-100">
                 <img
                   src="/images/story-oven-fire.avif"
                   alt="Blistered sourdough crust detail from the wood oven"
                   className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-700"
-                  loading="eager"
-                  decoding="sync"
+                  loading="lazy"
                 />
               </div>
 
-              {/* Technical Caption Stamp */}
-              <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 bg-[#F3ECDD] text-[#161412] px-3 py-1 border-[1.5px] border-[#161412] font-mono text-[10px] sm:text-xs font-bold uppercase tracking-wider">
-                FIG. 03 / LEOPARD CRUST DETAIL (48H FERMENT)
+              {/* Gentle Floating Badge */}
+              <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-xl border border-stone-200 shadow-sm text-xs font-semibold text-stone-800">
+                48-Hour Cold Ferment • Volcanic Stone Bake
               </div>
             </div>
           </div>
 
-          {/* Right Column: One Blunt Paragraph - 5 Columns */}
+          {/* Right Column: Narrative (5 Cols) */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-[#C8371A]">
-              [03] // The Dough & The Hearth
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 border border-orange-200 text-orange-800 text-xs font-semibold">
+              <Flame className="w-3.5 h-3.5 text-[#C8371A]" />
+              <span>The Dough & The Hearth</span>
             </div>
 
-            <h2 className="font-headline text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[0.95] text-[#161412]">
+            <h2 className="font-serif-clean text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-[1.1] text-stone-900">
               Naturally Leavened. <br />
-              <span className="italic font-normal text-[#C8371A]">Wood</span> Fired.
+              <span className="italic font-medium text-[#C8371A]">Wood</span> Fired.
             </h2>
 
-            {/* One short blunt paragraph */}
-            <p className="font-sans text-base sm:text-lg text-[#161412] leading-relaxed font-medium pt-2">
-              No commercial yeast, no dough conditioners, no rushed proofs. We cold-ferment our sourdough for 48 hours with organic stoneground flour, pure water, and sea salt. The oven runs on split oak and beech wood at 450°C. Ninety seconds on volcanic stone blisters the cornicione and caramelises the San Marzano tomato sugo. That is the entire secret.
+            <p className="font-sans text-base text-stone-600 leading-relaxed">
+              No commercial yeast, no dough conditioners, no rushed proofs. We cold-ferment our sourdough for 48 hours with organic stoneground flour, pure water, and sea salt. 
             </p>
 
-            <div className="pt-2 font-mono text-xs uppercase font-bold tracking-wider text-[#8A8378] border-t-[1.5px] border-[#161412]/20">
-              Oak Wood • Natural Ferment • 90 Seconds • Zero Additives
+            <p className="font-sans text-base text-stone-600 leading-relaxed">
+              Our hearth runs on split oak and beech wood at 450°C. In ninety seconds on volcanic stone, the cornicione blisters into a light, airy crust while caramelising the San Marzano tomato sugo. That is our entire craft.
+            </p>
+
+            <div className="grid grid-cols-2 gap-4 pt-4 border-t border-stone-100">
+              <div>
+                <span className="block font-serif-clean text-xl font-bold text-stone-900">100% Organic</span>
+                <span className="text-xs text-stone-500 font-medium">Stoneground Italian flour</span>
+              </div>
+              <div>
+                <span className="block font-serif-clean text-xl font-bold text-stone-900">Zero Additives</span>
+                <span className="text-xs text-stone-500 font-medium">Flour, water, wild leaven, salt</span>
+              </div>
             </div>
           </div>
 

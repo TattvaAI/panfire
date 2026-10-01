@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Plus, Minus, Utensils } from 'lucide-react';
 import { MenuItem } from '../../types';
 import { useCartStore } from '../../store/useCartStore';
 
@@ -6,21 +7,18 @@ interface MenuItemCardProps {
   item: MenuItem;
   onCustomise?: (item: MenuItem) => void;
   onQuickAdd: (item: MenuItem) => void;
-  onHoverItem?: (item: MenuItem, e: React.MouseEvent) => void;
-  onMouseMoveItem?: (e: React.MouseEvent) => void;
-  onLeaveItem?: () => void;
   onSelect?: (item: MenuItem) => void;
   isWishlisted?: boolean;
   onToggleWishlist?: (itemId: string) => void;
+  onHoverItem?: (item: MenuItem, e: React.MouseEvent) => void;
+  onMouseMoveItem?: (e: React.MouseEvent) => void;
+  onLeaveItem?: () => void;
 }
 
 export const MenuItemCard: React.FC<MenuItemCardProps> = ({
   item,
   onCustomise,
   onQuickAdd,
-  onHoverItem,
-  onMouseMoveItem,
-  onLeaveItem,
   onSelect,
 }) => {
   const [imgError, setImgError] = useState(false);
@@ -39,13 +37,8 @@ export const MenuItemCard: React.FC<MenuItemCardProps> = ({
     e.stopPropagation();
     if (item.hasVariants) {
       if (onCustomise) onCustomise(item);
-      else if (onSelect) onSelect(item);
     } else {
-      if (onSelect && !onQuickAdd) {
-        onSelect(item);
-      } else {
-        onQuickAdd(item);
-      }
+      onQuickAdd(item);
     }
   };
 
@@ -65,123 +58,105 @@ export const MenuItemCard: React.FC<MenuItemCardProps> = ({
 
   return (
     <article
-      className="py-4 sm:py-5 border-b-[1.5px] border-[#161412]/20 hover:border-[#161412] transition-colors group cursor-pointer relative"
-      onMouseEnter={(e) => hasValidImage && onHoverItem?.(item, e)}
-      onMouseMove={(e) => hasValidImage && onMouseMoveItem?.(e)}
-      onMouseLeave={() => onLeaveItem?.()}
       onClick={handleAction}
+      className="bg-white rounded-2xl border border-stone-200/90 card-shadow card-shadow-hover p-3.5 sm:p-4 flex gap-3.5 sm:gap-5 items-center justify-between cursor-pointer transition-all"
     >
-      <div className="flex items-baseline justify-between gap-3 sm:gap-4">
-        
-        {/* Left Side: Dietary Indicator + Dish Title */}
-        <div className="flex items-center gap-2.5 sm:gap-3.5 min-w-0 flex-1">
-          {/* Strict Dietary Box/Dot Indicator: Green for Veg, Red for Non-Veg */}
+      {/* 1. Left: Food Photo (Clean Rounded Visual) */}
+      <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-xl overflow-hidden bg-stone-100 border border-stone-200/70 shrink-0 relative">
+        {hasValidImage ? (
+          <img
+            src={item.imagePath}
+            alt={item.name}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            loading="lazy"
+            onError={() => setImgError(true)}
+          />
+        ) : (
+          <div className="w-full h-full flex flex-col items-center justify-center text-stone-400 bg-stone-50">
+            <Utensils className="w-6 h-6 stroke-[1.5]" />
+          </div>
+        )}
+
+        {/* Subtle Veg / Non-Veg Dot on Image Corner for Quick Glance */}
+        <div className="absolute top-1.5 left-1.5 bg-white/95 rounded-sm p-0.5 shadow-xs">
           <span
-            className={`w-3.5 h-3.5 shrink-0 border-[1.5px] flex items-center justify-center ${
-              item.isVeg ? 'border-[#2E7D32]' : 'border-[#C8371A]'
+            className={`w-3 h-3 border-[1.5px] flex items-center justify-center ${
+              item.isVeg ? 'border-emerald-600' : 'border-[#C8371A]'
             }`}
-            title={item.isVeg ? 'Vegetarian' : 'Non-Vegetarian'}
           >
             <span
               className={`w-1.5 h-1.5 rounded-full ${
-                item.isVeg ? 'bg-[#2E7D32]' : 'bg-[#C8371A]'
+                item.isVeg ? 'bg-emerald-600' : 'bg-[#C8371A]'
               }`}
             />
           </span>
+        </div>
+      </div>
 
-          {/* Dish Title in Fraunces / Bold Serif */}
-          <h4 className="font-headline text-lg sm:text-2xl font-bold tracking-tight text-[#161412] group-hover:text-[#C8371A] transition-colors truncate">
+      {/* 2. Middle: Content, Dietary Tag, Title, Description, Price */}
+      <div className="flex-1 min-w-0 pr-1 sm:pr-2">
+        <div className="flex items-center gap-2 mb-1">
+          <h3 className="font-sans text-sm sm:text-base font-bold text-stone-900 line-clamp-2">
             {item.name}
-          </h4>
-
-          {/* House Essential Label */}
-          {item.isBestseller && (
-            <span className="hidden md:inline-block font-mono text-[9px] uppercase font-bold tracking-wider px-1.5 py-0.5 bg-[#161412] text-[#F3ECDD] shrink-0">
-              Essential
-            </span>
-          )}
-
-          {/* Chef Special Label */}
-          {item.isChefSpecial && !item.isBestseller && (
-            <span className="hidden md:inline-block font-mono text-[9px] uppercase font-bold tracking-wider px-1.5 py-0.5 bg-[#C8371A] text-[#F3ECDD] shrink-0">
-              Chef Select
-            </span>
-          )}
+          </h3>
         </div>
 
-        {/* Typographic Dotted Leader (Extends across desktop widths) */}
-        <div className="dotted-leader hidden sm:block" />
+        {item.description && (
+          <p className="text-stone-500 text-xs sm:text-[13px] leading-relaxed line-clamp-2 mb-2 font-normal">
+            {item.description}
+          </p>
+        )}
 
-        {/* Right Side: JetBrains Mono Price + Add Action */}
-        <div className="flex items-center gap-3 sm:gap-4 shrink-0">
-          <span className="font-mono text-base sm:text-xl font-bold text-[#161412]">
+        {/* Price & Variant Pill */}
+        <div className="flex items-center gap-2">
+          <span className="font-sans font-bold text-sm sm:text-base text-stone-900">
             ₹{item.price}
           </span>
-
-          {/* Direct Quantity Counter if already in cart */}
-          {currentQuantity > 0 ? (
-            <div
-              onClick={(e) => e.stopPropagation()}
-              className="flex items-center bg-[#161412] text-[#F3ECDD] border-[1.5px] border-[#161412] hard-shadow-sm font-mono text-xs font-bold"
-            >
-              <button
-                onClick={handleDecrement}
-                className="px-2 py-1 hover:bg-[#C8371A] transition-colors cursor-pointer"
-                title="Decrease"
-              >
-                -
-              </button>
-              <span className="px-2 py-1 select-none min-w-[20px] text-center">
-                {currentQuantity}
-              </span>
-              <button
-                onClick={handleIncrement}
-                className="px-2 py-1 hover:bg-[#C8371A] transition-colors cursor-pointer"
-                title="Increase"
-              >
-                +
-              </button>
-            </div>
-          ) : item.hasVariants ? (
-            <button
-              onClick={handleAction}
-              className="px-2.5 py-1 sm:px-3 sm:py-1 bg-[#F3ECDD] hover:bg-[#161412] text-[#161412] hover:text-[#F3ECDD] border-[1.5px] border-[#161412] hard-shadow-sm text-[10px] sm:text-xs font-mono font-bold uppercase tracking-wider transition-all active:translate-x-[1px] active:translate-y-[1px] cursor-pointer shrink-0"
-            >
-              Customise +
-            </button>
-          ) : (
-            <button
-              onClick={handleAction}
-              className="px-3 py-1 sm:px-3.5 sm:py-1 bg-[#161412] hover:bg-[#C8371A] text-[#F3ECDD] border-[1.5px] border-[#161412] hard-shadow-sm text-[10px] sm:text-xs font-mono font-bold uppercase tracking-wider transition-all active:translate-x-[1px] active:translate-y-[1px] cursor-pointer shrink-0"
-            >
-              Add +
-            </button>
+          {item.hasVariants && (
+            <span className="text-[10px] font-semibold uppercase tracking-wider text-emerald-800 bg-emerald-50 border border-emerald-200/80 px-2 py-0.5 rounded-md">
+              Customisable
+            </span>
           )}
         </div>
       </div>
 
-      {/* Description / Ingredients Label Underneath & Mobile Thumbnail */}
-      <div className="mt-1.5 flex items-start justify-between gap-3 pl-6 sm:pl-7">
-        <p className="font-sans text-xs sm:text-sm text-[#8A8378] leading-relaxed max-w-2xl">
-          {item.description}
-          {item.hasVariants && item.variants && item.variants.length > 0 && (
-            <span className="block mt-1 font-mono text-[11px] text-[#161412] font-semibold">
-              Options: {item.variants.map((v) => v.name).join(' / ')}
+      {/* 3. Right: Action Button or Stepper */}
+      <div className="shrink-0 flex items-center" onClick={(e) => e.stopPropagation()}>
+        {item.hasVariants ? (
+          <button
+            onClick={handleAction}
+            className="px-3.5 sm:px-4 py-2 bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-300 rounded-xl text-xs sm:text-sm font-bold transition-colors cursor-pointer"
+          >
+            Customise +
+          </button>
+        ) : currentQuantity > 0 ? (
+          <div className="flex items-center bg-[#1E2D24] text-white rounded-xl shadow-xs overflow-hidden">
+            <button
+              onClick={handleDecrement}
+              className="w-8 h-8 flex items-center justify-center hover:bg-black/20 transition-colors cursor-pointer"
+              title="Decrease quantity"
+            >
+              <Minus className="w-3.5 h-3.5" />
+            </button>
+            <span className="font-sans text-xs sm:text-sm font-bold px-2 min-w-[24px] text-center">
+              {currentQuantity}
             </span>
-          )}
-        </p>
-
-        {/* Mobile touch thumbnail (hidden on desktop where hover reveal is used) */}
-        {hasValidImage && (
-          <div className="sm:hidden shrink-0 w-16 h-16 border-[1.5px] border-[#161412] overflow-hidden bg-[#161412]/5">
-            <img
-              src={item.imagePath}
-              alt={item.name}
-              className="w-full h-full object-cover"
-              onError={() => setImgError(true)}
-              loading="lazy"
-            />
+            <button
+              onClick={handleIncrement}
+              className="w-8 h-8 flex items-center justify-center hover:bg-black/20 transition-colors cursor-pointer"
+              title="Increase quantity"
+            >
+              <Plus className="w-3.5 h-3.5" />
+            </button>
           </div>
+        ) : (
+          <button
+            onClick={handleAction}
+            className="px-4 sm:px-5 py-2 bg-[#1E2D24] hover:bg-[#152019] text-white rounded-xl text-xs sm:text-sm font-bold shadow-xs transition-all cursor-pointer flex items-center gap-1.5"
+          >
+            <Plus className="w-3.5 h-3.5" />
+            <span>Add</span>
+          </button>
         )}
       </div>
     </article>

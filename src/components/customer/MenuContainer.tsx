@@ -1,354 +1,321 @@
-import React, { useState, useMemo, useEffect, useRef } from 'react';
-import { Search } from 'lucide-react';
+import React, { useState, useMemo, useRef, useEffect } from 'react';
+import { Search, Utensils, Sparkles, Filter } from 'lucide-react';
 import { RESTAURANT_MENU_ACCORDIONS } from '../../data/restaurantMenuData';
 import { CategoryAccordionData, MenuItem } from '../../types';
-import { CategoryAccordion } from './CategoryAccordion';
+import { MenuItemCard } from './MenuItemCard';
 import { VariantSelectorModal } from './VariantSelectorModal';
 import { useCartStore } from '../../store/useCartStore';
-
-type PrimaryGroup = 'all' | 'pizzas' | 'small-plates' | 'drinks';
 
 export const MenuContainer: React.FC = () => {
   const addItem = useCartStore((state) => state.addItem);
 
-  // Primary Tab Group: All, Pizzas, Small plates, Drinks
-  const [selectedGroup, setSelectedGroup] = useState<PrimaryGroup>('all');
-
-  // Accordion state: IDs of open categories (defaults to first 3 open)
-  const [openCategories, setOpenCategories] = useState<string[]>(() => [
-    'pizzas-calzones',
-    'dimsum-baos',
-    'soups-salads',
-  ]);
-
-  // Filtering state
+  // Active Category for Sidebar
+  const [activeCategoryId, setActiveCategoryId] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [dietaryFilter, setDietaryFilter] = useState<'all' | 'veg' | 'non-veg'>('all');
 
-  // Active item for VariantSelectorModal
+  // Customisation Modal State
   const [customisingItem, setCustomisingItem] = useState<MenuItem | null>(null);
 
-  // Desktop Hover Photo Reveal state
-  const [hoveredItem, setHoveredItem] = useState<MenuItem | null>(null);
-  const [cursorPos, setCursorPos] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
+  // Refs for smooth scroll target
+  const categoryRefs = useRef<{ [key: string]: HTMLElement | null }>({});
 
-  // Map each accordion to its primary group
-  const getAccordionGroup = (id: string): PrimaryGroup => {
-    if (id === 'pizzas-calzones') return 'pizzas';
-    if (id === 'beverages-desserts') return 'drinks';
-    return 'small-plates';
-  };
-
-  // Toggle single category
-  const toggleCategory = (catId: string) => {
-    setOpenCategories((prev) =>
-      prev.includes(catId) ? prev.filter((id) => id !== catId) : [...prev, catId]
-    );
-  };
-
-  // Expand / Collapse all
-  const areAllOpen = openCategories.length === RESTAURANT_MENU_ACCORDIONS.length;
-  const toggleAll = () => {
-    if (areAllOpen) {
-      setOpenCategories([]);
-    } else {
-      setOpenCategories(RESTAURANT_MENU_ACCORDIONS.map((c) => c.id));
-    }
-  };
-
-  // Filtered categories and items based on group tab, search, and dietary toggle
+  // Filtered categories and dishes
   const filteredCategories: CategoryAccordionData[] = useMemo(() => {
     const q = searchQuery.toLowerCase().trim();
 
-    return RESTAURANT_MENU_ACCORDIONS.filter((category) => {
-      if (selectedGroup !== 'all' && getAccordionGroup(category.id) !== selectedGroup) {
+    return RESTAURANT_MENU_ACCORDIONS.map((category) => {
+      // Filter subcategories and items
+      const filteredSubcategories = category.subcategories
+        .map((subgroup) => {
+          const filteredItems = subgroup.items.filter((item) => {
+            // Search filter
+            if (q) {
+              const matchName = item.name.toLowerCase().includes(q);
+              const matchDesc = item.description.toLowerCase().includes(q);
+              const matchSub = subgroup.title.toLowerCase().includes(q);
+              if (!matchName && !matchDesc && !matchSub) return false;
+            }
+
+            // Dietary filter
+            if (dietaryFilter === 'veg' && !item.isVeg) return false;
+            if (dietaryFilter === 'non-veg' && item.isVeg) return false;
+
+            return true;
+          });
+
+          return {
+            ...subgroup,
+            items: filteredItems,
+          };
+        })
+        .filter((subgroup) => subgroup.items.length > 0);
+
+      return {
+        ...category,
+        subcategories: filteredSubcategories,
+      };
+    }).filter((category) => {
+      if (activeCategoryId !== 'all' && category.id !== activeCategoryId) {
         return false;
       }
-      return true;
-    })
-      .map((category) => {
-        const filteredSubcategories = category.subcategories
-          .map((subgroup) => {
-            const filteredItems = subgroup.items.filter((item) => {
-              // Search filter
-              if (q) {
-                const matchName = item.name.toLowerCase().includes(q);
-                const matchDesc = item.description.toLowerCase().includes(q);
-                const matchSub = subgroup.title.toLowerCase().includes(q);
-                if (!matchName && !matchDesc && !matchSub) return false;
-              }
+      return category.subcategories.length > 0;
+    });
+  }, [searchQuery, dietaryFilter, activeCategoryId]);
 
-              // Dietary filters
-              if (dietaryFilter === 'veg' && !item.isVeg) return false;
-              if (dietaryFilter === 'non-veg' && item.isVeg) return false;
+  // Total dish count
+  const totalDishesCount = useMemo(() => {
+    return RESTAURANT_MENU_ACCORDIONS.reduce(
+      (acc, cat) => acc + cat.subcategories.reduce((sAcc, sub) => sAcc + sub.items.length, 0),
+      0
+    );
+  }, []);
 
-              return true;
-            });
-
-            return {
-              ...subgroup,
-              items: filteredItems,
-            };
-          })
-          .filter((subgroup) => subgroup.items.length > 0);
-
-        return {
-          ...category,
-          subcategories: filteredSubcategories,
-        };
-      })
-      .filter((category) => category.subcategories.length > 0);
-  }, [selectedGroup, searchQuery, dietaryFilter]);
-
-  const totalFilteredDishes = filteredCategories.reduce(
-    (total, cat) =>
-      total + cat.subcategories.reduce((subTotal, sub) => subTotal + sub.items.length, 0),
-    0
-  );
-
-  const handleQuickAdd = (item: MenuItem) => {
-    addItem(item, undefined, [], 1);
+  const handleScrollToCategory = (catId: string) => {
+    setActiveCategoryId(catId);
+    if (catId === 'all') {
+      const el = document.getElementById('menu-content');
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      const el = categoryRefs.current[catId];
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
   };
-
-  // Hover handlers for cursor reveal
-  const handleItemHover = (item: MenuItem, e: React.MouseEvent) => {
-    setHoveredItem(item);
-    setCursorPos({ x: e.clientX, y: e.clientY });
-  };
-
-  const handleItemMouseMove = (e: React.MouseEvent) => {
-    setCursorPos({ x: e.clientX, y: e.clientY });
-  };
-
-  const handleItemLeave = () => {
-    setHoveredItem(null);
-  };
-
-  // Floating preview position calculation with viewport boundary clamping
-  const previewLeft = typeof window !== 'undefined'
-    ? Math.min(cursorPos.x + 20, window.innerWidth - 270)
-    : cursorPos.x + 20;
-
-  const previewTop = typeof window !== 'undefined'
-    ? Math.min(Math.max(cursorPos.y - 120, 80), window.innerHeight - 230)
-    : cursorPos.y - 120;
 
   return (
-    <section id="menu" className="py-14 sm:py-24 bg-[#F3ECDD] text-[#161412] relative">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+    <section id="menu" className="py-12 sm:py-20 bg-[#FAFAF7] text-stone-900 scroll-mt-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header: Stark Editorial Bill of Fare */}
-        <div className="mb-10 sm:mb-14 border-b-[1.5px] border-[#161412] pb-6 sm:pb-8 flex flex-col md:flex-row md:items-end justify-between gap-6">
-          <div>
-            <div className="flex items-center gap-2 mb-2 font-mono text-xs font-bold uppercase tracking-wider text-[#8A8378]">
-              <span>[02]</span>
-              <span>•</span>
-              <span>Bill of Fare</span>
-              <span>•</span>
-              <span>Naturally Leavened</span>
-            </div>
-            <h2 className="font-headline text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-[#161412] leading-[0.95]">
-              The Menu.
-            </h2>
-            <p className="font-sans text-base sm:text-lg text-[#8A8378] mt-3 max-w-xl">
-              Wood-fired sourdough pizza, hand-pinched crystal dim sum, wok noodles, and botanical sodas.
-            </p>
+        {/* Section Header */}
+        <div className="mb-8 sm:mb-12">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 text-xs font-semibold mb-2.5">
+            <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
+            <span>Craft Culinary Catalog</span>
           </div>
-
-          {/* Primary Group Selectors: Pizzas, Small plates, Drinks */}
-          <div className="flex items-center gap-1.5 flex-wrap font-mono text-[11px] sm:text-xs font-bold uppercase">
-            <button
-              onClick={() => setSelectedGroup('all')}
-              className={`px-2.5 py-1 sm:px-3 sm:py-1.5 border-[1.5px] border-[#161412] transition-all cursor-pointer ${
-                selectedGroup === 'all'
-                  ? 'bg-[#161412] text-[#F3ECDD] hard-shadow-sm'
-                  : 'bg-[#F3ECDD] text-[#161412] hover:bg-[#161412]/5'
-              }`}
-            >
-              All [74]
-            </button>
-            <button
-              onClick={() => setSelectedGroup('pizzas')}
-              className={`px-2.5 py-1 sm:px-3 sm:py-1.5 border-[1.5px] border-[#161412] transition-all cursor-pointer ${
-                selectedGroup === 'pizzas'
-                  ? 'bg-[#C8371A] text-[#F3ECDD] hard-shadow-sm'
-                  : 'bg-[#F3ECDD] text-[#161412] hover:bg-[#161412]/5'
-              }`}
-            >
-              Pizzas
-            </button>
-            <button
-              onClick={() => setSelectedGroup('small-plates')}
-              className={`px-2.5 py-1 sm:px-3 sm:py-1.5 border-[1.5px] border-[#161412] transition-all cursor-pointer ${
-                selectedGroup === 'small-plates'
-                  ? 'bg-[#161412] text-[#F3ECDD] hard-shadow-sm'
-                  : 'bg-[#F3ECDD] text-[#161412] hover:bg-[#161412]/5'
-              }`}
-            >
-              Small Plates
-            </button>
-            <button
-              onClick={() => setSelectedGroup('drinks')}
-              className={`px-2.5 py-1 sm:px-3 sm:py-1.5 border-[1.5px] border-[#161412] transition-all cursor-pointer ${
-                selectedGroup === 'drinks'
-                  ? 'bg-[#161412] text-[#F3ECDD] hard-shadow-sm'
-                  : 'bg-[#F3ECDD] text-[#161412] hover:bg-[#161412]/5'
-              }`}
-            >
-              Drinks & Sweets
-            </button>
-          </div>
+          <h2 className="font-serif-clean text-3xl sm:text-4xl lg:text-5xl font-black text-stone-900 tracking-tight">
+            Explore Our Menu
+          </h2>
+          <p className="text-stone-500 text-sm sm:text-base mt-2 max-w-2xl leading-relaxed">
+            Wood-fired sourdough pizzas, delicate dim sums, handcrafted Asian street bowls, and chilled botanical beverages.
+          </p>
         </div>
 
-        {/* Filter Controls Row: Search, Dietary Filters, Expand All */}
-        <div className="mb-8 p-3 sm:p-4 bg-[#F3ECDD] border-[1.5px] border-[#161412] flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
-          
-          {/* Live Search Input */}
-          <div className="relative flex-1">
-            <Search className="w-4 h-4 text-[#8A8378] absolute left-3 top-3.5" />
-            <input
-              type="text"
-              placeholder="Search pizza, dim sum, broth, noodles, tacos..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-9 pr-3 py-2 bg-transparent border-[1.5px] border-[#161412] font-mono text-xs sm:text-sm text-[#161412] placeholder-[#8A8378] focus:outline-none focus:bg-[#161412]/5"
-            />
-          </div>
+        {/* Mobile Horizontal Category Bar (Sticky on Mobile) */}
+        <div className="lg:hidden sticky top-16 z-30 bg-[#FAFAF7]/95 backdrop-blur-md py-3 -mx-4 px-4 border-y border-stone-200/80 mb-6 overflow-x-auto no-scrollbar flex items-center gap-2">
+          <button
+            onClick={() => handleScrollToCategory('all')}
+            className={`px-3.5 py-1.5 rounded-full text-xs font-bold whitespace-nowrap transition-all cursor-pointer ${
+              activeCategoryId === 'all'
+                ? 'bg-[#1E2D24] text-white shadow-xs'
+                : 'bg-white text-stone-600 border border-stone-200'
+            }`}
+          >
+            All Dishes
+          </button>
+          {RESTAURANT_MENU_ACCORDIONS.map((cat) => (
+            <button
+              key={cat.id}
+              onClick={() => handleScrollToCategory(cat.id)}
+              className={`px-3.5 py-1.5 rounded-full text-xs font-bold whitespace-nowrap transition-all cursor-pointer ${
+                activeCategoryId === cat.id
+                  ? 'bg-[#1E2D24] text-white shadow-xs'
+                  : 'bg-white text-stone-600 border border-stone-200'
+              }`}
+            >
+              {cat.title}
+            </button>
+          ))}
+        </div>
 
-          <div className="flex items-center gap-2 flex-wrap">
-            {/* Dietary Filter Segmented Buttons */}
-            <div className="flex items-center border-[1.5px] border-[#161412] font-mono text-xs font-bold">
+        {/* 2-Column Grid: Sticky Category Sidebar Left (4 Cols), Dishes List Right (8 Cols) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          
+          {/* Left Column: Sticky Sidebar (Desktop Only) */}
+          <aside className="hidden lg:block lg:col-span-4 sticky top-24 space-y-5">
+            
+            {/* Search Input Box */}
+            <div className="relative">
+              <Search className="w-4 h-4 text-stone-400 absolute left-3.5 top-3.5" />
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Search pizzas, dim sum, noodles..."
+                className="w-full pl-10 pr-4 py-2.5 bg-white border border-stone-200 rounded-xl text-xs sm:text-sm text-stone-900 placeholder-stone-400 focus:outline-none focus:border-[#1E2D24] shadow-xs"
+              />
+            </div>
+
+            {/* Dietary Toggle Pills */}
+            <div className="flex bg-stone-100 p-1 rounded-xl border border-stone-200 text-xs font-bold">
               <button
                 onClick={() => setDietaryFilter('all')}
-                className={`px-2.5 py-1.5 transition-colors cursor-pointer ${
-                  dietaryFilter === 'all'
-                    ? 'bg-[#161412] text-[#F3ECDD]'
-                    : 'bg-[#F3ECDD] text-[#161412] hover:bg-[#161412]/5'
+                className={`flex-1 py-1.5 rounded-lg transition-all cursor-pointer text-center ${
+                  dietaryFilter === 'all' ? 'bg-white text-stone-900 shadow-xs' : 'text-stone-500 hover:text-stone-900'
                 }`}
               >
-                ALL
+                All
               </button>
               <button
                 onClick={() => setDietaryFilter('veg')}
-                className={`px-2.5 py-1.5 border-l-[1.5px] border-[#161412] flex items-center gap-1.5 transition-colors cursor-pointer ${
-                  dietaryFilter === 'veg'
-                    ? 'bg-[#161412] text-[#F3ECDD]'
-                    : 'bg-[#F3ECDD] text-[#161412] hover:bg-[#161412]/5'
+                className={`flex-1 py-1.5 rounded-lg transition-all cursor-pointer flex items-center justify-center gap-1.5 ${
+                  dietaryFilter === 'veg' ? 'bg-emerald-700 text-white shadow-xs' : 'text-stone-500 hover:text-emerald-700'
                 }`}
               >
-                <span className="w-2.5 h-2.5 border border-[#2E7D32] flex items-center justify-center">
-                  <span className="w-1 h-1 rounded-full bg-[#2E7D32]" />
-                </span>
-                <span>VEG</span>
+                <span className="w-2 h-2 rounded-full bg-emerald-400" />
+                <span>Veg</span>
               </button>
               <button
                 onClick={() => setDietaryFilter('non-veg')}
-                className={`px-2.5 py-1.5 border-l-[1.5px] border-[#161412] flex items-center gap-1.5 transition-colors cursor-pointer ${
-                  dietaryFilter === 'non-veg'
-                    ? 'bg-[#161412] text-[#F3ECDD]'
-                    : 'bg-[#F3ECDD] text-[#161412] hover:bg-[#161412]/5'
+                className={`flex-1 py-1.5 rounded-lg transition-all cursor-pointer flex items-center justify-center gap-1.5 ${
+                  dietaryFilter === 'non-veg' ? 'bg-[#C8371A] text-white shadow-xs' : 'text-stone-500 hover:text-[#C8371A]'
                 }`}
               >
-                <span className="w-2.5 h-2.5 border border-[#C8371A] flex items-center justify-center">
-                  <span className="w-1 h-1 rounded-full bg-[#C8371A]" />
-                </span>
-                <span>NON-VEG</span>
+                <span className="w-2 h-2 rounded-full bg-red-300" />
+                <span>Non-Veg</span>
               </button>
             </div>
 
-            {/* Expand / Collapse All */}
-            <button
-              onClick={toggleAll}
-              className="px-3 py-1.5 bg-[#F3ECDD] hover:bg-[#161412] hover:text-[#F3ECDD] border-[1.5px] border-[#161412] font-mono text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer"
-            >
-              {areAllOpen ? '[ Collapse All ]' : '[ Expand All ]'}
-            </button>
+            {/* Category Navigation List */}
+            <div className="bg-white rounded-2xl border border-stone-200/90 p-3 shadow-xs space-y-1">
+              <div className="px-3 py-2 flex items-center justify-between text-xs font-bold text-stone-400 uppercase tracking-wider border-b border-stone-100 mb-1">
+                <span>Categories</span>
+                <span>{totalDishesCount} Dishes</span>
+              </div>
+
+              {/* All Dishes Option */}
+              <button
+                onClick={() => handleScrollToCategory('all')}
+                className={`w-full px-3 py-2.5 rounded-xl text-left text-xs sm:text-sm font-bold flex items-center justify-between transition-all cursor-pointer ${
+                  activeCategoryId === 'all'
+                    ? 'bg-[#1E2D24] text-white shadow-xs'
+                    : 'text-stone-700 hover:bg-stone-50'
+                }`}
+              >
+                <span>⭐ All Categories</span>
+                <span
+                  className={`text-[11px] font-mono px-2 py-0.5 rounded-md ${
+                    activeCategoryId === 'all'
+                      ? 'bg-white/20 text-white'
+                      : 'bg-stone-100 text-stone-500'
+                  }`}
+                >
+                  {totalDishesCount}
+                </span>
+              </button>
+
+              {/* Specific Categories */}
+              {RESTAURANT_MENU_ACCORDIONS.map((cat) => {
+                const count = cat.subcategories.reduce((acc, sub) => acc + sub.items.length, 0);
+                const isActive = activeCategoryId === cat.id;
+
+                return (
+                  <button
+                    key={cat.id}
+                    onClick={() => handleScrollToCategory(cat.id)}
+                    className={`w-full px-3 py-2.5 rounded-xl text-left text-xs sm:text-sm font-bold flex items-center justify-between transition-all cursor-pointer ${
+                      isActive
+                        ? 'bg-[#1E2D24] text-white shadow-xs'
+                        : 'text-stone-700 hover:bg-stone-50'
+                    }`}
+                  >
+                    <span className="truncate pr-2">{cat.title}</span>
+                    <span
+                      className={`text-[11px] font-mono px-2 py-0.5 rounded-md shrink-0 ${
+                        isActive
+                          ? 'bg-white/20 text-white'
+                          : 'bg-stone-100 text-stone-500'
+                      }`}
+                    >
+                      {count}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+
+          </aside>
+
+          {/* Right Column: Menu Sections & Dish Cards (8 Cols) */}
+          <div id="menu-content" className="lg:col-span-8 space-y-10">
+            {filteredCategories.length === 0 ? (
+              <div className="bg-white rounded-2xl border border-stone-200 p-12 text-center card-shadow">
+                <Utensils className="w-10 h-10 text-stone-300 mx-auto mb-3" />
+                <h4 className="font-sans text-base font-bold text-stone-900">No matching dishes found</h4>
+                <p className="text-xs text-stone-500 mt-1 max-w-xs mx-auto">
+                  Try clearing your search query or switching dietary filters.
+                </p>
+                <button
+                  onClick={() => {
+                    setSearchQuery('');
+                    setDietaryFilter('all');
+                    setActiveCategoryId('all');
+                  }}
+                  className="mt-4 px-4 py-2 bg-[#1E2D24] text-white text-xs font-bold rounded-xl"
+                >
+                  Reset Filters
+                </button>
+              </div>
+            ) : (
+              filteredCategories.map((category) => (
+                <div
+                  key={category.id}
+                  ref={(el) => { categoryRefs.current[category.id] = el; }}
+                  className="space-y-5 scroll-mt-24"
+                >
+                  {/* Category Header */}
+                  <div className="border-b border-stone-200 pb-3 flex items-baseline justify-between">
+                    <div>
+                      <h3 className="font-serif-clean text-2xl sm:text-3xl font-black text-stone-900 tracking-tight">
+                        {category.title}
+                      </h3>
+                      {category.description && (
+                        <p className="text-xs sm:text-sm text-stone-500 mt-1">
+                          {category.description}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Subcategories (e.g. Veg Dim Sum vs Non-Veg Dim Sum) */}
+                  <div className="space-y-6">
+                    {category.subcategories.map((subgroup) => (
+                      <div key={subgroup.id} className="space-y-3">
+                        <div className="flex items-center gap-2 pt-2">
+                          <span className="text-xs font-bold uppercase tracking-wider text-stone-600">
+                            {subgroup.title}
+                          </span>
+                          <span className="text-[11px] text-stone-400 font-mono">
+                            ({subgroup.items.length})
+                          </span>
+                        </div>
+
+                        {/* Dish Cards List */}
+                        <div className="grid grid-cols-1 gap-3.5">
+                          {subgroup.items.map((dish) => (
+                            <MenuItemCard
+                              key={dish.id}
+                              item={dish}
+                              onCustomise={(item) => setCustomisingItem(item)}
+                              onQuickAdd={(item) => addItem(item)}
+                            />
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                </div>
+              ))
+            )}
           </div>
+
         </div>
-
-        {/* Results Counter if Filtered */}
-        {(searchQuery || dietaryFilter !== 'all' || selectedGroup !== 'all') && (
-          <div className="mb-6 font-mono text-xs text-[#8A8378] flex items-center justify-between">
-            <span>
-              Showing {totalFilteredDishes} {totalFilteredDishes === 1 ? 'item' : 'items'} matching current filters.
-            </span>
-            <button
-              onClick={() => {
-                setSearchQuery('');
-                setDietaryFilter('all');
-                setSelectedGroup('all');
-              }}
-              className="text-[#C8371A] font-bold underline cursor-pointer"
-            >
-              Reset filters
-            </button>
-          </div>
-        )}
-
-        {/* Categories Typographic Lists */}
-        {filteredCategories.length === 0 ? (
-          <div className="py-16 text-center border-[1.5px] border-[#161412] bg-[#F3ECDD] p-8">
-            <p className="font-headline text-2xl font-bold text-[#161412]">
-              No dishes match your selection.
-            </p>
-            <p className="font-sans text-sm text-[#8A8378] mt-2">
-              Try adjusting your search terms or dietary filters.
-            </p>
-          </div>
-        ) : (
-          <div className="space-y-4">
-            {filteredCategories.map((category, index) => (
-              <CategoryAccordion
-                key={category.id}
-                category={category}
-                index={index}
-                isOpen={openCategories.includes(category.id)}
-                onToggle={() => toggleCategory(category.id)}
-                onCustomise={(item) => setCustomisingItem(item)}
-                onQuickAdd={handleQuickAdd}
-                onHoverItem={handleItemHover}
-                onMouseMoveItem={handleItemMouseMove}
-                onLeaveItem={handleItemLeave}
-              />
-            ))}
-          </div>
-        )}
 
       </div>
 
-      {/* Desktop Cursor-Following Image Hover Reveal */}
-      {hoveredItem && hoveredItem.imagePath && (
-        <div
-          className="fixed pointer-events-none z-50 transition-opacity duration-150 hidden sm:block"
-          style={{
-            left: `${previewLeft}px`,
-            top: `${previewTop}px`,
-          }}
-        >
-          <div className="w-60 bg-[#F3ECDD] border-[1.5px] border-[#161412] hard-shadow p-2">
-            <div className="w-full h-40 overflow-hidden border-[1.5px] border-[#161412] bg-[#161412]">
-              <img
-                src={hoveredItem.imagePath}
-                alt={hoveredItem.name}
-                className="w-full h-full object-cover"
-                onError={(e) => {
-                  (e.currentTarget as HTMLElement).style.display = 'none';
-                }}
-              />
-            </div>
-            <div className="mt-2 flex items-baseline justify-between px-0.5">
-              <span className="font-headline text-xs font-bold text-[#161412] truncate max-w-[150px]">
-                {hoveredItem.name}
-              </span>
-              <span className="font-mono text-xs font-bold text-[#C8371A]">
-                ₹{hoveredItem.price}
-              </span>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Dish Customization Modal */}
+      {/* Product Variant & Customisation Modal */}
       <VariantSelectorModal
         item={customisingItem}
         isOpen={Boolean(customisingItem)}
