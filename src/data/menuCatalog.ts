@@ -249,7 +249,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     "imagePath": "/assets/garlic-bread/asparagus-burrata.webp",
     "isAvailable": true,
     "isChefSpecial": false,
-    "isBestseller": true,
+    "isBestseller": false,
     "spicyLevel": 0,
     "hasVariants": false,
     "variants": [],
@@ -422,7 +422,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     "price": 345,
     "basePrice": 345,
     "description": "Classic marinara layered with melted mozzarella, chicken pepperoni and spicy jalape\u00f1os.",
-    "imagePath": "/assets/pizza/chicken-pepperoni.webp",
+    "imagePath": "/assets/garlic-bread/pepperoni.webp",
     "isAvailable": true,
     "isChefSpecial": false,
     "isBestseller": false,
@@ -886,7 +886,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     "imagePath": "/assets/garlic-bread/asparagus-burrata.webp",
     "isAvailable": true,
     "isChefSpecial": false,
-    "isBestseller": true,
+    "isBestseller": false,
     "spicyLevel": 0,
     "hasVariants": false,
     "variants": [],
@@ -1059,7 +1059,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     "price": 670,
     "basePrice": 670,
     "description": "Classic marinara layered with melted mozzarella, chicken pepperoni and spicy jalape\u00f1os.",
-    "imagePath": "/assets/pizza/chicken-pepperoni.webp",
+    "imagePath": "/assets/garlic-bread/pepperoni.webp",
     "isAvailable": true,
     "isChefSpecial": false,
     "isBestseller": false,
@@ -1696,7 +1696,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     "price": 640,
     "basePrice": 640,
     "description": "Classic marinara layered with melted mozzarella, chicken pepperoni and spicy jalape\u00f1os.",
-    "imagePath": "/assets/pizza/chicken-pepperoni.webp",
+    "imagePath": "/assets/garlic-bread/pepperoni.webp",
     "isAvailable": true,
     "isChefSpecial": false,
     "isBestseller": false,
@@ -1925,15 +1925,8 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     "isChefSpecial": true,
     "isBestseller": false,
     "spicyLevel": 0,
-    "hasVariants": true,
-    "variants": [
-      {
-        "id": "var-served-as-6-slices",
-        "name": "Served as 6 slices",
-        "price": 695,
-        "isVeg": true
-      }
-    ],
+    "hasVariants": false,
+    "variants": [],
     "addons": []
   },
   {
@@ -1949,15 +1942,8 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     "isChefSpecial": true,
     "isBestseller": false,
     "spicyLevel": 0,
-    "hasVariants": true,
-    "variants": [
-      {
-        "id": "var-served-as-6-slices-2",
-        "name": "Served as 6 slices",
-        "price": 745,
-        "isVeg": true
-      }
-    ],
+    "hasVariants": false,
+    "variants": [],
     "addons": []
   },
   {
@@ -1973,15 +1959,8 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     "isChefSpecial": true,
     "isBestseller": false,
     "spicyLevel": 0,
-    "hasVariants": true,
-    "variants": [
-      {
-        "id": "var-served-as-6-slices-3",
-        "name": "Served as 6 slices",
-        "price": 845,
-        "isVeg": false
-      }
-    ],
+    "hasVariants": false,
+    "variants": [],
     "addons": []
   },
   {
@@ -1997,15 +1976,8 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     "isChefSpecial": true,
     "isBestseller": false,
     "spicyLevel": 0,
-    "hasVariants": true,
-    "variants": [
-      {
-        "id": "var-served-as-6-slices-4",
-        "name": "Served as 6 slices",
-        "price": 845,
-        "isVeg": false
-      }
-    ],
+    "hasVariants": false,
+    "variants": [],
     "addons": []
   },
   {
@@ -2021,15 +1993,8 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     "isChefSpecial": true,
     "isBestseller": false,
     "spicyLevel": 0,
-    "hasVariants": true,
-    "variants": [
-      {
-        "id": "var-served-as-6-slices-5",
-        "name": "Served as 6 slices",
-        "price": 845,
-        "isVeg": false
-      }
-    ],
+    "hasVariants": false,
+    "variants": [],
     "addons": []
   },
   {
@@ -2045,15 +2010,8 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     "isChefSpecial": false,
     "isBestseller": false,
     "spicyLevel": 1,
-    "hasVariants": true,
-    "variants": [
-      {
-        "id": "var-served-as-8-slices",
-        "name": "Served as 8 slices",
-        "price": 445,
-        "isVeg": true
-      }
-    ],
+    "hasVariants": false,
+    "variants": [],
     "addons": []
   },
   {
@@ -2069,15 +2027,8 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     "isChefSpecial": false,
     "isBestseller": false,
     "spicyLevel": 0,
-    "hasVariants": true,
-    "variants": [
-      {
-        "id": "var-served-as-8-slices-2",
-        "name": "Served as 8 slices",
-        "price": 445,
-        "isVeg": true
-      }
-    ],
+    "hasVariants": false,
+    "variants": [],
     "addons": []
   },
   {
@@ -2093,15 +2044,8 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     "isChefSpecial": false,
     "isBestseller": false,
     "spicyLevel": 0,
-    "hasVariants": true,
-    "variants": [
-      {
-        "id": "var-served-as-8-slices-3",
-        "name": "Served as 8 slices",
-        "price": 445,
-        "isVeg": true
-      }
-    ],
+    "hasVariants": false,
+    "variants": [],
     "addons": []
   },
   {
@@ -2117,15 +2061,8 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     "isChefSpecial": false,
     "isBestseller": false,
     "spicyLevel": 0,
-    "hasVariants": true,
-    "variants": [
-      {
-        "id": "var-served-as-8-slices-4",
-        "name": "Served as 8 slices",
-        "price": 495,
-        "isVeg": false
-      }
-    ],
+    "hasVariants": false,
+    "variants": [],
     "addons": []
   },
   {
@@ -2141,15 +2078,8 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     "isChefSpecial": false,
     "isBestseller": false,
     "spicyLevel": 0,
-    "hasVariants": true,
-    "variants": [
-      {
-        "id": "var-served-as-8-slices-5",
-        "name": "Served as 8 slices",
-        "price": 495,
-        "isVeg": false
-      }
-    ],
+    "hasVariants": false,
+    "variants": [],
     "addons": []
   },
   {
@@ -2165,15 +2095,8 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     "isChefSpecial": false,
     "isBestseller": false,
     "spicyLevel": 0,
-    "hasVariants": true,
-    "variants": [
-      {
-        "id": "var-served-as-8-slices-6",
-        "name": "Served as 8 slices",
-        "price": 495,
-        "isVeg": false
-      }
-    ],
+    "hasVariants": false,
+    "variants": [],
     "addons": []
   },
   {
@@ -2252,7 +2175,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     "price": 380,
     "basePrice": 380,
     "description": "Minced chicken with cream cheese, coriander, spring onion and chilli oil. 6 pieces per serving.",
-    "imagePath": "/assets/dim-sums/spicy-cheesy-chicken-dim-sum.webp",
+    "imagePath": "/assets/dim-sums/spicy-cheesy-dimsum.avif",
     "isAvailable": true,
     "isChefSpecial": true,
     "isBestseller": true,
@@ -2269,7 +2192,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     "price": 350,
     "basePrice": 350,
     "description": "Minced chicken, spring onion, sesame oil and mild seasoning. 6 pieces per serving.",
-    "imagePath": "/assets/dim-sums/classic-chicken-dim-sum.webp",
+    "imagePath": "/assets/mexican-appetisers/classic-fries.avif",
     "isAvailable": true,
     "isChefSpecial": false,
     "isBestseller": false,
@@ -2337,7 +2260,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     "price": 230,
     "basePrice": 230,
     "description": "6 pieces per serving.",
-    "imagePath": "/assets/momo-and-gyoza/chicken-momos.webp",
+    "imagePath": "/assets/momo-and-gyoza/vegetable-cheese-momos.webp",
     "isAvailable": true,
     "isChefSpecial": false,
     "isBestseller": false,
@@ -2354,7 +2277,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     "price": 250,
     "basePrice": 250,
     "description": "6 pieces per serving.",
-    "imagePath": "/assets/momo-and-gyoza/chicken-cheese-momos.avif",
+    "imagePath": "/assets/momo-and-gyoza/vegetable-cheese-momos.webp",
     "isAvailable": true,
     "isChefSpecial": false,
     "isBestseller": false,
@@ -2371,7 +2294,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     "price": 250,
     "basePrice": 250,
     "description": "6 pieces per serving.",
-    "imagePath": "/assets/momo-and-gyoza/chicken-momos.webp",
+    "imagePath": "/assets/momo-and-gyoza/vegetable-cheese-momos.webp",
     "isAvailable": true,
     "isChefSpecial": false,
     "isBestseller": false,
@@ -2388,7 +2311,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     "price": 300,
     "basePrice": 300,
     "description": "6 pieces per serving.",
-    "imagePath": "/assets/momo-and-gyoza/chicken-momos.webp",
+    "imagePath": "/assets/momo-and-gyoza/vegetable-cheese-momos.webp",
     "isAvailable": true,
     "isChefSpecial": false,
     "isBestseller": false,
@@ -2507,7 +2430,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     "price": 345,
     "basePrice": 345,
     "description": "Wok-tossed chilli chicken with onions and bell peppers in a tangy chilli-garlic sauce. 2 pieces per serving.",
-    "imagePath": "/assets/rice-bowls/chilli-chicken-rice-bowl.avif",
+    "imagePath": "/assets/rice-bowls/chilli-mushroom-rice-bowl.avif",
     "isAvailable": true,
     "isChefSpecial": false,
     "isBestseller": false,
@@ -2559,23 +2482,6 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     "basePrice": 315,
     "description": "Crispy asparagus tempura, carrot, cucumber and spicy mayo.",
     "imagePath": "/assets/sushi/asparagus-tempura-sushi.webp",
-    "isAvailable": true,
-    "isChefSpecial": false,
-    "isBestseller": false,
-    "spicyLevel": 0,
-    "hasVariants": false,
-    "variants": [],
-    "addons": []
-  },
-  {
-    "id": "asian-cream-cheese-filling-4-pcs",
-    "name": "Cream Cheese Filling 4 pcs",
-    "category": "Sushi - 4 Pieces",
-    "isVeg": true,
-    "price": 0,
-    "basePrice": 0,
-    "description": "Authentic Cream Cheese Filling 4 pcs freshly crafted with Asian herbs and wok techniques.",
-    "imagePath": "/assets/sushi/avocado-and-cream-cheese-sushi.webp",
     "isAvailable": true,
     "isChefSpecial": false,
     "isBestseller": false,
@@ -2806,23 +2712,6 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     "addons": []
   },
   {
-    "id": "asian-cream-cheese-filling-8-pcs",
-    "name": "Cream Cheese Filling 8 pcs",
-    "category": "Sushi - 8 Pieces",
-    "isVeg": true,
-    "price": 0,
-    "basePrice": 0,
-    "description": "Authentic Cream Cheese Filling 8 pcs freshly crafted with Asian herbs and wok techniques.",
-    "imagePath": "/assets/sushi/avocado-and-cream-cheese-sushi.webp",
-    "isAvailable": true,
-    "isChefSpecial": false,
-    "isBestseller": false,
-    "spicyLevel": 0,
-    "hasVariants": false,
-    "variants": [],
-    "addons": []
-  },
-  {
     "id": "asian-yasai-tempura-sushi-8-pieces",
     "name": "Yasai Tempura Sushi - 8 pieces",
     "category": "Sushi - 8 Pieces",
@@ -2993,44 +2882,25 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     "addons": []
   },
   {
-    "id": "soup-manchow-soup",
-    "name": "Manchow Soup",
+    "id": "asian-manchow-soup-vegetarian",
+    "name": "Manchow Soup (Vegetarian)",
     "category": "Soups",
     "isVeg": true,
     "price": 175,
     "basePrice": 175,
-    "description": "Spicy and tangy dark soya broth with ginger, garlic, fresh coriander and crispy fried noodles.",
+    "description": "Authentic Manchow Soup (Vegetarian) prepared with Asian herbs and wok fire.",
     "imagePath": "/assets/soups/manchow-soup.avif",
     "isAvailable": true,
-    "isChefSpecial": true,
-    "isBestseller": true,
+    "isChefSpecial": false,
+    "isBestseller": false,
     "spicyLevel": 0,
-    "hasVariants": true,
-    "variants": [
-      {
-        "id": "var-vegetarian",
-        "name": "Vegetarian",
-        "price": 175,
-        "isVeg": true
-      },
-      {
-        "id": "var-chicken",
-        "name": "Chicken",
-        "price": 225,
-        "isVeg": false
-      },
-      {
-        "id": "var-prawn",
-        "name": "Prawn",
-        "price": 295,
-        "isVeg": false
-      }
-    ],
+    "hasVariants": false,
+    "variants": [],
     "addons": []
   },
   {
-    "id": "soup-tom-kha-soup",
-    "name": "Tom Kha Soup",
+    "id": "asian-tom-kha-soup-vegetarian",
+    "name": "Tom Kha Soup (Vegetarian)",
     "category": "Soups",
     "isVeg": true,
     "price": 215,
@@ -3038,174 +2908,283 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     "description": "Creamy Thai coconut broth with galangal, lemongrass and kaffir lime leaves.",
     "imagePath": "/assets/soups/tom-kha-soup.avif",
     "isAvailable": true,
-    "isChefSpecial": true,
+    "isChefSpecial": false,
     "isBestseller": false,
-    "spicyLevel": 1,
-    "hasVariants": true,
-    "variants": [
-      {
-        "id": "var-vegetarian-2",
-        "name": "Vegetarian",
-        "price": 215,
-        "isVeg": true
-      },
-      {
-        "id": "var-chicken-2",
-        "name": "Chicken",
-        "price": 275,
-        "isVeg": false
-      },
-      {
-        "id": "var-prawn-2",
-        "name": "Prawn",
-        "price": 345,
-        "isVeg": false
-      }
-    ],
+    "spicyLevel": 0,
+    "hasVariants": false,
+    "variants": [],
     "addons": []
   },
   {
-    "id": "soup-sweet-corn-soup",
-    "name": "Sweet Corn Soup",
+    "id": "asian-sweet-corn-soup-vegetarian",
+    "name": "Sweet Corn Soup (Vegetarian)",
     "category": "Soups",
     "isVeg": true,
     "price": 145,
     "basePrice": 145,
-    "description": "Classic comforting creamy sweet corn soup with tender vegetables and mild seasonings.",
+    "description": "Creamy Thai coconut broth with galangal, lemongrass and kaffir lime leaves.",
     "imagePath": "/assets/soups/sweet-corn-soup.avif",
     "isAvailable": true,
     "isChefSpecial": false,
-    "isBestseller": true,
+    "isBestseller": false,
     "spicyLevel": 0,
-    "hasVariants": true,
-    "variants": [
-      {
-        "id": "var-vegetarian-3",
-        "name": "Vegetarian",
-        "price": 145,
-        "isVeg": true
-      },
-      {
-        "id": "var-chicken-3",
-        "name": "Chicken",
-        "price": 195,
-        "isVeg": false
-      },
-      {
-        "id": "var-prawn-3",
-        "name": "Prawn",
-        "price": 295,
-        "isVeg": false
-      }
-    ],
+    "hasVariants": false,
+    "variants": [],
     "addons": []
   },
   {
-    "id": "soup-hot-sour-soup",
-    "name": "Hot & Sour Soup",
+    "id": "asian-hot-sour-soup-vegetarian",
+    "name": "Hot & Sour Soup (Vegetarian)",
     "category": "Soups",
     "isVeg": true,
     "price": 175,
     "basePrice": 175,
-    "description": "Hearty, bold broth infused with red chillies, vinegar, white pepper and sliced mushrooms.",
+    "description": "Creamy Thai coconut broth with galangal, lemongrass and kaffir lime leaves.",
     "imagePath": "/assets/soups/hot-n-sour-soup.avif",
     "isAvailable": true,
     "isChefSpecial": false,
     "isBestseller": false,
-    "spicyLevel": 1,
-    "hasVariants": true,
-    "variants": [
-      {
-        "id": "var-vegetarian-4",
-        "name": "Vegetarian",
-        "price": 175,
-        "isVeg": true
-      },
-      {
-        "id": "var-chicken-4",
-        "name": "Chicken",
-        "price": 225,
-        "isVeg": false
-      },
-      {
-        "id": "var-prawn-4",
-        "name": "Prawn",
-        "price": 295,
-        "isVeg": false
-      }
-    ],
+    "spicyLevel": 0,
+    "hasVariants": false,
+    "variants": [],
     "addons": []
   },
   {
-    "id": "soup-tom-yum-soup",
-    "name": "Tom Yum Soup",
+    "id": "asian-tom-yum-soup-vegetarian",
+    "name": "Tom Yum Soup (Vegetarian)",
     "category": "Soups",
     "isVeg": true,
     "price": 175,
     "basePrice": 175,
-    "description": "Hot and sour Thai broth with lemongrass, kaffir lime leaves and fiery bird eye chilli.",
+    "description": "Hot and sour Thai broth with lemongrass and kaffir lime leaves.",
     "imagePath": "/assets/soups/tom-yum-soup.avif",
     "isAvailable": true,
     "isChefSpecial": false,
     "isBestseller": false,
-    "spicyLevel": 1,
-    "hasVariants": true,
-    "variants": [
-      {
-        "id": "var-vegetarian-5",
-        "name": "Vegetarian",
-        "price": 175,
-        "isVeg": true
-      },
-      {
-        "id": "var-chicken-5",
-        "name": "Chicken",
-        "price": 225,
-        "isVeg": false
-      },
-      {
-        "id": "var-prawn-5",
-        "name": "Prawn",
-        "price": 295,
-        "isVeg": false
-      }
-    ],
+    "spicyLevel": 0,
+    "hasVariants": false,
+    "variants": [],
     "addons": []
   },
   {
-    "id": "soup-lemon-coriander-soup",
-    "name": "Lemon Coriander Soup",
+    "id": "asian-lemon-coriander-soup-vegetarian",
+    "name": "Lemon Coriander Soup (Vegetarian)",
     "category": "Soups",
     "isVeg": true,
     "price": 145,
     "basePrice": 145,
-    "description": "Clear aromatic broth enriched with zesty fresh lemon juice, crushed garlic and fresh coriander.",
+    "description": "Hot and sour Thai broth with lemongrass and kaffir lime leaves.",
     "imagePath": "/assets/soups/lemon-coriander-soup.avif",
     "isAvailable": true,
     "isChefSpecial": false,
     "isBestseller": false,
     "spicyLevel": 0,
-    "hasVariants": true,
-    "variants": [
-      {
-        "id": "var-vegetarian-6",
-        "name": "Vegetarian",
-        "price": 145,
-        "isVeg": true
-      },
-      {
-        "id": "var-chicken-6",
-        "name": "Chicken",
-        "price": 195,
-        "isVeg": false
-      },
-      {
-        "id": "var-prawn-6",
-        "name": "Prawn",
-        "price": 295,
-        "isVeg": false
-      }
-    ],
+    "hasVariants": false,
+    "variants": [],
+    "addons": []
+  },
+  {
+    "id": "asian-manchow-soup-chicken",
+    "name": "Manchow Soup (Chicken)",
+    "category": "Soups",
+    "isVeg": false,
+    "price": 225,
+    "basePrice": 225,
+    "description": "Authentic Manchow Soup (Vegetarian) prepared with Asian herbs and wok fire.",
+    "imagePath": "/assets/soups/manchow-soup.avif",
+    "isAvailable": true,
+    "isChefSpecial": false,
+    "isBestseller": false,
+    "spicyLevel": 0,
+    "hasVariants": false,
+    "variants": [],
+    "addons": []
+  },
+  {
+    "id": "asian-manchow-soup-prawn",
+    "name": "Manchow Soup (Prawn)",
+    "category": "Soups",
+    "isVeg": false,
+    "price": 295,
+    "basePrice": 295,
+    "description": "Authentic Manchow Soup (Vegetarian) prepared with Asian herbs and wok fire.",
+    "imagePath": "/assets/soups/manchow-soup.avif",
+    "isAvailable": true,
+    "isChefSpecial": false,
+    "isBestseller": false,
+    "spicyLevel": 0,
+    "hasVariants": false,
+    "variants": [],
+    "addons": []
+  },
+  {
+    "id": "asian-tom-kha-soup-chicken",
+    "name": "Tom Kha Soup (Chicken)",
+    "category": "Soups",
+    "isVeg": false,
+    "price": 275,
+    "basePrice": 275,
+    "description": "Creamy Thai coconut broth with galangal, lemongrass and kaffir lime leaves.",
+    "imagePath": "/assets/soups/tom-kha-soup.avif",
+    "isAvailable": true,
+    "isChefSpecial": false,
+    "isBestseller": false,
+    "spicyLevel": 0,
+    "hasVariants": false,
+    "variants": [],
+    "addons": []
+  },
+  {
+    "id": "asian-tom-kha-soup-prawn",
+    "name": "Tom Kha Soup (Prawn)",
+    "category": "Soups",
+    "isVeg": false,
+    "price": 345,
+    "basePrice": 345,
+    "description": "Creamy Thai coconut broth with galangal, lemongrass and kaffir lime leaves.",
+    "imagePath": "/assets/soups/tom-kha-soup.avif",
+    "isAvailable": true,
+    "isChefSpecial": false,
+    "isBestseller": false,
+    "spicyLevel": 0,
+    "hasVariants": false,
+    "variants": [],
+    "addons": []
+  },
+  {
+    "id": "asian-sweet-corn-soup-chicken",
+    "name": "Sweet Corn Soup (Chicken)",
+    "category": "Soups",
+    "isVeg": false,
+    "price": 195,
+    "basePrice": 195,
+    "description": "Creamy Thai coconut broth with galangal, lemongrass and kaffir lime leaves.",
+    "imagePath": "/assets/soups/sweet-corn-soup.avif",
+    "isAvailable": true,
+    "isChefSpecial": false,
+    "isBestseller": false,
+    "spicyLevel": 0,
+    "hasVariants": false,
+    "variants": [],
+    "addons": []
+  },
+  {
+    "id": "asian-sweet-corn-soup-prawn",
+    "name": "Sweet Corn Soup (Prawn)",
+    "category": "Soups",
+    "isVeg": false,
+    "price": 295,
+    "basePrice": 295,
+    "description": "Creamy Thai coconut broth with galangal, lemongrass and kaffir lime leaves.",
+    "imagePath": "/assets/soups/sweet-corn-soup.avif",
+    "isAvailable": true,
+    "isChefSpecial": false,
+    "isBestseller": false,
+    "spicyLevel": 0,
+    "hasVariants": false,
+    "variants": [],
+    "addons": []
+  },
+  {
+    "id": "asian-hot-sour-soup-chicken",
+    "name": "Hot & Sour Soup (Chicken)",
+    "category": "Soups",
+    "isVeg": false,
+    "price": 225,
+    "basePrice": 225,
+    "description": "Creamy Thai coconut broth with galangal, lemongrass and kaffir lime leaves.",
+    "imagePath": "/assets/soups/hot-n-sour-soup.avif",
+    "isAvailable": true,
+    "isChefSpecial": false,
+    "isBestseller": false,
+    "spicyLevel": 0,
+    "hasVariants": false,
+    "variants": [],
+    "addons": []
+  },
+  {
+    "id": "asian-hot-sour-soup-prawn",
+    "name": "Hot & Sour Soup (Prawn)",
+    "category": "Soups",
+    "isVeg": false,
+    "price": 295,
+    "basePrice": 295,
+    "description": "Creamy Thai coconut broth with galangal, lemongrass and kaffir lime leaves.",
+    "imagePath": "/assets/soups/hot-n-sour-soup.avif",
+    "isAvailable": true,
+    "isChefSpecial": false,
+    "isBestseller": false,
+    "spicyLevel": 0,
+    "hasVariants": false,
+    "variants": [],
+    "addons": []
+  },
+  {
+    "id": "asian-tom-yum-soup-chicken",
+    "name": "Tom Yum Soup (Chicken)",
+    "category": "Soups",
+    "isVeg": false,
+    "price": 225,
+    "basePrice": 225,
+    "description": "Hot and sour Thai broth with lemongrass and kaffir lime leaves.",
+    "imagePath": "/assets/soups/tom-yum-soup.avif",
+    "isAvailable": true,
+    "isChefSpecial": false,
+    "isBestseller": false,
+    "spicyLevel": 0,
+    "hasVariants": false,
+    "variants": [],
+    "addons": []
+  },
+  {
+    "id": "asian-tom-yum-soup-prawn",
+    "name": "Tom Yum Soup (Prawn)",
+    "category": "Soups",
+    "isVeg": false,
+    "price": 295,
+    "basePrice": 295,
+    "description": "Hot and sour Thai broth with lemongrass and kaffir lime leaves.",
+    "imagePath": "/assets/soups/tom-yum-soup.avif",
+    "isAvailable": true,
+    "isChefSpecial": false,
+    "isBestseller": false,
+    "spicyLevel": 0,
+    "hasVariants": false,
+    "variants": [],
+    "addons": []
+  },
+  {
+    "id": "asian-lemon-coriander-soup-chicken",
+    "name": "Lemon Coriander Soup (Chicken)",
+    "category": "Soups",
+    "isVeg": false,
+    "price": 195,
+    "basePrice": 195,
+    "description": "Hot and sour Thai broth with lemongrass and kaffir lime leaves.",
+    "imagePath": "/assets/soups/lemon-coriander-soup.avif",
+    "isAvailable": true,
+    "isChefSpecial": false,
+    "isBestseller": false,
+    "spicyLevel": 0,
+    "hasVariants": false,
+    "variants": [],
+    "addons": []
+  },
+  {
+    "id": "asian-lemon-coriander-soup-prawn",
+    "name": "Lemon Coriander Soup (Prawn)",
+    "category": "Soups",
+    "isVeg": false,
+    "price": 295,
+    "basePrice": 295,
+    "description": "Hot and sour Thai broth with lemongrass and kaffir lime leaves.",
+    "imagePath": "/assets/soups/lemon-coriander-soup.avif",
+    "isAvailable": true,
+    "isChefSpecial": false,
+    "isBestseller": false,
+    "spicyLevel": 0,
+    "hasVariants": false,
+    "variants": [],
     "addons": []
   },
   {
@@ -3277,14 +3256,31 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     "addons": []
   },
   {
-    "id": "asian-manchurian",
-    "name": "Manchurian",
+    "id": "asian-manchurian-dry",
+    "name": "Manchurian (Dry)",
     "category": "Appetisers",
     "isVeg": true,
     "price": 345,
     "basePrice": 345,
     "description": "Crispy vegetable balls in a spicy, tangy Indo-Chinese sauce.",
     "imagePath": "/assets/appetisers/manchurian.avif",
+    "isAvailable": true,
+    "isChefSpecial": false,
+    "isBestseller": false,
+    "spicyLevel": 0,
+    "hasVariants": false,
+    "variants": [],
+    "addons": []
+  },
+  {
+    "id": "asian-manchurian-dry-gravy",
+    "name": "Manchurian (Dry) (Gravy)",
+    "category": "Appetisers",
+    "isVeg": true,
+    "price": 345,
+    "basePrice": 345,
+    "description": "Crispy vegetable balls in a spicy, tangy Indo-Chinese sauce.",
+    "imagePath": "/assets/mexican-appetisers/chicken-popcorn.avif",
     "isAvailable": true,
     "isChefSpecial": false,
     "isBestseller": false,
@@ -3379,14 +3375,31 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     "addons": []
   },
   {
-    "id": "asian-saut-ed-veggies",
-    "name": "Saut\u00e9ed Veggies",
+    "id": "asian-saut-ed-veggies-butter-garlic-sauce",
+    "name": "Saut\u00e9ed Veggies (Butter Garlic Sauce)",
     "category": "Appetisers",
     "isVeg": true,
     "price": 445,
     "basePrice": 445,
     "description": "Saut\u00e9ed vegetables served in your choice of sauce.",
     "imagePath": "/assets/appetisers/sauteed-veggies.webp",
+    "isAvailable": true,
+    "isChefSpecial": false,
+    "isBestseller": false,
+    "spicyLevel": 0,
+    "hasVariants": false,
+    "variants": [],
+    "addons": []
+  },
+  {
+    "id": "asian-saut-ed-veggies-butter-garlic-sauce-hot-garlic-sauce",
+    "name": "Saut\u00e9ed Veggies (Butter Garlic Sauce) (Hot Garlic Sauce)",
+    "category": "Appetisers",
+    "isVeg": true,
+    "price": 445,
+    "basePrice": 445,
+    "description": "Saut\u00e9ed vegetables served in your choice of sauce.",
+    "imagePath": "/assets/appetisers/hot-garlic-prawn.webp",
     "isAvailable": true,
     "isChefSpecial": false,
     "isBestseller": false,
@@ -3549,44 +3562,25 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     "addons": []
   },
   {
-    "id": "noodle-butter-burnt-garlic-noodles",
-    "name": "Butter & Burnt Garlic Noodles",
+    "id": "asian-butter-burnt-garlic-noodles-vegetarian",
+    "name": "Butter & Burnt Garlic Noodles (Vegetarian)",
     "category": "Noodles",
     "isVeg": true,
     "price": 275,
     "basePrice": 275,
-    "description": "Noodles tossed with butter, golden garlic and crisp vegetables.",
+    "description": "Noodles tossed with butter, garlic and crisp vegetables.",
     "imagePath": "/assets/noodles/butter-and-burnt-garlic-noodles.avif",
     "isAvailable": true,
-    "isChefSpecial": true,
+    "isChefSpecial": false,
     "isBestseller": false,
     "spicyLevel": 0,
-    "hasVariants": true,
-    "variants": [
-      {
-        "id": "var-vegetarian-7",
-        "name": "Vegetarian",
-        "price": 275,
-        "isVeg": true
-      },
-      {
-        "id": "var-chicken-7",
-        "name": "Chicken",
-        "price": 325,
-        "isVeg": false
-      },
-      {
-        "id": "var-prawn-7",
-        "name": "Prawn",
-        "price": 415,
-        "isVeg": false
-      }
-    ],
+    "hasVariants": false,
+    "variants": [],
     "addons": []
   },
   {
-    "id": "noodle-chilli-garlic-noodles",
-    "name": "Chilli Garlic Noodles",
+    "id": "asian-chilli-garlic-noodles-vegetarian",
+    "name": "Chilli Garlic Noodles (Vegetarian)",
     "category": "Noodles",
     "isVeg": true,
     "price": 275,
@@ -3597,32 +3591,13 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     "isChefSpecial": false,
     "isBestseller": false,
     "spicyLevel": 1,
-    "hasVariants": true,
-    "variants": [
-      {
-        "id": "var-vegetarian-8",
-        "name": "Vegetarian",
-        "price": 275,
-        "isVeg": true
-      },
-      {
-        "id": "var-chicken-8",
-        "name": "Chicken",
-        "price": 325,
-        "isVeg": false
-      },
-      {
-        "id": "var-prawn-8",
-        "name": "Prawn",
-        "price": 415,
-        "isVeg": false
-      }
-    ],
+    "hasVariants": false,
+    "variants": [],
     "addons": []
   },
   {
-    "id": "noodle-schezwan-noodles",
-    "name": "Schezwan Noodles",
+    "id": "asian-schezwan-noodles-vegetarian",
+    "name": "Schezwan Noodles (Vegetarian)",
     "category": "Noodles",
     "isVeg": true,
     "price": 275,
@@ -3633,32 +3608,13 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     "isChefSpecial": false,
     "isBestseller": false,
     "spicyLevel": 1,
-    "hasVariants": true,
-    "variants": [
-      {
-        "id": "var-vegetarian-9",
-        "name": "Vegetarian",
-        "price": 275,
-        "isVeg": true
-      },
-      {
-        "id": "var-chicken-9",
-        "name": "Chicken",
-        "price": 325,
-        "isVeg": false
-      },
-      {
-        "id": "var-prawn-9",
-        "name": "Prawn",
-        "price": 415,
-        "isVeg": false
-      }
-    ],
+    "hasVariants": false,
+    "variants": [],
     "addons": []
   },
   {
-    "id": "noodle-hakka-noodles",
-    "name": "Hakka Noodles",
+    "id": "asian-hakka-noodles-vegetarian",
+    "name": "Hakka Noodles (Vegetarian)",
     "category": "Noodles",
     "isVeg": true,
     "price": 245,
@@ -3667,34 +3623,15 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     "imagePath": "/assets/noodles/singaporean-hakka-noodles.webp",
     "isAvailable": true,
     "isChefSpecial": false,
-    "isBestseller": true,
+    "isBestseller": false,
     "spicyLevel": 0,
-    "hasVariants": true,
-    "variants": [
-      {
-        "id": "var-vegetarian-10",
-        "name": "Vegetarian",
-        "price": 245,
-        "isVeg": true
-      },
-      {
-        "id": "var-chicken-10",
-        "name": "Chicken",
-        "price": 295,
-        "isVeg": false
-      },
-      {
-        "id": "var-prawn-10",
-        "name": "Prawn",
-        "price": 395,
-        "isVeg": false
-      }
-    ],
+    "hasVariants": false,
+    "variants": [],
     "addons": []
   },
   {
-    "id": "noodle-singaporean-hakka-noodles",
-    "name": "Singaporean Hakka Noodles",
+    "id": "asian-singaporean-hakka-noodles-vegetarian",
+    "name": "Singaporean Hakka Noodles (Vegetarian)",
     "category": "Noodles",
     "isVeg": true,
     "price": 275,
@@ -3705,32 +3642,13 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     "isChefSpecial": false,
     "isBestseller": false,
     "spicyLevel": 0,
-    "hasVariants": true,
-    "variants": [
-      {
-        "id": "var-vegetarian-11",
-        "name": "Vegetarian",
-        "price": 275,
-        "isVeg": true
-      },
-      {
-        "id": "var-chicken-11",
-        "name": "Chicken",
-        "price": 325,
-        "isVeg": false
-      },
-      {
-        "id": "var-prawn-11",
-        "name": "Prawn",
-        "price": 415,
-        "isVeg": false
-      }
-    ],
+    "hasVariants": false,
+    "variants": [],
     "addons": []
   },
   {
-    "id": "noodle-udon-noodles",
-    "name": "Udon Noodles",
+    "id": "asian-udon-noodles-spicy-korean-sauce",
+    "name": "Udon Noodles (Spicy Korean Sauce /)",
     "category": "Noodles",
     "isVeg": true,
     "price": 495,
@@ -3738,155 +3656,322 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     "description": "Thick udon noodles tossed with crunchy vegetables in your choice of spicy Korean or creamy peanut sauce.",
     "imagePath": "/assets/noodles/udon-noodles.avif",
     "isAvailable": true,
-    "isChefSpecial": true,
+    "isChefSpecial": false,
     "isBestseller": false,
-    "spicyLevel": 0,
-    "hasVariants": true,
-    "variants": [
-      {
-        "id": "var-vegetarian-spicy-korean-sauce",
-        "name": "Vegetarian (Spicy Korean Sauce)",
-        "price": 495,
-        "isVeg": true
-      },
-      {
-        "id": "var-vegetarian-peanut-butter-sauce",
-        "name": "Vegetarian (Peanut Butter Sauce)",
-        "price": 495,
-        "isVeg": true
-      },
-      {
-        "id": "var-chicken-spicy-korean-sauce",
-        "name": "Chicken (Spicy Korean Sauce)",
-        "price": 545,
-        "isVeg": false
-      },
-      {
-        "id": "var-chicken-peanut-butter-sauce",
-        "name": "Chicken (Peanut Butter Sauce)",
-        "price": 545,
-        "isVeg": false
-      },
-      {
-        "id": "var-prawn-spicy-korean-sauce",
-        "name": "Prawn (Spicy Korean Sauce)",
-        "price": 645,
-        "isVeg": false
-      },
-      {
-        "id": "var-prawn-peanut-butter-sauce",
-        "name": "Prawn (Peanut Butter Sauce)",
-        "price": 645,
-        "isVeg": false
-      }
-    ],
+    "spicyLevel": 1,
+    "hasVariants": false,
+    "variants": [],
     "addons": []
   },
   {
-    "id": "bowl-thukpa",
-    "name": "Thukpa",
+    "id": "asian-udon-noodles-spicy-korean-sauce-peanut-butter-sauce",
+    "name": "Udon Noodles (Spicy Korean Sauce /) (Peanut Butter Sauce)",
+    "category": "Noodles",
+    "isVeg": true,
+    "price": 495,
+    "basePrice": 495,
+    "description": "Thick udon noodles tossed with crunchy vegetables in your choice of spicy Korean or creamy peanut sauce.",
+    "imagePath": "/assets/noodles/butter-and-burnt-garlic-noodles.avif",
+    "isAvailable": true,
+    "isChefSpecial": false,
+    "isBestseller": false,
+    "spicyLevel": 1,
+    "hasVariants": false,
+    "variants": [],
+    "addons": []
+  },
+  {
+    "id": "asian-udon-noodles-chicken-spicy-korean-sauce-chicken-peanut-butter-sauce",
+    "name": "Udon Noodles (Chicken; Spicy Korean Sauce) (Chicken; Peanut Butter Sauce)",
+    "category": "Noodles",
+    "isVeg": true,
+    "price": 545,
+    "basePrice": 545,
+    "description": "Thick udon noodles tossed with crunchy vegetables in your choice of spicy Korean or creamy peanut sauce.",
+    "imagePath": "/assets/noodles/butter-and-burnt-garlic-noodles.avif",
+    "isAvailable": true,
+    "isChefSpecial": false,
+    "isBestseller": false,
+    "spicyLevel": 1,
+    "hasVariants": false,
+    "variants": [],
+    "addons": []
+  },
+  {
+    "id": "asian-udon-noodles-prawn-peanut-butter-sauce-prawn-spicy-korean-sauce",
+    "name": "Udon Noodles (Prawn; Peanut Butter Sauce) (Prawn; Spicy Korean Sauce)",
+    "category": "Noodles",
+    "isVeg": true,
+    "price": 645,
+    "basePrice": 645,
+    "description": "Thick udon noodles tossed with crunchy vegetables in your choice of spicy Korean or creamy peanut sauce.",
+    "imagePath": "/assets/dim-sums/spicy-cheesy-dimsum.avif",
+    "isAvailable": true,
+    "isChefSpecial": false,
+    "isBestseller": false,
+    "spicyLevel": 1,
+    "hasVariants": false,
+    "variants": [],
+    "addons": []
+  },
+  {
+    "id": "asian-butter-burnt-garlic-noodles-chicken",
+    "name": "Butter & Burnt Garlic Noodles (Chicken)",
+    "category": "Noodles",
+    "isVeg": false,
+    "price": 325,
+    "basePrice": 325,
+    "description": "Noodles tossed with butter, garlic and crisp vegetables.",
+    "imagePath": "/assets/noodles/butter-and-burnt-garlic-noodles.avif",
+    "isAvailable": true,
+    "isChefSpecial": false,
+    "isBestseller": false,
+    "spicyLevel": 0,
+    "hasVariants": false,
+    "variants": [],
+    "addons": []
+  },
+  {
+    "id": "asian-butter-burnt-garlic-noodles-prawn",
+    "name": "Butter & Burnt Garlic Noodles (Prawn)",
+    "category": "Noodles",
+    "isVeg": false,
+    "price": 415,
+    "basePrice": 415,
+    "description": "Noodles tossed with butter, garlic and crisp vegetables.",
+    "imagePath": "/assets/noodles/butter-and-burnt-garlic-noodles.avif",
+    "isAvailable": true,
+    "isChefSpecial": false,
+    "isBestseller": false,
+    "spicyLevel": 0,
+    "hasVariants": false,
+    "variants": [],
+    "addons": []
+  },
+  {
+    "id": "asian-chilli-garlic-noodles-chicken",
+    "name": "Chilli Garlic Noodles (Chicken)",
+    "category": "Noodles",
+    "isVeg": false,
+    "price": 325,
+    "basePrice": 325,
+    "description": "Noodles tossed with vegetables in a fragrant chilli-garlic oil.",
+    "imagePath": "/assets/noodles/chilli-garlic-noodles.avif",
+    "isAvailable": true,
+    "isChefSpecial": false,
+    "isBestseller": false,
+    "spicyLevel": 1,
+    "hasVariants": false,
+    "variants": [],
+    "addons": []
+  },
+  {
+    "id": "asian-chilli-garlic-noodles-prawn",
+    "name": "Chilli Garlic Noodles (Prawn)",
+    "category": "Noodles",
+    "isVeg": false,
+    "price": 415,
+    "basePrice": 415,
+    "description": "Noodles tossed with vegetables in a fragrant chilli-garlic oil.",
+    "imagePath": "/assets/noodles/chilli-garlic-noodles.avif",
+    "isAvailable": true,
+    "isChefSpecial": false,
+    "isBestseller": false,
+    "spicyLevel": 1,
+    "hasVariants": false,
+    "variants": [],
+    "addons": []
+  },
+  {
+    "id": "asian-schezwan-noodles-chicken",
+    "name": "Schezwan Noodles (Chicken)",
+    "category": "Noodles",
+    "isVeg": false,
+    "price": 325,
+    "basePrice": 325,
+    "description": "Noodles wok-tossed with vegetables in a spicy, tangy Schezwan sauce.",
+    "imagePath": "/assets/noodles/schezwan-noodles.avif",
+    "isAvailable": true,
+    "isChefSpecial": false,
+    "isBestseller": false,
+    "spicyLevel": 1,
+    "hasVariants": false,
+    "variants": [],
+    "addons": []
+  },
+  {
+    "id": "asian-schezwan-noodles-prawn",
+    "name": "Schezwan Noodles (Prawn)",
+    "category": "Noodles",
+    "isVeg": false,
+    "price": 415,
+    "basePrice": 415,
+    "description": "Noodles wok-tossed with vegetables in a spicy, tangy Schezwan sauce.",
+    "imagePath": "/assets/noodles/schezwan-noodles.avif",
+    "isAvailable": true,
+    "isChefSpecial": false,
+    "isBestseller": false,
+    "spicyLevel": 1,
+    "hasVariants": false,
+    "variants": [],
+    "addons": []
+  },
+  {
+    "id": "asian-hakka-noodles-chicken",
+    "name": "Hakka Noodles (Chicken)",
+    "category": "Noodles",
+    "isVeg": false,
+    "price": 295,
+    "basePrice": 295,
+    "description": "Indo-Chinese noodles wok-tossed with vegetables and mild seasoning.",
+    "imagePath": "/assets/noodles/singaporean-hakka-noodles.webp",
+    "isAvailable": true,
+    "isChefSpecial": false,
+    "isBestseller": false,
+    "spicyLevel": 0,
+    "hasVariants": false,
+    "variants": [],
+    "addons": []
+  },
+  {
+    "id": "asian-hakka-noodles-prawn",
+    "name": "Hakka Noodles (Prawn)",
+    "category": "Noodles",
+    "isVeg": false,
+    "price": 395,
+    "basePrice": 395,
+    "description": "Indo-Chinese noodles wok-tossed with vegetables and mild seasoning.",
+    "imagePath": "/assets/noodles/singaporean-hakka-noodles.webp",
+    "isAvailable": true,
+    "isChefSpecial": false,
+    "isBestseller": false,
+    "spicyLevel": 0,
+    "hasVariants": false,
+    "variants": [],
+    "addons": []
+  },
+  {
+    "id": "asian-singaporean-hakka-noodles-chicken",
+    "name": "Singaporean Hakka Noodles (Chicken)",
+    "category": "Noodles",
+    "isVeg": false,
+    "price": 325,
+    "basePrice": 325,
+    "description": "Noodles wok-tossed with vegetables, curry spices and mild chilli.",
+    "imagePath": "/assets/noodles/singaporean-hakka-noodles.webp",
+    "isAvailable": true,
+    "isChefSpecial": false,
+    "isBestseller": false,
+    "spicyLevel": 0,
+    "hasVariants": false,
+    "variants": [],
+    "addons": []
+  },
+  {
+    "id": "asian-singaporean-hakka-noodles-prawn",
+    "name": "Singaporean Hakka Noodles (Prawn)",
+    "category": "Noodles",
+    "isVeg": false,
+    "price": 415,
+    "basePrice": 415,
+    "description": "Noodles wok-tossed with vegetables, curry spices and mild chilli.",
+    "imagePath": "/assets/noodles/singaporean-hakka-noodles.webp",
+    "isAvailable": true,
+    "isChefSpecial": false,
+    "isBestseller": false,
+    "spicyLevel": 0,
+    "hasVariants": false,
+    "variants": [],
+    "addons": []
+  },
+  {
+    "id": "asian-udon-noodles-chicken-spicy-korean-sauce",
+    "name": "Udon Noodles (Chicken; Spicy Korean Sauce)",
+    "category": "Noodles",
+    "isVeg": false,
+    "price": 545,
+    "basePrice": 545,
+    "description": "Thick udon noodles tossed with crunchy vegetables in your choice of spicy Korean or creamy peanut sauce.",
+    "imagePath": "/assets/noodles/udon-noodles.avif",
+    "isAvailable": true,
+    "isChefSpecial": false,
+    "isBestseller": false,
+    "spicyLevel": 1,
+    "hasVariants": false,
+    "variants": [],
+    "addons": []
+  },
+  {
+    "id": "asian-udon-noodles-prawn-peanut-butter-sauce",
+    "name": "Udon Noodles (Prawn; Peanut Butter Sauce)",
+    "category": "Noodles",
+    "isVeg": false,
+    "price": 645,
+    "basePrice": 645,
+    "description": "Thick udon noodles tossed with crunchy vegetables in your choice of spicy Korean or creamy peanut sauce.",
+    "imagePath": "/assets/noodles/udon-noodles.avif",
+    "isAvailable": true,
+    "isChefSpecial": false,
+    "isBestseller": false,
+    "spicyLevel": 0,
+    "hasVariants": false,
+    "variants": [],
+    "addons": []
+  },
+  {
+    "id": "asian-thukpa-vegetarian",
+    "name": "Thukpa (Vegetarian)",
     "category": "Noodle Bowls",
     "isVeg": true,
     "price": 344,
     "basePrice": 344,
-    "description": "Tibetan noodle soup with vegetables, ginger, garlic and fragrant broth.",
+    "description": "Tibetan-style noodles and vegetables simmered in a warm, mildly spiced broth.",
     "imagePath": "/assets/noodles/thukpa.webp",
     "isAvailable": true,
     "isChefSpecial": false,
-    "isBestseller": true,
-    "spicyLevel": 1,
-    "hasVariants": true,
-    "variants": [
-      {
-        "id": "var-vegetarian-12",
-        "name": "Vegetarian",
-        "price": 344,
-        "isVeg": true
-      },
-      {
-        "id": "var-chicken-12",
-        "name": "Chicken",
-        "price": 395,
-        "isVeg": false
-      }
-    ],
+    "isBestseller": false,
+    "spicyLevel": 0,
+    "hasVariants": false,
+    "variants": [],
     "addons": []
   },
   {
-    "id": "bowl-ramen",
-    "name": "Ramen",
+    "id": "asian-ramen-vegetarian",
+    "name": "Ramen (Vegetarian)",
     "category": "Noodle Bowls",
     "isVeg": true,
     "price": 495,
     "basePrice": 495,
-    "description": "Rich Japanese broth with wheat noodles, fresh greens and savory garnishes.",
+    "description": "Korean-inspired noodles in a rich, flavourful broth with vegetables and sesame seeds.",
     "imagePath": "/assets/noodles/ramen-bowl.avif",
     "isAvailable": true,
-    "isChefSpecial": true,
+    "isChefSpecial": false,
     "isBestseller": false,
-    "spicyLevel": 1,
-    "hasVariants": true,
-    "variants": [
-      {
-        "id": "var-vegetarian-13",
-        "name": "Vegetarian",
-        "price": 495,
-        "isVeg": true
-      },
-      {
-        "id": "var-chicken-13",
-        "name": "Chicken",
-        "price": 545,
-        "isVeg": false
-      },
-      {
-        "id": "var-prawn-12",
-        "name": "Prawn",
-        "price": 645,
-        "isVeg": false
-      }
-    ],
+    "spicyLevel": 0,
+    "hasVariants": false,
+    "variants": [],
     "addons": []
   },
   {
-    "id": "bowl-khao-suey",
-    "name": "Khao Suey",
+    "id": "asian-khao-suey-vegetarian",
+    "name": "Khao Suey (Vegetarian)",
     "category": "Noodle Bowls",
     "isVeg": true,
     "price": 545,
     "basePrice": 545,
-    "description": "Burmese coconut milk curry noodle soup served with an array of crunchy condiments.",
+    "description": "Burmese noodles in a creamy coconut broth, finished with fresh herbs, peanuts and traditional accompaniments.",
     "imagePath": "/assets/noodles/chopsuey.avif",
     "isAvailable": true,
-    "isChefSpecial": true,
+    "isChefSpecial": false,
     "isBestseller": false,
-    "spicyLevel": 1,
-    "hasVariants": true,
-    "variants": [
-      {
-        "id": "var-vegetarian-14",
-        "name": "Vegetarian",
-        "price": 545,
-        "isVeg": true
-      },
-      {
-        "id": "var-chicken-14",
-        "name": "Chicken",
-        "price": 595,
-        "isVeg": false
-      },
-      {
-        "id": "var-prawn-13",
-        "name": "Prawn",
-        "price": 675,
-        "isVeg": false
-      }
-    ],
+    "spicyLevel": 0,
+    "hasVariants": false,
+    "variants": [],
     "addons": []
   },
   {
-    "id": "bowl-pan-fried-noodles",
-    "name": "Pan-Fried Noodles",
+    "id": "asian-pan-fried-noodles-vegetarian-black-bean-sauce",
+    "name": "Pan-Fried Noodles (Vegetarian; Black Bean Sauce)",
     "category": "Noodle Bowls",
     "isVeg": true,
     "price": 345,
@@ -3896,99 +3981,320 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     "isAvailable": true,
     "isChefSpecial": false,
     "isBestseller": false,
-    "spicyLevel": 1,
-    "hasVariants": true,
-    "variants": [
-      {
-        "id": "var-vegetarian-15",
-        "name": "Vegetarian",
-        "price": 345,
-        "isVeg": true
-      },
-      {
-        "id": "var-chicken-15",
-        "name": "Chicken",
-        "price": 395,
-        "isVeg": false
-      },
-      {
-        "id": "var-prawn-14",
-        "name": "Prawn",
-        "price": 475,
-        "isVeg": false
-      }
-    ],
+    "spicyLevel": 0,
+    "hasVariants": false,
+    "variants": [],
     "addons": []
   },
   {
-    "id": "bowl-oriental-bowl",
-    "name": "Oriental Bowl",
+    "id": "asian-pan-fried-noodles-vegetarian-black-bean-sauce-vegetarian-burnt-garlic-sauce",
+    "name": "Pan-Fried Noodles (Vegetarian; Black Bean Sauce) (Vegetarian; Burnt Garlic Sauce)",
     "category": "Noodle Bowls",
     "isVeg": true,
     "price": 345,
     "basePrice": 345,
-    "description": "Hearty Asian meal bowl with wok-charred noodles, fresh greens and savory sauce.",
+    "description": "Crispy pan-fried noodles served with vegetables in your choice of sauce.",
+    "imagePath": "/assets/noodles/butter-and-burnt-garlic-noodles.avif",
+    "isAvailable": true,
+    "isChefSpecial": false,
+    "isBestseller": false,
+    "spicyLevel": 0,
+    "hasVariants": false,
+    "variants": [],
+    "addons": []
+  },
+  {
+    "id": "asian-pan-fried-noodles-vegetarian-black-bean-sauce-vegetarian-burnt-garlic-sauce-vegetarian-spicy-basil-sauce",
+    "name": "Pan-Fried Noodles (Vegetarian; Black Bean Sauce) (Vegetarian; Burnt Garlic Sauce) (Vegetarian; Spicy Basil Sauce)",
+    "category": "Noodle Bowls",
+    "isVeg": true,
+    "price": 345,
+    "basePrice": 345,
+    "description": "Crispy pan-fried noodles served with vegetables in your choice of sauce.",
+    "imagePath": "/assets/dim-sums/spicy-cheesy-dimsum.avif",
+    "isAvailable": true,
+    "isChefSpecial": false,
+    "isBestseller": false,
+    "spicyLevel": 1,
+    "hasVariants": false,
+    "variants": [],
+    "addons": []
+  },
+  {
+    "id": "asian-pan-fried-noodles-chicken-black-bean-sauce-chicken-burnt-garlic-sauce",
+    "name": "Pan-Fried Noodles (Chicken; Black Bean Sauce) (Chicken; Burnt Garlic Sauce)",
+    "category": "Noodle Bowls",
+    "isVeg": true,
+    "price": 395,
+    "basePrice": 395,
+    "description": "Crispy pan-fried noodles served with vegetables in your choice of sauce.",
+    "imagePath": "/assets/noodles/butter-and-burnt-garlic-noodles.avif",
+    "isAvailable": true,
+    "isChefSpecial": false,
+    "isBestseller": false,
+    "spicyLevel": 0,
+    "hasVariants": false,
+    "variants": [],
+    "addons": []
+  },
+  {
+    "id": "asian-pan-fried-noodles-chicken-black-bean-sauce-chicken-burnt-garlic-sauce-chicken-spicy-basil-sauce",
+    "name": "Pan-Fried Noodles (Chicken; Black Bean Sauce) (Chicken; Burnt Garlic Sauce) (Chicken; Spicy Basil Sauce)",
+    "category": "Noodle Bowls",
+    "isVeg": true,
+    "price": 395,
+    "basePrice": 395,
+    "description": "Crispy pan-fried noodles served with vegetables in your choice of sauce.",
+    "imagePath": "/assets/dim-sums/spicy-cheesy-dimsum.avif",
+    "isAvailable": true,
+    "isChefSpecial": false,
+    "isBestseller": false,
+    "spicyLevel": 1,
+    "hasVariants": false,
+    "variants": [],
+    "addons": []
+  },
+  {
+    "id": "asian-pan-fried-noodles-prawn-black-bean-sauce-prawn-burnt-garlic-sauce",
+    "name": "Pan-Fried Noodles (Prawn; Black Bean Sauce) (Prawn; Burnt Garlic Sauce)",
+    "category": "Noodle Bowls",
+    "isVeg": true,
+    "price": 475,
+    "basePrice": 475,
+    "description": "Crispy pan-fried noodles served with vegetables in your choice of sauce.",
+    "imagePath": "/assets/noodles/butter-and-burnt-garlic-noodles.avif",
+    "isAvailable": true,
+    "isChefSpecial": false,
+    "isBestseller": false,
+    "spicyLevel": 0,
+    "hasVariants": false,
+    "variants": [],
+    "addons": []
+  },
+  {
+    "id": "asian-pan-fried-noodles-prawn-black-bean-sauce-prawn-burnt-garlic-sauce-prawn-spicy-basil-sauce",
+    "name": "Pan-Fried Noodles (Prawn; Black Bean Sauce) (Prawn; Burnt Garlic Sauce) (Prawn; Spicy Basil Sauce)",
+    "category": "Noodle Bowls",
+    "isVeg": true,
+    "price": 475,
+    "basePrice": 475,
+    "description": "Crispy pan-fried noodles served with vegetables in your choice of sauce.",
+    "imagePath": "/assets/dim-sums/spicy-cheesy-dimsum.avif",
+    "isAvailable": true,
+    "isChefSpecial": false,
+    "isBestseller": false,
+    "spicyLevel": 1,
+    "hasVariants": false,
+    "variants": [],
+    "addons": []
+  },
+  {
+    "id": "asian-oriental-bowl-vegetarian",
+    "name": "Oriental Bowl (Vegetarian)",
+    "category": "Noodle Bowls",
+    "isVeg": true,
+    "price": 345,
+    "basePrice": 345,
+    "description": "Flavourful noodles tossed with vegetables and togarashi, served with a spicy broth.",
     "imagePath": "/assets/noodles/oriental-bowl.avif",
     "isAvailable": true,
     "isChefSpecial": false,
     "isBestseller": false,
-    "spicyLevel": 1,
-    "hasVariants": true,
-    "variants": [
-      {
-        "id": "var-vegetarian-16",
-        "name": "Vegetarian",
-        "price": 345,
-        "isVeg": true
-      },
-      {
-        "id": "var-chicken-16",
-        "name": "Chicken",
-        "price": 395,
-        "isVeg": false
-      },
-      {
-        "id": "var-prawn-15",
-        "name": "Prawn",
-        "price": 475,
-        "isVeg": false
-      }
-    ],
+    "spicyLevel": 0,
+    "hasVariants": false,
+    "variants": [],
     "addons": []
   },
   {
-    "id": "bowl-chop-suey",
-    "name": "Chop Suey",
+    "id": "asian-chop-suey-vegetarian",
+    "name": "Chop Suey (Vegetarian)",
     "category": "Noodle Bowls",
     "isVeg": true,
     "price": 345,
     "basePrice": 345,
-    "description": "Crispy fried noodles topped with vegetables in sweet and sour Indo-Chinese sauce.",
+    "description": "Crispy noodles topped with vegetables in a sweet, savoury and mildly spiced sauce.",
     "imagePath": "/assets/noodles/chopsuey.avif",
     "isAvailable": true,
     "isChefSpecial": false,
     "isBestseller": false,
-    "spicyLevel": 1,
-    "hasVariants": true,
-    "variants": [
-      {
-        "id": "var-vegetarian-17",
-        "name": "Vegetarian",
-        "price": 345,
-        "isVeg": true
-      },
-      {
-        "id": "var-chicken-17",
-        "name": "Chicken",
-        "price": 395,
-        "isVeg": false
-      }
-    ],
+    "spicyLevel": 0,
+    "hasVariants": false,
+    "variants": [],
     "addons": []
   },
   {
-    "id": "curry-thai-green-curry",
-    "name": "Thai Green Curry",
+    "id": "asian-thukpa-chicken",
+    "name": "Thukpa (Chicken)",
+    "category": "Noodle Bowls",
+    "isVeg": false,
+    "price": 395,
+    "basePrice": 395,
+    "description": "Tibetan-style noodles and vegetables simmered in a warm, mildly spiced broth.",
+    "imagePath": "/assets/noodles/thukpa.webp",
+    "isAvailable": true,
+    "isChefSpecial": false,
+    "isBestseller": false,
+    "spicyLevel": 0,
+    "hasVariants": false,
+    "variants": [],
+    "addons": []
+  },
+  {
+    "id": "asian-ramen-chicken",
+    "name": "Ramen (Chicken)",
+    "category": "Noodle Bowls",
+    "isVeg": false,
+    "price": 545,
+    "basePrice": 545,
+    "description": "Korean-inspired noodles in a rich, flavourful broth with vegetables and sesame seeds.",
+    "imagePath": "/assets/noodles/ramen-bowl.avif",
+    "isAvailable": true,
+    "isChefSpecial": false,
+    "isBestseller": false,
+    "spicyLevel": 0,
+    "hasVariants": false,
+    "variants": [],
+    "addons": []
+  },
+  {
+    "id": "asian-ramen-prawn",
+    "name": "Ramen (Prawn)",
+    "category": "Noodle Bowls",
+    "isVeg": false,
+    "price": 645,
+    "basePrice": 645,
+    "description": "Korean-inspired noodles in a rich, flavourful broth with vegetables and sesame seeds.",
+    "imagePath": "/assets/noodles/ramen-bowl.avif",
+    "isAvailable": true,
+    "isChefSpecial": false,
+    "isBestseller": false,
+    "spicyLevel": 0,
+    "hasVariants": false,
+    "variants": [],
+    "addons": []
+  },
+  {
+    "id": "asian-khao-suey-chicken",
+    "name": "Khao Suey (Chicken)",
+    "category": "Noodle Bowls",
+    "isVeg": false,
+    "price": 595,
+    "basePrice": 595,
+    "description": "Burmese noodles in a creamy coconut broth, finished with fresh herbs, peanuts and traditional accompaniments.",
+    "imagePath": "/assets/noodles/chopsuey.avif",
+    "isAvailable": true,
+    "isChefSpecial": false,
+    "isBestseller": false,
+    "spicyLevel": 0,
+    "hasVariants": false,
+    "variants": [],
+    "addons": []
+  },
+  {
+    "id": "asian-khao-suey-prawn",
+    "name": "Khao Suey (Prawn)",
+    "category": "Noodle Bowls",
+    "isVeg": false,
+    "price": 675,
+    "basePrice": 675,
+    "description": "Burmese noodles in a creamy coconut broth, finished with fresh herbs, peanuts and traditional accompaniments.",
+    "imagePath": "/assets/noodles/chopsuey.avif",
+    "isAvailable": true,
+    "isChefSpecial": false,
+    "isBestseller": false,
+    "spicyLevel": 0,
+    "hasVariants": false,
+    "variants": [],
+    "addons": []
+  },
+  {
+    "id": "asian-pan-fried-noodles-chicken-black-bean-sauce",
+    "name": "Pan-Fried Noodles (Chicken; Black Bean Sauce)",
+    "category": "Noodle Bowls",
+    "isVeg": false,
+    "price": 395,
+    "basePrice": 395,
+    "description": "Crispy pan-fried noodles served with vegetables in your choice of sauce.",
+    "imagePath": "/assets/noodles/pan-fried-noodles.avif",
+    "isAvailable": true,
+    "isChefSpecial": false,
+    "isBestseller": false,
+    "spicyLevel": 0,
+    "hasVariants": false,
+    "variants": [],
+    "addons": []
+  },
+  {
+    "id": "asian-pan-fried-noodles-prawn-black-bean-sauce",
+    "name": "Pan-Fried Noodles (Prawn; Black Bean Sauce)",
+    "category": "Noodle Bowls",
+    "isVeg": false,
+    "price": 475,
+    "basePrice": 475,
+    "description": "Crispy pan-fried noodles served with vegetables in your choice of sauce.",
+    "imagePath": "/assets/noodles/pan-fried-noodles.avif",
+    "isAvailable": true,
+    "isChefSpecial": false,
+    "isBestseller": false,
+    "spicyLevel": 0,
+    "hasVariants": false,
+    "variants": [],
+    "addons": []
+  },
+  {
+    "id": "asian-oriental-bowl-chicken",
+    "name": "Oriental Bowl (Chicken)",
+    "category": "Noodle Bowls",
+    "isVeg": false,
+    "price": 395,
+    "basePrice": 395,
+    "description": "Flavourful noodles tossed with vegetables and togarashi, served with a spicy broth.",
+    "imagePath": "/assets/noodles/oriental-bowl.avif",
+    "isAvailable": true,
+    "isChefSpecial": false,
+    "isBestseller": false,
+    "spicyLevel": 0,
+    "hasVariants": false,
+    "variants": [],
+    "addons": []
+  },
+  {
+    "id": "asian-oriental-bowl-prawn",
+    "name": "Oriental Bowl (Prawn)",
+    "category": "Noodle Bowls",
+    "isVeg": false,
+    "price": 475,
+    "basePrice": 475,
+    "description": "Flavourful noodles tossed with vegetables and togarashi, served with a spicy broth.",
+    "imagePath": "/assets/noodles/oriental-bowl.avif",
+    "isAvailable": true,
+    "isChefSpecial": false,
+    "isBestseller": false,
+    "spicyLevel": 0,
+    "hasVariants": false,
+    "variants": [],
+    "addons": []
+  },
+  {
+    "id": "asian-chop-suey-chicken",
+    "name": "Chop Suey (Chicken)",
+    "category": "Noodle Bowls",
+    "isVeg": false,
+    "price": 395,
+    "basePrice": 395,
+    "description": "Crispy noodles topped with vegetables in a sweet, savoury and mildly spiced sauce.",
+    "imagePath": "/assets/noodles/chopsuey.avif",
+    "isAvailable": true,
+    "isChefSpecial": false,
+    "isBestseller": false,
+    "spicyLevel": 0,
+    "hasVariants": false,
+    "variants": [],
+    "addons": []
+  },
+  {
+    "id": "asian-thai-green-curry-vegetarian",
+    "name": "Thai Green Curry Vegetarian",
     "category": "Curries",
     "isVeg": true,
     "price": 365,
@@ -3996,30 +4302,11 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     "description": "A fragrant Thai green curry with coconut milk, vegetables and fresh herbs. Rice not included.",
     "imagePath": "/assets/rice-bowls/thai-pineapple-n-egg-fried-rice.avif",
     "isAvailable": true,
-    "isChefSpecial": true,
-    "isBestseller": true,
-    "spicyLevel": 2,
-    "hasVariants": true,
-    "variants": [
-      {
-        "id": "var-vegetarian-18",
-        "name": "Vegetarian",
-        "price": 365,
-        "isVeg": true
-      },
-      {
-        "id": "var-chicken-18",
-        "name": "Chicken",
-        "price": 425,
-        "isVeg": false
-      },
-      {
-        "id": "var-prawn-16",
-        "name": "Prawn",
-        "price": 645,
-        "isVeg": false
-      }
-    ],
+    "isChefSpecial": false,
+    "isBestseller": false,
+    "spicyLevel": 0,
+    "hasVariants": false,
+    "variants": [],
     "addons": [
       {
         "id": "addon-steamed-rice",
@@ -4035,44 +4322,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
         "id": "addon-jasmine-rice",
         "name": "Jasmine Rice",
         "price": 199
-      }
-    ]
-  },
-  {
-    "id": "curry-thai-red-curry",
-    "name": "Thai Red Curry",
-    "category": "Curries",
-    "isVeg": true,
-    "price": 365,
-    "basePrice": 365,
-    "description": "A rich Thai red curry with coconut milk, vegetables and aromatic spices. Rice not included.",
-    "imagePath": "/assets/rice-bowls/thai-pineapple-n-egg-fried-rice.avif",
-    "isAvailable": true,
-    "isChefSpecial": true,
-    "isBestseller": false,
-    "spicyLevel": 2,
-    "hasVariants": true,
-    "variants": [
-      {
-        "id": "var-vegetarian-19",
-        "name": "Vegetarian",
-        "price": 365,
-        "isVeg": true
       },
-      {
-        "id": "var-chicken-19",
-        "name": "Chicken",
-        "price": 425,
-        "isVeg": false
-      },
-      {
-        "id": "var-prawn-17",
-        "name": "Prawn",
-        "price": 645,
-        "isVeg": false
-      }
-    ],
-    "addons": [
       {
         "id": "addon-steamed-rice-2",
         "name": "Steamed Rice",
@@ -4091,39 +4341,116 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     ]
   },
   {
-    "id": "curry-burmese-yellow-curry",
-    "name": "Burmese Yellow Curry",
+    "id": "asian-thai-red-curry-vegetarian",
+    "name": "Thai Red Curry Vegetarian",
     "category": "Curries",
     "isVeg": true,
     "price": 365,
     "basePrice": 365,
-    "description": "Rich Burmese coconut curry with mild spices. Rice not included.",
+    "description": "A rich Thai red curry with coconut milk, vegetables and aromatic spices. Rice not included",
+    "imagePath": "/assets/rice-bowls/thai-pineapple-n-egg-fried-rice.avif",
+    "isAvailable": true,
+    "isChefSpecial": false,
+    "isBestseller": false,
+    "spicyLevel": 0,
+    "hasVariants": false,
+    "variants": [],
+    "addons": [
+      {
+        "id": "addon-steamed-rice-7",
+        "name": "Steamed Rice",
+        "price": 129
+      },
+      {
+        "id": "addon-fried-rice-7",
+        "name": "Fried Rice",
+        "price": 179
+      },
+      {
+        "id": "addon-jasmine-rice-7",
+        "name": "Jasmine Rice",
+        "price": 199
+      },
+      {
+        "id": "addon-steamed-rice-8",
+        "name": "Steamed Rice",
+        "price": 129
+      },
+      {
+        "id": "addon-fried-rice-8",
+        "name": "Fried Rice",
+        "price": 179
+      },
+      {
+        "id": "addon-jasmine-rice-8",
+        "name": "Jasmine Rice",
+        "price": 199
+      }
+    ]
+  },
+  {
+    "id": "asian-burmese-yellow-curry-vegetarian",
+    "name": "Burmese Yellow Curry Vegetarian",
+    "category": "Curries",
+    "isVeg": true,
+    "price": 365,
+    "basePrice": 365,
+    "description": "Rich Burmese coconut curry with mild spices. Rice not included",
     "imagePath": "/assets/pizza/classic-margherita.avif",
     "isAvailable": true,
-    "isChefSpecial": true,
+    "isChefSpecial": false,
     "isBestseller": false,
-    "spicyLevel": 2,
-    "hasVariants": true,
-    "variants": [
+    "spicyLevel": 0,
+    "hasVariants": false,
+    "variants": [],
+    "addons": [
       {
-        "id": "var-vegetarian-20",
-        "name": "Vegetarian",
-        "price": 365,
-        "isVeg": true
+        "id": "addon-steamed-rice-13",
+        "name": "Steamed Rice",
+        "price": 129
       },
       {
-        "id": "var-chicken-20",
-        "name": "Chicken",
-        "price": 425,
-        "isVeg": false
+        "id": "addon-fried-rice-13",
+        "name": "Fried Rice",
+        "price": 179
       },
       {
-        "id": "var-prawn-18",
-        "name": "Prawn",
-        "price": 645,
-        "isVeg": false
+        "id": "addon-jasmine-rice-13",
+        "name": "Jasmine Rice",
+        "price": 199
+      },
+      {
+        "id": "addon-steamed-rice-14",
+        "name": "Steamed Rice",
+        "price": 129
+      },
+      {
+        "id": "addon-fried-rice-14",
+        "name": "Fried Rice",
+        "price": 179
+      },
+      {
+        "id": "addon-jasmine-rice-14",
+        "name": "Jasmine Rice",
+        "price": 199
       }
-    ],
+    ]
+  },
+  {
+    "id": "asian-thai-green-curry-chicken",
+    "name": "Thai Green Curry Chicken",
+    "category": "Curries",
+    "isVeg": false,
+    "price": 425,
+    "basePrice": 425,
+    "description": "A fragrant Thai green curry with coconut milk, vegetables and fresh herbs. Rice not included.",
+    "imagePath": "/assets/rice-bowls/thai-pineapple-n-egg-fried-rice.avif",
+    "isAvailable": true,
+    "isChefSpecial": false,
+    "isBestseller": false,
+    "spicyLevel": 0,
+    "hasVariants": false,
+    "variants": [],
     "addons": [
       {
         "id": "addon-steamed-rice-3",
@@ -4137,6 +4464,261 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
       },
       {
         "id": "addon-jasmine-rice-3",
+        "name": "Jasmine Rice",
+        "price": 199
+      },
+      {
+        "id": "addon-steamed-rice-4",
+        "name": "Steamed Rice",
+        "price": 129
+      },
+      {
+        "id": "addon-fried-rice-4",
+        "name": "Fried Rice",
+        "price": 179
+      },
+      {
+        "id": "addon-jasmine-rice-4",
+        "name": "Jasmine Rice",
+        "price": 199
+      }
+    ]
+  },
+  {
+    "id": "asian-thai-green-curry-prawn",
+    "name": "Thai Green Curry Prawn",
+    "category": "Curries",
+    "isVeg": false,
+    "price": 645,
+    "basePrice": 645,
+    "description": "A fragrant Thai green curry with coconut milk, vegetables and fresh herbs. Rice not included.",
+    "imagePath": "/assets/rice-bowls/thai-pineapple-n-egg-fried-rice.avif",
+    "isAvailable": true,
+    "isChefSpecial": false,
+    "isBestseller": false,
+    "spicyLevel": 0,
+    "hasVariants": false,
+    "variants": [],
+    "addons": [
+      {
+        "id": "addon-steamed-rice-5",
+        "name": "Steamed Rice",
+        "price": 129
+      },
+      {
+        "id": "addon-fried-rice-5",
+        "name": "Fried Rice",
+        "price": 179
+      },
+      {
+        "id": "addon-jasmine-rice-5",
+        "name": "Jasmine Rice",
+        "price": 199
+      },
+      {
+        "id": "addon-steamed-rice-6",
+        "name": "Steamed Rice",
+        "price": 129
+      },
+      {
+        "id": "addon-fried-rice-6",
+        "name": "Fried Rice",
+        "price": 179
+      },
+      {
+        "id": "addon-jasmine-rice-6",
+        "name": "Jasmine Rice",
+        "price": 199
+      }
+    ]
+  },
+  {
+    "id": "asian-thai-red-curry-chicken",
+    "name": "Thai Red Curry Chicken",
+    "category": "Curries",
+    "isVeg": false,
+    "price": 425,
+    "basePrice": 425,
+    "description": "A rich Thai red curry with coconut milk, vegetables and aromatic spices. Rice not included.",
+    "imagePath": "/assets/rice-bowls/thai-pineapple-n-egg-fried-rice.avif",
+    "isAvailable": true,
+    "isChefSpecial": false,
+    "isBestseller": false,
+    "spicyLevel": 0,
+    "hasVariants": false,
+    "variants": [],
+    "addons": [
+      {
+        "id": "addon-steamed-rice-9",
+        "name": "Steamed Rice",
+        "price": 129
+      },
+      {
+        "id": "addon-fried-rice-9",
+        "name": "Fried Rice",
+        "price": 179
+      },
+      {
+        "id": "addon-jasmine-rice-9",
+        "name": "Jasmine Rice",
+        "price": 199
+      },
+      {
+        "id": "addon-steamed-rice-10",
+        "name": "Steamed Rice",
+        "price": 129
+      },
+      {
+        "id": "addon-fried-rice-10",
+        "name": "Fried Rice",
+        "price": 179
+      },
+      {
+        "id": "addon-jasmine-rice-10",
+        "name": "Jasmine Rice",
+        "price": 199
+      }
+    ]
+  },
+  {
+    "id": "asian-thai-red-curry-prawn",
+    "name": "Thai Red Curry Prawn",
+    "category": "Curries",
+    "isVeg": false,
+    "price": 645,
+    "basePrice": 645,
+    "description": "A rich Thai red curry with coconut milk, vegetables and aromatic spices. Rice not included.",
+    "imagePath": "/assets/rice-bowls/thai-pineapple-n-egg-fried-rice.avif",
+    "isAvailable": true,
+    "isChefSpecial": false,
+    "isBestseller": false,
+    "spicyLevel": 0,
+    "hasVariants": false,
+    "variants": [],
+    "addons": [
+      {
+        "id": "addon-steamed-rice-11",
+        "name": "Steamed Rice",
+        "price": 129
+      },
+      {
+        "id": "addon-fried-rice-11",
+        "name": "Fried Rice",
+        "price": 179
+      },
+      {
+        "id": "addon-jasmine-rice-11",
+        "name": "Jasmine Rice",
+        "price": 199
+      },
+      {
+        "id": "addon-steamed-rice-12",
+        "name": "Steamed Rice",
+        "price": 129
+      },
+      {
+        "id": "addon-fried-rice-12",
+        "name": "Fried Rice",
+        "price": 179
+      },
+      {
+        "id": "addon-jasmine-rice-12",
+        "name": "Jasmine Rice",
+        "price": 199
+      }
+    ]
+  },
+  {
+    "id": "asian-burmese-yellow-curry-chicken",
+    "name": "Burmese Yellow Curry Chicken",
+    "category": "Curries",
+    "isVeg": false,
+    "price": 425,
+    "basePrice": 425,
+    "description": "Rich Burmese coconut curry with mild spices. Rice not included.",
+    "imagePath": "/assets/pizza/classic-margherita.avif",
+    "isAvailable": true,
+    "isChefSpecial": false,
+    "isBestseller": false,
+    "spicyLevel": 0,
+    "hasVariants": false,
+    "variants": [],
+    "addons": [
+      {
+        "id": "addon-steamed-rice-15",
+        "name": "Steamed Rice",
+        "price": 129
+      },
+      {
+        "id": "addon-fried-rice-15",
+        "name": "Fried Rice",
+        "price": 179
+      },
+      {
+        "id": "addon-jasmine-rice-15",
+        "name": "Jasmine Rice",
+        "price": 199
+      },
+      {
+        "id": "addon-steamed-rice-16",
+        "name": "Steamed Rice",
+        "price": 129
+      },
+      {
+        "id": "addon-fried-rice-16",
+        "name": "Fried Rice",
+        "price": 179
+      },
+      {
+        "id": "addon-jasmine-rice-16",
+        "name": "Jasmine Rice",
+        "price": 199
+      }
+    ]
+  },
+  {
+    "id": "asian-burmese-yellow-curry-prawn",
+    "name": "Burmese Yellow Curry Prawn",
+    "category": "Curries",
+    "isVeg": false,
+    "price": 645,
+    "basePrice": 645,
+    "description": "Rich Burmese coconut curry with mild spices. Rice not included.",
+    "imagePath": "/assets/pizza/classic-margherita.avif",
+    "isAvailable": true,
+    "isChefSpecial": false,
+    "isBestseller": false,
+    "spicyLevel": 0,
+    "hasVariants": false,
+    "variants": [],
+    "addons": [
+      {
+        "id": "addon-steamed-rice-17",
+        "name": "Steamed Rice",
+        "price": 129
+      },
+      {
+        "id": "addon-fried-rice-17",
+        "name": "Fried Rice",
+        "price": 179
+      },
+      {
+        "id": "addon-jasmine-rice-17",
+        "name": "Jasmine Rice",
+        "price": 199
+      },
+      {
+        "id": "addon-steamed-rice-18",
+        "name": "Steamed Rice",
+        "price": 129
+      },
+      {
+        "id": "addon-fried-rice-18",
+        "name": "Fried Rice",
+        "price": 179
+      },
+      {
+        "id": "addon-jasmine-rice-18",
         "name": "Jasmine Rice",
         "price": 199
       }
@@ -4303,7 +4885,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     "price": 425,
     "basePrice": 425,
     "description": "Crispy chilli chicken with peppers and onions in a spicy Indo-Chinese sauce, served over fried rice.",
-    "imagePath": "/assets/rice-bowls/chilli-chicken-rice-bowl.avif",
+    "imagePath": "/assets/rice-bowls/chilli-mushroom-rice-bowl.avif",
     "isAvailable": true,
     "isChefSpecial": false,
     "isBestseller": false,
@@ -4337,7 +4919,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     "price": 595,
     "basePrice": 595,
     "description": "Crispy prawns in a bold hot garlic sauce, served over fried rice.",
-    "imagePath": "/assets/rice-bowls/chilli-prawn-rice-bowl.avif",
+    "imagePath": "/assets/rice-bowls/chilli-mushroom-rice-bowl.avif",
     "isAvailable": true,
     "isChefSpecial": false,
     "isBestseller": false,
@@ -4361,13 +4943,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     "spicyLevel": 0,
     "hasVariants": false,
     "variants": [],
-    "addons": [
-      {
-        "id": "addon-caprese-grilled-chicken",
-        "name": "Caprese Grilled Chicken",
-        "price": 50
-      }
-    ]
+    "addons": []
   },
   {
     "id": "dish-caesar-salad",
@@ -4384,13 +4960,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     "spicyLevel": 0,
     "hasVariants": false,
     "variants": [],
-    "addons": [
-      {
-        "id": "addon-caesar-grilled-chicken",
-        "name": "Caesar Grilled Chicken",
-        "price": 50
-      }
-    ]
+    "addons": []
   },
   {
     "id": "dish-apple-salad",
@@ -4407,13 +4977,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     "spicyLevel": 0,
     "hasVariants": false,
     "variants": [],
-    "addons": [
-      {
-        "id": "addon-apple-grilled-chicken",
-        "name": "Apple Grilled Chicken",
-        "price": 50
-      }
-    ]
+    "addons": []
   },
   {
     "id": "dish-watermelon-salad",
@@ -4430,13 +4994,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     "spicyLevel": 0,
     "hasVariants": false,
     "variants": [],
-    "addons": [
-      {
-        "id": "addon-watermelon-grilled-chicken",
-        "name": "Watermelon Grilled chicken",
-        "price": 50
-      }
-    ]
+    "addons": []
   },
   {
     "id": "dish-rucola-burrata-salad",
@@ -4448,18 +5006,97 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     "description": "Rocket leaves, cherry tomatoes, burrata and pesto tossed in a honey-balsamic dressing and finished with a delicate balsamic reduction.",
     "imagePath": "/assets/garlic-bread/asparagus-burrata.webp",
     "isAvailable": true,
-    "isChefSpecial": true,
+    "isChefSpecial": false,
     "isBestseller": false,
     "spicyLevel": 0,
     "hasVariants": false,
     "variants": [],
-    "addons": [
-      {
-        "id": "addon-rucola-burrata-grilled-chicken",
-        "name": "Rucola Burrata Grilled Chicken",
-        "price": 50
-      }
-    ]
+    "addons": []
+  },
+  {
+    "id": "dish-caprese-grilled-chicken",
+    "name": "Caprese Grilled Chicken",
+    "category": "Salads",
+    "isVeg": false,
+    "price": 415,
+    "basePrice": 415,
+    "description": "Fresh Caprese Grilled Chicken prepared with tender protein and chef's dressings.",
+    "imagePath": "/assets/garlic-bread/grilled-chicken.avif",
+    "isAvailable": true,
+    "isChefSpecial": false,
+    "isBestseller": false,
+    "spicyLevel": 0,
+    "hasVariants": false,
+    "variants": [],
+    "addons": []
+  },
+  {
+    "id": "dish-caesar-grilled-chicken",
+    "name": "Caesar Grilled Chicken",
+    "category": "Salads",
+    "isVeg": false,
+    "price": 395,
+    "basePrice": 395,
+    "description": "Fresh Caesar Grilled Chicken prepared with tender protein and chef's dressings.",
+    "imagePath": "/assets/garlic-bread/grilled-chicken.avif",
+    "isAvailable": true,
+    "isChefSpecial": false,
+    "isBestseller": false,
+    "spicyLevel": 0,
+    "hasVariants": false,
+    "variants": [],
+    "addons": []
+  },
+  {
+    "id": "dish-apple-grilled-chicken",
+    "name": "Apple Grilled Chicken",
+    "category": "Salads",
+    "isVeg": false,
+    "price": 415,
+    "basePrice": 415,
+    "description": "Fresh Apple Grilled Chicken prepared with tender protein and chef's dressings.",
+    "imagePath": "/assets/garlic-bread/grilled-chicken.avif",
+    "isAvailable": true,
+    "isChefSpecial": false,
+    "isBestseller": false,
+    "spicyLevel": 0,
+    "hasVariants": false,
+    "variants": [],
+    "addons": []
+  },
+  {
+    "id": "dish-watermelon-grilled-chicken",
+    "name": "Watermelon Grilled chicken",
+    "category": "Salads",
+    "isVeg": false,
+    "price": 415,
+    "basePrice": 415,
+    "description": "Fresh Watermelon Grilled chicken prepared with tender protein and chef's dressings.",
+    "imagePath": "/assets/garlic-bread/grilled-chicken.avif",
+    "isAvailable": true,
+    "isChefSpecial": false,
+    "isBestseller": false,
+    "spicyLevel": 0,
+    "hasVariants": false,
+    "variants": [],
+    "addons": []
+  },
+  {
+    "id": "dish-rucola-burrata-grilled-chicken",
+    "name": "Rucola Burrata Grilled Chicken",
+    "category": "Salads",
+    "isVeg": false,
+    "price": 495,
+    "basePrice": 495,
+    "description": "Fresh Rucola Burrata Grilled Chicken prepared with tender protein and chef's dressings.",
+    "imagePath": "/assets/garlic-bread/grilled-chicken.avif",
+    "isAvailable": true,
+    "isChefSpecial": false,
+    "isBestseller": false,
+    "spicyLevel": 0,
+    "hasVariants": false,
+    "variants": [],
+    "addons": []
   },
   {
     "id": "dish-sourdough-smash-veggie-cheese-burger",
@@ -4486,7 +5123,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     "price": 380,
     "basePrice": 380,
     "description": "A hand-crafted chicken patty, smashed and grilled until golden, layered with crisp lettuce, tomato, gherkins, caramelised onions and cheese, served in a freshly baked wood-fired sourdough bun.",
-    "imagePath": "/assets/sourdough-burgers/smash-chicken-cheese-sourdough-burger.avif",
+    "imagePath": "/assets/sourdough-burgers/smash-veggie-cheese-sourdough-burger.webp",
     "isAvailable": true,
     "isChefSpecial": true,
     "isBestseller": false,
@@ -4511,13 +5148,13 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     "hasVariants": true,
     "variants": [
       {
-        "id": "var-spaghetti-2",
+        "id": "var-spaghetti",
         "name": "Spaghetti",
         "price": 365,
         "isVeg": true
       },
       {
-        "id": "var-penne-2",
+        "id": "var-penne",
         "name": "Penne",
         "price": 365,
         "isVeg": true
@@ -4525,8 +5162,13 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     ],
     "addons": [
       {
-        "id": "addon-chicken",
-        "name": "Add Grilled Chicken",
+        "id": "addon-spaghetti-add-grilled-chicken",
+        "name": "Spaghetti / Add Grilled Chicken",
+        "price": 50
+      },
+      {
+        "id": "addon-penne-add-grilled-chicken",
+        "name": "Penne / Add Grilled Chicken",
         "price": 50
       }
     ]
@@ -4547,13 +5189,13 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     "hasVariants": true,
     "variants": [
       {
-        "id": "var-spaghetti-4",
+        "id": "var-spaghetti-3",
         "name": "Spaghetti",
         "price": 365,
         "isVeg": true
       },
       {
-        "id": "var-penne-4",
+        "id": "var-penne-3",
         "name": "Penne",
         "price": 365,
         "isVeg": true
@@ -4561,8 +5203,13 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     ],
     "addons": [
       {
-        "id": "addon-chicken-2",
-        "name": "Add Grilled Chicken",
+        "id": "addon-spaghetti-add-grilled-chicken-2",
+        "name": "Spaghetti / Add Grilled Chicken",
+        "price": 50
+      },
+      {
+        "id": "addon-penne-add-grilled-chicken-2",
+        "name": "Penne / Add Grilled Chicken",
         "price": 50
       }
     ]
@@ -4583,13 +5230,13 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     "hasVariants": true,
     "variants": [
       {
-        "id": "var-spaghetti-6",
+        "id": "var-spaghetti-5",
         "name": "Spaghetti",
         "price": 365,
         "isVeg": true
       },
       {
-        "id": "var-penne-6",
+        "id": "var-penne-5",
         "name": "Penne",
         "price": 365,
         "isVeg": true
@@ -4597,8 +5244,13 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     ],
     "addons": [
       {
-        "id": "addon-chicken-3",
-        "name": "Add Grilled Chicken",
+        "id": "addon-spaghetti-add-grilled-chicken-3",
+        "name": "Spaghetti / Add Grilled Chicken",
+        "price": 50
+      },
+      {
+        "id": "addon-penne-add-grilled-chicken-3",
+        "name": "Penne / Add Grilled Chicken",
         "price": 50
       }
     ]
@@ -4633,7 +5285,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     ],
     "addons": [
       {
-        "id": "addon-chicken-4",
+        "id": "addon-add-grilled-chicken",
         "name": "Add Grilled Chicken",
         "price": 50
       }
@@ -4655,13 +5307,13 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     "hasVariants": true,
     "variants": [
       {
-        "id": "var-spaghetti-9",
+        "id": "var-spaghetti-8",
         "name": "Spaghetti",
         "price": 365,
         "isVeg": true
       },
       {
-        "id": "var-penne-9",
+        "id": "var-penne-8",
         "name": "Penne",
         "price": 365,
         "isVeg": true
@@ -4669,11 +5321,136 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     ],
     "addons": [
       {
-        "id": "addon-chicken-5",
-        "name": "Add Grilled Chicken",
+        "id": "addon-spaghetti-add-grilled-chicken-4",
+        "name": "Spaghetti / Add Grilled Chicken",
+        "price": 50
+      },
+      {
+        "id": "addon-penne-add-grilled-chicken-4",
+        "name": "Penne / Add Grilled Chicken",
         "price": 50
       }
     ]
+  },
+  {
+    "id": "dish-penne",
+    "name": "Penne",
+    "category": "Pasta",
+    "isVeg": true,
+    "price": 365,
+    "basePrice": 365,
+    "description": "Fresh Penne prepared with tender protein and chef's dressings.",
+    "imagePath": "/assets/pasta/alfredo-pasta.avif",
+    "isAvailable": true,
+    "isChefSpecial": false,
+    "isBestseller": false,
+    "spicyLevel": 0,
+    "hasVariants": true,
+    "variants": [
+      {
+        "id": "var-spaghetti-2",
+        "name": "Spaghetti",
+        "price": 365,
+        "isVeg": false
+      },
+      {
+        "id": "var-penne-2",
+        "name": "Penne",
+        "price": 365,
+        "isVeg": false
+      }
+    ],
+    "addons": []
+  },
+  {
+    "id": "dish-penne-2",
+    "name": "Penne",
+    "category": "Pasta",
+    "isVeg": true,
+    "price": 365,
+    "basePrice": 365,
+    "description": "Fresh Penne prepared with tender protein and chef's dressings.",
+    "imagePath": "/assets/pasta/alfredo-pasta.avif",
+    "isAvailable": true,
+    "isChefSpecial": false,
+    "isBestseller": false,
+    "spicyLevel": 0,
+    "hasVariants": true,
+    "variants": [
+      {
+        "id": "var-spaghetti-4",
+        "name": "Spaghetti",
+        "price": 365,
+        "isVeg": false
+      },
+      {
+        "id": "var-penne-4",
+        "name": "Penne",
+        "price": 365,
+        "isVeg": false
+      }
+    ],
+    "addons": []
+  },
+  {
+    "id": "dish-penne-3",
+    "name": "Penne",
+    "category": "Pasta",
+    "isVeg": true,
+    "price": 365,
+    "basePrice": 365,
+    "description": "Fresh Penne prepared with tender protein and chef's dressings.",
+    "imagePath": "/assets/pasta/alfredo-pasta.avif",
+    "isAvailable": true,
+    "isChefSpecial": false,
+    "isBestseller": false,
+    "spicyLevel": 0,
+    "hasVariants": true,
+    "variants": [
+      {
+        "id": "var-spaghetti-6",
+        "name": "Spaghetti",
+        "price": 365,
+        "isVeg": false
+      },
+      {
+        "id": "var-penne-6",
+        "name": "Penne",
+        "price": 365,
+        "isVeg": false
+      }
+    ],
+    "addons": []
+  },
+  {
+    "id": "dish-penne-4",
+    "name": "Penne",
+    "category": "Pasta",
+    "isVeg": true,
+    "price": 365,
+    "basePrice": 365,
+    "description": "Fresh Penne prepared with tender protein and chef's dressings.",
+    "imagePath": "/assets/pasta/alfredo-pasta.avif",
+    "isAvailable": true,
+    "isChefSpecial": false,
+    "isBestseller": false,
+    "spicyLevel": 0,
+    "hasVariants": true,
+    "variants": [
+      {
+        "id": "var-spaghetti-9",
+        "name": "Spaghetti",
+        "price": 365,
+        "isVeg": false
+      },
+      {
+        "id": "var-penne-9",
+        "name": "Penne",
+        "price": 365,
+        "isVeg": false
+      }
+    ],
+    "addons": []
   },
   {
     "id": "dish-loaded-vegetables-sandwich",
@@ -4972,7 +5749,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     "price": 375,
     "basePrice": 375,
     "description": "Freshly prepared Chicken Pepperoni Garlic Bread made with premium ingredients in our kitchen.",
-    "imagePath": "/assets/garlic-bread/grilled-chicken.avif",
+    "imagePath": "/assets/garlic-bread/pepperoni.webp",
     "isAvailable": true,
     "isChefSpecial": false,
     "isBestseller": false,
@@ -5159,7 +5936,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     "price": 375,
     "basePrice": 375,
     "description": "Freshly prepared Spicy Grilled Chicken Burrito Bowl made with premium ingredients in our kitchen.",
-    "imagePath": "/assets/burrito-wraps/grilled-chicken-burrito-wrap.avif",
+    "imagePath": "/assets/burrito-wraps/spicy-grilled-paneer-burrito-bowl.avif",
     "isAvailable": true,
     "isChefSpecial": false,
     "isBestseller": false,
@@ -5261,7 +6038,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     "price": 345,
     "basePrice": 345,
     "description": "Freshly prepared Spicy Grilled Chicken Burrito Wrap made with premium ingredients in our kitchen.",
-    "imagePath": "/assets/burrito-wraps/grilled-chicken-burrito-wrap.avif",
+    "imagePath": "/assets/burrito-wraps/spicy-grilled-paneer-burrito-bowl.avif",
     "isAvailable": true,
     "isChefSpecial": false,
     "isBestseller": false,
@@ -5346,7 +6123,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     "price": 325,
     "basePrice": 325,
     "description": "Freshly prepared Smash Chicken Cheese Burger made with premium ingredients in our kitchen.",
-    "imagePath": "/assets/burgers/smash-chicken-cheese-burger.avif",
+    "imagePath": "/assets/burgers/smash-veggie-cheese-burger.avif",
     "isAvailable": true,
     "isChefSpecial": false,
     "isBestseller": false,
@@ -5414,7 +6191,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     "price": 345,
     "basePrice": 345,
     "description": "Freshly prepared Grilled Chicken Tacos made with premium ingredients in our kitchen.",
-    "imagePath": "/assets/garlic-bread/grilled-chicken.avif",
+    "imagePath": "/assets/tacos/grilled-paneer-taco.avif",
     "isAvailable": true,
     "isChefSpecial": false,
     "isBestseller": false,
@@ -5431,7 +6208,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     "price": 345,
     "basePrice": 345,
     "description": "Freshly prepared Crispy Spicy Chicken Tacos made with premium ingredients in our kitchen.",
-    "imagePath": "/assets/burgers/crispy-spicy-chicken-burgher.avif",
+    "imagePath": "/assets/tacos/crispy-spicy-paneer-taco.avif",
     "isAvailable": true,
     "isChefSpecial": false,
     "isBestseller": false,
@@ -5482,7 +6259,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     "price": 295,
     "basePrice": 295,
     "description": "Freshly prepared Chicken Cheese made with premium ingredients in our kitchen.",
-    "imagePath": "/assets/burgers/smash-chicken-cheese-burger.avif",
+    "imagePath": "/assets/dim-sums/spinach-and-cream-cheese-dim-sum.webp",
     "isAvailable": true,
     "isChefSpecial": false,
     "isBestseller": false,
@@ -5504,6 +6281,21 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
         "id": "addon-tomatoes",
         "name": "Sun-dried tomatoes",
         "price": 40
+      },
+      {
+        "id": "addon-saut-ed-mushrooms",
+        "name": "Saut\u00e9ed mushrooms",
+        "price": 60
+      },
+      {
+        "id": "addon-caramelised-onions",
+        "name": "Caramelised onions",
+        "price": 40
+      },
+      {
+        "id": "addon-sun-dried-tomatoes",
+        "name": "Sun-dried tomatoes",
+        "price": 40
       }
     ]
   },
@@ -5515,7 +6307,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     "price": 295,
     "basePrice": 295,
     "description": "Freshly prepared Peri-Peri Chicken made with premium ingredients in our kitchen.",
-    "imagePath": "/assets/sushi/peri-peri-chicken-sushi.webp",
+    "imagePath": "/assets/mexican-appetisers/peri-peri-fries.avif",
     "isAvailable": true,
     "isChefSpecial": false,
     "isBestseller": false,
@@ -5535,6 +6327,21 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
       },
       {
         "id": "addon-tomatoes-2",
+        "name": "Sun-dried tomatoes",
+        "price": 40
+      },
+      {
+        "id": "addon-saut-ed-mushrooms-2",
+        "name": "Saut\u00e9ed mushrooms",
+        "price": 60
+      },
+      {
+        "id": "addon-caramelised-onions-2",
+        "name": "Caramelised onions",
+        "price": 40
+      },
+      {
+        "id": "addon-sun-dried-tomatoes-2",
         "name": "Sun-dried tomatoes",
         "price": 40
       }
@@ -5570,6 +6377,21 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
         "id": "addon-tomatoes-3",
         "name": "Sun-dried tomatoes",
         "price": 40
+      },
+      {
+        "id": "addon-saut-ed-mushrooms-3",
+        "name": "Saut\u00e9ed mushrooms",
+        "price": 60
+      },
+      {
+        "id": "addon-caramelised-onions-3",
+        "name": "Caramelised onions",
+        "price": 40
+      },
+      {
+        "id": "addon-sun-dried-tomatoes-3",
+        "name": "Sun-dried tomatoes",
+        "price": 40
       }
     ]
   },
@@ -5581,7 +6403,7 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     "price": 295,
     "basePrice": 295,
     "description": "Freshly prepared Pesto Chicken made with premium ingredients in our kitchen.",
-    "imagePath": "/assets/garlic-bread/pesto-pulled-chicken.avif",
+    "imagePath": "/assets/garlic-bread/pesto-veggies.avif",
     "isAvailable": true,
     "isChefSpecial": false,
     "isBestseller": false,
@@ -5601,6 +6423,21 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
       },
       {
         "id": "addon-tomatoes-4",
+        "name": "Sun-dried tomatoes",
+        "price": 40
+      },
+      {
+        "id": "addon-saut-ed-mushrooms-4",
+        "name": "Saut\u00e9ed mushrooms",
+        "price": 60
+      },
+      {
+        "id": "addon-caramelised-onions-4",
+        "name": "Caramelised onions",
+        "price": 40
+      },
+      {
+        "id": "addon-sun-dried-tomatoes-4",
         "name": "Sun-dried tomatoes",
         "price": 40
       }
@@ -5717,23 +6554,6 @@ export const INITIAL_MENU_ITEMS: MenuItem[] = [
     "basePrice": 75,
     "description": "Freshly prepared Cold Drink made with premium ingredients in our kitchen.",
     "imagePath": "/assets/beverages/cold-coffee.avif",
-    "isAvailable": true,
-    "isChefSpecial": false,
-    "isBestseller": false,
-    "spicyLevel": 0,
-    "hasVariants": false,
-    "variants": [],
-    "addons": []
-  },
-  {
-    "id": "dish-water-bottle",
-    "name": "Water Bottle",
-    "category": "Beverages",
-    "isVeg": true,
-    "price": 0,
-    "basePrice": 0,
-    "description": "Freshly prepared Water Bottle made with premium ingredients in our kitchen.",
-    "imagePath": "/assets/appetisers/korean-water-chestnut.avif",
     "isAvailable": true,
     "isChefSpecial": false,
     "isBestseller": false,

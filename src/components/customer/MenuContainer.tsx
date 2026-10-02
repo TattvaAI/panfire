@@ -141,7 +141,7 @@ export const MenuContainer: React.FC = () => {
             Explore Our Menu
           </h2>
           <p className="text-stone-500 text-sm sm:text-base mt-2 max-w-2xl leading-relaxed">
-            Wood-fired sourdough pizzas, delicate dim sums, handcrafted Asian street bowls, and chilled botanical beverages.
+            Complete restaurant kitchen catalog: 318 authentic dishes & 490+ custom variations across Wood-Fired Pizzas, Dim Sum, Momos, Wok Bowls, Pastas & Mexican Street.
           </p>
         </div>
 
@@ -224,7 +224,9 @@ export const MenuContainer: React.FC = () => {
             <div className="bg-white rounded-2xl border border-stone-200/90 p-3 shadow-xs space-y-1">
               <div className="px-3 py-2 flex items-center justify-between text-xs font-bold text-stone-400 uppercase tracking-wider border-b border-stone-100 mb-1">
                 <span>Categories</span>
-                <span>{totalDishesCount} Dishes</span>
+                <span className="text-[10px] font-mono font-bold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200/60">
+                  {totalDishesCount} Dishes • 490+ Items
+                </span>
               </div>
 
               {/* All Dishes Option */}
