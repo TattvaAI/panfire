@@ -96,7 +96,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenReservation }) =
                   <p className="text-[11px] text-stone-500">San Marzano Sugo & Fresh Fior di Latte</p>
                 </div>
                 <span className="px-2.5 py-1 bg-emerald-100 text-emerald-800 text-[11px] font-bold rounded-lg">
-                  ₹445
+                  From ₹290
                 </span>
               </div>
             </div>

@@ -1,0 +1,316 @@
+,,,,,,,,
+S. NO. ,BROAD CATEGORY ,CATEGORY,VEGETARIAN/ NON- VEGETARIAN,ITEM NAME,VARIANTS/ ADD-ONS,ADD-ON COST ,PRICE,DESCRIPTION
+,,,,,,,,
+1,ITALIAN,Salads,Vegetarian,Caprese Salad,,,365,"Rocket leaves, freshly sliced tomatoes, bocconcini and basil pesto, finished with mild seasoning and a balsamic reduction."
+,,Salads,Non-vegetarian ,,Caprese Grilled Chicken ,50,415,
+2,ITALIAN,Salads,Vegetarian,Caesar Salad,,,345,"Lettuce, crunchy croutons, sautéed bell peppers and sweetcorn, tossed in a creamy mustard-mayo dressing, finished with parmesan."
+,,,Non-vegetarian ,,Caesar Grilled Chicken,50,395,
+3,ITALIAN,Salads,Vegetarian,Apple Salad,,,365,"Crisp green apple and orange slices tossed with mixed lettuce, crunchy nuts and a refreshing honey-lemon dressing."
+,,,Non-vegetarian ,,Apple Grilled Chicken,50,415,
+4,ITALIAN,Salads,Vegetarian,Watermelon Salad,,,365,"Watermelon, burrata, lettuce and feta tossed in a honey-lemon dressing."
+,,,Non-vegetarian ,,Watermelon Grilled chicken,50,415,
+5,ITALIAN,Salads,Vegetarian,Rucola Burrata Salad,,,445,"Rocket leaves, cherry tomatoes, burrata and pesto tossed in a honey-balsamic dressing and finished with a delicate balsamic reduction."
+,,,Non-vegetarian ,,Rucola Burrata Grilled Chicken,50,495,
+6,ITALIAN,Sourdough Burgers- Vegetarian,Vegetarian,Sourdough Smash Veggie Cheese Burger,,,350,"A hand-crafted potato, mushroom, corn and mozzarella patty, smashed and grilled until golden, topped with crisp lettuce, tomato, gherkins, caramelised onions and cheese, served in a freshly baked wood-fired sourdough bun."
+7,ITALIAN,Sourdough Burgers- Non-Vegetarian,Non-vegetarian ,Sourdough Smash Chicken Cheese Burger,,,380,"A hand-crafted chicken patty, smashed and grilled until golden, layered with crisp lettuce, tomato, gherkins, caramelised onions and cheese, served in a freshly baked wood-fired sourdough bun."
+8,ITALIAN,Neapolitan Pizza - Small (8 inch),Vegetarian,Classic Margherita Pizza- Neapolitan Pizza - Small ,,,290,"Classic San Marzano tomato sauce, mozzarella and aromatic hand-torn basil."
+,,,Vegetarian,,Spicy Style ,20,,
+,,,Vegetarian,, Pesto Drizzle ,30,,
+,,,Vegetarian,,Extra Cheese ,70,,
+9,ITALIAN,Neapolitan Pizza - Large (12 inch),Vegetarian,Classic Margherita - Neapolitan Pizza - Large ,,,570,"Classic San Marzano tomato sauce, mozzarella and aromatic hand-torn basil."
+,,,Vegetarian,,Spicy Style ,50,,
+,,,Vegetarian,,Pesto Drizzle ,60,,
+,,,Vegetarian,,Extra Cheese ,120,,
+10,ITALIAN,Panfire Thin Crust Pizza (8 slices),Vegetarian,Classic Margherita- Thin Crust Pizza ,,,520,"Classic San Marzano tomato sauce, mozzarella and aromatic hand-torn basil."
+,,,Vegetarian,,Spicy Style ,50,,
+,,,Vegetarian,,Pesto Drizzle,60,,
+,,,Vegetarian,,Extra Cheese ,120,,
+11,ITALIAN,Neapolitan Pizza - Small (8 inch),Vegetarian,Creamy Spinach & Mushroom- Neapolitan Pizza - Small ,,,345,"Mozzarella, sautéed spinach and earthy mushrooms over a velvety white sauce."
+,,,Vegetarian,,Extra Cheese,70,,
+12,ITALIAN,Neapolitan Pizza - Large (12 inch),Vegetarian,Creamy Spinach & Mushroom - Neapolitan Pizza - Large ,,,670,"Mozzarella, sautéed spinach and earthy mushrooms over a velvety white sauce."
+,,,Vegetarian,,Extra Cheese ,120,,
+13,ITALIAN,Panfire Thin Crust Pizza (8 slices),Vegetarian,Creamy Spinach & Mushroom - Thin Crust Pizza ,,,640,"Mozzarella, sautéed spinach and earthy mushrooms over a velvety white sauce."
+,,,Vegetarian,,Extra Cheese ,120,,
+14,ITALIAN,Neapolitan Pizza - Small (8 inch),Vegetarian,Butter Paneer - Neapolitan Pizza - Small ,,,325,"Rich, spiced makhani sauce with mozzarella, paneer, green chillies and a hint of fresh ginger."
+,,,Vegetarian,,Add Burrata ,120,,
+,,,Vegetarian,,Extra Cheese ,70,,
+15,ITALIAN,Neapolitan Pizza - Large (12 inch),Vegetarian,Butter Paneer - Neapolitan Pizza - Large ,,,645,"Rich, spiced makhani sauce with mozzarella, paneer, green chillies and a hint of fresh ginger."
+,,,Vegetarian,,Add Burrata ,190,,
+,,,Vegetarian,,Extra Cheese ,120,,
+16,ITALIAN,Panfire Thin Crust Pizza (8 slices),Vegetarian,Butter Paneer - Thin Crust Pizza ,,,620,"Rich, spiced makhani sauce with mozzarella, paneer, green chillies and a hint of fresh ginger."
+,,,Vegetarian,,Add Burrata ,190,,
+,,,Vegetarian,,Extra Cheese ,120,,
+17,ITALIAN,Neapolitan Pizza - Small (8 inch),Vegetarian,Spicy Paneer - Neapolitan Pizza - Small ,,,325,"Mozzarella, marinated peri-peri paneer, spicy jalapeños and red onions over a bold, fiery marinara base."
+,,,Vegetarian,,Add Burrata ,120,,
+,,,Vegetarian,,Extra Cheese ,70,,
+18,ITALIAN,Neapolitan Pizza - Large (12 inch),Vegetarian,Spicy Paneer - Neapolitan Pizza - Large ,,,645,"Mozzarella, marinated peri-peri paneer, spicy jalapeños and red onions over a bold, fiery marinara base."
+,,,Vegetarian,,Add Burrata ,190,,
+,,,Vegetarian,,Extra Cheese ,120,,
+19,ITALIAN,Panfire Thin Crust Pizza (8 slices),Vegetarian,Spicy Paneer - Thin Crust Pizza ,,,620,"Mozzarella, marinated peri-peri paneer, spicy jalapeños and red onions over a bold, fiery marinara base."
+,,,Vegetarian,,Add Burrata ,190,,
+,,,Vegetarian,,Extra Cheese ,120,,
+20,ITALIAN,Neapolitan Pizza - Small (8 inch),Vegetarian,Sun & Rocket - Neapolitan Pizza - Small ,,,325,"Mozzarella, tangy sun-dried tomatoes, garlic and peppery rocket over a classic red sauce, finished with a balsamic reduction drizzle."
+,,,Vegetarian,,Extra Cheese ,70,,
+21,ITALIAN,Neapolitan Pizza - Large (12 inch),Vegetarian,Sun & Rocket - Neapolitan Pizza - Large ,,,645,"Mozzarella, tangy sun-dried tomatoes, garlic and peppery rocket over a classic red sauce, finished with a balsamic reduction drizzle."
+,,,Vegetarian,,Extra Cheese ,120,,
+22,ITALIAN,Panfire Thin Crust Pizza (8 slices),Vegetarian,Sun & Rocket - Thin Crust Pizza ,,,620,"Mozzarella, tangy sun-dried tomatoes, garlic and peppery rocket over a classic red sauce, finished with a balsamic reduction drizzle."
+,,,Vegetarian,,Extra Cheese ,120,,
+23,ITALIAN,Neapolitan Pizza - Small (8 inch),Vegetarian,Panfire Loaded Vegetables - Neapolitan Pizza - Small ,,,325,"Marinara and mozzarella topped with button mushrooms, cherry tomatoes, mixed bell peppers and grilled zucchini, then finished with crumbled feta and fresh basil."
+,,,Vegetarian,,Extra Cheese ,70,,
+24,ITALIAN,Neapolitan Pizza - Large (12 inch),Vegetarian,Panfire Loaded Vegetables - Neapolitan Pizza - Large ,,,645,"Marinara and mozzarella topped with button mushrooms, cherry tomatoes, mixed bell peppers and grilled zucchini, then finished with crumbled feta and fresh basil."
+,,,Vegetarian,,Extra Cheese ,120,,
+25,ITALIAN,Panfire Thin Crust Pizza (8 slices),Vegetarian,Panfire Loaded Vegetables - Thin Crust Pizza ,,,620,"Marinara and mozzarella topped with button mushrooms, cherry tomatoes, mixed bell peppers and grilled zucchini, then finished with crumbled feta and fresh basil."
+,,,Vegetarian,,Extra Cheese ,120,,
+26,ITALIAN,Neapolitan Pizza - Small (8 inch),Vegetarian,Spicy Mushroom - Neapolitan Pizza - Small ,,,325,"Mozzarella, earthy button mushrooms, spicy red paprika and red onions over a fiery peri-peri marinara base."
+,,,Vegetarian,,Add Burrata ,120,,
+,,,Vegetarian,,Extra Cheese ,70,,
+27,ITALIAN,Neapolitan Pizza - Large (12 inch),Vegetarian,Spicy Mushroom - Neapolitan Pizza - Large ,,,645,"Mozzarella, earthy button mushrooms, spicy red paprika and red onions over a fiery peri-peri marinara base."
+,,,Vegetarian,,Add Burrata  ,190,,
+,,,Vegetarian,,Extra Cheese ,120,,
+28,ITALIAN,Panfire Thin Crust Pizza (8 slices),Vegetarian,Spicy Mushroom - Thin Crust Pizza ,,,620,"Mozzarella, earthy button mushrooms, spicy red paprika and red onions over a fiery peri-peri marinara base."
+,,,Vegetarian,,Add Burrata ,190,,
+,,,Vegetarian,,Extra Cheese ,120,,
+29,ITALIAN,Neapolitan Pizza - Small (8 inch),Vegetarian,Hawaiian - Neapolitan Pizza - Small ,,,325,"Mozzarella, juicy pineapple, sweet corn and hot jalapeños over a classic marinara base."
+,,,Vegetarian,,Extra Cheese ,70,,
+30,ITALIAN,Neapolitan Pizza - Large (12 inch),Vegetarian,Hawaiian - Neapolitan Pizza - Large ,,,645,"Mozzarella, juicy pineapple, sweet corn and hot jalapeños over a classic marinara base."
+,,,Vegetarian,,Extra Cheese ,120,,
+31,ITALIAN,Panfire Thin Crust Pizza (8 slices),Vegetarian,Hawaiian - Thin Crust Pizza ,,,620,"Mozzarella, juicy pineapple, sweet corn and hot jalapeños over a classic marinara base."
+,,,Vegetarian,,Extra Cheese ,120,,
+32,ITALIAN,Neapolitan Pizza - Small (8 inch),Vegetarian,Pesto Paneer - Neapolitan Pizza - Small ,,,345,"Classic red sauce and melted mozzarella topped with paneer, finished with a vibrant basil pesto drizzle."
+,,,Vegetarian,,Add Burrata ,120,,
+,,,Vegetarian,,Extra Cheese ,70,,
+33,ITALIAN,Neapolitan Pizza - Large (12 inch),Vegetarian,Pesto Paneer - Neapolitan Pizza - Large ,,,670,"Classic red sauce and melted mozzarella topped with paneer, finished with a vibrant basil pesto drizzle."
+,,,Vegetarian,,Add Burrata ,190,,
+,,,Vegetarian,,Extra Cheese ,120,,
+34,ITALIAN,Panfire Thin Crust Pizza (8 slices),Vegetarian,Pesto Paneer - Thin Crust Pizza ,,,640,"Classic red sauce and melted mozzarella topped with paneer, finished with a vibrant basil pesto drizzle."
+,,,Vegetarian,,Add Burrata ,190,,
+,,,Vegetarian,,Extra Cheese ,120,,
+35,ITALIAN,Neapolitan Pizza - Small (8 inch),Vegetarian,Burrata - Neapolitan Pizza - Small ,,,440,"Creamy white base with mozzarella, burrata, sweet cherry tomatoes and caramelized onions."
+,,,Vegetarian,,Extra Cheese ,70,,
+36,ITALIAN,Neapolitan Pizza - Large (12 inch),Vegetarian,Burrata - Neapolitan Pizza - Large ,,,845,"Creamy white base with mozzarella, burrata, sweet cherry tomatoes and caramelized onions."
+,,,Vegetarian,,Extra Cheese ,120,,
+37,ITALIAN,Panfire Thin Crust Pizza (8 slices),Vegetarian,Burrata - Thin Crust Pizza ,,,795,"Creamy white base with mozzarella, burrata, sweet cherry tomatoes and caramelized onions."
+,,,Vegetarian,,Extra Cheese,120,,
+38,ITALIAN,Neapolitan Pizza - Small (8 inch),Vegetarian,Truffle Mushroom - Neapolitan Pizza - Small ,,,440,"Mozzarella, shiitake and button mushrooms over a creamy white base, finished with a drizzle of white truffle oil."
+,,,Vegetarian,,Add Burrata ,120,,
+,,,Vegetarian,,Extra Cheese ,70,,
+39,ITALIAN,Neapolitan Pizza - Large (12 inch),Vegetarian,Truffle Mushroom - Neapolitan Pizza - Large ,,,845,"Mozzarella, shiitake and button mushrooms over a creamy white base, finished with a drizzle of white truffle oil."
+,,,Vegetarian,,Add Burrata ,190,,
+,,,Vegetarian,,Extra Cheese ,120,,
+40,ITALIAN,Panfire Thin Crust Pizza (8 slices),Vegetarian,Truffle Mushroom - Thin Crust Pizza ,,,795,"Mozzarella, shiitake and button mushrooms over a creamy white base, finished with a drizzle of white truffle oil."
+,,,Vegetarian,,Add Burrata ,190,,
+,,,Vegetarian,,Extra Cheese ,120,,
+41,ITALIAN,Neapolitan Pizza - Small (8 inch),Vegetarian,Magic Mushroom - Neapolitan Pizza - Small ,,,440,"Mozzarella, earthy shiitake and button mushrooms paired with creamy goat cheese and fresh rocket, finished with a drizzle of balsamic reduction."
+,,,Vegetarian,,Extra Cheese ,70,,
+42,ITALIAN,Neapolitan Pizza - Large (12 inch),Vegetarian,Magic Mushroom - Neapolitan Pizza - Large ,,,845,"Mozzarella, earthy shiitake and button mushrooms paired with creamy goat cheese and fresh rocket, finished with a drizzle of balsamic reduction."
+,,,Vegetarian,,Extra Cheese ,120,,
+43,ITALIAN,Panfire Thin Crust Pizza (8 slices),Vegetarian,Magic Mushroom - Thin Crust Pizza ,,,795,"Mozzarella, earthy shiitake and button mushrooms paired with creamy goat cheese and fresh rocket, finished with a drizzle of balsamic reduction."
+,,,Vegetarian,,Extra Cheese,120,,
+44,ITALIAN,Neapolitan Pizza - Small (8 inch),Vegetarian,4 Cheese - Neapolitan Pizza - Small ,,,520,"An indulgent, rich blend of mozzarella, fresh bocconcini, parmesan and creamy goat cheese."
+,,,Vegetarian,,Extra Cheese ,70,,
+45,ITALIAN,Neapolitan Pizza - Large (12 inch),Vegetarian,4 Cheese - Neapolitan Pizza - Large ,,,995,"An indulgent, rich blend of mozzarella, fresh bocconcini, parmesan and creamy goat cheese."
+,,,Vegetarian,,Extra Cheese ,120,,
+46,ITALIAN,Panfire Thin Crust Pizza (8 slices),Vegetarian,4 Cheese - Thin Crust Pizza ,,,945,"An indulgent, rich blend of mozzarella, fresh bocconcini, parmesan and creamy goat cheese."
+,,,Vegetarian,,Extra Cheese,120,,
+47,ITALIAN,Neapolitan Pizza - Small (8 inch),Vegetarian,3 Cheese Asparagus Pesto - Neapolitan Pizza - Small ,,,520,"Vibrant basil pesto base with tender asparagus, mozzarella, rich burrata, rocket leaves and parmesan, finished with a balsamic reduction drizzle."
+,,,Vegetarian,,Extra Cheese ,70,,
+48,ITALIAN,Neapolitan Pizza - Large (12 inch),Vegetarian,3 Cheese Asparagus Pesto - Neapolitan Pizza - Large ,,,995,"Vibrant basil pesto base with tender asparagus, mozzarella, rich burrata, rocket leaves and parmesan, finished with a balsamic reduction drizzle."
+,,,Vegetarian,,Extra Cheese ,120,,
+49,ITALIAN,Panfire Thin Crust Pizza (8 slices),Vegetarian,3 Cheese Asparagus Pesto - Thin Crust Pizza ,,,945,"Vibrant basil pesto base with tender asparagus, mozzarella, rich burrata, rocket leaves and parmesan, finished with a balsamic reduction drizzle."
+,,,Non-vegetarian ,,Extra Cheese ,120,,
+50,ITALIAN,Neapolitan Pizza - Small (8 inch),Non-vegetarian ,Panfire Overload Chicken - Neapolitan Pizza - Small ,,,345,"Classic marinara and melted mozzarella topped with grilled chicken, smoked chicken and chicken sausage."
+,,,Non-vegetarian ,,Add Burrata ,120,,
+,,,Non-vegetarian ,,Extra Cheese ,70,,
+51,ITALIAN,Neapolitan Pizza - Large (12 inch),Non-vegetarian ,Panfire Overload Chicken - Neapolitan Pizza - Large ,,,670,"Classic marinara and melted mozzarella topped with grilled chicken, smoked chicken and chicken sausage."
+,,,Non-vegetarian ,,Add Burrata ,190,,
+,,,Non-vegetarian ,,Extra Cheese ,120,,
+52,ITALIAN,Panfire Thin Crust Pizza (8 slices),Non-vegetarian ,Panfire Overload Chicken - Thin Crust Pizza ,,,640,"Classic marinara and melted mozzarella topped with grilled chicken, smoked chicken and chicken sausage."
+,,,Non-vegetarian ,,Add Burrata ,190,,
+,,,Non-vegetarian ,,Extra Cheese ,120,,
+53,ITALIAN,Neapolitan Pizza - Small (8 inch),Non-vegetarian ,Panfire Four Meat - Neapolitan Pizza - Small ,,,440,"Classic marinara and melted mozzarella topped with bacon, smoked chicken, chicken sausage and chicken pepperoni."
+,,,Non-vegetarian ,,Add Burrata ,120,,
+,,,Non-vegetarian ,,Extra Cheese ,70,,
+54,ITALIAN,Neapolitan Pizza - Large (12 inch),Non-vegetarian ,Panfire Four Meat - Neapolitan Pizza - Large ,,,845,"Classic marinara and melted mozzarella topped with bacon, smoked chicken, chicken sausage and chicken pepperoni."
+,,,Non-vegetarian ,,Add Burrata ,190,,
+,,,Non-vegetarian ,,Extra Cheese ,120,,
+55,ITALIAN,Panfire Thin Crust Pizza (8 slices),Non-vegetarian ,Panfire Four Meat - Thin Crust Pizza ,,,795,"Classic marinara and melted mozzarella topped with bacon, smoked chicken, chicken sausage and chicken pepperoni."
+,,,Non-vegetarian ,,Add Burrata ,190,,
+,,,Non-vegetarian ,,Extra Cheese ,120,,
+56,ITALIAN,Neapolitan Pizza - Small (8 inch),Non-vegetarian ,Chicken Pepperoni - Neapolitan Pizza - Small ,,,345,"Classic marinara layered with melted mozzarella, chicken pepperoni and spicy jalapeños."
+,,,Non-vegetarian ,,Add Burrata ,120,,
+,,,Non-vegetarian ,,Extra Cheese ,70,,
+57,ITALIAN,Neapolitan Pizza - Large (12 inch),Non-vegetarian ,Chicken Pepperoni - Neapolitan Pizza - Large ,,,670,"Classic marinara layered with melted mozzarella, chicken pepperoni and spicy jalapeños."
+,,,Non-vegetarian ,,Add Burrata ,190,,
+,,,Non-vegetarian ,,Extra Cheese ,120,,
+58,ITALIAN,Panfire Thin Crust Pizza (8 slices),Non-vegetarian ,Chicken Pepperoni - Thin Crust Pizza ,,,640,"Classic marinara layered with melted mozzarella, chicken pepperoni and spicy jalapeños."
+,,,Non-vegetarian ,,Add Burrata ,190,,
+,,,Non-vegetarian ,,Extra Cheese ,120,,
+59,ITALIAN,Neapolitan Pizza - Small (8 inch),Non-vegetarian ,Panfire Pollo - Neapolitan Pizza - Small ,,,520,"Smoked chicken, earthy button mushrooms and caramelised onions over classic marinara and mozzarella, finished with creamy goat cheese."
+,,,Non-vegetarian ,,Add Burrata ,120,,
+,,,Non-vegetarian ,,Extra Cheese ,70,,
+60,ITALIAN,Neapolitan Pizza - Large (12 inch),Non-vegetarian ,Panfire Pollo - Neapolitan Pizza - Large ,,,995,"Smoked chicken, earthy button mushrooms and caramelised onions over classic marinara and mozzarella, finished with creamy goat cheese."
+,,,Non-vegetarian ,,Add Burrata ,190,,
+,,,Non-vegetarian ,,Extra Cheese ,120,,
+61,ITALIAN,Panfire Thin Crust Pizza (8 slices),Non-vegetarian ,Panfire Pollo - Thin Crust Pizza ,,,945,"Smoked chicken, earthy button mushrooms and caramelised onions over classic marinara and mozzarella, finished with creamy goat cheese."
+,,,Non-vegetarian ,,Add Burrata ,190,,
+,,,Non-vegetarian ,,Extra Cheese ,120,,
+62,ITALIAN,Neapolitan Pizza - Small (8 inch),Non-vegetarian ,Butter Chicken - Neapolitan Pizza - Small ,,,345,"Grilled butter chicken over a rich makhani sauce and mozzarella, finished with fresh coriander, green chillies and ginger."
+,,,Non-vegetarian ,,Add Burrata ,120,,
+,,,Non-vegetarian ,,Extra Cheese ,70,,
+63,ITALIAN,Neapolitan Pizza - Large (12 inch),Non-vegetarian ,Butter Chicken - Neapolitan Pizza - Large ,,,670,"Grilled butter chicken over a rich makhani sauce and mozzarella, finished with fresh coriander, green chillies and ginger."
+,,,Non-vegetarian ,,Add Burrata ,190,,
+,,,Non-vegetarian ,,Extra Cheese ,120,,
+64,ITALIAN,Panfire Thin Crust Pizza (8 slices),Non-vegetarian ,Butter Chicken - Thin Crust Pizza ,,,640,"Grilled butter chicken over a rich makhani sauce and mozzarella, finished with fresh coriander, green chillies and ginger."
+,,,Non-vegetarian ,,Add Burrata ,190,,
+,,,Non-vegetarian ,,Extra Cheese ,120,,
+65,ITALIAN,Neapolitan Pizza - Small (8 inch),Non-vegetarian ,Grilled Chicken & Roasted Peppers - Neapolitan Pizza - Small ,,,345,"Grilled chicken, roasted bell peppers and red onions over classic marinara and melted mozzarella, finished with a touch of red paprika."
+,,,Non-vegetarian ,,Add Burrata ,120,,
+,,,Non-vegetarian ,,Extra Cheese ,70,,
+66,ITALIAN,Neapolitan Pizza - Large (12 inch),Non-vegetarian ,Grilled Chicken & Roasted Peppers - Neapolitan Pizza - Large ,,,670,"Grilled chicken, roasted bell peppers and red onions over classic marinara and melted mozzarella, finished with a touch of red paprika."
+,,,Non-vegetarian ,,Add Burrata ,190,,
+,,,Non-vegetarian ,,Extra Cheese ,120,,
+67,ITALIAN,Panfire Thin Crust Pizza (8 slices),Non-vegetarian ,Grilled Chicken & Roasted Peppers - Thin Crust Pizza ,,,640,"Grilled chicken, roasted bell peppers and red onions over classic marinara and melted mozzarella, finished with a touch of red paprika."
+,,,Non-vegetarian ,,Add Burrata ,190,,
+,,,Non-vegetarian ,,Extra Cheese ,120,,
+68,ITALIAN,Neapolitan Pizza - Small (8 inch),Non-vegetarian ,Pesto Smoked Chicken & Rocket - Neapolitan Pizza - Small ,,,440,"Smoked chicken and mozzarella topped with fresh rocket, basil pesto and a balsamic drizzle."
+,,,Non-vegetarian ,,Add Burrata ,120,,
+,,,Non-vegetarian ,,Extra Cheese ,70,,
+69,ITALIAN,Neapolitan Pizza - Large (12 inch),Non-vegetarian ,Pesto Smoked Chicken & Rocket - Neapolitan Pizza - Large ,,,845,"Smoked chicken and mozzarella topped with fresh rocket, basil pesto and a balsamic drizzle."
+,,,Non-vegetarian ,,Add Burrata ,190,,
+,,,Non-vegetarian ,,Extra Cheese ,120,,
+70,ITALIAN,Panfire Thin Crust Pizza (8 slices),Non-vegetarian ,Pesto Smoked Chicken & Rocket - Thin Crust Pizza ,,,795,"Smoked chicken and mozzarella topped with fresh rocket, basil pesto and a balsamic drizzle."
+,,,Non-vegetarian ,,Add Burrata ,190,,
+,,,Non-vegetarian ,,Extra Cheese ,120,,
+71,ITALIAN,Neapolitan Pizza - Small (8 inch),Non-vegetarian ,Smoked Chicken Paprika - Neapolitan Pizza - Small ,,,345,"Smoked chicken, red onions and sliced paprika over classic marinara and melted mozzarella."
+,,,Non-vegetarian ,,Add Burrata ,120,,
+,,,Non-vegetarian ,,Extra Cheese ,70,,
+72,ITALIAN,Neapolitan Pizza - Large (12 inch),Non-vegetarian ,Smoked Chicken Paprika - Neapolitan Pizza - Large ,,,670,"Smoked chicken, red onions and sliced paprika over classic marinara and melted mozzarella."
+,,,Non-vegetarian ,,Add Burrata ,190,,
+,,,Non-vegetarian ,, Extra Cheese ,120,,
+73,ITALIAN,Panfire Thin Crust Pizza (8 slices),Non-vegetarian ,Smoked Chicken Paprika - Thin Crust Pizza ,,,640,"Smoked chicken, red onions and sliced paprika over classic marinara and melted mozzarella."
+,,,Non-vegetarian ,,Add Burrata ,190,,
+,,,Non-vegetarian ,,Extra Cheese ,120,,
+74,ITALIAN,Neapolitan Pizza - Small (8 inch),Non-vegetarian ,"Grilled Chicken, Spinach & Mushroom - Neapolitan Pizza - Small ",,,345,"Creamy white sauce layered with melted mozzarella, grilled chicken, sautéed spinach and earthy mushrooms."
+,,,Non-vegetarian ,,Add Burrata ,120,,
+,,,Non-vegetarian ,,Extra Cheese ,70,,
+75,ITALIAN,Neapolitan Pizza - Large (12 inch),Non-vegetarian ,"Grilled Chicken, Spinach & Mushroom - Neapolitan Pizza - Large ",,,670,"Creamy white sauce layered with melted mozzarella, grilled chicken, sautéed spinach and earthy mushrooms."
+,,,Non-vegetarian ,,Add Burrata ,190,,
+,,,Non-vegetarian ,,Extra Cheese ,120,,
+76,ITALIAN,Panfire Thin Crust Pizza (8 slices),Non-vegetarian ,"Grilled Chicken, Spinach & Mushroom - Thin Crust Pizza ",,,640,"Creamy white sauce layered with melted mozzarella, grilled chicken, sautéed spinach and earthy mushrooms."
+,,,Non-vegetarian ,,Add Burrata ,190,,
+,,,Non-vegetarian ,,Extra Cheese ,120,,
+77,ITALIAN,Neapolitan Pizza - Small (8 inch),Non-vegetarian ,Bacon - Neapolitan Pizza - Small ,,,345,Bacon and caramelised onions over a creamy white sauce and melted mozzarella.
+,,,Non-vegetarian ,,Add Burrata ,120,,
+,,,Non-vegetarian ,,Extra Cheese ,70,,
+78,ITALIAN,Neapolitan Pizza - Large (12 inch),Non-vegetarian ,Bacon - Neapolitan Pizza - Large ,,,670,Bacon and caramelised onions over a creamy white sauce and melted mozzarella.
+,,,Non-vegetarian ,,Add Burrata ,190,,
+,,,Non-vegetarian ,,Extra Cheese ,120,,
+79,ITALIAN,Panfire Thin Crust Pizza (8 slices),Non-vegetarian ,Bacon - Thin Crust Pizza ,,,640,Bacon and caramelised onions over a creamy white sauce and melted mozzarella.
+,,,Non-vegetarian ,,Add Burrata ,190,,
+,,,Non-vegetarian ,,Extra Cheese ,120,,
+80,ITALIAN,Deep Dish Pizzas - Vegetarian,Vegetarian,Loaded Vegetables Deep Dish Pizza,Served as 6 slices,,695,"Stuffing: Mixed bell peppers, sun-dried tomatoes and jalapeños. Topping: Marinara, parmesan and basil."
+33,ITALIAN,Deep Dish Pizzas - Vegetarian,Vegetarian,Ultimate Mushroom Deep Dish Pizza,Served as 6 slices,,745,"Stuffing: Mushrooms and red onion. Topping: Marinara, parmesan and basil."
+34,ITALIAN,Deep Dish Pizzas - Non-Vegetarian,Non-vegetarian ,Pepperoni Melt Deep Dish Pizza,Served as 6 slices,,845,"Stuffing: Chicken pepperoni. Topping: Marinara, parmesan and basil."
+35,ITALIAN,Deep Dish Pizzas - Non-Vegetarian,Non-vegetarian ,Panfire Overload Chicken Deep Dish Pizza,Served as 6 slices,,845,"Stuffing: Grilled chicken, smoked chicken and chicken sausage. Topping: Marinara, parmesan and basil."
+36,ITALIAN,Deep Dish Pizzas - Non-Vegetarian,Non-vegetarian ,Panfire Four Meat Deep Dish Pizza,Served as 6 slices,,845,"Stuffing: Bacon, smoked chicken, chicken sausage and chicken pepperoni. Topping: Marinara, parmesan and basil."
+37,ITALIAN,Indie Thin Crust Pizzas - Vegetarian,Vegetarian,Peri-Peri Paneer Indie Thin Crust Pizza,Served as 8 slices,,445,"Marinara, peri-peri paneer and red onion."
+38,ITALIAN,Indie Thin Crust Pizzas - Vegetarian,Vegetarian,Mushroom Delight Indie Thin Crust Pizza,Served as 8 slices,,445,"Marinara, mushrooms and red onion."
+39,ITALIAN,Indie Thin Crust Pizzas - Vegetarian,Vegetarian,Veggie Delight Indie Thin Crust Pizza,Served as 8 slices,,445,"Marinara, bell peppers, red onion and black olives."
+40,ITALIAN,Indie Thin Crust Pizzas - Non-Vegetarian,Non-vegetarian ,Tandoori Chicken Indie Thin Crust Pizza,Served as 8 slices,,495,"Marinara, tandoori chicken and red onion."
+41,ITALIAN,Indie Thin Crust Pizzas - Non-Vegetarian,Non-vegetarian ,Chicken Sausage Indie Thin Crust Pizza,Served as 8 slices,,495,Marinara and chicken sausage.
+42,ITALIAN,Indie Thin Crust Pizzas - Non-Vegetarian,Non-vegetarian ,Fully Loaded Indie Thin Crust Pizza,Served as 8 slices,,495,"Marinara, chicken sausage and grilled chicken."
+43,ITALIAN,Pasta,Vegetarian,Arrabbiata Pasta,Spaghetti ,,365,"Fiery San Marzano tomato sauce tossed with fresh capsicum, broccoli and zucchini."
+,,,Vegetarian,,Penne,,365,
+,,,Non-vegetarian ,,Spaghetti / Add Grilled Chicken ,50,,
+,,,Non-vegetarian ,,Penne / Add Grilled Chicken ,50,,
+44,ITALIAN,Pasta,Vegetarian,Alfredo Pasta,Spaghetti ,,365,Velvety parmesan cream sauce tossed with garlic-herb sautéed mushrooms.
+,,,Vegetarian,,Penne,,365,
+,,,Non-vegetarian ,,Spaghetti / Add Grilled Chicken ,50,,
+,,,Non-vegetarian ,,Penne / Add Grilled Chicken ,50,,
+45,ITALIAN,Pasta,Vegetarian,Pesto Pasta,Spaghetti ,,365,"Vibrant house-made basil pesto tossed with bell peppers, broccoli and zucchini."
+,,,Vegetarian,,Penne,,365,
+,,,Non-vegetarian ,,Spaghetti / Add Grilled Chicken ,50,,
+,,,Non-vegetarian ,,Penne / Add Grilled Chicken ,50,,
+46,ITALIAN,Pasta,Vegetarian,Aglio e Olio Pasta,,,365,"Spaghetti tossed in extra-virgin olive oil, garlic, sun-dried tomatoes and black olives."
+,,,Non-vegetarian ,,Add Grilled Chicken ,50,,
+47,ITALIAN,Pasta,Vegetarian,Rosé Pasta,Spaghetti ,,365,"A creamy blend of white sauce and tangy tomato sauce, tossed with fresh garden vegetables."
+,,,Vegetarian,,Penne,,365,
+,,,Non-vegetarian ,,Spaghetti / Add Grilled Chicken ,50,,
+,,,Non-vegetarian ,,Penne / Add Grilled Chicken ,50,,
+48,ITALIAN,Napoli Sandwiches - Vegetarian,Vegetarian,Loaded Vegetables Sandwich,,,295,
+49,ITALIAN,Napoli Sandwiches - Vegetarian,Vegetarian,Sun-Dried Tomato Pesto Sandwich,,,345,
+50,ITALIAN,Napoli Sandwiches - Vegetarian,Vegetarian,Pesto Paneer Sandwich,,,345,
+51,ITALIAN,Napoli Sandwiches - Vegetarian,Vegetarian,Mushroom & Cheese Sandwich,,,345,
+52,ITALIAN,Napoli Sandwiches - Vegetarian,Vegetarian,Caprese Sandwich,,,395,
+53,ITALIAN,Napoli Sandwiches - Non-Vegetarian,Non-vegetarian ,Ham & Cheese Sandwich,,,375,
+54,ITALIAN,Napoli Sandwiches - Non-Vegetarian,Non-vegetarian ,Pulled Chicken Pesto Sandwich,,,395,
+55,ITALIAN,Napoli Sandwiches - Non-Vegetarian,Non-vegetarian ,Grilled Chicken Sandwich,,,375,
+56,ITALIAN,Napoli Sandwiches - Non-Vegetarian,Non-vegetarian ,Bacon & Eggs Sandwich,,,375,
+57,ITALIAN,Garlic Breads - Vegetarian,Vegetarian,Garlic Bread with Cheese,,,295,
+58,ITALIAN,Garlic Breads - Vegetarian,Vegetarian,Vegetable & Cheese Garlic Bread,,,325,
+59,ITALIAN,Garlic Breads - Vegetarian,Vegetarian,Mushroom & Cheese Garlic Bread,,,345,
+60,ITALIAN,Garlic Breads - Vegetarian,Vegetarian,Pesto Veggies Garlic Bread,,,345,
+61,ITALIAN,Garlic Breads - Vegetarian,Vegetarian,Pesto & Sun-Dried Tomato Garlic Bread,,,345,
+62,ITALIAN,Garlic Breads - Vegetarian,Vegetarian,Asparagus & Burrata Garlic Bread,,,445,
+63,ITALIAN,Garlic Breads - Non-Vegetarian,Non-vegetarian ,Bacon & Mushroom Garlic Bread,,,375,
+64,ITALIAN,Garlic Breads - Non-Vegetarian,Non-vegetarian ,Grilled Chicken Garlic Bread,,,375,
+65,ITALIAN,Garlic Breads - Non-Vegetarian,Non-vegetarian ,Chicken Pepperoni Garlic Bread,,,375,
+66,ITALIAN,Garlic Breads - Non-Vegetarian,Non-vegetarian ,Pesto Pulled Chicken Garlic Bread,,,445,
+67,MEXICAN,Appetizers - Vegetarian,Vegetarian,Classic Fries,,,195,
+68,MEXICAN,Appetizers - Vegetarian,Vegetarian,Peri-Peri Fries,,,215,
+69,MEXICAN,Appetizers - Vegetarian,Vegetarian,Parmesan Fries,,,245,
+70,MEXICAN,Appetizers - Non-Vegetarian,Non-vegetarian ,Chicken Popcorn,,,275,
+71,MEXICAN,Appetizers - Non-Vegetarian,Non-vegetarian ,Chicken Strips,,,285,
+72,MEXICAN,Burrito Bowls - Vegetarian,Vegetarian,Crispy Spicy Paneer Burrito Bowl,,,345,
+73,MEXICAN,Burrito Bowls - Vegetarian,Vegetarian,Crispy Spicy Mushroom Burrito Bowl,,,345,
+74,MEXICAN,Burrito Bowls - Vegetarian,Vegetarian,Spicy Grilled Paneer Burrito Bowl,,,345,
+75,MEXICAN,Burrito Bowls - Non-Vegetarian,Non-vegetarian ,Crispy Spicy Chicken Burrito Bowl,,,375,
+76,MEXICAN,Burrito Bowls - Non-Vegetarian,Non-vegetarian ,Spicy Grilled Chicken Burrito Bowl,,,375,
+77,MEXICAN,Burrito Wraps - Vegetarian,Vegetarian,Crispy Spicy Paneer Burrito Wrap,,,325,
+78,MEXICAN,Burrito Wraps - Vegetarian,Vegetarian,Crispy Spicy Mushroom Burrito Wrap,,,325,
+79,MEXICAN,Burrito Wraps - Vegetarian,Vegetarian,Spicy Grilled Paneer Burrito Wrap,,,325,
+80,MEXICAN,Burrito Wraps - Non-Vegetarian,Non-vegetarian ,Crispy Spicy Chicken Burrito Wrap,,,345,
+81,MEXICAN,Burrito Wraps - Non-Vegetarian,Non-vegetarian ,Egg & Bacon Burrito Wrap,,,345,
+82,MEXICAN,Burrito Wraps - Non-Vegetarian,Non-vegetarian ,Spicy Grilled Chicken Burrito Wrap,,,345,
+83,MEXICAN,Burgers - Vegetarian,Vegetarian,Classic Potato Cheese Burger,,,275,
+84,MEXICAN,Burgers - Vegetarian,Vegetarian,Peri-Peri Potato Cheese Burger,,,285,
+85,MEXICAN,Burgers - Vegetarian,Vegetarian,Smash Veggie Cheese Burger,,,295,
+86,MEXICAN,Burgers - Non-Vegetarian,Non-vegetarian ,Crispy Chipotle Chicken Burger,,,295,
+87,MEXICAN,Burgers - Non-Vegetarian,Non-vegetarian ,Smash Chicken Cheese Burger,,,325,
+88,MEXICAN,Tacos - Vegetarian,Vegetarian,Grilled Spicy Paneer Tacos,,,325,
+89,MEXICAN,Tacos - Vegetarian,Vegetarian,Corn & Cheese Tacos,,,325,
+90,MEXICAN,Tacos - Vegetarian,Vegetarian,Crispy Spicy Paneer Tacos,,,325,
+91,MEXICAN,Tacos - Non-Vegetarian,Non-vegetarian ,Grilled Chicken Tacos,,,345,
+92,MEXICAN,Tacos - Non-Vegetarian,Non-vegetarian ,Crispy Spicy Chicken Tacos,,,345,
+93,MEXICAN,Nachos - Vegetarian,Vegetarian,Baked Veg Nachos,,,325,
+94,MEXICAN,Nachos - Non-Vegetarian,Non-vegetarian ,Baked Chicken Nachos,,,345,
+95,MEXICAN,Wood-Fired Hot Dogs - Non-Vegetarian,Non-vegetarian ,Chicken Cheese,,,295,
+,,,,,Sautéed mushrooms ,60,,
+,,,,,Caramelised onions ,40,,
+,,,,,Sun-dried tomatoes ,40,,
+96,MEXICAN,Wood-Fired Hot Dogs - Non-Vegetarian,Non-vegetarian ,Peri-Peri Chicken,,,295,
+,,,,,Sautéed mushrooms  ,60,,
+,,,,,Caramelised onions ,40,,
+,,,,,Sun-dried tomatoes ,40,,
+97,MEXICAN,Wood-Fired Hot Dogs - Non-Vegetarian,Non-vegetarian ,Makhni Chicken,,,295,
+,,,,,Sautéed mushrooms ,60,,
+,,,,, Caramelised onions ,40,,
+,,,,,Sun-dried tomatoes ,40,,
+98,MEXICAN,Wood-Fired Hot Dogs - Non-Vegetarian,Non-vegetarian ,Pesto Chicken,,,295,
+,,,,,Sautéed mushrooms ,60,,
+,,,,,Caramelised onions ,40,,
+,,,,,Sun-dried tomatoes ,40,,
+99,BEVERAGES,Beverages,Vegetarian,Fresh Lime Soda,,,120,
+100,BEVERAGES,Beverages,Vegetarian,Iced Tea (Lemon),,,120,
+101,BEVERAGES,Beverages,Vegetarian,Strawberry Shake,,,175,
+102,BEVERAGES,Beverages,Vegetarian,Orange Mojito,,,175,
+103,BEVERAGES,Beverages,Vegetarian,Strawberry Mojito,,,175,
+104,BEVERAGES,Beverages,Vegetarian,Blueberry Mojito,,,175,
+105,BEVERAGES,Beverages,Vegetarian,Cold Coffee,,,195,
+106,BEVERAGES,Beverages,Vegetarian,Blueberry Shake,,,195,
+107,BEVERAGES,Beverages,Vegetarian,Oreo Shake,,,195,
+108,BEVERAGES,Beverages,Vegetarian,KitKat Shake,,,195,
+109,BEVERAGES,Beverages,Vegetarian,Cold Drink,,,75,
+110,BEVERAGES,Beverages,Vegetarian,Water Bottle,,,MRP,
+111,DESSERTS,Desserts,contains egg,Brownie with Ice Cream,,,250,"Brownie, served with classic vanilla Ice cream"
+112,DESSERTS,Desserts,,Churros,,,250,"6 pcs Churros, served with chocolate sauce"

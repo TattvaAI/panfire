@@ -1,0 +1,182 @@
+S. No.,BROAD CATEGORY,CATEGORY,VEGETARIAN / NON-VEGETARIAN,ITEM,VARIANTS/ ADD ONS,ADD-ON COST,PRICE,DESCRIPTION
+,,,,,,,,
+1,ASIAN,Soups,Vegetarian,Manchow Soup,Vegetarian,,175,
+2,ASIAN,Soups,Non-Vegetarian,Manchow Soup,Chicken,,225,
+3,ASIAN,Soups,Non-Vegetarian,Manchow Soup,Prawn,,295,
+4,ASIAN,Soups,Vegetarian,Tom Kha Soup,Vegetarian,,215,"Creamy Thai coconut broth with galangal, lemongrass and kaffir lime leaves."
+5,ASIAN,Soups,Non-Vegetarian,Tom Kha Soup,Chicken,,275,"Creamy Thai coconut broth with galangal, lemongrass and kaffir lime leaves."
+6,ASIAN,Soups,Non-Vegetarian,Tom Kha Soup,Prawn,,345,"Creamy Thai coconut broth with galangal, lemongrass and kaffir lime leaves."
+7,ASIAN,Soups,Vegetarian,Sweet Corn Soup,Vegetarian,,145,
+8,ASIAN,Soups,Non-Vegetarian,Sweet Corn Soup,Chicken,,195,
+9,ASIAN,Soups,Non-Vegetarian,Sweet Corn Soup,Prawn,,295,
+10,ASIAN,Soups,Vegetarian,Hot & Sour Soup,Vegetarian,,175,
+11,ASIAN,Soups,Non-Vegetarian,Hot & Sour Soup,Chicken,,225,
+12,ASIAN,Soups,Non-Vegetarian,Hot & Sour Soup,Prawn,,295,
+13,ASIAN,Soups,Vegetarian,Tom Yum Soup,Vegetarian,,175,Hot and sour Thai broth with lemongrass and kaffir lime leaves.
+14,ASIAN,Soups,Non-Vegetarian,Tom Yum Soup,Chicken,,225,Hot and sour Thai broth with lemongrass and kaffir lime leaves.
+15,ASIAN,Soups,Non-Vegetarian,Tom Yum Soup,Prawn,,295,Hot and sour Thai broth with lemongrass and kaffir lime leaves.
+16,ASIAN,Soups,Vegetarian,Lemon Coriander Soup,Vegetarian,,145,
+17,ASIAN,Soups,Non-Vegetarian,Lemon Coriander Soup,Chicken,,195,
+18,ASIAN,Soups,Non-Vegetarian,Lemon Coriander Soup,Prawn,,295,
+19,ASIAN,Dim Sum ,Vegetarian,Mushroom & Cheese Dim Sum,,,340,Mushrooms and carrot blended with cream cheese. 6 pieces per serving. 
+20,ASIAN,Dim Sum,Vegetarian,Spicy Cheesy Dim Sum,,,370,Cream cheese with Thai chilli and a touch of chilli flakes. 6 pieces per serving.
+21,ASIAN,Dim Sum,Vegetarian,Spinach & Cheese Dim Sum,,,340,Spinach and cream cheese. 6 pieces per serving
+22,ASIAN,Dim Sum,Vegetarian,Paneer Bok Choy Dim Sum,,,340,"Paneer, bok choy, ginger and chilli. 6 pieces per serving."
+23,ASIAN,Dim Sum,Non-Vegetarian,Spicy Cheesy Chicken Dim Sum,,,380,"Minced chicken with cream cheese, coriander, spring onion and chilli oil. 6 pieces per serving."
+24,ASIAN,Dim Sum,Non-Vegetarian,Classic Chicken Dim Sum,,,350,"Minced chicken, spring onion, sesame oil and mild seasoning. 6 pieces per serving."
+25,ASIAN,Momos,Vegetarian,Vegetable Momos,,,190,6 pieces per serving.
+26,ASIAN,Momos,Vegetarian,Vegetable & Cheese Momos,,,220,6 pieces per serving.
+27,ASIAN,Momos,Vegetarian,Vegetable Gyoza,,,220,6 pieces per serving.
+28,ASIAN,Momos,Non-Vegetarian,Chicken Momos,,,230,6 pieces per serving.
+29,ASIAN,Momos,Non-Vegetarian,Chicken & Cheese Momos,,,250,6 pieces per serving.
+30,ASIAN,Momos,Non-Vegetarian,Chicken Gyoza,,,250,6 pieces per serving.
+31,ASIAN,Momos,Non-Vegetarian,Chicken Wontons,,,300,6 pieces per serving.
+32,ASIAN,Baos,Vegetarian,Paneer & Veggies Bao,,,285,Paneer and vegetables in a chilli-garlic sauce. 2 pieces per serving.
+33,ASIAN,Baos,Vegetarian,Cantonese Mushrooms Bao,,,285,Crispy chilli mushrooms with a creamy chilli mayo filling. 2 pieces per serving.
+34,ASIAN,Baos,Non-Vegetarian,Prawn Frier Cracker Bao,,,495,Fried prawns with spicy mayo and wasabi mayo. 2 pieces per serving.
+35,ASIAN,Baos,Non-Vegetarian,Katsu Chicken Bao,,,395,"Crispy fried chicken with lettuce, cucumber and chilli sauce. 2 pieces per serving."
+36,ASIAN,Baos,Non-Vegetarian,Teriyaki Chicken Bao,,,345,Wok-tossed chicken in a savoury teriyaki and ginger-garlic sauce. 2 pieces per serving.
+37,ASIAN,Baos,Non-Vegetarian,Korean Chicken Bao,,,345,"Crispy chicken glazed in a spicy Korean sauce, layered with lettuce. 2 pieces per serving."
+38,ASIAN,Baos,Non-Vegetarian,Chilli Chicken Bao,,,345,Wok-tossed chilli chicken with onions and bell peppers in a tangy chilli-garlic sauce. 2 pieces per serving.
+39,ASIAN,Sushi - 4 Pieces,Vegetarian,California Veg Sushi - 4 pieces,,,315,"Cucumber, avocado, carrot and Japanese mayo."
+40,ASIAN,Sushi - 8 Pieces,Vegetarian,California Veg Sushi - 8 pieces,,,545,"Cucumber, avocado, carrot and Japanese mayo."
+41,ASIAN,Sushi - 4 Pieces,Vegetarian,Avocado & Cream Cheese Sushi- 4 pieces,,,345,"Avocado, jalapeño, sesame seeds and cream cheese."
+42,ASIAN,Sushi - 8 Pieces,Vegetarian,Avocado & Cream Cheese Sushi- 8 pieces,,,595,"Avocado, jalapeño, sesame seeds and cream cheese."
+43,ASIAN,Sushi - 4 Pieces,Vegetarian,Asparagus Tempura Sushi - 4 pieces,,,315,"Crispy asparagus tempura, carrot, cucumber and spicy mayo."
+,,,,Cream Cheese Filling 4 pcs ,,50,,
+,,,,,,,,
+44,ASIAN,Sushi - 8 Pieces,Vegetarian,Asparagus Tempura Sushi - 8 pieces,,,545,"Crispy asparagus tempura, carrot, cucumber and spicy mayo."
+,,,,Cream Cheese Filling 8 pcs ,,90,,
+45,ASIAN,Sushi - 4 Pieces,Vegetarian,Yasai Tempura Sushi - 4 pieces,,,315,"Crispy tempura vegetables, bell peppers, wasabi mayo and tanuki."
+46,ASIAN,Sushi - 8 Pieces,Vegetarian,Yasai Tempura Sushi - 8 pieces,,,545,"Crispy tempura vegetables, bell peppers, wasabi mayo and tanuki."
+47,ASIAN,Sushi - 4 Pieces,Vegetarian,Crispy Mushroom Sushi - 4 pieces,,,315,"Crispy peri-peri mushroom, cucumber, avocado, carrot, teriyaki and wasabi mayo."
+48,ASIAN,Sushi - 8 Pieces,Vegetarian,Crispy Mushroom Sushi - 8 pieces,,,545,"Crispy peri-peri mushroom, cucumber, avocado, carrot, teriyaki and wasabi mayo."
+49,ASIAN,Sushi - 4 Pieces,Vegetarian,Rainbow Sushi - 4 pieces,,,375,"Cream cheese, beetroot, seasonal fruit and cucumber."
+50,ASIAN,Sushi - 8 Pieces,Vegetarian,Rainbow Sushi - 8 pieces,,,645,"Cream cheese, beetroot, seasonal fruit and cucumber."
+51,ASIAN,Sushi - 4 Pieces,Vegetarian,Crispy Spinach Sushi - 4 pieces,,,315,"Carrot, crispy spinach, dynamite sauce and Japanese mayo, topped with spinach crumbs."
+52,ASIAN,Sushi - 8 Pieces,Vegetarian,Crispy Spinach Sushi - 8 pieces,,,545,"Carrot, crispy spinach, dynamite sauce and Japanese mayo, topped with spinach crumbs."
+53,ASIAN,Sushi - 4 Pieces,Non-Vegetarian,American California Sushi- 4 pieces,,,345,"Grilled chicken, avocado, cucumber and sesame seeds, finished with Japanese mayo and wasabi mayo."
+54,ASIAN,Sushi - 8 Pieces,Non-Vegetarian,American California Sushi- 8 pieces,,,595,"Grilled chicken, avocado, cucumber and sesame seeds, finished with Japanese mayo and wasabi mayo."
+55,ASIAN,Sushi - 4 Pieces,Non-Vegetarian,Peri-Peri Chicken Sushi- 4 pieces,,,345,"Peri-peri grilled chicken, carrot and spicy mayo."
+56,ASIAN,Sushi - 8 Pieces,Non-Vegetarian,Peri-Peri Chicken Sushi- 8 pieces,,,595,"Peri-peri grilled chicken, carrot and spicy mayo."
+57,ASIAN,Sushi - 4 Pieces,Non-Vegetarian,Katsu Chicken Sushi - 4 pieces,,,345,"Grilled chicken, cucumber and carrot, in a crispy tempura-fried roll served with spicy mayo."
+58,ASIAN,Sushi - 8 Pieces,Non-Vegetarian,Katsu Chicken Sushi - 8 pieces,,,595,"Grilled chicken, cucumber and carrot, in a crispy tempura-fried roll served with spicy mayo."
+59,ASIAN,Sushi - 4 Pieces,Non-Vegetarian,Teriyaki Chicken Sushi - 4 pieces,,,345,"Chicken tempura, sesame seeds, spicy mayo and teriyaki glaze."
+60,ASIAN,Sushi - 8 Pieces,Non-Vegetarian,Teriyaki Chicken Sushi - 8 pieces,,,595,"Chicken tempura, sesame seeds, spicy mayo and teriyaki glaze."
+61,ASIAN,Sushi - 4 Pieces,Non-Vegetarian,Dragon Uramaki Sushi- 4 pieces,,,395,"Prawn tempura and avocado with spicy mayo, sesame seeds and tanuki."
+62,ASIAN,Sushi - 8 Pieces,Non-Vegetarian,Dragon Uramaki Sushi- 8 pieces,,,645,"Prawn tempura and avocado with spicy mayo, sesame seeds and tanuki."
+63,ASIAN,Sushi - 4 Pieces,Non-Vegetarian,Prawn Rock 'N' Roll Sushi- 4 pieces,,,445,"Prawn tempura, avocado and cucumber, topped with crispy dynamite prawns, spicy mayo, teriyaki, sesame and tanuki."
+64,ASIAN,Sushi - 8 Pieces,Non-Vegetarian,Prawn Rock 'N' Roll Sushi- 8 pieces,,,895,"Prawn tempura, avocado and cucumber, topped with crispy dynamite prawns, spicy mayo, teriyaki, sesame and tanuki."
+65,ASIAN,Appetisers,Vegetarian,Salt & Pepper Corn,,,315,Thai-style crispy fried corn.
+66,ASIAN,Appetisers,Vegetarian,Veg Cheese Corn Roll,,,345,"Crispy rolls filled with sautéed vegetables, mozzarella and sweet corn. 6 pieces per serving."
+67,ASIAN,Appetisers,Vegetarian,Chilli Potato,,,345,Crispy fried potatoes tossed in chilli sauce with bell peppers and spring onion.
+68,ASIAN,Appetisers,Vegetarian,Honey Chilli Cauliflower,,,345,Crispy fried cauliflower tossed in honey garlic sauce.
+69,ASIAN,Appetisers,Vegetarian,Manchurian,Dry ,,345,"Crispy vegetable balls in a spicy, tangy Indo-Chinese sauce."
+,,,,,Gravy ,,345,
+70,ASIAN,Appetisers,Vegetarian,Chilli Paneer,,,365,Crispy paneer coated in a sweet-and-spicy Indo-Chinese glaze.
+71,ASIAN,Appetisers,Vegetarian,Thai Basil Paneer,,,365,Crispy paneer tossed in a fragrant Thai basil sauce.
+72,ASIAN,Appetisers,Vegetarian,Mushroom Shanghai,,,365,Crispy mushrooms tossed in a spicy Shanghai-style soy sauce.
+73,ASIAN,Appetisers,Vegetarian,Crispy Lotus Stem,,,365,Crispy lotus stem coated in a sweet-and-spicy glaze.
+74,ASIAN,Appetisers,Vegetarian,Korean Water Chestnut,,,395,Crispy water chestnuts tossed in a flavourful spicy sauce.
+75,ASIAN,Appetisers,Vegetarian,Sautéed Veggies,Butter Garlic Sauce ,,445,Sautéed vegetables served in your choice of sauce.
+,,,,,Hot Garlic Sauce,,445,
+76,ASIAN,Appetisers,Vegetarian,Paneer Bok Choy,,,445,"Paneer and crisp bok choy tossed in a light, spicy Asian garlic sauce."
+77,ASIAN,Appetisers,Non-Vegetarian,Cigar Roll,,,345,Crispy rolls filled with pulled chicken and melted mozzarella. 6 pieces per serving.
+78,ASIAN,Appetisers,Non-Vegetarian,Traditional Chicken Satay,,,345,"Grilled chicken and bell pepper skewers in a rich, creamy peanut sauce. 3 sticks per serving. "
+79,ASIAN,Appetisers,Non-Vegetarian,Crispy Honey Chicken,,,395,Crispy chicken wok-tossed with spring onions and bell peppers in a sweet-and-spicy honey chilli glaze.
+80,ASIAN,Appetisers,Non-Vegetarian,Hot Basil Chicken,,,395,"Crispy chicken and vegetables wok-tossed in a fragrant, spicy hot basil sauce."
+81,ASIAN,Appetisers,Non-Vegetarian,Wok-Tossed Chicken,,,395,"Crispy fried chicken wok-tossed with vegetables in a spicy, tangy hot garlic sauce with a hint of sweetness."
+82,ASIAN,Appetisers,Non-Vegetarian,Rock Shrimp Tempura,,,795,"Bite-sized tempura prawns tossed in a creamy, spicy dynamite sauce."
+83,ASIAN,Appetisers,Non-Vegetarian,Katsu Chicken,,,395,"Crispy fried chicken, tender on the inside, finished with teriyaki glaze, dynamite sauce and sesame seeds."
+84,ASIAN,Appetisers,Non-Vegetarian,Hot Garlic Prawn,,,745,"Crispy prawns tossed in a spicy, buttery hot garlic sauce."
+85,ASIAN,Noodles,Vegetarian,Butter & Burnt Garlic Noodles,Vegetarian ,,275,"Noodles tossed with butter, garlic and crisp vegetables."
+86,ASIAN,Noodles,Non-Vegetarian,Butter & Burnt Garlic Noodles,Chicken,,325,"Noodles tossed with butter, garlic and crisp vegetables."
+87,ASIAN,Noodles,Non-Vegetarian,Butter & Burnt Garlic Noodles,Prawn,,415,"Noodles tossed with butter, garlic and crisp vegetables."
+88,ASIAN,Noodles,Vegetarian,Chilli Garlic Noodles,Vegetarian ,,275,Noodles tossed with vegetables in a fragrant chilli-garlic oil.
+89,ASIAN,Noodles,Non-Vegetarian,Chilli Garlic Noodles,Chicken,,325,Noodles tossed with vegetables in a fragrant chilli-garlic oil.
+90,ASIAN,Noodles,Non-Vegetarian,Chilli Garlic Noodles,Prawn,,415,Noodles tossed with vegetables in a fragrant chilli-garlic oil.
+91,ASIAN,Noodles,Vegetarian,Schezwan Noodles,Vegetarian ,,275,"Noodles wok-tossed with vegetables in a spicy, tangy Schezwan sauce."
+92,ASIAN,Noodles,Non-Vegetarian,Schezwan Noodles,Chicken,,325,"Noodles wok-tossed with vegetables in a spicy, tangy Schezwan sauce."
+93,ASIAN,Noodles,Non-Vegetarian,Schezwan Noodles,Prawn,,415,"Noodles wok-tossed with vegetables in a spicy, tangy Schezwan sauce."
+94,ASIAN,Noodles,Vegetarian,Hakka Noodles,Vegetarian ,,245,Indo-Chinese noodles wok-tossed with vegetables and mild seasoning.
+95,ASIAN,Noodles,Non-Vegetarian,Hakka Noodles,Chicken,,295,Indo-Chinese noodles wok-tossed with vegetables and mild seasoning.
+96,ASIAN,Noodles,Non-Vegetarian,Hakka Noodles,Prawn,,395,Indo-Chinese noodles wok-tossed with vegetables and mild seasoning.
+97,ASIAN,Noodles,Vegetarian,Singaporean Hakka Noodles,Vegetarian,,275,"Noodles wok-tossed with vegetables, curry spices and mild chilli."
+98,ASIAN,Noodles,Non-Vegetarian,Singaporean Hakka Noodles,Chicken,,325,"Noodles wok-tossed with vegetables, curry spices and mild chilli."
+99,ASIAN,Noodles,Non-Vegetarian,Singaporean Hakka Noodles,Prawn,,415,"Noodles wok-tossed with vegetables, curry spices and mild chilli."
+100,ASIAN,Noodles,Vegetarian,Udon Noodles,Spicy Korean Sauce /,,495,Thick udon noodles tossed with crunchy vegetables in your choice of spicy Korean or creamy peanut sauce.
+,,,,,Peanut Butter Sauce,,495,
+101,ASIAN,Noodles,Non-Vegetarian,Udon Noodles,Chicken; Spicy Korean Sauce ,,545,Thick udon noodles tossed with crunchy vegetables in your choice of spicy Korean or creamy peanut sauce.
+,,,,,Chicken; Peanut Butter Sauce,,545,
+102,ASIAN,Noodles,Non-Vegetarian,Udon Noodles,Prawn; Peanut Butter Sauce,,645,Thick udon noodles tossed with crunchy vegetables in your choice of spicy Korean or creamy peanut sauce.
+,,,,,Prawn; Spicy Korean Sauce ,,645,
+103,ASIAN,Noodle Bowls,Vegetarian,Thukpa,Vegetarian,,344,"Tibetan-style noodles and vegetables simmered in a warm, mildly spiced broth."
+104,ASIAN,Noodle Bowls,Non-Vegetarian,Thukpa,Chicken,,395,"Tibetan-style noodles and vegetables simmered in a warm, mildly spiced broth."
+105,ASIAN,Noodle Bowls,Vegetarian,Ramen,Vegetarian,,495,"Korean-inspired noodles in a rich, flavourful broth with vegetables and sesame seeds."
+106,ASIAN,Noodle Bowls,Non-Vegetarian,Ramen,Chicken,,545,"Korean-inspired noodles in a rich, flavourful broth with vegetables and sesame seeds."
+107,ASIAN,Noodle Bowls,Non-Vegetarian,Ramen,Prawn,,645,"Korean-inspired noodles in a rich, flavourful broth with vegetables and sesame seeds."
+108,ASIAN,Noodle Bowls,Vegetarian,Khao Suey,Vegetarian,,545,"Burmese noodles in a creamy coconut broth, finished with fresh herbs, peanuts and traditional accompaniments."
+109,ASIAN,Noodle Bowls,Non-Vegetarian,Khao Suey,Chicken,,595,"Burmese noodles in a creamy coconut broth, finished with fresh herbs, peanuts and traditional accompaniments."
+110,ASIAN,Noodle Bowls,Non-Vegetarian,Khao Suey,Prawn,,675,"Burmese noodles in a creamy coconut broth, finished with fresh herbs, peanuts and traditional accompaniments."
+111,ASIAN,Noodle Bowls,Vegetarian,Pan-Fried Noodles,Vegetarian; Black Bean Sauce,,345,Crispy pan-fried noodles served with vegetables in your choice of sauce.
+,,,,,Vegetarian; Burnt Garlic Sauce,,345,Crispy pan-fried noodles served with vegetables in your choice of sauce.
+,,,,,Vegetarian; Spicy Basil Sauce,,345,Crispy pan-fried noodles served with vegetables in your choice of sauce.
+112,ASIAN,Noodle Bowls,Non-Vegetarian,Pan-Fried Noodles,Chicken; Black Bean Sauce,,395,Crispy pan-fried noodles served with vegetables in your choice of sauce.
+,,,,,Chicken; Burnt Garlic Sauce,,395,Crispy pan-fried noodles served with vegetables in your choice of sauce.
+,,,,,Chicken; Spicy Basil Sauce,,395,Crispy pan-fried noodles served with vegetables in your choice of sauce.
+113,ASIAN,Noodle Bowls,Non-Vegetarian,Pan-Fried Noodles,Prawn; Black Bean Sauce,,475,Crispy pan-fried noodles served with vegetables in your choice of sauce.
+,,,,,Prawn; Burnt Garlic Sauce,,475,Crispy pan-fried noodles served with vegetables in your choice of sauce.
+,,,,,Prawn; Spicy Basil Sauce,,475,Crispy pan-fried noodles served with vegetables in your choice of sauce.
+114,ASIAN,Noodle Bowls,Vegetarian,Oriental Bowl,Vegetarian,,345,"Flavourful noodles tossed with vegetables and togarashi, served with a spicy broth."
+115,ASIAN,Noodle Bowls,Non-Vegetarian,Oriental Bowl,Chicken,,395,"Flavourful noodles tossed with vegetables and togarashi, served with a spicy broth."
+116,ASIAN,Noodle Bowls,Non-Vegetarian,Oriental Bowl,Prawn,,475,"Flavourful noodles tossed with vegetables and togarashi, served with a spicy broth."
+117,ASIAN,Noodle Bowls,Vegetarian,Chop Suey,Vegetarian,,345,"Crispy noodles topped with vegetables in a sweet, savoury and mildly spiced sauce."
+118,ASIAN,Noodle Bowls,Non-Vegetarian,Chop Suey,Chicken,,395,"Crispy noodles topped with vegetables in a sweet, savoury and mildly spiced sauce."
+119,ASIAN,Curries,Vegetarian,Thai Green Curry Vegetarian,,,365,"A fragrant Thai green curry with coconut milk, vegetables and fresh herbs. Rice not included."
+,,,,, Steamed Rice ,129,,
+,,,,,Fried Rice ,179,,
+,,,,,Jasmine Rice ,199,,
+120,ASIAN,Curries,Non-Vegetarian,Thai Green Curry Chicken,,,425,"A fragrant Thai green curry with coconut milk, vegetables and fresh herbs. Rice not included."
+,,,,, Steamed Rice ,129,,
+,,,,,Fried Rice ,179,,
+,,,,,Jasmine Rice ,199,,
+121,ASIAN,Curries,Non-Vegetarian,Thai Green Curry Prawn,,,645,"A fragrant Thai green curry with coconut milk, vegetables and fresh herbs. Rice not included."
+,,,,, Steamed Rice ,129,,
+,,,,,Fried Rice ,179,,
+,,,,,Jasmine Rice ,199,,
+122,ASIAN,Curries,Vegetarian,Thai Red Curry Vegetarian,,,365,"A rich Thai red curry with coconut milk, vegetables and aromatic spices. Rice not included"
+,,,,, Steamed Rice ,129,,
+,,,,,Fried Rice ,179,,
+,,,,,Jasmine Rice ,199,,
+123,ASIAN,Curries,Non-Vegetarian,Thai Red Curry Chicken,,,425,"A rich Thai red curry with coconut milk, vegetables and aromatic spices. Rice not included."
+,,,,, Steamed Rice ,129,,
+,,,,,Fried Rice ,179,,
+,,,,,Jasmine Rice ,199,,
+124,ASIAN,Curries,Non-Vegetarian,Thai Red Curry Prawn,,,645,"A rich Thai red curry with coconut milk, vegetables and aromatic spices. Rice not included."
+,,,,, Steamed Rice ,129,,
+,,,,,Fried Rice ,179,,
+,,,,,Jasmine Rice ,199,,
+125,ASIAN,Curries,Vegetarian,Burmese Yellow Curry Vegetarian,,,365,Rich Burmese coconut curry with mild spices. Rice not included
+,,,,, Steamed Rice ,129,,
+,,,,,Fried Rice ,179,,
+,,,,,Jasmine Rice ,199,,
+126,ASIAN,Curries,Non-Vegetarian,Burmese Yellow Curry Chicken,,,425,Rich Burmese coconut curry with mild spices. Rice not included.
+,,,,, Steamed Rice ,129,,
+,,,,,Fried Rice ,179,,
+,,,,,Jasmine Rice ,199,,
+127,ASIAN,Curries,Non-Vegetarian,Burmese Yellow Curry Prawn,,,645,Rich Burmese coconut curry with mild spices. Rice not included.
+,,,,, Steamed Rice ,129,,
+,,,,,Fried Rice ,179,,
+,,,,,Jasmine Rice ,199,,
+128,ASIAN,Rice Bowls,Vegetarian,Paneer Krapow,,,425,"Thai basil, chilli and garlic wok-tossed with minced paneer, served over jasmine rice."
+129,ASIAN,Rice Bowls,Vegetarian,Kimchi Rice Bowl,,,445,"Grilled paneer, corn, mushrooms and bok choy tossed in a sweet-and-spicy kimchi sauce, served with jasmine rice."
+130,ASIAN,Rice Bowls,Vegetarian,Chilli Paneer Rice Bowl,,,395,"Sweet-and-spicy Indo-Chinese sauce with crispy paneer, peppers and onions, served over fried rice."
+131,ASIAN,Rice Bowls,Vegetarian,Thai Basil Paneer & Fried Rice Bowl,,,395,"Fresh Thai basil and savoury aromatics wok-tossed with paneer, served with vegetable fried rice."
+132,ASIAN,Rice Bowls,Vegetarian,Chilli Mushroom Rice Bowl,,,395,"Crispy mushrooms in a spicy soy-garlic sauce, served over fried rice."
+133,ASIAN,Rice Bowls,Vegetarian,Manchurian Rice Bowl,,,375,"Crispy vegetable Manchurian in a rich, tangy sauce, served over fried rice."
+134,ASIAN,Rice Bowls,Non-Vegetarian,Nasi Goreng,,,445,"Indonesian fried rice with chicken, vegetables and a savoury peanut butter sauce, served with fried chicken and a sunny-side-up egg."
+135,ASIAN,Rice Bowls,Non-Vegetarian,Krapow Jasmine Rice Bowl,,,445,"Thai basil, chilli and garlic wok-tossed with minced chicken, served over fragrant jasmine rice."
+136,ASIAN,Rice Bowls,Non-Vegetarian,Katsu Chicken Rice Bowl,,,445,Golden crispy chicken katsu served over jasmine rice with creamy garlic sauce and tangy ginger pickle.
+137,ASIAN,Rice Bowls,Non-Vegetarian,Chilli Chicken Rice Bowl,,,425,"Crispy chilli chicken with peppers and onions in a spicy Indo-Chinese sauce, served over fried rice."
+138,ASIAN,Rice Bowls,Non-Vegetarian,"Thai Pineapple, Chicken & Egg Fried Rice bowl",,,445,"Fragrant fried rice with chicken, egg, vegetables and caramelised pineapple in a sweet-and-spicy chilli basil sauce."
+139,ASIAN,Rice Bowls,Non-Vegetarian,Chilli Prawn Rice Bowl,,,595,"Crispy prawns in a bold hot garlic sauce, served over fried rice."

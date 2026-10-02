@@ -411,7 +411,7 @@ export const AdminDashboard: React.FC = () => {
                   />
                   <div>
                     <h4 className="text-xs font-bold text-white line-clamp-1">{item.name}</h4>
-                    <p className="text-[10px] text-slate-400">{item.category} • ${item.price}</p>
+                    <p className="text-[10px] text-slate-400">{item.category} • ₹{item.price}</p>
                   </div>
                 </div>
 
@@ -440,7 +440,7 @@ export const AdminDashboard: React.FC = () => {
                 <span>TOTAL SALES REVENUE</span>
                 <DollarSign className="w-4 h-4 text-emerald-400" />
               </div>
-              <p className="text-4xl font-extrabold text-emerald-400 font-['Outfit']">${totalRevenue}</p>
+              <p className="text-4xl font-extrabold text-emerald-400 font-['Outfit']">₹{totalRevenue}</p>
               <p className="text-[11px] text-slate-400">Generated from {orders.length} total orders</p>
             </div>
 
