@@ -95,7 +95,7 @@ export const UserProfileModal: React.FC<UserProfileModalProps> = ({ onClose }) =
                 <input
                   type="tel"
                   required
-                  placeholder="+91 98100 12345"
+                  placeholder="+91 78142 19191"
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                   className="w-full px-3.5 py-2.5 bg-white border border-stone-200 rounded-xl text-xs sm:text-sm text-stone-900 placeholder-stone-400 focus:outline-none focus:border-[#1E2D24] shadow-xs"

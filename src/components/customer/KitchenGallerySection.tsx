@@ -50,13 +50,13 @@ export const KitchenGallerySection: React.FC = () => {
           </div>
 
           <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/panfire_newchandigarh?cplk=Nnpma3cxeHJ5cTZu"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-neutral-300 hover:text-white transition-colors"
           >
-            <Instagram className="w-4 h-4 text-[#F97316]" />
-            <span>@PanFireKitchen</span>
+            <Instagram className="w-4 h-4 text-[#C8371A]" />
+            <span>@panfire_newchandigarh</span>
             <ArrowUpRight className="w-3.5 h-3.5" />
           </a>
         </div>

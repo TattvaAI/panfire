@@ -141,7 +141,7 @@ export const MenuContainer: React.FC = () => {
             Explore Our Menu
           </h2>
           <p className="text-stone-500 text-sm sm:text-base mt-2 max-w-2xl leading-relaxed">
-            Complete restaurant kitchen catalog: 318 authentic dishes across Wood-Fired Pizzas, Dim Sum, Momos, Wok Bowls, Pastas & Mexican Street.
+            Complete restaurant kitchen catalog: {totalDishesCount} authentic dishes across Wood-Fired Pizzas, Dim Sum, Momos, Wok Bowls, Pastas & Mexican Street.
           </p>
         </div>
 
@@ -151,7 +151,7 @@ export const MenuContainer: React.FC = () => {
             onClick={() => handleScrollToCategory('all')}
             className={`px-3.5 py-1.5 rounded-full text-xs font-bold whitespace-nowrap transition-all cursor-pointer ${
               activeCategoryId === 'all'
-                ? 'bg-[#1E2D24] text-white shadow-xs'
+                ? 'bg-[#161412] text-[#F3ECDD] shadow-xs'
                 : 'bg-white text-stone-600 border border-stone-200'
             }`}
           >
@@ -163,7 +163,7 @@ export const MenuContainer: React.FC = () => {
               onClick={() => handleScrollToCategory(cat.id)}
               className={`px-3.5 py-1.5 rounded-full text-xs font-bold whitespace-nowrap transition-all cursor-pointer ${
                 activeCategoryId === cat.id
-                  ? 'bg-[#1E2D24] text-white shadow-xs'
+                  ? 'bg-[#161412] text-[#F3ECDD] shadow-xs'
                   : 'bg-white text-stone-600 border border-stone-200'
               }`}
             >
@@ -185,8 +185,8 @@ export const MenuContainer: React.FC = () => {
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search pizzas, dim sum, noodles..."
-                className="w-full pl-10 pr-4 py-2.5 bg-white border border-stone-200 rounded-xl text-xs sm:text-sm text-stone-900 placeholder-stone-400 focus:outline-none focus:border-[#1E2D24] shadow-xs"
+                placeholder="Search pizzas, sushi, dim sum, momos..."
+                className="w-full pl-10 pr-4 py-2.5 bg-white border border-stone-200 rounded-xl text-xs sm:text-sm text-stone-900 placeholder-stone-400 focus:outline-none focus:border-[#161412] shadow-xs"
               />
             </div>
 
@@ -224,7 +224,7 @@ export const MenuContainer: React.FC = () => {
             <div className="bg-white rounded-2xl border border-stone-200/90 p-3 shadow-xs space-y-1">
               <div className="px-3 py-2 flex items-center justify-between text-xs font-bold text-stone-400 uppercase tracking-wider border-b border-stone-100 mb-1">
                 <span>Categories</span>
-                <span className="text-[10px] font-mono font-bold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200/60">
+                <span className="text-[10px] font-mono font-bold text-stone-700 bg-stone-100 px-2 py-0.5 rounded-full border border-stone-200">
                   {totalDishesCount} Dishes
                 </span>
               </div>
@@ -234,15 +234,15 @@ export const MenuContainer: React.FC = () => {
                 onClick={() => handleScrollToCategory('all')}
                 className={`w-full px-3 py-2.5 rounded-xl text-left text-xs sm:text-sm font-bold flex items-center justify-between transition-all cursor-pointer ${
                   activeCategoryId === 'all'
-                    ? 'bg-[#1E2D24] text-white shadow-xs'
+                    ? 'bg-[#161412] text-[#F3ECDD] shadow-xs'
                     : 'text-stone-700 hover:bg-stone-50'
                 }`}
               >
-                <span>⭐ All Categories</span>
+                <span>All Categories</span>
                 <span
                   className={`text-[11px] font-mono px-2 py-0.5 rounded-md ${
                     activeCategoryId === 'all'
-                      ? 'bg-white/20 text-white'
+                      ? 'bg-white/20 text-[#F3ECDD]'
                       : 'bg-stone-100 text-stone-500'
                   }`}
                 >
@@ -261,18 +261,18 @@ export const MenuContainer: React.FC = () => {
                     onClick={() => handleScrollToCategory(cat.id)}
                     className={`w-full px-3 py-2.5 rounded-xl text-left text-xs sm:text-sm font-bold flex items-center justify-between transition-all cursor-pointer ${
                       isActive
-                        ? 'bg-[#1E2D24] text-white shadow-xs'
+                        ? 'bg-[#161412] text-[#F3ECDD] shadow-xs'
                         : 'text-stone-700 hover:bg-stone-50'
                     }`}
                   >
                     <span className="truncate pr-2">
-                      <span className="text-stone-400 mr-1.5 font-mono text-xs">0{idx + 1}</span>
+                      <span className="text-stone-400 mr-1.5 font-mono text-xs">{(idx + 1).toString().padStart(2, '0')}</span>
                       {cat.title}
                     </span>
                     <span
                       className={`text-[11px] font-mono px-2 py-0.5 rounded-md shrink-0 ${
                         isActive
-                          ? 'bg-white/20 text-white'
+                          ? 'bg-white/20 text-[#F3ECDD]'
                           : 'bg-stone-100 text-stone-500'
                       }`}
                     >

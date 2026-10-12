@@ -2,30 +2,55 @@ import { CategoryAccordionData, MenuItem } from '../types';
 
 export const RESTAURANT_MENU_ACCORDIONS: CategoryAccordionData[] = [
   {
-    "id": "wood-fired-neapolitan-pizzas",
-    "title": "Wood-Fired Neapolitan Pizzas (8\" & 12\")",
-    "description": "Handcrafted 48-hour slow-fermented Neapolitan dough baked in our 500\u00b0C wood-fired oven.",
-    "badge": "House Signature",
+    "id": "pizza",
+    "title": "Pizza",
+    "description": "Wood-fired sourdough pizzas, Roman thin crusts, Chicago deep dish, and indie pies.",
+    "badge": "Wood-Fired Hearth",
     "subcategories": [
       {
-        "id": "neapolitan-small",
-        "title": "Neapolitan Pizzas - Small (8 Inch)",
+        "id": "signature-pizzas",
+        "title": "Signature Pizzas (8\", 12\" & Thin Crust)",
         "items": [
           {
-            "id": "dish-classic-margherita-pizza-neapolitan-pizza-small",
-            "name": "Classic Margherita Pizza- Neapolitan Pizza - Small",
-            "category": "Neapolitan Pizza - Small (8 inch)",
+            "id": "dish-classic-margherita-pizza",
+            "name": "Classic Margherita Pizza",
+            "category": "Wood-Fired & Thin Crust Pizzas",
             "isVeg": true,
             "price": 290,
             "basePrice": 290,
             "description": "Classic San Marzano tomato sauce, mozzarella and aromatic hand-torn basil.",
-            "imagePath": "/assets/pizza/classic-margherita.avif",
+            "imagePath": "/images/pizza-margherita.avif",
             "isAvailable": true,
             "isChefSpecial": false,
             "isBestseller": true,
             "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
+            "hasVariants": true,
+            "variants": [
+              {
+                "id": "dish-classic-margherita-pizza-woodfired-small",
+                "name": "Wood-Fired Small (8\")",
+                "price": 290,
+                "isVeg": true,
+                "imagePath": "/images/pizza-margherita.avif",
+                "crustType": "woodfired-small"
+              },
+              {
+                "id": "dish-classic-margherita-pizza-woodfired-large",
+                "name": "Wood-Fired Large (12\")",
+                "price": 570,
+                "isVeg": true,
+                "imagePath": "/assets/pizza/classic-margherita.avif",
+                "crustType": "woodfired-large"
+              },
+              {
+                "id": "dish-classic-margherita-pizza-thin-crust",
+                "name": "Thin Crust (8 Slices)",
+                "price": 520,
+                "isVeg": true,
+                "imagePath": "/assets/pizza/classic-margherita.webp",
+                "crustType": "thin-crust"
+              }
+            ],
             "addons": [
               {
                 "id": "addon-spicy-style",
@@ -45,21 +70,152 @@ export const RESTAURANT_MENU_ACCORDIONS: CategoryAccordionData[] = [
             ]
           },
           {
-            "id": "dish-creamy-spinach-mushroom-neapolitan-pizza-small",
-            "name": "Creamy Spinach & Mushroom- Neapolitan Pizza - Small",
-            "category": "Neapolitan Pizza - Small (8 inch)",
+            "id": "dish-creamy-spinach-mushroom-pizza",
+            "name": "Creamy Spinach & Mushroom Pizza",
+            "category": "Wood-Fired & Thin Crust Pizzas",
             "isVeg": true,
             "price": 345,
             "basePrice": 345,
             "description": "Mozzarella, saut\u00e9ed spinach and earthy mushrooms over a velvety white sauce.",
-            "imagePath": "/assets/pizza/creamy-spinach-mushroom.webp",
+            "imagePath": "/assets/pizza/spicy-mushroom.webp",
             "isAvailable": true,
             "isChefSpecial": false,
             "isBestseller": false,
             "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
+            "hasVariants": true,
+            "variants": [
+              {
+                "id": "dish-creamy-spinach-mushroom-pizza-woodfired-small",
+                "name": "Wood-Fired Small (8\")",
+                "price": 345,
+                "isVeg": true,
+                "imagePath": "/assets/pizza/spicy-mushroom.webp",
+                "crustType": "woodfired-small"
+              },
+              {
+                "id": "dish-creamy-spinach-mushroom-pizza-woodfired-large",
+                "name": "Wood-Fired Large (12\")",
+                "price": 670,
+                "isVeg": true,
+                "imagePath": "/images/pizza-mushroom.avif",
+                "crustType": "woodfired-large"
+              },
+              {
+                "id": "dish-creamy-spinach-mushroom-pizza-thin-crust",
+                "name": "Thin Crust (8 Slices)",
+                "price": 640,
+                "isVeg": true,
+                "imagePath": "/assets/pizza/truffle-mushroom.avif",
+                "crustType": "thin-crust"
+              }
+            ],
             "addons": [
+              {
+                "id": "addon-extra-cheese-2",
+                "name": "Extra Cheese",
+                "price": 70
+              }
+            ]
+          },
+          {
+            "id": "dish-butter-paneer-pizza",
+            "name": "Butter Paneer Pizza",
+            "category": "Wood-Fired & Thin Crust Pizzas",
+            "isVeg": true,
+            "price": 325,
+            "basePrice": 325,
+            "description": "Rich, spiced makhani sauce with mozzarella, paneer, green chillies and a hint of fresh ginger.",
+            "imagePath": "/assets/pizza/butter-paneer-pizza.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": true,
+            "variants": [
+              {
+                "id": "dish-butter-paneer-pizza-woodfired-small",
+                "name": "Wood-Fired Small (8\")",
+                "price": 325,
+                "isVeg": true,
+                "imagePath": "/assets/pizza/butter-paneer-pizza.avif",
+                "crustType": "woodfired-small"
+              },
+              {
+                "id": "dish-butter-paneer-pizza-woodfired-large",
+                "name": "Wood-Fired Large (12\")",
+                "price": 645,
+                "isVeg": true,
+                "imagePath": "/assets/pizza/butter-paneer-pizza.webp",
+                "crustType": "woodfired-large"
+              },
+              {
+                "id": "dish-butter-paneer-pizza-thin-crust",
+                "name": "Thin Crust (8 Slices)",
+                "price": 620,
+                "isVeg": true,
+                "imagePath": "/assets/pizza/butter-paneer-pizza.avif",
+                "crustType": "thin-crust"
+              }
+            ],
+            "addons": [
+              {
+                "id": "addon-add-burrata",
+                "name": "Add Burrata",
+                "price": 120
+              },
+              {
+                "id": "addon-extra-cheese-3",
+                "name": "Extra Cheese",
+                "price": 70
+              }
+            ]
+          },
+          {
+            "id": "dish-spicy-paneer-pizza",
+            "name": "Spicy Paneer Pizza",
+            "category": "Wood-Fired & Thin Crust Pizzas",
+            "isVeg": true,
+            "price": 325,
+            "basePrice": 325,
+            "description": "Mozzarella, marinated peri-peri paneer, spicy jalape\u00f1os and red onions over a bold, fiery marinara base.",
+            "imagePath": "/assets/pizza/spicy-paneer.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 1,
+            "hasVariants": true,
+            "variants": [
+              {
+                "id": "dish-spicy-paneer-pizza-woodfired-small",
+                "name": "Wood-Fired Small (8\")",
+                "price": 325,
+                "isVeg": true,
+                "imagePath": "/assets/pizza/spicy-paneer.avif",
+                "crustType": "woodfired-small"
+              },
+              {
+                "id": "dish-spicy-paneer-pizza-woodfired-large",
+                "name": "Wood-Fired Large (12\")",
+                "price": 645,
+                "isVeg": true,
+                "imagePath": "/assets/pizza/spicy-paneer.webp",
+                "crustType": "woodfired-large"
+              },
+              {
+                "id": "dish-spicy-paneer-pizza-thin-crust",
+                "name": "Thin Crust (8 Slices)",
+                "price": 620,
+                "isVeg": true,
+                "imagePath": "/assets/pizza/spicy-paneer.avif",
+                "crustType": "thin-crust"
+              }
+            ],
+            "addons": [
+              {
+                "id": "addon-add-burrata-2",
+                "name": "Add Burrata",
+                "price": 120
+              },
               {
                 "id": "addon-extra-cheese-4",
                 "name": "Extra Cheese",
@@ -68,23 +224,144 @@ export const RESTAURANT_MENU_ACCORDIONS: CategoryAccordionData[] = [
             ]
           },
           {
-            "id": "dish-butter-paneer-neapolitan-pizza-small",
-            "name": "Butter Paneer - Neapolitan Pizza - Small",
-            "category": "Neapolitan Pizza - Small (8 inch)",
+            "id": "dish-sun-rocket-pizza",
+            "name": "Sun & Rocket Pizza",
+            "category": "Wood-Fired & Thin Crust Pizzas",
             "isVeg": true,
             "price": 325,
             "basePrice": 325,
-            "description": "Rich, spiced makhani sauce with mozzarella, paneer, green chillies and a hint of fresh ginger.",
-            "imagePath": "/assets/pizza/butter-paneer-pizza.webp",
+            "description": "Mozzarella, tangy sun-dried tomatoes, garlic and peppery rocket over a classic red sauce, finished with a balsamic reduction drizzle.",
+            "imagePath": "/assets/pizza/sun-rocket.avif",
             "isAvailable": true,
             "isChefSpecial": false,
             "isBestseller": false,
             "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
+            "hasVariants": true,
+            "variants": [
+              {
+                "id": "dish-sun-rocket-pizza-woodfired-small",
+                "name": "Wood-Fired Small (8\")",
+                "price": 325,
+                "isVeg": true,
+                "imagePath": "/assets/pizza/sun-rocket.avif",
+                "crustType": "woodfired-small"
+              },
+              {
+                "id": "dish-sun-rocket-pizza-woodfired-large",
+                "name": "Wood-Fired Large (12\")",
+                "price": 645,
+                "isVeg": true,
+                "imagePath": "/assets/pizza/sun-rocket.webp",
+                "crustType": "woodfired-large"
+              },
+              {
+                "id": "dish-sun-rocket-pizza-thin-crust",
+                "name": "Thin Crust (8 Slices)",
+                "price": 620,
+                "isVeg": true,
+                "imagePath": "/assets/pizza/sun-rocket.avif",
+                "crustType": "thin-crust"
+              }
+            ],
             "addons": [
               {
-                "id": "addon-add-burrata",
+                "id": "addon-extra-cheese-5",
+                "name": "Extra Cheese",
+                "price": 70
+              }
+            ]
+          },
+          {
+            "id": "dish-panfire-loaded-vegetables-pizza",
+            "name": "Panfire Loaded Vegetables Pizza",
+            "category": "Wood-Fired & Thin Crust Pizzas",
+            "isVeg": true,
+            "price": 325,
+            "basePrice": 325,
+            "description": "Marinara and mozzarella topped with button mushrooms, cherry tomatoes, mixed bell peppers and grilled zucchini, then finished with crumbled feta and fresh basil.",
+            "imagePath": "/assets/pizza/panfire-loaded-vegetables.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": true,
+            "variants": [
+              {
+                "id": "dish-panfire-loaded-vegetables-pizza-woodfired-small",
+                "name": "Wood-Fired Small (8\")",
+                "price": 325,
+                "isVeg": true,
+                "imagePath": "/assets/pizza/panfire-loaded-vegetables.avif",
+                "crustType": "woodfired-small"
+              },
+              {
+                "id": "dish-panfire-loaded-vegetables-pizza-woodfired-large",
+                "name": "Wood-Fired Large (12\")",
+                "price": 645,
+                "isVeg": true,
+                "imagePath": "/assets/pizza/panfire-loaded-vegetables.webp",
+                "crustType": "woodfired-large"
+              },
+              {
+                "id": "dish-panfire-loaded-vegetables-pizza-thin-crust",
+                "name": "Thin Crust (8 Slices)",
+                "price": 620,
+                "isVeg": true,
+                "imagePath": "/assets/pizza/panfire-loaded-vegetables.avif",
+                "crustType": "thin-crust"
+              }
+            ],
+            "addons": [
+              {
+                "id": "addon-extra-cheese-6",
+                "name": "Extra Cheese",
+                "price": 70
+              }
+            ]
+          },
+          {
+            "id": "dish-spicy-mushroom-pizza",
+            "name": "Spicy Mushroom Pizza",
+            "category": "Wood-Fired & Thin Crust Pizzas",
+            "isVeg": true,
+            "price": 325,
+            "basePrice": 325,
+            "description": "Mozzarella, earthy button mushrooms, spicy red paprika and red onions over a fiery peri-peri marinara base.",
+            "imagePath": "/assets/pizza/spicy-mushroom.webp",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 1,
+            "hasVariants": true,
+            "variants": [
+              {
+                "id": "dish-spicy-mushroom-pizza-woodfired-small",
+                "name": "Wood-Fired Small (8\")",
+                "price": 325,
+                "isVeg": true,
+                "imagePath": "/assets/pizza/spicy-mushroom.webp",
+                "crustType": "woodfired-small"
+              },
+              {
+                "id": "dish-spicy-mushroom-pizza-woodfired-large",
+                "name": "Wood-Fired Large (12\")",
+                "price": 645,
+                "isVeg": true,
+                "imagePath": "/images/pizza-mushroom.avif",
+                "crustType": "woodfired-large"
+              },
+              {
+                "id": "dish-spicy-mushroom-pizza-thin-crust",
+                "name": "Thin Crust (8 Slices)",
+                "price": 620,
+                "isVeg": true,
+                "imagePath": "/assets/pizza/truffle-mushroom.avif",
+                "crustType": "thin-crust"
+              }
+            ],
+            "addons": [
+              {
+                "id": "addon-add-burrata-3",
                 "name": "Add Burrata",
                 "price": 120
               },
@@ -96,26 +373,147 @@ export const RESTAURANT_MENU_ACCORDIONS: CategoryAccordionData[] = [
             ]
           },
           {
-            "id": "dish-spicy-paneer-neapolitan-pizza-small",
-            "name": "Spicy Paneer - Neapolitan Pizza - Small",
-            "category": "Neapolitan Pizza - Small (8 inch)",
+            "id": "dish-hawaiian-pizza",
+            "name": "Hawaiian Pizza",
+            "category": "Wood-Fired & Thin Crust Pizzas",
             "isVeg": true,
             "price": 325,
             "basePrice": 325,
-            "description": "Mozzarella, marinated peri-peri paneer, spicy jalape\u00f1os and red onions over a bold, fiery marinara base.",
-            "imagePath": "/assets/burrito-wraps/spicy-grilled-paneer-burrito-bowl.avif",
+            "description": "Mozzarella, juicy pineapple, sweet corn and hot jalape\u00f1os over a classic marinara base.",
+            "imagePath": "/assets/pizza/hawaiian-pizza.avif",
             "isAvailable": true,
             "isChefSpecial": false,
             "isBestseller": false,
-            "spicyLevel": 1,
-            "hasVariants": false,
-            "variants": [],
+            "spicyLevel": 0,
+            "hasVariants": true,
+            "variants": [
+              {
+                "id": "dish-hawaiian-pizza-woodfired-small",
+                "name": "Wood-Fired Small (8\")",
+                "price": 325,
+                "isVeg": true,
+                "imagePath": "/assets/pizza/hawaiian-pizza.avif",
+                "crustType": "woodfired-small"
+              },
+              {
+                "id": "dish-hawaiian-pizza-woodfired-large",
+                "name": "Wood-Fired Large (12\")",
+                "price": 645,
+                "isVeg": true,
+                "imagePath": "/assets/pizza/hawaiian-pizza.webp",
+                "crustType": "woodfired-large"
+              },
+              {
+                "id": "dish-hawaiian-pizza-thin-crust",
+                "name": "Thin Crust (8 Slices)",
+                "price": 620,
+                "isVeg": true,
+                "imagePath": "/assets/pizza/hawaiian-pizza.avif",
+                "crustType": "thin-crust"
+              }
+            ],
+            "addons": [
+              {
+                "id": "addon-extra-cheese-8",
+                "name": "Extra Cheese",
+                "price": 70
+              }
+            ]
+          },
+          {
+            "id": "dish-pesto-paneer-pizza",
+            "name": "Pesto Paneer Pizza",
+            "category": "Wood-Fired & Thin Crust Pizzas",
+            "isVeg": true,
+            "price": 345,
+            "basePrice": 345,
+            "description": "Classic red sauce and melted mozzarella topped with paneer, finished with a vibrant basil pesto drizzle.",
+            "imagePath": "/assets/pizza/pesto-paneer.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": true,
+            "variants": [
+              {
+                "id": "dish-pesto-paneer-pizza-woodfired-small",
+                "name": "Wood-Fired Small (8\")",
+                "price": 345,
+                "isVeg": true,
+                "imagePath": "/assets/pizza/pesto-paneer.avif",
+                "crustType": "woodfired-small"
+              },
+              {
+                "id": "dish-pesto-paneer-pizza-woodfired-large",
+                "name": "Wood-Fired Large (12\")",
+                "price": 670,
+                "isVeg": true,
+                "imagePath": "/assets/pizza/pesto-paneer.webp",
+                "crustType": "woodfired-large"
+              },
+              {
+                "id": "dish-pesto-paneer-pizza-thin-crust",
+                "name": "Thin Crust (8 Slices)",
+                "price": 640,
+                "isVeg": true,
+                "imagePath": "/assets/pizza/pesto-paneer.avif",
+                "crustType": "thin-crust"
+              }
+            ],
             "addons": [
               {
                 "id": "addon-add-burrata-4",
                 "name": "Add Burrata",
                 "price": 120
               },
+              {
+                "id": "addon-extra-cheese-9",
+                "name": "Extra Cheese",
+                "price": 70
+              }
+            ]
+          },
+          {
+            "id": "dish-burrata-pizza",
+            "name": "Burrata Pizza",
+            "category": "Wood-Fired & Thin Crust Pizzas",
+            "isVeg": true,
+            "price": 440,
+            "basePrice": 440,
+            "description": "Creamy white base with mozzarella, burrata, sweet cherry tomatoes and caramelized onions.",
+            "imagePath": "/assets/pizza/burrata-pizza.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": true,
+            "variants": [
+              {
+                "id": "dish-burrata-pizza-woodfired-small",
+                "name": "Wood-Fired Small (8\")",
+                "price": 440,
+                "isVeg": true,
+                "imagePath": "/assets/pizza/burrata-pizza.avif",
+                "crustType": "woodfired-small"
+              },
+              {
+                "id": "dish-burrata-pizza-woodfired-large",
+                "name": "Wood-Fired Large (12\")",
+                "price": 845,
+                "isVeg": true,
+                "imagePath": "/images/pizza-burrata.avif",
+                "crustType": "woodfired-large"
+              },
+              {
+                "id": "dish-burrata-pizza-thin-crust",
+                "name": "Thin Crust (8 Slices)",
+                "price": 795,
+                "isVeg": true,
+                "imagePath": "/assets/pizza/burrata-pizza.webp",
+                "crustType": "thin-crust"
+              }
+            ],
+            "addons": [
               {
                 "id": "addon-extra-cheese-10",
                 "name": "Extra Cheese",
@@ -124,20 +522,146 @@ export const RESTAURANT_MENU_ACCORDIONS: CategoryAccordionData[] = [
             ]
           },
           {
-            "id": "dish-sun-rocket-neapolitan-pizza-small",
-            "name": "Sun & Rocket - Neapolitan Pizza - Small",
-            "category": "Neapolitan Pizza - Small (8 inch)",
+            "id": "dish-truffle-mushroom-pizza",
+            "name": "Truffle Mushroom Pizza",
+            "category": "Wood-Fired & Thin Crust Pizzas",
             "isVeg": true,
-            "price": 325,
-            "basePrice": 325,
-            "description": "Mozzarella, tangy sun-dried tomatoes, garlic and peppery rocket over a classic red sauce, finished with a balsamic reduction drizzle.",
-            "imagePath": "/assets/pizza/sun-rocket.avif",
+            "price": 440,
+            "basePrice": 440,
+            "description": "Mozzarella, shiitake and button mushrooms over a creamy white base, finished with a drizzle of white truffle oil.",
+            "imagePath": "/assets/pizza/spicy-mushroom.webp",
             "isAvailable": true,
             "isChefSpecial": false,
             "isBestseller": false,
             "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
+            "hasVariants": true,
+            "variants": [
+              {
+                "id": "dish-truffle-mushroom-pizza-woodfired-small",
+                "name": "Wood-Fired Small (8\")",
+                "price": 440,
+                "isVeg": true,
+                "imagePath": "/assets/pizza/spicy-mushroom.webp",
+                "crustType": "woodfired-small"
+              },
+              {
+                "id": "dish-truffle-mushroom-pizza-woodfired-large",
+                "name": "Wood-Fired Large (12\")",
+                "price": 845,
+                "isVeg": true,
+                "imagePath": "/images/pizza-mushroom.avif",
+                "crustType": "woodfired-large"
+              },
+              {
+                "id": "dish-truffle-mushroom-pizza-thin-crust",
+                "name": "Thin Crust (8 Slices)",
+                "price": 795,
+                "isVeg": true,
+                "imagePath": "/assets/pizza/truffle-mushroom.avif",
+                "crustType": "thin-crust"
+              }
+            ],
+            "addons": [
+              {
+                "id": "addon-add-burrata-5",
+                "name": "Add Burrata",
+                "price": 120
+              },
+              {
+                "id": "addon-extra-cheese-11",
+                "name": "Extra Cheese",
+                "price": 70
+              }
+            ]
+          },
+          {
+            "id": "dish-magic-mushroom-pizza",
+            "name": "Magic Mushroom Pizza",
+            "category": "Wood-Fired & Thin Crust Pizzas",
+            "isVeg": true,
+            "price": 440,
+            "basePrice": 440,
+            "description": "Mozzarella, earthy shiitake and button mushrooms paired with creamy goat cheese and fresh rocket, finished with a drizzle of balsamic reduction.",
+            "imagePath": "/assets/pizza/spicy-mushroom.webp",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": true,
+            "variants": [
+              {
+                "id": "dish-magic-mushroom-pizza-woodfired-small",
+                "name": "Wood-Fired Small (8\")",
+                "price": 440,
+                "isVeg": true,
+                "imagePath": "/assets/pizza/spicy-mushroom.webp",
+                "crustType": "woodfired-small"
+              },
+              {
+                "id": "dish-magic-mushroom-pizza-woodfired-large",
+                "name": "Wood-Fired Large (12\")",
+                "price": 845,
+                "isVeg": true,
+                "imagePath": "/images/pizza-mushroom.avif",
+                "crustType": "woodfired-large"
+              },
+              {
+                "id": "dish-magic-mushroom-pizza-thin-crust",
+                "name": "Thin Crust (8 Slices)",
+                "price": 795,
+                "isVeg": true,
+                "imagePath": "/assets/pizza/truffle-mushroom.avif",
+                "crustType": "thin-crust"
+              }
+            ],
+            "addons": [
+              {
+                "id": "addon-extra-cheese-12",
+                "name": "Extra Cheese",
+                "price": 70
+              }
+            ]
+          },
+          {
+            "id": "dish-4-cheese-pizza",
+            "name": "4 Cheese Pizza",
+            "category": "Wood-Fired & Thin Crust Pizzas",
+            "isVeg": true,
+            "price": 520,
+            "basePrice": 520,
+            "description": "An indulgent, rich blend of mozzarella, fresh bocconcini, parmesan and creamy goat cheese.",
+            "imagePath": "/assets/pizza/4-cheese.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": true,
+            "variants": [
+              {
+                "id": "dish-4-cheese-pizza-woodfired-small",
+                "name": "Wood-Fired Small (8\")",
+                "price": 520,
+                "isVeg": true,
+                "imagePath": "/assets/pizza/4-cheese.avif",
+                "crustType": "woodfired-small"
+              },
+              {
+                "id": "dish-4-cheese-pizza-woodfired-large",
+                "name": "Wood-Fired Large (12\")",
+                "price": 995,
+                "isVeg": true,
+                "imagePath": "/assets/pizza/4-cheese.webp",
+                "crustType": "woodfired-large"
+              },
+              {
+                "id": "dish-4-cheese-pizza-thin-crust",
+                "name": "Thin Crust (8 Slices)",
+                "price": 945,
+                "isVeg": true,
+                "imagePath": "/assets/pizza/4-cheese.avif",
+                "crustType": "thin-crust"
+              }
+            ],
             "addons": [
               {
                 "id": "addon-extra-cheese-13",
@@ -147,21 +671,152 @@ export const RESTAURANT_MENU_ACCORDIONS: CategoryAccordionData[] = [
             ]
           },
           {
-            "id": "dish-panfire-loaded-vegetables-neapolitan-pizza-small",
-            "name": "Panfire Loaded Vegetables - Neapolitan Pizza - Small",
-            "category": "Neapolitan Pizza - Small (8 inch)",
+            "id": "dish-3-cheese-asparagus-pesto-pizza",
+            "name": "3 Cheese Asparagus Pesto Pizza",
+            "category": "Wood-Fired & Thin Crust Pizzas",
             "isVeg": true,
-            "price": 325,
-            "basePrice": 325,
-            "description": "Marinara and mozzarella topped with button mushrooms, cherry tomatoes, mixed bell peppers and grilled zucchini, then finished with crumbled feta and fresh basil.",
-            "imagePath": "/assets/pizza/panfire-loaded-vegetables.avif",
+            "price": 520,
+            "basePrice": 520,
+            "description": "Vibrant basil pesto base with tender asparagus, mozzarella, rich burrata, rocket leaves and parmesan, finished with a balsamic reduction drizzle.",
+            "imagePath": "/assets/pizza/3-cheese-asparagus-pesto.avif",
             "isAvailable": true,
             "isChefSpecial": false,
             "isBestseller": false,
             "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
+            "hasVariants": true,
+            "variants": [
+              {
+                "id": "dish-3-cheese-asparagus-pesto-pizza-woodfired-small",
+                "name": "Wood-Fired Small (8\")",
+                "price": 520,
+                "isVeg": true,
+                "imagePath": "/assets/pizza/3-cheese-asparagus-pesto.avif",
+                "crustType": "woodfired-small"
+              },
+              {
+                "id": "dish-3-cheese-asparagus-pesto-pizza-woodfired-large",
+                "name": "Wood-Fired Large (12\")",
+                "price": 995,
+                "isVeg": true,
+                "imagePath": "/assets/pizza/3-cheese-asparagus-pesto.webp",
+                "crustType": "woodfired-large"
+              },
+              {
+                "id": "dish-3-cheese-asparagus-pesto-pizza-thin-crust",
+                "name": "Thin Crust (8 Slices)",
+                "price": 945,
+                "isVeg": true,
+                "imagePath": "/assets/pizza/3-cheese-asparagus-pesto.avif",
+                "crustType": "thin-crust"
+              }
+            ],
             "addons": [
+              {
+                "id": "addon-extra-cheese-14",
+                "name": "Extra Cheese",
+                "price": 70
+              }
+            ]
+          },
+          {
+            "id": "dish-panfire-overload-chicken-pizza",
+            "name": "Panfire Overload Chicken Pizza",
+            "category": "Wood-Fired & Thin Crust Pizzas",
+            "isVeg": false,
+            "price": 345,
+            "basePrice": 345,
+            "description": "Classic marinara and melted mozzarella topped with grilled chicken, smoked chicken and chicken sausage.",
+            "imagePath": "/assets/pizza/panfire-overload-chicken.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": true,
+            "variants": [
+              {
+                "id": "dish-panfire-overload-chicken-pizza-woodfired-small",
+                "name": "Wood-Fired Small (8\")",
+                "price": 345,
+                "isVeg": false,
+                "imagePath": "/assets/pizza/panfire-overload-chicken.avif",
+                "crustType": "woodfired-small"
+              },
+              {
+                "id": "dish-panfire-overload-chicken-pizza-woodfired-large",
+                "name": "Wood-Fired Large (12\")",
+                "price": 670,
+                "isVeg": false,
+                "imagePath": "/assets/pizza/panfire-overload-chicken.webp",
+                "crustType": "woodfired-large"
+              },
+              {
+                "id": "dish-panfire-overload-chicken-pizza-thin-crust",
+                "name": "Thin Crust (8 Slices)",
+                "price": 640,
+                "isVeg": false,
+                "imagePath": "/assets/pizza/panfire-overload-chicken.avif",
+                "crustType": "thin-crust"
+              }
+            ],
+            "addons": [
+              {
+                "id": "addon-add-burrata-6",
+                "name": "Add Burrata",
+                "price": 120
+              },
+              {
+                "id": "addon-extra-cheese-15",
+                "name": "Extra Cheese",
+                "price": 70
+              }
+            ]
+          },
+          {
+            "id": "dish-panfire-four-meat-pizza",
+            "name": "Panfire Four Meat Pizza",
+            "category": "Wood-Fired & Thin Crust Pizzas",
+            "isVeg": false,
+            "price": 440,
+            "basePrice": 440,
+            "description": "Classic marinara and melted mozzarella topped with bacon, smoked chicken, chicken sausage and chicken pepperoni.",
+            "imagePath": "/assets/pizza/panfire-4-meat.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": true,
+            "variants": [
+              {
+                "id": "dish-panfire-four-meat-pizza-woodfired-small",
+                "name": "Wood-Fired Small (8\")",
+                "price": 440,
+                "isVeg": false,
+                "imagePath": "/assets/pizza/panfire-4-meat.avif",
+                "crustType": "woodfired-small"
+              },
+              {
+                "id": "dish-panfire-four-meat-pizza-woodfired-large",
+                "name": "Wood-Fired Large (12\")",
+                "price": 845,
+                "isVeg": false,
+                "imagePath": "/assets/pizza/panfire-4-meat.webp",
+                "crustType": "woodfired-large"
+              },
+              {
+                "id": "dish-panfire-four-meat-pizza-thin-crust",
+                "name": "Thin Crust (8 Slices)",
+                "price": 795,
+                "isVeg": false,
+                "imagePath": "/assets/pizza/panfire-4-meat.avif",
+                "crustType": "thin-crust"
+              }
+            ],
+            "addons": [
+              {
+                "id": "addon-add-burrata-7",
+                "name": "Add Burrata",
+                "price": 120
+              },
               {
                 "id": "addon-extra-cheese-16",
                 "name": "Extra Cheese",
@@ -170,23 +825,154 @@ export const RESTAURANT_MENU_ACCORDIONS: CategoryAccordionData[] = [
             ]
           },
           {
-            "id": "dish-spicy-mushroom-neapolitan-pizza-small",
-            "name": "Spicy Mushroom - Neapolitan Pizza - Small",
-            "category": "Neapolitan Pizza - Small (8 inch)",
-            "isVeg": true,
-            "price": 325,
-            "basePrice": 325,
-            "description": "Mozzarella, earthy button mushrooms, spicy red paprika and red onions over a fiery peri-peri marinara base.",
-            "imagePath": "/assets/pizza/spicy-mushroom.webp",
+            "id": "dish-chicken-pepperoni-pizza",
+            "name": "Chicken Pepperoni Pizza",
+            "category": "Wood-Fired & Thin Crust Pizzas",
+            "isVeg": false,
+            "price": 345,
+            "basePrice": 345,
+            "description": "Classic marinara layered with melted mozzarella, chicken pepperoni and spicy jalape\u00f1os.",
+            "imagePath": "/assets/pizza/chicken-pepperoni.avif",
             "isAvailable": true,
             "isChefSpecial": false,
             "isBestseller": false,
-            "spicyLevel": 1,
-            "hasVariants": false,
-            "variants": [],
+            "spicyLevel": 0,
+            "hasVariants": true,
+            "variants": [
+              {
+                "id": "dish-chicken-pepperoni-pizza-woodfired-small",
+                "name": "Wood-Fired Small (8\")",
+                "price": 345,
+                "isVeg": false,
+                "imagePath": "/assets/pizza/chicken-pepperoni.avif",
+                "crustType": "woodfired-small"
+              },
+              {
+                "id": "dish-chicken-pepperoni-pizza-woodfired-large",
+                "name": "Wood-Fired Large (12\")",
+                "price": 670,
+                "isVeg": false,
+                "imagePath": "/images/pizza-pepperoni.avif",
+                "crustType": "woodfired-large"
+              },
+              {
+                "id": "dish-chicken-pepperoni-pizza-thin-crust",
+                "name": "Thin Crust (8 Slices)",
+                "price": 640,
+                "isVeg": false,
+                "imagePath": "/assets/pizza/chicken-pepperoni.webp",
+                "crustType": "thin-crust"
+              }
+            ],
             "addons": [
               {
-                "id": "addon-add-burrata-7",
+                "id": "addon-add-burrata-8",
+                "name": "Add Burrata",
+                "price": 120
+              },
+              {
+                "id": "addon-extra-cheese-17",
+                "name": "Extra Cheese",
+                "price": 70
+              }
+            ]
+          },
+          {
+            "id": "dish-panfire-pollo-pizza",
+            "name": "Panfire Pollo Pizza",
+            "category": "Wood-Fired & Thin Crust Pizzas",
+            "isVeg": false,
+            "price": 520,
+            "basePrice": 520,
+            "description": "Smoked chicken, earthy button mushrooms and caramelised onions over classic marinara and mozzarella, finished with creamy goat cheese.",
+            "imagePath": "/assets/pizza/panfire-pollo.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": true,
+            "variants": [
+              {
+                "id": "dish-panfire-pollo-pizza-woodfired-small",
+                "name": "Wood-Fired Small (8\")",
+                "price": 520,
+                "isVeg": false,
+                "imagePath": "/assets/pizza/panfire-pollo.avif",
+                "crustType": "woodfired-small"
+              },
+              {
+                "id": "dish-panfire-pollo-pizza-woodfired-large",
+                "name": "Wood-Fired Large (12\")",
+                "price": 995,
+                "isVeg": false,
+                "imagePath": "/assets/pizza/panfire-pollo.webp",
+                "crustType": "woodfired-large"
+              },
+              {
+                "id": "dish-panfire-pollo-pizza-thin-crust",
+                "name": "Thin Crust (8 Slices)",
+                "price": 945,
+                "isVeg": false,
+                "imagePath": "/assets/pizza/panfire-pollo.avif",
+                "crustType": "thin-crust"
+              }
+            ],
+            "addons": [
+              {
+                "id": "addon-add-burrata-9",
+                "name": "Add Burrata",
+                "price": 120
+              },
+              {
+                "id": "addon-extra-cheese-18",
+                "name": "Extra Cheese",
+                "price": 70
+              }
+            ]
+          },
+          {
+            "id": "dish-butter-chicken-pizza",
+            "name": "Butter Chicken Pizza",
+            "category": "Wood-Fired & Thin Crust Pizzas",
+            "isVeg": false,
+            "price": 345,
+            "basePrice": 345,
+            "description": "Grilled butter chicken over a rich makhani sauce and mozzarella, finished with fresh coriander, green chillies and ginger.",
+            "imagePath": "/assets/pizza/butter-chicken-pizza.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": true,
+            "variants": [
+              {
+                "id": "dish-butter-chicken-pizza-woodfired-small",
+                "name": "Wood-Fired Small (8\")",
+                "price": 345,
+                "isVeg": false,
+                "imagePath": "/assets/pizza/butter-chicken-pizza.avif",
+                "crustType": "woodfired-small"
+              },
+              {
+                "id": "dish-butter-chicken-pizza-woodfired-large",
+                "name": "Wood-Fired Large (12\")",
+                "price": 670,
+                "isVeg": false,
+                "imagePath": "/assets/pizza/butter-chicken-pizza.webp",
+                "crustType": "woodfired-large"
+              },
+              {
+                "id": "dish-butter-chicken-pizza-thin-crust",
+                "name": "Thin Crust (8 Slices)",
+                "price": 640,
+                "isVeg": false,
+                "imagePath": "/assets/pizza/butter-chicken-pizza.avif",
+                "crustType": "thin-crust"
+              }
+            ],
+            "addons": [
+              {
+                "id": "addon-add-burrata-10",
                 "name": "Add Burrata",
                 "price": 120
               },
@@ -198,21 +984,157 @@ export const RESTAURANT_MENU_ACCORDIONS: CategoryAccordionData[] = [
             ]
           },
           {
-            "id": "dish-hawaiian-neapolitan-pizza-small",
-            "name": "Hawaiian - Neapolitan Pizza - Small",
-            "category": "Neapolitan Pizza - Small (8 inch)",
-            "isVeg": true,
-            "price": 325,
-            "basePrice": 325,
-            "description": "Mozzarella, juicy pineapple, sweet corn and hot jalape\u00f1os over a classic marinara base.",
-            "imagePath": "/assets/pizza/chicken-ham-hawaiian.webp",
+            "id": "dish-grilled-chicken-roasted-peppers-pizza",
+            "name": "Grilled Chicken & Roasted Peppers Pizza",
+            "category": "Wood-Fired & Thin Crust Pizzas",
+            "isVeg": false,
+            "price": 345,
+            "basePrice": 345,
+            "description": "Grilled chicken, roasted bell peppers and red onions over classic marinara and melted mozzarella, finished with a touch of red paprika.",
+            "imagePath": "/assets/pizza/grilled-chicken-and-roasted-peppers.avif",
             "isAvailable": true,
             "isChefSpecial": false,
             "isBestseller": false,
             "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
+            "hasVariants": true,
+            "variants": [
+              {
+                "id": "dish-grilled-chicken-roasted-peppers-pizza-woodfired-small",
+                "name": "Wood-Fired Small (8\")",
+                "price": 345,
+                "isVeg": false,
+                "imagePath": "/assets/pizza/grilled-chicken-and-roasted-peppers.avif",
+                "crustType": "woodfired-small"
+              },
+              {
+                "id": "dish-grilled-chicken-roasted-peppers-pizza-woodfired-large",
+                "name": "Wood-Fired Large (12\")",
+                "price": 670,
+                "isVeg": false,
+                "imagePath": "/assets/pizza/grilled-chicken-and-roasted-peppers.webp",
+                "crustType": "woodfired-large"
+              },
+              {
+                "id": "dish-grilled-chicken-roasted-peppers-pizza-thin-crust",
+                "name": "Thin Crust (8 Slices)",
+                "price": 640,
+                "isVeg": false,
+                "imagePath": "/assets/pizza/grilled-chicken-and-roasted-peppers.avif",
+                "crustType": "thin-crust"
+              }
+            ],
             "addons": [
+              {
+                "id": "addon-add-burrata-11",
+                "name": "Add Burrata",
+                "price": 120
+              },
+              {
+                "id": "addon-extra-cheese-20",
+                "name": "Extra Cheese",
+                "price": 70
+              }
+            ]
+          },
+          {
+            "id": "dish-pesto-smoked-chicken-rocket-pizza",
+            "name": "Pesto Smoked Chicken & Rocket Pizza",
+            "category": "Wood-Fired & Thin Crust Pizzas",
+            "isVeg": false,
+            "price": 440,
+            "basePrice": 440,
+            "description": "Smoked chicken and mozzarella topped with fresh rocket, basil pesto and a balsamic drizzle.",
+            "imagePath": "/assets/pizza/pesto-smoked-chicken-and-rocket.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": true,
+            "variants": [
+              {
+                "id": "dish-pesto-smoked-chicken-rocket-pizza-woodfired-small",
+                "name": "Wood-Fired Small (8\")",
+                "price": 440,
+                "isVeg": false,
+                "imagePath": "/assets/pizza/pesto-smoked-chicken-and-rocket.avif",
+                "crustType": "woodfired-small"
+              },
+              {
+                "id": "dish-pesto-smoked-chicken-rocket-pizza-woodfired-large",
+                "name": "Wood-Fired Large (12\")",
+                "price": 845,
+                "isVeg": false,
+                "imagePath": "/assets/pizza/pesto-smoked-chicken-and-rocket.webp",
+                "crustType": "woodfired-large"
+              },
+              {
+                "id": "dish-pesto-smoked-chicken-rocket-pizza-thin-crust",
+                "name": "Thin Crust (8 Slices)",
+                "price": 795,
+                "isVeg": false,
+                "imagePath": "/assets/pizza/pesto-smoked-chicken-and-rocket.avif",
+                "crustType": "thin-crust"
+              }
+            ],
+            "addons": [
+              {
+                "id": "addon-add-burrata-12",
+                "name": "Add Burrata",
+                "price": 120
+              },
+              {
+                "id": "addon-extra-cheese-21",
+                "name": "Extra Cheese",
+                "price": 70
+              }
+            ]
+          },
+          {
+            "id": "dish-smoked-chicken-paprika-pizza",
+            "name": "Smoked Chicken Paprika Pizza",
+            "category": "Wood-Fired & Thin Crust Pizzas",
+            "isVeg": false,
+            "price": 345,
+            "basePrice": 345,
+            "description": "Smoked chicken, red onions and sliced paprika over classic marinara and melted mozzarella.",
+            "imagePath": "/assets/pizza/pesto-smoked-chicken-and-rocket.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 1,
+            "hasVariants": true,
+            "variants": [
+              {
+                "id": "dish-smoked-chicken-paprika-pizza-woodfired-small",
+                "name": "Wood-Fired Small (8\")",
+                "price": 345,
+                "isVeg": false,
+                "imagePath": "/assets/pizza/pesto-smoked-chicken-and-rocket.avif",
+                "crustType": "woodfired-small"
+              },
+              {
+                "id": "dish-smoked-chicken-paprika-pizza-woodfired-large",
+                "name": "Wood-Fired Large (12\")",
+                "price": 670,
+                "isVeg": false,
+                "imagePath": "/assets/pizza/pesto-smoked-chicken-and-rocket.webp",
+                "crustType": "woodfired-large"
+              },
+              {
+                "id": "dish-smoked-chicken-paprika-pizza-thin-crust",
+                "name": "Thin Crust (8 Slices)",
+                "price": 640,
+                "isVeg": false,
+                "imagePath": "/assets/pizza/pesto-smoked-chicken-and-rocket.avif",
+                "crustType": "thin-crust"
+              }
+            ],
+            "addons": [
+              {
+                "id": "addon-add-burrata-13",
+                "name": "Add Burrata",
+                "price": 120
+              },
               {
                 "id": "addon-extra-cheese-22",
                 "name": "Extra Cheese",
@@ -221,1724 +1143,108 @@ export const RESTAURANT_MENU_ACCORDIONS: CategoryAccordionData[] = [
             ]
           },
           {
-            "id": "dish-pesto-paneer-neapolitan-pizza-small",
-            "name": "Pesto Paneer - Neapolitan Pizza - Small",
-            "category": "Neapolitan Pizza - Small (8 inch)",
-            "isVeg": true,
-            "price": 345,
-            "basePrice": 345,
-            "description": "Classic red sauce and melted mozzarella topped with paneer, finished with a vibrant basil pesto drizzle.",
-            "imagePath": "/assets/pizza/pesto-paneer.webp",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-add-burrata-10",
-                "name": "Add Burrata",
-                "price": 120
-              },
-              {
-                "id": "addon-extra-cheese-25",
-                "name": "Extra Cheese",
-                "price": 70
-              }
-            ]
-          },
-          {
-            "id": "dish-burrata-neapolitan-pizza-small",
-            "name": "Burrata - Neapolitan Pizza - Small",
-            "category": "Neapolitan Pizza - Small (8 inch)",
-            "isVeg": true,
-            "price": 440,
-            "basePrice": 440,
-            "description": "Creamy white base with mozzarella, burrata, sweet cherry tomatoes and caramelized onions.",
-            "imagePath": "/assets/garlic-bread/asparagus-burrata.webp",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-extra-cheese-28",
-                "name": "Extra Cheese",
-                "price": 70
-              }
-            ]
-          },
-          {
-            "id": "dish-truffle-mushroom-neapolitan-pizza-small",
-            "name": "Truffle Mushroom - Neapolitan Pizza - Small",
-            "category": "Neapolitan Pizza - Small (8 inch)",
-            "isVeg": true,
-            "price": 440,
-            "basePrice": 440,
-            "description": "Mozzarella, shiitake and button mushrooms over a creamy white base, finished with a drizzle of white truffle oil.",
-            "imagePath": "/assets/pizza/truffle-mushroom.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-add-burrata-13",
-                "name": "Add Burrata",
-                "price": 120
-              },
-              {
-                "id": "addon-extra-cheese-31",
-                "name": "Extra Cheese",
-                "price": 70
-              }
-            ]
-          },
-          {
-            "id": "dish-magic-mushroom-neapolitan-pizza-small",
-            "name": "Magic Mushroom - Neapolitan Pizza - Small",
-            "category": "Neapolitan Pizza - Small (8 inch)",
-            "isVeg": true,
-            "price": 440,
-            "basePrice": 440,
-            "description": "Mozzarella, earthy shiitake and button mushrooms paired with creamy goat cheese and fresh rocket, finished with a drizzle of balsamic reduction.",
-            "imagePath": "/assets/pizza/magic-mushroom.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-extra-cheese-34",
-                "name": "Extra Cheese",
-                "price": 70
-              }
-            ]
-          },
-          {
-            "id": "dish-4-cheese-neapolitan-pizza-small",
-            "name": "4 Cheese - Neapolitan Pizza - Small",
-            "category": "Neapolitan Pizza - Small (8 inch)",
-            "isVeg": true,
-            "price": 520,
-            "basePrice": 520,
-            "description": "An indulgent, rich blend of mozzarella, fresh bocconcini, parmesan and creamy goat cheese.",
-            "imagePath": "/assets/dim-sums/spinach-and-cream-cheese-dim-sum.webp",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-extra-cheese-37",
-                "name": "Extra Cheese",
-                "price": 70
-              }
-            ]
-          },
-          {
-            "id": "dish-3-cheese-asparagus-pesto-neapolitan-pizza-small",
-            "name": "3 Cheese Asparagus Pesto - Neapolitan Pizza - Small",
-            "category": "Neapolitan Pizza - Small (8 inch)",
-            "isVeg": true,
-            "price": 520,
-            "basePrice": 520,
-            "description": "Vibrant basil pesto base with tender asparagus, mozzarella, rich burrata, rocket leaves and parmesan, finished with a balsamic reduction drizzle.",
-            "imagePath": "/assets/pizza/3-cheese-asparagus-pesto.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-extra-cheese-40",
-                "name": "Extra Cheese",
-                "price": 70
-              }
-            ]
-          },
-          {
-            "id": "dish-panfire-overload-chicken-neapolitan-pizza-small",
-            "name": "Panfire Overload Chicken - Neapolitan Pizza - Small",
-            "category": "Neapolitan Pizza - Small (8 inch)",
-            "isVeg": false,
-            "price": 345,
-            "basePrice": 345,
-            "description": "Classic marinara and melted mozzarella topped with grilled chicken, smoked chicken and chicken sausage.",
-            "imagePath": "/assets/deep-dish-pizza/panfire-overload-chicken.webp",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-add-burrata-16",
-                "name": "Add Burrata",
-                "price": 120
-              },
-              {
-                "id": "addon-extra-cheese-43",
-                "name": "Extra Cheese",
-                "price": 70
-              }
-            ]
-          },
-          {
-            "id": "dish-panfire-four-meat-neapolitan-pizza-small",
-            "name": "Panfire Four Meat - Neapolitan Pizza - Small",
-            "category": "Neapolitan Pizza - Small (8 inch)",
-            "isVeg": false,
-            "price": 440,
-            "basePrice": 440,
-            "description": "Classic marinara and melted mozzarella topped with bacon, smoked chicken, chicken sausage and chicken pepperoni.",
-            "imagePath": "/assets/deep-dish-pizza/panfire-4-meat.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-add-burrata-19",
-                "name": "Add Burrata",
-                "price": 120
-              },
-              {
-                "id": "addon-extra-cheese-46",
-                "name": "Extra Cheese",
-                "price": 70
-              }
-            ]
-          },
-          {
-            "id": "dish-chicken-pepperoni-neapolitan-pizza-small",
-            "name": "Chicken Pepperoni - Neapolitan Pizza - Small",
-            "category": "Neapolitan Pizza - Small (8 inch)",
-            "isVeg": false,
-            "price": 345,
-            "basePrice": 345,
-            "description": "Classic marinara layered with melted mozzarella, chicken pepperoni and spicy jalape\u00f1os.",
-            "imagePath": "/assets/garlic-bread/pepperoni.webp",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-add-burrata-22",
-                "name": "Add Burrata",
-                "price": 120
-              },
-              {
-                "id": "addon-extra-cheese-49",
-                "name": "Extra Cheese",
-                "price": 70
-              }
-            ]
-          },
-          {
-            "id": "dish-panfire-pollo-neapolitan-pizza-small",
-            "name": "Panfire Pollo - Neapolitan Pizza - Small",
-            "category": "Neapolitan Pizza - Small (8 inch)",
-            "isVeg": false,
-            "price": 520,
-            "basePrice": 520,
-            "description": "Smoked chicken, earthy button mushrooms and caramelised onions over classic marinara and mozzarella, finished with creamy goat cheese.",
-            "imagePath": "/assets/pizza/panfire-pollo.webp",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-add-burrata-25",
-                "name": "Add Burrata",
-                "price": 120
-              },
-              {
-                "id": "addon-extra-cheese-52",
-                "name": "Extra Cheese",
-                "price": 70
-              }
-            ]
-          },
-          {
-            "id": "dish-butter-chicken-neapolitan-pizza-small",
-            "name": "Butter Chicken - Neapolitan Pizza - Small",
-            "category": "Neapolitan Pizza - Small (8 inch)",
-            "isVeg": false,
-            "price": 345,
-            "basePrice": 345,
-            "description": "Grilled butter chicken over a rich makhani sauce and mozzarella, finished with fresh coriander, green chillies and ginger.",
-            "imagePath": "/assets/pizza/butter-chicken-pizza.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-add-burrata-28",
-                "name": "Add Burrata",
-                "price": 120
-              },
-              {
-                "id": "addon-extra-cheese-55",
-                "name": "Extra Cheese",
-                "price": 70
-              }
-            ]
-          },
-          {
-            "id": "dish-grilled-chicken-roasted-peppers-neapolitan-pizza-small",
-            "name": "Grilled Chicken & Roasted Peppers - Neapolitan Pizza - Small",
-            "category": "Neapolitan Pizza - Small (8 inch)",
-            "isVeg": false,
-            "price": 345,
-            "basePrice": 345,
-            "description": "Grilled chicken, roasted bell peppers and red onions over classic marinara and melted mozzarella, finished with a touch of red paprika.",
-            "imagePath": "/assets/pizza/grilled-chicken-and-roasted-peppers.webp",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-add-burrata-31",
-                "name": "Add Burrata",
-                "price": 120
-              },
-              {
-                "id": "addon-extra-cheese-58",
-                "name": "Extra Cheese",
-                "price": 70
-              }
-            ]
-          },
-          {
-            "id": "dish-pesto-smoked-chicken-rocket-neapolitan-pizza-small",
-            "name": "Pesto Smoked Chicken & Rocket - Neapolitan Pizza - Small",
-            "category": "Neapolitan Pizza - Small (8 inch)",
-            "isVeg": false,
-            "price": 440,
-            "basePrice": 440,
-            "description": "Smoked chicken and mozzarella topped with fresh rocket, basil pesto and a balsamic drizzle.",
-            "imagePath": "/assets/pizza/pesto-smoked-chicken-and-rocket.webp",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-add-burrata-34",
-                "name": "Add Burrata",
-                "price": 120
-              },
-              {
-                "id": "addon-extra-cheese-61",
-                "name": "Extra Cheese",
-                "price": 70
-              }
-            ]
-          },
-          {
-            "id": "dish-smoked-chicken-paprika-neapolitan-pizza-small",
-            "name": "Smoked Chicken Paprika - Neapolitan Pizza - Small",
-            "category": "Neapolitan Pizza - Small (8 inch)",
-            "isVeg": false,
-            "price": 345,
-            "basePrice": 345,
-            "description": "Smoked chicken, red onions and sliced paprika over classic marinara and melted mozzarella.",
-            "imagePath": "/assets/pizza/pesto-smoked-chicken-and-rocket.webp",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-add-burrata-37",
-                "name": "Add Burrata",
-                "price": 120
-              },
-              {
-                "id": "addon-extra-cheese-64",
-                "name": "Extra Cheese",
-                "price": 70
-              }
-            ]
-          },
-          {
-            "id": "dish-grilled-chicken-spinach-mushroom-neapolitan-pizza-small",
-            "name": "Grilled Chicken, Spinach & Mushroom - Neapolitan Pizza - Small",
-            "category": "Neapolitan Pizza - Small (8 inch)",
+            "id": "dish-grilled-chicken-spinach-mushroom-pizza",
+            "name": "Grilled Chicken, Spinach & Mushroom Pizza",
+            "category": "Wood-Fired & Thin Crust Pizzas",
             "isVeg": false,
             "price": 345,
             "basePrice": 345,
             "description": "Creamy white sauce layered with melted mozzarella, grilled chicken, saut\u00e9ed spinach and earthy mushrooms.",
-            "imagePath": "/assets/pizza/grilled-chicken-spinach-and-mushroom.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-add-burrata-40",
-                "name": "Add Burrata",
-                "price": 120
-              },
-              {
-                "id": "addon-extra-cheese-67",
-                "name": "Extra Cheese",
-                "price": 70
-              }
-            ]
-          },
-          {
-            "id": "dish-bacon-neapolitan-pizza-small",
-            "name": "Bacon - Neapolitan Pizza - Small",
-            "category": "Neapolitan Pizza - Small (8 inch)",
-            "isVeg": false,
-            "price": 345,
-            "basePrice": 345,
-            "description": "Bacon and caramelised onions over a creamy white sauce and melted mozzarella.",
-            "imagePath": "/assets/garlic-bread/bacon-and-mushroom.webp",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-add-burrata-43",
-                "name": "Add Burrata",
-                "price": 120
-              },
-              {
-                "id": "addon-extra-cheese-70",
-                "name": "Extra Cheese",
-                "price": 70
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "neapolitan-large",
-        "title": "Neapolitan Pizzas - Large (12 Inch)",
-        "items": [
-          {
-            "id": "dish-classic-margherita-neapolitan-pizza-large",
-            "name": "Classic Margherita - Neapolitan Pizza - Large",
-            "category": "Neapolitan Pizza - Large (12 inch)",
-            "isVeg": true,
-            "price": 570,
-            "basePrice": 570,
-            "description": "Classic San Marzano tomato sauce, mozzarella and aromatic hand-torn basil.",
-            "imagePath": "/assets/pizza/classic-margherita.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": true,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-spicy-style-2",
-                "name": "Spicy Style",
-                "price": 50
-              },
-              {
-                "id": "addon-pesto-drizzle-2",
-                "name": "Pesto Drizzle",
-                "price": 60
-              },
-              {
-                "id": "addon-extra-cheese-2",
-                "name": "Extra Cheese",
-                "price": 120
-              }
-            ]
-          },
-          {
-            "id": "dish-creamy-spinach-mushroom-neapolitan-pizza-large",
-            "name": "Creamy Spinach & Mushroom - Neapolitan Pizza - Large",
-            "category": "Neapolitan Pizza - Large (12 inch)",
-            "isVeg": true,
-            "price": 670,
-            "basePrice": 670,
-            "description": "Mozzarella, saut\u00e9ed spinach and earthy mushrooms over a velvety white sauce.",
-            "imagePath": "/assets/pizza/creamy-spinach-mushroom.webp",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-extra-cheese-5",
-                "name": "Extra Cheese",
-                "price": 120
-              }
-            ]
-          },
-          {
-            "id": "dish-butter-paneer-neapolitan-pizza-large",
-            "name": "Butter Paneer - Neapolitan Pizza - Large",
-            "category": "Neapolitan Pizza - Large (12 inch)",
-            "isVeg": true,
-            "price": 645,
-            "basePrice": 645,
-            "description": "Rich, spiced makhani sauce with mozzarella, paneer, green chillies and a hint of fresh ginger.",
-            "imagePath": "/assets/pizza/butter-paneer-pizza.webp",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-add-burrata-2",
-                "name": "Add Burrata",
-                "price": 190
-              },
-              {
-                "id": "addon-extra-cheese-8",
-                "name": "Extra Cheese",
-                "price": 120
-              }
-            ]
-          },
-          {
-            "id": "dish-spicy-paneer-neapolitan-pizza-large",
-            "name": "Spicy Paneer - Neapolitan Pizza - Large",
-            "category": "Neapolitan Pizza - Large (12 inch)",
-            "isVeg": true,
-            "price": 645,
-            "basePrice": 645,
-            "description": "Mozzarella, marinated peri-peri paneer, spicy jalape\u00f1os and red onions over a bold, fiery marinara base.",
-            "imagePath": "/assets/burrito-wraps/spicy-grilled-paneer-burrito-bowl.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 1,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-add-burrata-5",
-                "name": "Add Burrata",
-                "price": 190
-              },
-              {
-                "id": "addon-extra-cheese-11",
-                "name": "Extra Cheese",
-                "price": 120
-              }
-            ]
-          },
-          {
-            "id": "dish-sun-rocket-neapolitan-pizza-large",
-            "name": "Sun & Rocket - Neapolitan Pizza - Large",
-            "category": "Neapolitan Pizza - Large (12 inch)",
-            "isVeg": true,
-            "price": 645,
-            "basePrice": 645,
-            "description": "Mozzarella, tangy sun-dried tomatoes, garlic and peppery rocket over a classic red sauce, finished with a balsamic reduction drizzle.",
-            "imagePath": "/assets/pizza/sun-rocket.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-extra-cheese-14",
-                "name": "Extra Cheese",
-                "price": 120
-              }
-            ]
-          },
-          {
-            "id": "dish-panfire-loaded-vegetables-neapolitan-pizza-large",
-            "name": "Panfire Loaded Vegetables - Neapolitan Pizza - Large",
-            "category": "Neapolitan Pizza - Large (12 inch)",
-            "isVeg": true,
-            "price": 645,
-            "basePrice": 645,
-            "description": "Marinara and mozzarella topped with button mushrooms, cherry tomatoes, mixed bell peppers and grilled zucchini, then finished with crumbled feta and fresh basil.",
-            "imagePath": "/assets/pizza/panfire-loaded-vegetables.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-extra-cheese-17",
-                "name": "Extra Cheese",
-                "price": 120
-              }
-            ]
-          },
-          {
-            "id": "dish-spicy-mushroom-neapolitan-pizza-large",
-            "name": "Spicy Mushroom - Neapolitan Pizza - Large",
-            "category": "Neapolitan Pizza - Large (12 inch)",
-            "isVeg": true,
-            "price": 645,
-            "basePrice": 645,
-            "description": "Mozzarella, earthy button mushrooms, spicy red paprika and red onions over a fiery peri-peri marinara base.",
             "imagePath": "/assets/pizza/spicy-mushroom.webp",
             "isAvailable": true,
             "isChefSpecial": false,
             "isBestseller": false,
-            "spicyLevel": 1,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
+            "spicyLevel": 0,
+            "hasVariants": true,
+            "variants": [
               {
-                "id": "addon-add-burrata-8",
-                "name": "Add Burrata",
-                "price": 190
+                "id": "dish-grilled-chicken-spinach-mushroom-pizza-woodfired-small",
+                "name": "Wood-Fired Small (8\")",
+                "price": 345,
+                "isVeg": false,
+                "imagePath": "/assets/pizza/spicy-mushroom.webp",
+                "crustType": "woodfired-small"
               },
               {
-                "id": "addon-extra-cheese-20",
-                "name": "Extra Cheese",
-                "price": 120
-              }
-            ]
-          },
-          {
-            "id": "dish-hawaiian-neapolitan-pizza-large",
-            "name": "Hawaiian - Neapolitan Pizza - Large",
-            "category": "Neapolitan Pizza - Large (12 inch)",
-            "isVeg": true,
-            "price": 645,
-            "basePrice": 645,
-            "description": "Mozzarella, juicy pineapple, sweet corn and hot jalape\u00f1os over a classic marinara base.",
-            "imagePath": "/assets/pizza/chicken-ham-hawaiian.webp",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-extra-cheese-23",
-                "name": "Extra Cheese",
-                "price": 120
-              }
-            ]
-          },
-          {
-            "id": "dish-pesto-paneer-neapolitan-pizza-large",
-            "name": "Pesto Paneer - Neapolitan Pizza - Large",
-            "category": "Neapolitan Pizza - Large (12 inch)",
-            "isVeg": true,
-            "price": 670,
-            "basePrice": 670,
-            "description": "Classic red sauce and melted mozzarella topped with paneer, finished with a vibrant basil pesto drizzle.",
-            "imagePath": "/assets/pizza/pesto-paneer.webp",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-add-burrata-11",
-                "name": "Add Burrata",
-                "price": 190
+                "id": "dish-grilled-chicken-spinach-mushroom-pizza-woodfired-large",
+                "name": "Wood-Fired Large (12\")",
+                "price": 670,
+                "isVeg": false,
+                "imagePath": "/images/pizza-mushroom.avif",
+                "crustType": "woodfired-large"
               },
               {
-                "id": "addon-extra-cheese-26",
-                "name": "Extra Cheese",
-                "price": 120
+                "id": "dish-grilled-chicken-spinach-mushroom-pizza-thin-crust",
+                "name": "Thin Crust (8 Slices)",
+                "price": 640,
+                "isVeg": false,
+                "imagePath": "/assets/pizza/truffle-mushroom.avif",
+                "crustType": "thin-crust"
               }
-            ]
-          },
-          {
-            "id": "dish-burrata-neapolitan-pizza-large",
-            "name": "Burrata - Neapolitan Pizza - Large",
-            "category": "Neapolitan Pizza - Large (12 inch)",
-            "isVeg": true,
-            "price": 845,
-            "basePrice": 845,
-            "description": "Creamy white base with mozzarella, burrata, sweet cherry tomatoes and caramelized onions.",
-            "imagePath": "/assets/garlic-bread/asparagus-burrata.webp",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-extra-cheese-29",
-                "name": "Extra Cheese",
-                "price": 120
-              }
-            ]
-          },
-          {
-            "id": "dish-truffle-mushroom-neapolitan-pizza-large",
-            "name": "Truffle Mushroom - Neapolitan Pizza - Large",
-            "category": "Neapolitan Pizza - Large (12 inch)",
-            "isVeg": true,
-            "price": 845,
-            "basePrice": 845,
-            "description": "Mozzarella, shiitake and button mushrooms over a creamy white base, finished with a drizzle of white truffle oil.",
-            "imagePath": "/assets/pizza/truffle-mushroom.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
+            ],
             "addons": [
               {
                 "id": "addon-add-burrata-14",
                 "name": "Add Burrata",
-                "price": 190
+                "price": 120
               },
               {
-                "id": "addon-extra-cheese-32",
+                "id": "addon-extra-cheese-23",
                 "name": "Extra Cheese",
-                "price": 120
+                "price": 70
               }
             ]
           },
           {
-            "id": "dish-magic-mushroom-neapolitan-pizza-large",
-            "name": "Magic Mushroom - Neapolitan Pizza - Large",
-            "category": "Neapolitan Pizza - Large (12 inch)",
-            "isVeg": true,
-            "price": 845,
-            "basePrice": 845,
-            "description": "Mozzarella, earthy shiitake and button mushrooms paired with creamy goat cheese and fresh rocket, finished with a drizzle of balsamic reduction.",
-            "imagePath": "/assets/pizza/magic-mushroom.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-extra-cheese-35",
-                "name": "Extra Cheese",
-                "price": 120
-              }
-            ]
-          },
-          {
-            "id": "dish-4-cheese-neapolitan-pizza-large",
-            "name": "4 Cheese - Neapolitan Pizza - Large",
-            "category": "Neapolitan Pizza - Large (12 inch)",
-            "isVeg": true,
-            "price": 995,
-            "basePrice": 995,
-            "description": "An indulgent, rich blend of mozzarella, fresh bocconcini, parmesan and creamy goat cheese.",
-            "imagePath": "/assets/dim-sums/spinach-and-cream-cheese-dim-sum.webp",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-extra-cheese-38",
-                "name": "Extra Cheese",
-                "price": 120
-              }
-            ]
-          },
-          {
-            "id": "dish-3-cheese-asparagus-pesto-neapolitan-pizza-large",
-            "name": "3 Cheese Asparagus Pesto - Neapolitan Pizza - Large",
-            "category": "Neapolitan Pizza - Large (12 inch)",
-            "isVeg": true,
-            "price": 995,
-            "basePrice": 995,
-            "description": "Vibrant basil pesto base with tender asparagus, mozzarella, rich burrata, rocket leaves and parmesan, finished with a balsamic reduction drizzle.",
-            "imagePath": "/assets/pizza/3-cheese-asparagus-pesto.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-extra-cheese-41",
-                "name": "Extra Cheese",
-                "price": 120
-              }
-            ]
-          },
-          {
-            "id": "dish-panfire-overload-chicken-neapolitan-pizza-large",
-            "name": "Panfire Overload Chicken - Neapolitan Pizza - Large",
-            "category": "Neapolitan Pizza - Large (12 inch)",
+            "id": "dish-bacon-pizza",
+            "name": "Bacon Pizza",
+            "category": "Wood-Fired & Thin Crust Pizzas",
             "isVeg": false,
-            "price": 670,
-            "basePrice": 670,
-            "description": "Classic marinara and melted mozzarella topped with grilled chicken, smoked chicken and chicken sausage.",
-            "imagePath": "/assets/deep-dish-pizza/panfire-overload-chicken.webp",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-add-burrata-17",
-                "name": "Add Burrata",
-                "price": 190
-              },
-              {
-                "id": "addon-extra-cheese-44",
-                "name": "Extra Cheese",
-                "price": 120
-              }
-            ]
-          },
-          {
-            "id": "dish-panfire-four-meat-neapolitan-pizza-large",
-            "name": "Panfire Four Meat - Neapolitan Pizza - Large",
-            "category": "Neapolitan Pizza - Large (12 inch)",
-            "isVeg": false,
-            "price": 845,
-            "basePrice": 845,
-            "description": "Classic marinara and melted mozzarella topped with bacon, smoked chicken, chicken sausage and chicken pepperoni.",
-            "imagePath": "/assets/deep-dish-pizza/panfire-4-meat.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-add-burrata-20",
-                "name": "Add Burrata",
-                "price": 190
-              },
-              {
-                "id": "addon-extra-cheese-47",
-                "name": "Extra Cheese",
-                "price": 120
-              }
-            ]
-          },
-          {
-            "id": "dish-chicken-pepperoni-neapolitan-pizza-large",
-            "name": "Chicken Pepperoni - Neapolitan Pizza - Large",
-            "category": "Neapolitan Pizza - Large (12 inch)",
-            "isVeg": false,
-            "price": 670,
-            "basePrice": 670,
-            "description": "Classic marinara layered with melted mozzarella, chicken pepperoni and spicy jalape\u00f1os.",
-            "imagePath": "/assets/garlic-bread/pepperoni.webp",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-add-burrata-23",
-                "name": "Add Burrata",
-                "price": 190
-              },
-              {
-                "id": "addon-extra-cheese-50",
-                "name": "Extra Cheese",
-                "price": 120
-              }
-            ]
-          },
-          {
-            "id": "dish-panfire-pollo-neapolitan-pizza-large",
-            "name": "Panfire Pollo - Neapolitan Pizza - Large",
-            "category": "Neapolitan Pizza - Large (12 inch)",
-            "isVeg": false,
-            "price": 995,
-            "basePrice": 995,
-            "description": "Smoked chicken, earthy button mushrooms and caramelised onions over classic marinara and mozzarella, finished with creamy goat cheese.",
-            "imagePath": "/assets/pizza/panfire-pollo.webp",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-add-burrata-26",
-                "name": "Add Burrata",
-                "price": 190
-              },
-              {
-                "id": "addon-extra-cheese-53",
-                "name": "Extra Cheese",
-                "price": 120
-              }
-            ]
-          },
-          {
-            "id": "dish-butter-chicken-neapolitan-pizza-large",
-            "name": "Butter Chicken - Neapolitan Pizza - Large",
-            "category": "Neapolitan Pizza - Large (12 inch)",
-            "isVeg": false,
-            "price": 670,
-            "basePrice": 670,
-            "description": "Grilled butter chicken over a rich makhani sauce and mozzarella, finished with fresh coriander, green chillies and ginger.",
-            "imagePath": "/assets/pizza/butter-chicken-pizza.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-add-burrata-29",
-                "name": "Add Burrata",
-                "price": 190
-              },
-              {
-                "id": "addon-extra-cheese-56",
-                "name": "Extra Cheese",
-                "price": 120
-              }
-            ]
-          },
-          {
-            "id": "dish-grilled-chicken-roasted-peppers-neapolitan-pizza-large",
-            "name": "Grilled Chicken & Roasted Peppers - Neapolitan Pizza - Large",
-            "category": "Neapolitan Pizza - Large (12 inch)",
-            "isVeg": false,
-            "price": 670,
-            "basePrice": 670,
-            "description": "Grilled chicken, roasted bell peppers and red onions over classic marinara and melted mozzarella, finished with a touch of red paprika.",
-            "imagePath": "/assets/pizza/grilled-chicken-and-roasted-peppers.webp",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-add-burrata-32",
-                "name": "Add Burrata",
-                "price": 190
-              },
-              {
-                "id": "addon-extra-cheese-59",
-                "name": "Extra Cheese",
-                "price": 120
-              }
-            ]
-          },
-          {
-            "id": "dish-pesto-smoked-chicken-rocket-neapolitan-pizza-large",
-            "name": "Pesto Smoked Chicken & Rocket - Neapolitan Pizza - Large",
-            "category": "Neapolitan Pizza - Large (12 inch)",
-            "isVeg": false,
-            "price": 845,
-            "basePrice": 845,
-            "description": "Smoked chicken and mozzarella topped with fresh rocket, basil pesto and a balsamic drizzle.",
-            "imagePath": "/assets/pizza/pesto-smoked-chicken-and-rocket.webp",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-add-burrata-35",
-                "name": "Add Burrata",
-                "price": 190
-              },
-              {
-                "id": "addon-extra-cheese-62",
-                "name": "Extra Cheese",
-                "price": 120
-              }
-            ]
-          },
-          {
-            "id": "dish-smoked-chicken-paprika-neapolitan-pizza-large",
-            "name": "Smoked Chicken Paprika - Neapolitan Pizza - Large",
-            "category": "Neapolitan Pizza - Large (12 inch)",
-            "isVeg": false,
-            "price": 670,
-            "basePrice": 670,
-            "description": "Smoked chicken, red onions and sliced paprika over classic marinara and melted mozzarella.",
-            "imagePath": "/assets/pizza/pesto-smoked-chicken-and-rocket.webp",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-add-burrata-38",
-                "name": "Add Burrata",
-                "price": 190
-              },
-              {
-                "id": "addon-extra-cheese-65",
-                "name": "Extra Cheese",
-                "price": 120
-              }
-            ]
-          },
-          {
-            "id": "dish-grilled-chicken-spinach-mushroom-neapolitan-pizza-large",
-            "name": "Grilled Chicken, Spinach & Mushroom - Neapolitan Pizza - Large",
-            "category": "Neapolitan Pizza - Large (12 inch)",
-            "isVeg": false,
-            "price": 670,
-            "basePrice": 670,
-            "description": "Creamy white sauce layered with melted mozzarella, grilled chicken, saut\u00e9ed spinach and earthy mushrooms.",
-            "imagePath": "/assets/pizza/grilled-chicken-spinach-and-mushroom.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-add-burrata-41",
-                "name": "Add Burrata",
-                "price": 190
-              },
-              {
-                "id": "addon-extra-cheese-68",
-                "name": "Extra Cheese",
-                "price": 120
-              }
-            ]
-          },
-          {
-            "id": "dish-bacon-neapolitan-pizza-large",
-            "name": "Bacon - Neapolitan Pizza - Large",
-            "category": "Neapolitan Pizza - Large (12 inch)",
-            "isVeg": false,
-            "price": 670,
-            "basePrice": 670,
+            "price": 345,
+            "basePrice": 345,
             "description": "Bacon and caramelised onions over a creamy white sauce and melted mozzarella.",
-            "imagePath": "/assets/garlic-bread/bacon-and-mushroom.webp",
+            "imagePath": "/assets/pizza/bacon-pizza.avif",
             "isAvailable": true,
             "isChefSpecial": false,
             "isBestseller": false,
             "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
+            "hasVariants": true,
+            "variants": [
               {
-                "id": "addon-add-burrata-44",
-                "name": "Add Burrata",
-                "price": 190
+                "id": "dish-bacon-pizza-woodfired-small",
+                "name": "Wood-Fired Small (8\")",
+                "price": 345,
+                "isVeg": false,
+                "imagePath": "/assets/pizza/bacon-pizza.avif",
+                "crustType": "woodfired-small"
               },
               {
-                "id": "addon-extra-cheese-71",
-                "name": "Extra Cheese",
-                "price": 120
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "thin-crust-deep-dish-pizzas",
-    "title": "Panfire Thin Crust & Deep Dish Pizzas",
-    "description": "Ultra-crispy Roman-style thin crusts and indulgent Chicago-style deep dish pies.",
-    "badge": "Crispy & Loaded",
-    "subcategories": [
-      {
-        "id": "panfire-thin-crust",
-        "title": "Panfire Thin Crust Pizzas (8 Slices)",
-        "items": [
-          {
-            "id": "dish-classic-margherita-thin-crust-pizza",
-            "name": "Classic Margherita- Thin Crust Pizza",
-            "category": "Panfire Thin Crust Pizza (8 slices)",
-            "isVeg": true,
-            "price": 520,
-            "basePrice": 520,
-            "description": "Classic San Marzano tomato sauce, mozzarella and aromatic hand-torn basil.",
-            "imagePath": "/assets/pizza/classic-margherita.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": true,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-spicy-style-3",
-                "name": "Spicy Style",
-                "price": 50
+                "id": "dish-bacon-pizza-woodfired-large",
+                "name": "Wood-Fired Large (12\")",
+                "price": 670,
+                "isVeg": false,
+                "imagePath": "/assets/pizza/bacon-pizza.webp",
+                "crustType": "woodfired-large"
               },
               {
-                "id": "addon-pesto-drizzle-3",
-                "name": "Pesto Drizzle",
-                "price": 60
-              },
-              {
-                "id": "addon-extra-cheese-3",
-                "name": "Extra Cheese",
-                "price": 120
+                "id": "dish-bacon-pizza-thin-crust",
+                "name": "Thin Crust (8 Slices)",
+                "price": 640,
+                "isVeg": false,
+                "imagePath": "/assets/pizza/bacon-pizza.avif",
+                "crustType": "thin-crust"
               }
-            ]
-          },
-          {
-            "id": "dish-creamy-spinach-mushroom-thin-crust-pizza",
-            "name": "Creamy Spinach & Mushroom - Thin Crust Pizza",
-            "category": "Panfire Thin Crust Pizza (8 slices)",
-            "isVeg": true,
-            "price": 640,
-            "basePrice": 640,
-            "description": "Mozzarella, saut\u00e9ed spinach and earthy mushrooms over a velvety white sauce.",
-            "imagePath": "/assets/pizza/creamy-spinach-mushroom.webp",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-extra-cheese-6",
-                "name": "Extra Cheese",
-                "price": 120
-              }
-            ]
-          },
-          {
-            "id": "dish-butter-paneer-thin-crust-pizza",
-            "name": "Butter Paneer - Thin Crust Pizza",
-            "category": "Panfire Thin Crust Pizza (8 slices)",
-            "isVeg": true,
-            "price": 620,
-            "basePrice": 620,
-            "description": "Rich, spiced makhani sauce with mozzarella, paneer, green chillies and a hint of fresh ginger.",
-            "imagePath": "/assets/pizza/butter-paneer-pizza.webp",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-add-burrata-3",
-                "name": "Add Burrata",
-                "price": 190
-              },
-              {
-                "id": "addon-extra-cheese-9",
-                "name": "Extra Cheese",
-                "price": 120
-              }
-            ]
-          },
-          {
-            "id": "dish-spicy-paneer-thin-crust-pizza",
-            "name": "Spicy Paneer - Thin Crust Pizza",
-            "category": "Panfire Thin Crust Pizza (8 slices)",
-            "isVeg": true,
-            "price": 620,
-            "basePrice": 620,
-            "description": "Mozzarella, marinated peri-peri paneer, spicy jalape\u00f1os and red onions over a bold, fiery marinara base.",
-            "imagePath": "/assets/burrito-wraps/spicy-grilled-paneer-burrito-bowl.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 1,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-add-burrata-6",
-                "name": "Add Burrata",
-                "price": 190
-              },
-              {
-                "id": "addon-extra-cheese-12",
-                "name": "Extra Cheese",
-                "price": 120
-              }
-            ]
-          },
-          {
-            "id": "dish-sun-rocket-thin-crust-pizza",
-            "name": "Sun & Rocket - Thin Crust Pizza",
-            "category": "Panfire Thin Crust Pizza (8 slices)",
-            "isVeg": true,
-            "price": 620,
-            "basePrice": 620,
-            "description": "Mozzarella, tangy sun-dried tomatoes, garlic and peppery rocket over a classic red sauce, finished with a balsamic reduction drizzle.",
-            "imagePath": "/assets/pizza/sun-rocket.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-extra-cheese-15",
-                "name": "Extra Cheese",
-                "price": 120
-              }
-            ]
-          },
-          {
-            "id": "dish-panfire-loaded-vegetables-thin-crust-pizza",
-            "name": "Panfire Loaded Vegetables - Thin Crust Pizza",
-            "category": "Panfire Thin Crust Pizza (8 slices)",
-            "isVeg": true,
-            "price": 620,
-            "basePrice": 620,
-            "description": "Marinara and mozzarella topped with button mushrooms, cherry tomatoes, mixed bell peppers and grilled zucchini, then finished with crumbled feta and fresh basil.",
-            "imagePath": "/assets/pizza/panfire-loaded-vegetables.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-extra-cheese-18",
-                "name": "Extra Cheese",
-                "price": 120
-              }
-            ]
-          },
-          {
-            "id": "dish-spicy-mushroom-thin-crust-pizza",
-            "name": "Spicy Mushroom - Thin Crust Pizza",
-            "category": "Panfire Thin Crust Pizza (8 slices)",
-            "isVeg": true,
-            "price": 620,
-            "basePrice": 620,
-            "description": "Mozzarella, earthy button mushrooms, spicy red paprika and red onions over a fiery peri-peri marinara base.",
-            "imagePath": "/assets/pizza/spicy-mushroom.webp",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 1,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-add-burrata-9",
-                "name": "Add Burrata",
-                "price": 190
-              },
-              {
-                "id": "addon-extra-cheese-21",
-                "name": "Extra Cheese",
-                "price": 120
-              }
-            ]
-          },
-          {
-            "id": "dish-hawaiian-thin-crust-pizza",
-            "name": "Hawaiian - Thin Crust Pizza",
-            "category": "Panfire Thin Crust Pizza (8 slices)",
-            "isVeg": true,
-            "price": 620,
-            "basePrice": 620,
-            "description": "Mozzarella, juicy pineapple, sweet corn and hot jalape\u00f1os over a classic marinara base.",
-            "imagePath": "/assets/pizza/chicken-ham-hawaiian.webp",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-extra-cheese-24",
-                "name": "Extra Cheese",
-                "price": 120
-              }
-            ]
-          },
-          {
-            "id": "dish-pesto-paneer-thin-crust-pizza",
-            "name": "Pesto Paneer - Thin Crust Pizza",
-            "category": "Panfire Thin Crust Pizza (8 slices)",
-            "isVeg": true,
-            "price": 640,
-            "basePrice": 640,
-            "description": "Classic red sauce and melted mozzarella topped with paneer, finished with a vibrant basil pesto drizzle.",
-            "imagePath": "/assets/pizza/pesto-paneer.webp",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-add-burrata-12",
-                "name": "Add Burrata",
-                "price": 190
-              },
-              {
-                "id": "addon-extra-cheese-27",
-                "name": "Extra Cheese",
-                "price": 120
-              }
-            ]
-          },
-          {
-            "id": "dish-burrata-thin-crust-pizza",
-            "name": "Burrata - Thin Crust Pizza",
-            "category": "Panfire Thin Crust Pizza (8 slices)",
-            "isVeg": true,
-            "price": 795,
-            "basePrice": 795,
-            "description": "Creamy white base with mozzarella, burrata, sweet cherry tomatoes and caramelized onions.",
-            "imagePath": "/assets/garlic-bread/asparagus-burrata.webp",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-extra-cheese-30",
-                "name": "Extra Cheese",
-                "price": 120
-              }
-            ]
-          },
-          {
-            "id": "dish-truffle-mushroom-thin-crust-pizza",
-            "name": "Truffle Mushroom - Thin Crust Pizza",
-            "category": "Panfire Thin Crust Pizza (8 slices)",
-            "isVeg": true,
-            "price": 795,
-            "basePrice": 795,
-            "description": "Mozzarella, shiitake and button mushrooms over a creamy white base, finished with a drizzle of white truffle oil.",
-            "imagePath": "/assets/pizza/truffle-mushroom.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
+            ],
             "addons": [
               {
                 "id": "addon-add-burrata-15",
                 "name": "Add Burrata",
-                "price": 190
+                "price": 120
               },
               {
-                "id": "addon-extra-cheese-33",
+                "id": "addon-extra-cheese-24",
                 "name": "Extra Cheese",
-                "price": 120
-              }
-            ]
-          },
-          {
-            "id": "dish-magic-mushroom-thin-crust-pizza",
-            "name": "Magic Mushroom - Thin Crust Pizza",
-            "category": "Panfire Thin Crust Pizza (8 slices)",
-            "isVeg": true,
-            "price": 795,
-            "basePrice": 795,
-            "description": "Mozzarella, earthy shiitake and button mushrooms paired with creamy goat cheese and fresh rocket, finished with a drizzle of balsamic reduction.",
-            "imagePath": "/assets/pizza/magic-mushroom.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-extra-cheese-36",
-                "name": "Extra Cheese",
-                "price": 120
-              }
-            ]
-          },
-          {
-            "id": "dish-4-cheese-thin-crust-pizza",
-            "name": "4 Cheese - Thin Crust Pizza",
-            "category": "Panfire Thin Crust Pizza (8 slices)",
-            "isVeg": true,
-            "price": 945,
-            "basePrice": 945,
-            "description": "An indulgent, rich blend of mozzarella, fresh bocconcini, parmesan and creamy goat cheese.",
-            "imagePath": "/assets/dim-sums/spinach-and-cream-cheese-dim-sum.webp",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-extra-cheese-39",
-                "name": "Extra Cheese",
-                "price": 120
-              }
-            ]
-          },
-          {
-            "id": "dish-3-cheese-asparagus-pesto-thin-crust-pizza",
-            "name": "3 Cheese Asparagus Pesto - Thin Crust Pizza",
-            "category": "Panfire Thin Crust Pizza (8 slices)",
-            "isVeg": true,
-            "price": 945,
-            "basePrice": 945,
-            "description": "Vibrant basil pesto base with tender asparagus, mozzarella, rich burrata, rocket leaves and parmesan, finished with a balsamic reduction drizzle.",
-            "imagePath": "/assets/pizza/3-cheese-asparagus-pesto.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-extra-cheese-42",
-                "name": "Extra Cheese",
-                "price": 120
-              }
-            ]
-          },
-          {
-            "id": "dish-panfire-overload-chicken-thin-crust-pizza",
-            "name": "Panfire Overload Chicken - Thin Crust Pizza",
-            "category": "Panfire Thin Crust Pizza (8 slices)",
-            "isVeg": false,
-            "price": 640,
-            "basePrice": 640,
-            "description": "Classic marinara and melted mozzarella topped with grilled chicken, smoked chicken and chicken sausage.",
-            "imagePath": "/assets/deep-dish-pizza/panfire-overload-chicken.webp",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-add-burrata-18",
-                "name": "Add Burrata",
-                "price": 190
-              },
-              {
-                "id": "addon-extra-cheese-45",
-                "name": "Extra Cheese",
-                "price": 120
-              }
-            ]
-          },
-          {
-            "id": "dish-panfire-four-meat-thin-crust-pizza",
-            "name": "Panfire Four Meat - Thin Crust Pizza",
-            "category": "Panfire Thin Crust Pizza (8 slices)",
-            "isVeg": false,
-            "price": 795,
-            "basePrice": 795,
-            "description": "Classic marinara and melted mozzarella topped with bacon, smoked chicken, chicken sausage and chicken pepperoni.",
-            "imagePath": "/assets/deep-dish-pizza/panfire-4-meat.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-add-burrata-21",
-                "name": "Add Burrata",
-                "price": 190
-              },
-              {
-                "id": "addon-extra-cheese-48",
-                "name": "Extra Cheese",
-                "price": 120
-              }
-            ]
-          },
-          {
-            "id": "dish-chicken-pepperoni-thin-crust-pizza",
-            "name": "Chicken Pepperoni - Thin Crust Pizza",
-            "category": "Panfire Thin Crust Pizza (8 slices)",
-            "isVeg": false,
-            "price": 640,
-            "basePrice": 640,
-            "description": "Classic marinara layered with melted mozzarella, chicken pepperoni and spicy jalape\u00f1os.",
-            "imagePath": "/assets/garlic-bread/pepperoni.webp",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-add-burrata-24",
-                "name": "Add Burrata",
-                "price": 190
-              },
-              {
-                "id": "addon-extra-cheese-51",
-                "name": "Extra Cheese",
-                "price": 120
-              }
-            ]
-          },
-          {
-            "id": "dish-panfire-pollo-thin-crust-pizza",
-            "name": "Panfire Pollo - Thin Crust Pizza",
-            "category": "Panfire Thin Crust Pizza (8 slices)",
-            "isVeg": false,
-            "price": 945,
-            "basePrice": 945,
-            "description": "Smoked chicken, earthy button mushrooms and caramelised onions over classic marinara and mozzarella, finished with creamy goat cheese.",
-            "imagePath": "/assets/pizza/panfire-pollo.webp",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-add-burrata-27",
-                "name": "Add Burrata",
-                "price": 190
-              },
-              {
-                "id": "addon-extra-cheese-54",
-                "name": "Extra Cheese",
-                "price": 120
-              }
-            ]
-          },
-          {
-            "id": "dish-butter-chicken-thin-crust-pizza",
-            "name": "Butter Chicken - Thin Crust Pizza",
-            "category": "Panfire Thin Crust Pizza (8 slices)",
-            "isVeg": false,
-            "price": 640,
-            "basePrice": 640,
-            "description": "Grilled butter chicken over a rich makhani sauce and mozzarella, finished with fresh coriander, green chillies and ginger.",
-            "imagePath": "/assets/pizza/butter-chicken-pizza.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-add-burrata-30",
-                "name": "Add Burrata",
-                "price": 190
-              },
-              {
-                "id": "addon-extra-cheese-57",
-                "name": "Extra Cheese",
-                "price": 120
-              }
-            ]
-          },
-          {
-            "id": "dish-grilled-chicken-roasted-peppers-thin-crust-pizza",
-            "name": "Grilled Chicken & Roasted Peppers - Thin Crust Pizza",
-            "category": "Panfire Thin Crust Pizza (8 slices)",
-            "isVeg": false,
-            "price": 640,
-            "basePrice": 640,
-            "description": "Grilled chicken, roasted bell peppers and red onions over classic marinara and melted mozzarella, finished with a touch of red paprika.",
-            "imagePath": "/assets/pizza/grilled-chicken-and-roasted-peppers.webp",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-add-burrata-33",
-                "name": "Add Burrata",
-                "price": 190
-              },
-              {
-                "id": "addon-extra-cheese-60",
-                "name": "Extra Cheese",
-                "price": 120
-              }
-            ]
-          },
-          {
-            "id": "dish-pesto-smoked-chicken-rocket-thin-crust-pizza",
-            "name": "Pesto Smoked Chicken & Rocket - Thin Crust Pizza",
-            "category": "Panfire Thin Crust Pizza (8 slices)",
-            "isVeg": false,
-            "price": 795,
-            "basePrice": 795,
-            "description": "Smoked chicken and mozzarella topped with fresh rocket, basil pesto and a balsamic drizzle.",
-            "imagePath": "/assets/pizza/pesto-smoked-chicken-and-rocket.webp",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-add-burrata-36",
-                "name": "Add Burrata",
-                "price": 190
-              },
-              {
-                "id": "addon-extra-cheese-63",
-                "name": "Extra Cheese",
-                "price": 120
-              }
-            ]
-          },
-          {
-            "id": "dish-smoked-chicken-paprika-thin-crust-pizza",
-            "name": "Smoked Chicken Paprika - Thin Crust Pizza",
-            "category": "Panfire Thin Crust Pizza (8 slices)",
-            "isVeg": false,
-            "price": 640,
-            "basePrice": 640,
-            "description": "Smoked chicken, red onions and sliced paprika over classic marinara and melted mozzarella.",
-            "imagePath": "/assets/pizza/pesto-smoked-chicken-and-rocket.webp",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-add-burrata-39",
-                "name": "Add Burrata",
-                "price": 190
-              },
-              {
-                "id": "addon-extra-cheese-66",
-                "name": "Extra Cheese",
-                "price": 120
-              }
-            ]
-          },
-          {
-            "id": "dish-grilled-chicken-spinach-mushroom-thin-crust-pizza",
-            "name": "Grilled Chicken, Spinach & Mushroom - Thin Crust Pizza",
-            "category": "Panfire Thin Crust Pizza (8 slices)",
-            "isVeg": false,
-            "price": 640,
-            "basePrice": 640,
-            "description": "Creamy white sauce layered with melted mozzarella, grilled chicken, saut\u00e9ed spinach and earthy mushrooms.",
-            "imagePath": "/assets/pizza/grilled-chicken-spinach-and-mushroom.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-add-burrata-42",
-                "name": "Add Burrata",
-                "price": 190
-              },
-              {
-                "id": "addon-extra-cheese-69",
-                "name": "Extra Cheese",
-                "price": 120
-              }
-            ]
-          },
-          {
-            "id": "dish-bacon-thin-crust-pizza",
-            "name": "Bacon - Thin Crust Pizza",
-            "category": "Panfire Thin Crust Pizza (8 slices)",
-            "isVeg": false,
-            "price": 640,
-            "basePrice": 640,
-            "description": "Bacon and caramelised onions over a creamy white sauce and melted mozzarella.",
-            "imagePath": "/assets/garlic-bread/bacon-and-mushroom.webp",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-add-burrata-45",
-                "name": "Add Burrata",
-                "price": 190
-              },
-              {
-                "id": "addon-extra-cheese-72",
-                "name": "Extra Cheese",
-                "price": 120
+                "price": 70
               }
             ]
           }
@@ -2146,10 +1452,488 @@ export const RESTAURANT_MENU_ACCORDIONS: CategoryAccordionData[] = [
     ]
   },
   {
-    "id": "dim-sum-momos-baos",
-    "title": "Dim Sum, Momos & Handcrafted Baos",
-    "description": "Delicate steamed dumplings, Himalayan momos, and cloud-soft Taiwanese bao buns.",
-    "badge": "Freshly Steamed",
+    "id": "sushi",
+    "title": "Sushi",
+    "description": "Freshly rolled maki and uramaki rolls with premium Japanese ingredients.",
+    "badge": "Master Rolled",
+    "subcategories": [
+      {
+        "id": "veg-sushi-4pcs",
+        "title": "Vegetarian Sushi (4 Pcs)",
+        "isVegSection": true,
+        "items": [
+          {
+            "id": "asian-california-veg-sushi-4-pieces",
+            "name": "California Veg Sushi - 4 pieces",
+            "category": "Sushi - 4 Pieces",
+            "isVeg": true,
+            "price": 315,
+            "basePrice": 315,
+            "description": "Cucumber, avocado, carrot and Japanese mayo.",
+            "imagePath": "/assets/sushi/california-veg-sushi.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-avocado-cream-cheese-sushi-4-pieces",
+            "name": "Avocado & Cream Cheese Sushi- 4 pieces",
+            "category": "Sushi - 4 Pieces",
+            "isVeg": true,
+            "price": 345,
+            "basePrice": 345,
+            "description": "Avocado, jalape\u00f1o, sesame seeds and cream cheese.",
+            "imagePath": "/assets/sushi/avocado-and-cream-cheese-sushi.webp",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-asparagus-tempura-sushi-4-pieces",
+            "name": "Asparagus Tempura Sushi - 4 pieces",
+            "category": "Sushi - 4 Pieces",
+            "isVeg": true,
+            "price": 315,
+            "basePrice": 315,
+            "description": "Crispy asparagus tempura, carrot, cucumber and spicy mayo.",
+            "imagePath": "/assets/sushi/asparagus-tempura-sushi.webp",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-yasai-tempura-sushi-4-pieces",
+            "name": "Yasai Tempura Sushi - 4 pieces",
+            "category": "Sushi - 4 Pieces",
+            "isVeg": true,
+            "price": 315,
+            "basePrice": 315,
+            "description": "Crispy tempura vegetables, bell peppers, wasabi mayo and tanuki.",
+            "imagePath": "/assets/sushi/yassai-tempura-sushi.webp",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-crispy-mushroom-sushi-4-pieces",
+            "name": "Crispy Mushroom Sushi - 4 pieces",
+            "category": "Sushi - 4 Pieces",
+            "isVeg": true,
+            "price": 315,
+            "basePrice": 315,
+            "description": "Crispy peri-peri mushroom, cucumber, avocado, carrot, teriyaki and wasabi mayo.",
+            "imagePath": "/assets/sushi/crispy-spinach-sushi.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-rainbow-sushi-4-pieces",
+            "name": "Rainbow Sushi - 4 pieces",
+            "category": "Sushi - 4 Pieces",
+            "isVeg": true,
+            "price": 375,
+            "basePrice": 375,
+            "description": "Cream cheese, beetroot, seasonal fruit and cucumber.",
+            "imagePath": "/assets/sushi/rainbow-sushi.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-crispy-spinach-sushi-4-pieces",
+            "name": "Crispy Spinach Sushi - 4 pieces",
+            "category": "Sushi - 4 Pieces",
+            "isVeg": true,
+            "price": 315,
+            "basePrice": 315,
+            "description": "Carrot, crispy spinach, dynamite sauce and Japanese mayo, topped with spinach crumbs.",
+            "imagePath": "/assets/sushi/crispy-spinach-sushi.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          }
+        ]
+      },
+      {
+        "id": "nonveg-sushi-4pcs",
+        "title": "Non-Vegetarian Sushi (4 Pcs)",
+        "isVegSection": false,
+        "items": [
+          {
+            "id": "asian-american-california-sushi-4-pieces",
+            "name": "American California Sushi- 4 pieces",
+            "category": "Sushi - 4 Pieces",
+            "isVeg": false,
+            "price": 345,
+            "basePrice": 345,
+            "description": "Grilled chicken, avocado, cucumber and sesame seeds, finished with Japanese mayo and wasabi mayo.",
+            "imagePath": "/assets/sushi/american-california-chicken-sushi.webp",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-peri-peri-chicken-sushi-4-pieces",
+            "name": "Peri-Peri Chicken Sushi- 4 pieces",
+            "category": "Sushi - 4 Pieces",
+            "isVeg": false,
+            "price": 345,
+            "basePrice": 345,
+            "description": "Peri-peri grilled chicken, carrot and spicy mayo.",
+            "imagePath": "/assets/sushi/peri-peri-chicken-sushi.webp",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-katsu-chicken-sushi-4-pieces",
+            "name": "Katsu Chicken Sushi - 4 pieces",
+            "category": "Sushi - 4 Pieces",
+            "isVeg": false,
+            "price": 345,
+            "basePrice": 345,
+            "description": "Grilled chicken, cucumber and carrot, in a crispy tempura-fried roll served with spicy mayo.",
+            "imagePath": "/assets/sushi/katsu-chicken-sushi.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-teriyaki-chicken-sushi-4-pieces",
+            "name": "Teriyaki Chicken Sushi - 4 pieces",
+            "category": "Sushi - 4 Pieces",
+            "isVeg": false,
+            "price": 345,
+            "basePrice": 345,
+            "description": "Chicken tempura, sesame seeds, spicy mayo and teriyaki glaze.",
+            "imagePath": "/assets/sushi/teriyaki-chicken-sushi.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-dragon-uramaki-sushi-4-pieces",
+            "name": "Dragon Uramaki Sushi- 4 pieces",
+            "category": "Sushi - 4 Pieces",
+            "isVeg": false,
+            "price": 395,
+            "basePrice": 395,
+            "description": "Prawn tempura and avocado with spicy mayo, sesame seeds and tanuki.",
+            "imagePath": "/assets/sushi/dragon-uramaki.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-prawn-rock-n-roll-sushi-4-pieces",
+            "name": "Prawn Rock 'N' Roll Sushi- 4 pieces",
+            "category": "Sushi - 4 Pieces",
+            "isVeg": false,
+            "price": 445,
+            "basePrice": 445,
+            "description": "Prawn tempura, avocado and cucumber, topped with crispy dynamite prawns, spicy mayo, teriyaki, sesame and tanuki.",
+            "imagePath": "/assets/sushi/avocado-and-cream-cheese-sushi.webp",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          }
+        ]
+      },
+      {
+        "id": "veg-sushi-8pcs",
+        "title": "Vegetarian Sushi (8 Pcs)",
+        "isVegSection": true,
+        "items": [
+          {
+            "id": "asian-california-veg-sushi-8-pieces",
+            "name": "California Veg Sushi - 8 pieces",
+            "category": "Sushi - 8 Pieces",
+            "isVeg": true,
+            "price": 545,
+            "basePrice": 545,
+            "description": "Cucumber, avocado, carrot and Japanese mayo.",
+            "imagePath": "/assets/sushi/california-veg-sushi.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-avocado-cream-cheese-sushi-8-pieces",
+            "name": "Avocado & Cream Cheese Sushi- 8 pieces",
+            "category": "Sushi - 8 Pieces",
+            "isVeg": true,
+            "price": 595,
+            "basePrice": 595,
+            "description": "Avocado, jalape\u00f1o, sesame seeds and cream cheese.",
+            "imagePath": "/assets/sushi/avocado-and-cream-cheese-sushi.webp",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-asparagus-tempura-sushi-8-pieces",
+            "name": "Asparagus Tempura Sushi - 8 pieces",
+            "category": "Sushi - 8 Pieces",
+            "isVeg": true,
+            "price": 545,
+            "basePrice": 545,
+            "description": "Crispy asparagus tempura, carrot, cucumber and spicy mayo.",
+            "imagePath": "/assets/sushi/asparagus-tempura-sushi.webp",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-yasai-tempura-sushi-8-pieces",
+            "name": "Yasai Tempura Sushi - 8 pieces",
+            "category": "Sushi - 8 Pieces",
+            "isVeg": true,
+            "price": 545,
+            "basePrice": 545,
+            "description": "Crispy tempura vegetables, bell peppers, wasabi mayo and tanuki.",
+            "imagePath": "/assets/sushi/yassai-tempura-sushi.webp",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-crispy-mushroom-sushi-8-pieces",
+            "name": "Crispy Mushroom Sushi - 8 pieces",
+            "category": "Sushi - 8 Pieces",
+            "isVeg": true,
+            "price": 545,
+            "basePrice": 545,
+            "description": "Crispy peri-peri mushroom, cucumber, avocado, carrot, teriyaki and wasabi mayo.",
+            "imagePath": "/assets/sushi/crispy-spinach-sushi.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-rainbow-sushi-8-pieces",
+            "name": "Rainbow Sushi - 8 pieces",
+            "category": "Sushi - 8 Pieces",
+            "isVeg": true,
+            "price": 645,
+            "basePrice": 645,
+            "description": "Cream cheese, beetroot, seasonal fruit and cucumber.",
+            "imagePath": "/assets/sushi/rainbow-sushi.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-crispy-spinach-sushi-8-pieces",
+            "name": "Crispy Spinach Sushi - 8 pieces",
+            "category": "Sushi - 8 Pieces",
+            "isVeg": true,
+            "price": 545,
+            "basePrice": 545,
+            "description": "Carrot, crispy spinach, dynamite sauce and Japanese mayo, topped with spinach crumbs.",
+            "imagePath": "/assets/sushi/crispy-spinach-sushi.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          }
+        ]
+      },
+      {
+        "id": "nonveg-sushi-8pcs",
+        "title": "Non-Vegetarian Sushi (8 Pcs)",
+        "isVegSection": false,
+        "items": [
+          {
+            "id": "asian-american-california-sushi-8-pieces",
+            "name": "American California Sushi- 8 pieces",
+            "category": "Sushi - 8 Pieces",
+            "isVeg": false,
+            "price": 595,
+            "basePrice": 595,
+            "description": "Grilled chicken, avocado, cucumber and sesame seeds, finished with Japanese mayo and wasabi mayo.",
+            "imagePath": "/assets/sushi/american-california-chicken-sushi.webp",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-peri-peri-chicken-sushi-8-pieces",
+            "name": "Peri-Peri Chicken Sushi- 8 pieces",
+            "category": "Sushi - 8 Pieces",
+            "isVeg": false,
+            "price": 595,
+            "basePrice": 595,
+            "description": "Peri-peri grilled chicken, carrot and spicy mayo.",
+            "imagePath": "/assets/sushi/peri-peri-chicken-sushi.webp",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-katsu-chicken-sushi-8-pieces",
+            "name": "Katsu Chicken Sushi - 8 pieces",
+            "category": "Sushi - 8 Pieces",
+            "isVeg": false,
+            "price": 595,
+            "basePrice": 595,
+            "description": "Grilled chicken, cucumber and carrot, in a crispy tempura-fried roll served with spicy mayo.",
+            "imagePath": "/assets/sushi/katsu-chicken-sushi.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-teriyaki-chicken-sushi-8-pieces",
+            "name": "Teriyaki Chicken Sushi - 8 pieces",
+            "category": "Sushi - 8 Pieces",
+            "isVeg": false,
+            "price": 595,
+            "basePrice": 595,
+            "description": "Chicken tempura, sesame seeds, spicy mayo and teriyaki glaze.",
+            "imagePath": "/assets/sushi/teriyaki-chicken-sushi.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-dragon-uramaki-sushi-8-pieces",
+            "name": "Dragon Uramaki Sushi- 8 pieces",
+            "category": "Sushi - 8 Pieces",
+            "isVeg": false,
+            "price": 645,
+            "basePrice": 645,
+            "description": "Prawn tempura and avocado with spicy mayo, sesame seeds and tanuki.",
+            "imagePath": "/assets/sushi/dragon-uramaki.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-prawn-rock-n-roll-sushi-8-pieces",
+            "name": "Prawn Rock 'N' Roll Sushi- 8 pieces",
+            "category": "Sushi - 8 Pieces",
+            "isVeg": false,
+            "price": 895,
+            "basePrice": 895,
+            "description": "Prawn tempura, avocado and cucumber, topped with crispy dynamite prawns, spicy mayo, teriyaki, sesame and tanuki.",
+            "imagePath": "/assets/sushi/avocado-and-cream-cheese-sushi.webp",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "dim-sum",
+    "title": "Dim Sum",
+    "description": "Delicate translucent steamed dumplings crafted fresh to order.",
+    "badge": "Handcrafted",
     "subcategories": [
       {
         "id": "veg-dim-sum",
@@ -2266,7 +2050,15 @@ export const RESTAURANT_MENU_ACCORDIONS: CategoryAccordionData[] = [
             "addons": []
           }
         ]
-      },
+      }
+    ]
+  },
+  {
+    "id": "momo",
+    "title": "Momo",
+    "description": "Steamed and pan-fried Himalayan momos and crisp Japanese gyozas.",
+    "badge": "Steamed & Crisp",
+    "subcategories": [
       {
         "id": "veg-momos",
         "title": "Vegetarian Momos & Gyozas (6 Pcs)",
@@ -2399,10 +2191,18 @@ export const RESTAURANT_MENU_ACCORDIONS: CategoryAccordionData[] = [
             "addons": []
           }
         ]
-      },
+      }
+    ]
+  },
+  {
+    "id": "baos",
+    "title": "Baos",
+    "description": "Cloud-soft steamed Taiwanese open buns loaded with savoury fillings.",
+    "badge": "Cloud Soft",
+    "subcategories": [
       {
         "id": "veg-baos",
-        "title": "Vegetarian Handcrafted Baos (2 Pcs)",
+        "title": "Vegetarian Baos (2 Pcs)",
         "isVegSection": true,
         "items": [
           {
@@ -2443,7 +2243,7 @@ export const RESTAURANT_MENU_ACCORDIONS: CategoryAccordionData[] = [
       },
       {
         "id": "nonveg-baos",
-        "title": "Non-Vegetarian Handcrafted Baos (2 Pcs)",
+        "title": "Non-Vegetarian Baos (2 Pcs)",
         "isVegSection": false,
         "items": [
           {
@@ -2536,477 +2336,341 @@ export const RESTAURANT_MENU_ACCORDIONS: CategoryAccordionData[] = [
     ]
   },
   {
-    "id": "sushi-bar",
-    "title": "Artisanal Sushi Bar (4 & 8 Pieces)",
-    "description": "Freshly rolled maki and uramaki with seasoned Japanese short-grain rice and house pickles.",
-    "badge": "Master Rolled",
+    "id": "pasta",
+    "title": "Pasta",
+    "description": "Hand-rolled artisanal spaghetti and penne with authentic Italian sugo.",
+    "badge": "Fresh Sugo",
     "subcategories": [
       {
-        "id": "veg-sushi-4pcs",
-        "title": "Vegetarian Sushi - 4 Pieces",
+        "id": "veg-pastas",
+        "title": "Vegetarian Pastas",
         "isVegSection": true,
         "items": [
           {
-            "id": "asian-california-veg-sushi-4-pieces",
-            "name": "California Veg Sushi - 4 pieces",
-            "category": "Sushi - 4 Pieces",
+            "id": "dish-arrabbiata-pasta",
+            "name": "Arrabbiata Pasta",
+            "category": "Pasta",
             "isVeg": true,
-            "price": 315,
-            "basePrice": 315,
-            "description": "Cucumber, avocado, carrot and Japanese mayo.",
-            "imagePath": "/assets/sushi/california-veg-sushi.avif",
+            "price": 365,
+            "basePrice": 365,
+            "description": "Fiery San Marzano tomato sauce tossed with fresh capsicum, broccoli and zucchini.",
+            "imagePath": "/assets/pasta/arrabbiata-pasta.avif",
             "isAvailable": true,
             "isChefSpecial": false,
             "isBestseller": false,
             "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
+            "hasVariants": true,
+            "variants": [
+              {
+                "id": "var-spaghetti",
+                "name": "Spaghetti",
+                "price": 365,
+                "isVeg": true
+              },
+              {
+                "id": "var-penne",
+                "name": "Penne",
+                "price": 365,
+                "isVeg": true
+              }
+            ],
+            "addons": [
+              {
+                "id": "addon-spaghetti-add-grilled-chicken",
+                "name": "Spaghetti / Add Grilled Chicken",
+                "price": 50
+              },
+              {
+                "id": "addon-penne-add-grilled-chicken",
+                "name": "Penne / Add Grilled Chicken",
+                "price": 50
+              }
+            ]
           },
           {
-            "id": "asian-avocado-cream-cheese-sushi-4-pieces",
-            "name": "Avocado & Cream Cheese Sushi- 4 pieces",
-            "category": "Sushi - 4 Pieces",
+            "id": "dish-alfredo-pasta",
+            "name": "Alfredo Pasta",
+            "category": "Pasta",
             "isVeg": true,
-            "price": 345,
-            "basePrice": 345,
-            "description": "Avocado, jalape\u00f1o, sesame seeds and cream cheese.",
-            "imagePath": "/assets/sushi/avocado-and-cream-cheese-sushi.webp",
+            "price": 365,
+            "basePrice": 365,
+            "description": "Velvety parmesan cream sauce tossed with garlic-herb saut\u00e9ed mushrooms.",
+            "imagePath": "/assets/pasta/alfredo-pasta.avif",
             "isAvailable": true,
             "isChefSpecial": false,
             "isBestseller": false,
             "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
+            "hasVariants": true,
+            "variants": [
+              {
+                "id": "var-spaghetti-3",
+                "name": "Spaghetti",
+                "price": 365,
+                "isVeg": true
+              },
+              {
+                "id": "var-penne-3",
+                "name": "Penne",
+                "price": 365,
+                "isVeg": true
+              }
+            ],
+            "addons": [
+              {
+                "id": "addon-spaghetti-add-grilled-chicken-2",
+                "name": "Spaghetti / Add Grilled Chicken",
+                "price": 50
+              },
+              {
+                "id": "addon-penne-add-grilled-chicken-2",
+                "name": "Penne / Add Grilled Chicken",
+                "price": 50
+              }
+            ]
           },
           {
-            "id": "asian-asparagus-tempura-sushi-4-pieces",
-            "name": "Asparagus Tempura Sushi - 4 pieces",
-            "category": "Sushi - 4 Pieces",
+            "id": "dish-pesto-pasta",
+            "name": "Pesto Pasta",
+            "category": "Pasta",
             "isVeg": true,
-            "price": 315,
-            "basePrice": 315,
-            "description": "Crispy asparagus tempura, carrot, cucumber and spicy mayo.",
-            "imagePath": "/assets/sushi/asparagus-tempura-sushi.webp",
+            "price": 365,
+            "basePrice": 365,
+            "description": "Vibrant house-made basil pesto tossed with bell peppers, broccoli and zucchini.",
+            "imagePath": "/assets/pasta/pesto-pastaa.avif",
             "isAvailable": true,
             "isChefSpecial": false,
             "isBestseller": false,
             "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
+            "hasVariants": true,
+            "variants": [
+              {
+                "id": "var-spaghetti-5",
+                "name": "Spaghetti",
+                "price": 365,
+                "isVeg": true
+              },
+              {
+                "id": "var-penne-5",
+                "name": "Penne",
+                "price": 365,
+                "isVeg": true
+              }
+            ],
+            "addons": [
+              {
+                "id": "addon-spaghetti-add-grilled-chicken-3",
+                "name": "Spaghetti / Add Grilled Chicken",
+                "price": 50
+              },
+              {
+                "id": "addon-penne-add-grilled-chicken-3",
+                "name": "Penne / Add Grilled Chicken",
+                "price": 50
+              }
+            ]
           },
           {
-            "id": "asian-yasai-tempura-sushi-4-pieces",
-            "name": "Yasai Tempura Sushi - 4 pieces",
-            "category": "Sushi - 4 Pieces",
+            "id": "dish-aglio-e-olio-pasta",
+            "name": "Aglio e Olio Pasta",
+            "category": "Pasta",
             "isVeg": true,
-            "price": 315,
-            "basePrice": 315,
-            "description": "Crispy tempura vegetables, bell peppers, wasabi mayo and tanuki.",
-            "imagePath": "/assets/sushi/yassai-tempura-sushi.webp",
+            "price": 365,
+            "basePrice": 365,
+            "description": "Spaghetti tossed in extra-virgin olive oil, garlic, sun-dried tomatoes and black olives.",
+            "imagePath": "/assets/pasta/aglio-olio-pasta.avif",
             "isAvailable": true,
             "isChefSpecial": false,
             "isBestseller": false,
             "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
+            "hasVariants": true,
+            "variants": [
+              {
+                "id": "var-spaghetti-7",
+                "name": "Spaghetti",
+                "price": 365,
+                "isVeg": true
+              },
+              {
+                "id": "var-penne-7",
+                "name": "Penne",
+                "price": 365,
+                "isVeg": true
+              }
+            ],
+            "addons": [
+              {
+                "id": "addon-add-grilled-chicken",
+                "name": "Add Grilled Chicken",
+                "price": 50
+              }
+            ]
           },
           {
-            "id": "asian-crispy-mushroom-sushi-4-pieces",
-            "name": "Crispy Mushroom Sushi - 4 pieces",
-            "category": "Sushi - 4 Pieces",
+            "id": "dish-ros-pasta",
+            "name": "Ros\u00e9 Pasta",
+            "category": "Pasta",
             "isVeg": true,
-            "price": 315,
-            "basePrice": 315,
-            "description": "Crispy peri-peri mushroom, cucumber, avocado, carrot, teriyaki and wasabi mayo.",
-            "imagePath": "/assets/sushi/crispy-spinach-sushi.avif",
+            "price": 365,
+            "basePrice": 365,
+            "description": "A creamy blend of white sauce and tangy tomato sauce, tossed with fresh garden vegetables.",
+            "imagePath": "/assets/pasta/rose-pasta.webp",
             "isAvailable": true,
             "isChefSpecial": false,
             "isBestseller": false,
             "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "asian-rainbow-sushi-4-pieces",
-            "name": "Rainbow Sushi - 4 pieces",
-            "category": "Sushi - 4 Pieces",
-            "isVeg": true,
-            "price": 375,
-            "basePrice": 375,
-            "description": "Cream cheese, beetroot, seasonal fruit and cucumber.",
-            "imagePath": "/assets/sushi/rainbow-sushi.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "asian-crispy-spinach-sushi-4-pieces",
-            "name": "Crispy Spinach Sushi - 4 pieces",
-            "category": "Sushi - 4 Pieces",
-            "isVeg": true,
-            "price": 315,
-            "basePrice": 315,
-            "description": "Carrot, crispy spinach, dynamite sauce and Japanese mayo, topped with spinach crumbs.",
-            "imagePath": "/assets/sushi/crispy-spinach-sushi.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
+            "hasVariants": true,
+            "variants": [
+              {
+                "id": "var-spaghetti-8",
+                "name": "Spaghetti",
+                "price": 365,
+                "isVeg": true
+              },
+              {
+                "id": "var-penne-8",
+                "name": "Penne",
+                "price": 365,
+                "isVeg": true
+              }
+            ],
+            "addons": [
+              {
+                "id": "addon-spaghetti-add-grilled-chicken-4",
+                "name": "Spaghetti / Add Grilled Chicken",
+                "price": 50
+              },
+              {
+                "id": "addon-penne-add-grilled-chicken-4",
+                "name": "Penne / Add Grilled Chicken",
+                "price": 50
+              }
+            ]
           }
         ]
       },
       {
-        "id": "nonveg-sushi-4pcs",
-        "title": "Non-Vegetarian Sushi - 4 Pieces",
+        "id": "nonveg-pastas",
+        "title": "Non-Vegetarian Pastas",
         "isVegSection": false,
         "items": [
           {
-            "id": "asian-american-california-sushi-4-pieces",
-            "name": "American California Sushi- 4 pieces",
-            "category": "Sushi - 4 Pieces",
-            "isVeg": false,
-            "price": 345,
-            "basePrice": 345,
-            "description": "Grilled chicken, avocado, cucumber and sesame seeds, finished with Japanese mayo and wasabi mayo.",
-            "imagePath": "/assets/sushi/american-california-chicken-sushi.webp",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "asian-peri-peri-chicken-sushi-4-pieces",
-            "name": "Peri-Peri Chicken Sushi- 4 pieces",
-            "category": "Sushi - 4 Pieces",
-            "isVeg": false,
-            "price": 345,
-            "basePrice": 345,
-            "description": "Peri-peri grilled chicken, carrot and spicy mayo.",
-            "imagePath": "/assets/sushi/peri-peri-chicken-sushi.webp",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "asian-katsu-chicken-sushi-4-pieces",
-            "name": "Katsu Chicken Sushi - 4 pieces",
-            "category": "Sushi - 4 Pieces",
-            "isVeg": false,
-            "price": 345,
-            "basePrice": 345,
-            "description": "Grilled chicken, cucumber and carrot, in a crispy tempura-fried roll served with spicy mayo.",
-            "imagePath": "/assets/sushi/katsu-chicken-sushi.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "asian-teriyaki-chicken-sushi-4-pieces",
-            "name": "Teriyaki Chicken Sushi - 4 pieces",
-            "category": "Sushi - 4 Pieces",
-            "isVeg": false,
-            "price": 345,
-            "basePrice": 345,
-            "description": "Chicken tempura, sesame seeds, spicy mayo and teriyaki glaze.",
-            "imagePath": "/assets/sushi/teriyaki-chicken-sushi.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "asian-dragon-uramaki-sushi-4-pieces",
-            "name": "Dragon Uramaki Sushi- 4 pieces",
-            "category": "Sushi - 4 Pieces",
-            "isVeg": false,
-            "price": 395,
-            "basePrice": 395,
-            "description": "Prawn tempura and avocado with spicy mayo, sesame seeds and tanuki.",
-            "imagePath": "/assets/sushi/dragon-uramaki.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "asian-prawn-rock-n-roll-sushi-4-pieces",
-            "name": "Prawn Rock 'N' Roll Sushi- 4 pieces",
-            "category": "Sushi - 4 Pieces",
-            "isVeg": false,
-            "price": 445,
-            "basePrice": 445,
-            "description": "Prawn tempura, avocado and cucumber, topped with crispy dynamite prawns, spicy mayo, teriyaki, sesame and tanuki.",
-            "imagePath": "/assets/sushi/avocado-and-cream-cheese-sushi.webp",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          }
-        ]
-      },
-      {
-        "id": "veg-sushi-8pcs",
-        "title": "Vegetarian Sushi - 8 Pieces",
-        "isVegSection": true,
-        "items": [
-          {
-            "id": "asian-california-veg-sushi-8-pieces",
-            "name": "California Veg Sushi - 8 pieces",
-            "category": "Sushi - 8 Pieces",
+            "id": "dish-penne",
+            "name": "Penne",
+            "category": "Pasta",
             "isVeg": true,
-            "price": 545,
-            "basePrice": 545,
-            "description": "Cucumber, avocado, carrot and Japanese mayo.",
-            "imagePath": "/assets/sushi/california-veg-sushi.avif",
+            "price": 365,
+            "basePrice": 365,
+            "description": "Fresh Penne prepared with tender protein and chef's dressings.",
+            "imagePath": "/assets/pasta/alfredo-pasta.avif",
             "isAvailable": true,
             "isChefSpecial": false,
             "isBestseller": false,
             "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
+            "hasVariants": true,
+            "variants": [
+              {
+                "id": "var-spaghetti-2",
+                "name": "Spaghetti",
+                "price": 365,
+                "isVeg": false
+              },
+              {
+                "id": "var-penne-2",
+                "name": "Penne",
+                "price": 365,
+                "isVeg": false
+              }
+            ],
             "addons": []
           },
           {
-            "id": "asian-avocado-cream-cheese-sushi-8-pieces",
-            "name": "Avocado & Cream Cheese Sushi- 8 pieces",
-            "category": "Sushi - 8 Pieces",
+            "id": "dish-penne-2",
+            "name": "Penne",
+            "category": "Pasta",
             "isVeg": true,
-            "price": 595,
-            "basePrice": 595,
-            "description": "Avocado, jalape\u00f1o, sesame seeds and cream cheese.",
-            "imagePath": "/assets/sushi/avocado-and-cream-cheese-sushi.webp",
+            "price": 365,
+            "basePrice": 365,
+            "description": "Fresh Penne prepared with tender protein and chef's dressings.",
+            "imagePath": "/assets/pasta/alfredo-pasta.avif",
             "isAvailable": true,
             "isChefSpecial": false,
             "isBestseller": false,
             "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
+            "hasVariants": true,
+            "variants": [
+              {
+                "id": "var-spaghetti-4",
+                "name": "Spaghetti",
+                "price": 365,
+                "isVeg": false
+              },
+              {
+                "id": "var-penne-4",
+                "name": "Penne",
+                "price": 365,
+                "isVeg": false
+              }
+            ],
             "addons": []
           },
           {
-            "id": "asian-asparagus-tempura-sushi-8-pieces",
-            "name": "Asparagus Tempura Sushi - 8 pieces",
-            "category": "Sushi - 8 Pieces",
+            "id": "dish-penne-3",
+            "name": "Penne",
+            "category": "Pasta",
             "isVeg": true,
-            "price": 545,
-            "basePrice": 545,
-            "description": "Crispy asparagus tempura, carrot, cucumber and spicy mayo.",
-            "imagePath": "/assets/sushi/asparagus-tempura-sushi.webp",
+            "price": 365,
+            "basePrice": 365,
+            "description": "Fresh Penne prepared with tender protein and chef's dressings.",
+            "imagePath": "/assets/pasta/alfredo-pasta.avif",
             "isAvailable": true,
             "isChefSpecial": false,
             "isBestseller": false,
             "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
+            "hasVariants": true,
+            "variants": [
+              {
+                "id": "var-spaghetti-6",
+                "name": "Spaghetti",
+                "price": 365,
+                "isVeg": false
+              },
+              {
+                "id": "var-penne-6",
+                "name": "Penne",
+                "price": 365,
+                "isVeg": false
+              }
+            ],
             "addons": []
           },
           {
-            "id": "asian-yasai-tempura-sushi-8-pieces",
-            "name": "Yasai Tempura Sushi - 8 pieces",
-            "category": "Sushi - 8 Pieces",
+            "id": "dish-penne-4",
+            "name": "Penne",
+            "category": "Pasta",
             "isVeg": true,
-            "price": 545,
-            "basePrice": 545,
-            "description": "Crispy tempura vegetables, bell peppers, wasabi mayo and tanuki.",
-            "imagePath": "/assets/sushi/yassai-tempura-sushi.webp",
+            "price": 365,
+            "basePrice": 365,
+            "description": "Fresh Penne prepared with tender protein and chef's dressings.",
+            "imagePath": "/assets/pasta/alfredo-pasta.avif",
             "isAvailable": true,
             "isChefSpecial": false,
             "isBestseller": false,
             "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "asian-crispy-mushroom-sushi-8-pieces",
-            "name": "Crispy Mushroom Sushi - 8 pieces",
-            "category": "Sushi - 8 Pieces",
-            "isVeg": true,
-            "price": 545,
-            "basePrice": 545,
-            "description": "Crispy peri-peri mushroom, cucumber, avocado, carrot, teriyaki and wasabi mayo.",
-            "imagePath": "/assets/sushi/crispy-spinach-sushi.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "asian-rainbow-sushi-8-pieces",
-            "name": "Rainbow Sushi - 8 pieces",
-            "category": "Sushi - 8 Pieces",
-            "isVeg": true,
-            "price": 645,
-            "basePrice": 645,
-            "description": "Cream cheese, beetroot, seasonal fruit and cucumber.",
-            "imagePath": "/assets/sushi/rainbow-sushi.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "asian-crispy-spinach-sushi-8-pieces",
-            "name": "Crispy Spinach Sushi - 8 pieces",
-            "category": "Sushi - 8 Pieces",
-            "isVeg": true,
-            "price": 545,
-            "basePrice": 545,
-            "description": "Carrot, crispy spinach, dynamite sauce and Japanese mayo, topped with spinach crumbs.",
-            "imagePath": "/assets/sushi/crispy-spinach-sushi.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          }
-        ]
-      },
-      {
-        "id": "nonveg-sushi-8pcs",
-        "title": "Non-Vegetarian Sushi - 8 Pieces",
-        "isVegSection": false,
-        "items": [
-          {
-            "id": "asian-american-california-sushi-8-pieces",
-            "name": "American California Sushi- 8 pieces",
-            "category": "Sushi - 8 Pieces",
-            "isVeg": false,
-            "price": 595,
-            "basePrice": 595,
-            "description": "Grilled chicken, avocado, cucumber and sesame seeds, finished with Japanese mayo and wasabi mayo.",
-            "imagePath": "/assets/sushi/american-california-chicken-sushi.webp",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "asian-peri-peri-chicken-sushi-8-pieces",
-            "name": "Peri-Peri Chicken Sushi- 8 pieces",
-            "category": "Sushi - 8 Pieces",
-            "isVeg": false,
-            "price": 595,
-            "basePrice": 595,
-            "description": "Peri-peri grilled chicken, carrot and spicy mayo.",
-            "imagePath": "/assets/sushi/peri-peri-chicken-sushi.webp",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "asian-katsu-chicken-sushi-8-pieces",
-            "name": "Katsu Chicken Sushi - 8 pieces",
-            "category": "Sushi - 8 Pieces",
-            "isVeg": false,
-            "price": 595,
-            "basePrice": 595,
-            "description": "Grilled chicken, cucumber and carrot, in a crispy tempura-fried roll served with spicy mayo.",
-            "imagePath": "/assets/sushi/katsu-chicken-sushi.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "asian-teriyaki-chicken-sushi-8-pieces",
-            "name": "Teriyaki Chicken Sushi - 8 pieces",
-            "category": "Sushi - 8 Pieces",
-            "isVeg": false,
-            "price": 595,
-            "basePrice": 595,
-            "description": "Chicken tempura, sesame seeds, spicy mayo and teriyaki glaze.",
-            "imagePath": "/assets/sushi/teriyaki-chicken-sushi.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "asian-dragon-uramaki-sushi-8-pieces",
-            "name": "Dragon Uramaki Sushi- 8 pieces",
-            "category": "Sushi - 8 Pieces",
-            "isVeg": false,
-            "price": 645,
-            "basePrice": 645,
-            "description": "Prawn tempura and avocado with spicy mayo, sesame seeds and tanuki.",
-            "imagePath": "/assets/sushi/dragon-uramaki.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "asian-prawn-rock-n-roll-sushi-8-pieces",
-            "name": "Prawn Rock 'N' Roll Sushi- 8 pieces",
-            "category": "Sushi - 8 Pieces",
-            "isVeg": false,
-            "price": 895,
-            "basePrice": 895,
-            "description": "Prawn tempura, avocado and cucumber, topped with crispy dynamite prawns, spicy mayo, teriyaki, sesame and tanuki.",
-            "imagePath": "/assets/sushi/avocado-and-cream-cheese-sushi.webp",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
+            "hasVariants": true,
+            "variants": [
+              {
+                "id": "var-spaghetti-9",
+                "name": "Spaghetti",
+                "price": 365,
+                "isVeg": false
+              },
+              {
+                "id": "var-penne-9",
+                "name": "Penne",
+                "price": 365,
+                "isVeg": false
+              }
+            ],
             "addons": []
           }
         ]
@@ -3014,722 +2678,14 @@ export const RESTAURANT_MENU_ACCORDIONS: CategoryAccordionData[] = [
     ]
   },
   {
-    "id": "asian-wok-soups-bowls",
-    "title": "Asian Soups, Noodles & Wok Curries",
-    "description": "Simmered broths, wok-charred noodles, rich coconut curries, and loaded rice bowls.",
-    "badge": "Wok & Broth",
+    "id": "noodles",
+    "title": "Noodles",
+    "description": "Wok-charred noodles, rich ramen broths, and street-style noodles.",
+    "badge": "Wok Tossed",
     "subcategories": [
       {
-        "id": "veg-asian-soups",
-        "title": "Vegetarian Asian Soups",
-        "isVegSection": true,
-        "items": [
-          {
-            "id": "asian-manchow-soup-vegetarian",
-            "name": "Manchow Soup (Vegetarian)",
-            "category": "Soups",
-            "isVeg": true,
-            "price": 175,
-            "basePrice": 175,
-            "description": "Authentic Manchow Soup (Vegetarian) prepared with Asian herbs and wok fire.",
-            "imagePath": "/assets/soups/manchow-soup.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "asian-tom-kha-soup-vegetarian",
-            "name": "Tom Kha Soup (Vegetarian)",
-            "category": "Soups",
-            "isVeg": true,
-            "price": 215,
-            "basePrice": 215,
-            "description": "Creamy Thai coconut broth with galangal, lemongrass and kaffir lime leaves.",
-            "imagePath": "/assets/soups/tom-kha-soup.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "asian-sweet-corn-soup-vegetarian",
-            "name": "Sweet Corn Soup (Vegetarian)",
-            "category": "Soups",
-            "isVeg": true,
-            "price": 145,
-            "basePrice": 145,
-            "description": "Creamy Thai coconut broth with galangal, lemongrass and kaffir lime leaves.",
-            "imagePath": "/assets/soups/sweet-corn-soup.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "asian-hot-sour-soup-vegetarian",
-            "name": "Hot & Sour Soup (Vegetarian)",
-            "category": "Soups",
-            "isVeg": true,
-            "price": 175,
-            "basePrice": 175,
-            "description": "Creamy Thai coconut broth with galangal, lemongrass and kaffir lime leaves.",
-            "imagePath": "/assets/soups/hot-n-sour-soup.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "asian-tom-yum-soup-vegetarian",
-            "name": "Tom Yum Soup (Vegetarian)",
-            "category": "Soups",
-            "isVeg": true,
-            "price": 175,
-            "basePrice": 175,
-            "description": "Hot and sour Thai broth with lemongrass and kaffir lime leaves.",
-            "imagePath": "/assets/soups/tom-yum-soup.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "asian-lemon-coriander-soup-vegetarian",
-            "name": "Lemon Coriander Soup (Vegetarian)",
-            "category": "Soups",
-            "isVeg": true,
-            "price": 145,
-            "basePrice": 145,
-            "description": "Hot and sour Thai broth with lemongrass and kaffir lime leaves.",
-            "imagePath": "/assets/soups/lemon-coriander-soup.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          }
-        ]
-      },
-      {
-        "id": "nonveg-asian-soups",
-        "title": "Non-Vegetarian Asian Soups (Chicken & Prawn)",
-        "isVegSection": false,
-        "items": [
-          {
-            "id": "asian-manchow-soup-chicken",
-            "name": "Manchow Soup (Chicken)",
-            "category": "Soups",
-            "isVeg": false,
-            "price": 225,
-            "basePrice": 225,
-            "description": "Authentic Manchow Soup (Vegetarian) prepared with Asian herbs and wok fire.",
-            "imagePath": "/assets/soups/manchow-soup.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "asian-manchow-soup-prawn",
-            "name": "Manchow Soup (Prawn)",
-            "category": "Soups",
-            "isVeg": false,
-            "price": 295,
-            "basePrice": 295,
-            "description": "Authentic Manchow Soup (Vegetarian) prepared with Asian herbs and wok fire.",
-            "imagePath": "/assets/soups/manchow-soup.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "asian-tom-kha-soup-chicken",
-            "name": "Tom Kha Soup (Chicken)",
-            "category": "Soups",
-            "isVeg": false,
-            "price": 275,
-            "basePrice": 275,
-            "description": "Creamy Thai coconut broth with galangal, lemongrass and kaffir lime leaves.",
-            "imagePath": "/assets/soups/tom-kha-soup.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "asian-tom-kha-soup-prawn",
-            "name": "Tom Kha Soup (Prawn)",
-            "category": "Soups",
-            "isVeg": false,
-            "price": 345,
-            "basePrice": 345,
-            "description": "Creamy Thai coconut broth with galangal, lemongrass and kaffir lime leaves.",
-            "imagePath": "/assets/soups/tom-kha-soup.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "asian-sweet-corn-soup-chicken",
-            "name": "Sweet Corn Soup (Chicken)",
-            "category": "Soups",
-            "isVeg": false,
-            "price": 195,
-            "basePrice": 195,
-            "description": "Creamy Thai coconut broth with galangal, lemongrass and kaffir lime leaves.",
-            "imagePath": "/assets/soups/sweet-corn-soup.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "asian-sweet-corn-soup-prawn",
-            "name": "Sweet Corn Soup (Prawn)",
-            "category": "Soups",
-            "isVeg": false,
-            "price": 295,
-            "basePrice": 295,
-            "description": "Creamy Thai coconut broth with galangal, lemongrass and kaffir lime leaves.",
-            "imagePath": "/assets/soups/sweet-corn-soup.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "asian-hot-sour-soup-chicken",
-            "name": "Hot & Sour Soup (Chicken)",
-            "category": "Soups",
-            "isVeg": false,
-            "price": 225,
-            "basePrice": 225,
-            "description": "Creamy Thai coconut broth with galangal, lemongrass and kaffir lime leaves.",
-            "imagePath": "/assets/soups/hot-n-sour-soup.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "asian-hot-sour-soup-prawn",
-            "name": "Hot & Sour Soup (Prawn)",
-            "category": "Soups",
-            "isVeg": false,
-            "price": 295,
-            "basePrice": 295,
-            "description": "Creamy Thai coconut broth with galangal, lemongrass and kaffir lime leaves.",
-            "imagePath": "/assets/soups/hot-n-sour-soup.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "asian-tom-yum-soup-chicken",
-            "name": "Tom Yum Soup (Chicken)",
-            "category": "Soups",
-            "isVeg": false,
-            "price": 225,
-            "basePrice": 225,
-            "description": "Hot and sour Thai broth with lemongrass and kaffir lime leaves.",
-            "imagePath": "/assets/soups/tom-yum-soup.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "asian-tom-yum-soup-prawn",
-            "name": "Tom Yum Soup (Prawn)",
-            "category": "Soups",
-            "isVeg": false,
-            "price": 295,
-            "basePrice": 295,
-            "description": "Hot and sour Thai broth with lemongrass and kaffir lime leaves.",
-            "imagePath": "/assets/soups/tom-yum-soup.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "asian-lemon-coriander-soup-chicken",
-            "name": "Lemon Coriander Soup (Chicken)",
-            "category": "Soups",
-            "isVeg": false,
-            "price": 195,
-            "basePrice": 195,
-            "description": "Hot and sour Thai broth with lemongrass and kaffir lime leaves.",
-            "imagePath": "/assets/soups/lemon-coriander-soup.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "asian-lemon-coriander-soup-prawn",
-            "name": "Lemon Coriander Soup (Prawn)",
-            "category": "Soups",
-            "isVeg": false,
-            "price": 295,
-            "basePrice": 295,
-            "description": "Hot and sour Thai broth with lemongrass and kaffir lime leaves.",
-            "imagePath": "/assets/soups/lemon-coriander-soup.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          }
-        ]
-      },
-      {
-        "id": "veg-asian-appetisers",
-        "title": "Vegetarian Asian Appetisers & Small Plates",
-        "isVegSection": true,
-        "items": [
-          {
-            "id": "asian-salt-pepper-corn",
-            "name": "Salt & Pepper Corn",
-            "category": "Appetisers",
-            "isVeg": true,
-            "price": 315,
-            "basePrice": 315,
-            "description": "Thai-style crispy fried corn.",
-            "imagePath": "/assets/appetisers/salt-and-pepper-corn.webp",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "asian-veg-cheese-corn-roll",
-            "name": "Veg Cheese Corn Roll",
-            "category": "Appetisers",
-            "isVeg": true,
-            "price": 345,
-            "basePrice": 345,
-            "description": "Crispy rolls filled with saut\u00e9ed vegetables, mozzarella and sweet corn. 6 pieces per serving.",
-            "imagePath": "/assets/appetisers/veg-cheese-corn-roll.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "asian-chilli-potato",
-            "name": "Chilli Potato",
-            "category": "Appetisers",
-            "isVeg": true,
-            "price": 345,
-            "basePrice": 345,
-            "description": "Crispy fried potatoes tossed in chilli sauce with bell peppers and spring onion.",
-            "imagePath": "/assets/appetisers/chilli-potato.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 1,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "asian-honey-chilli-cauliflower",
-            "name": "Honey Chilli Cauliflower",
-            "category": "Appetisers",
-            "isVeg": true,
-            "price": 345,
-            "basePrice": 345,
-            "description": "Crispy fried cauliflower tossed in honey garlic sauce.",
-            "imagePath": "/assets/appetisers/honey-chilli-cauliflower.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 1,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "asian-manchurian-dry",
-            "name": "Manchurian (Dry)",
-            "category": "Appetisers",
-            "isVeg": true,
-            "price": 345,
-            "basePrice": 345,
-            "description": "Crispy vegetable balls in a spicy, tangy Indo-Chinese sauce.",
-            "imagePath": "/assets/appetisers/manchurian.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "asian-manchurian-dry-gravy",
-            "name": "Manchurian (Dry) (Gravy)",
-            "category": "Appetisers",
-            "isVeg": true,
-            "price": 345,
-            "basePrice": 345,
-            "description": "Crispy vegetable balls in a spicy, tangy Indo-Chinese sauce.",
-            "imagePath": "/assets/mexican-appetisers/chicken-popcorn.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "asian-chilli-paneer",
-            "name": "Chilli Paneer",
-            "category": "Appetisers",
-            "isVeg": true,
-            "price": 365,
-            "basePrice": 365,
-            "description": "Crispy paneer coated in a sweet-and-spicy Indo-Chinese glaze.",
-            "imagePath": "/assets/appetisers/chilli-paneer.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 1,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "asian-thai-basil-paneer",
-            "name": "Thai Basil Paneer",
-            "category": "Appetisers",
-            "isVeg": true,
-            "price": 365,
-            "basePrice": 365,
-            "description": "Crispy paneer tossed in a fragrant Thai basil sauce.",
-            "imagePath": "/assets/appetisers/thai-basil-paneer.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "asian-mushroom-shanghai",
-            "name": "Mushroom Shanghai",
-            "category": "Appetisers",
-            "isVeg": true,
-            "price": 365,
-            "basePrice": 365,
-            "description": "Crispy mushrooms tossed in a spicy Shanghai-style soy sauce.",
-            "imagePath": "/assets/appetisers/mushroom-shanghai.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "asian-crispy-lotus-stem",
-            "name": "Crispy Lotus Stem",
-            "category": "Appetisers",
-            "isVeg": true,
-            "price": 365,
-            "basePrice": 365,
-            "description": "Crispy lotus stem coated in a sweet-and-spicy glaze.",
-            "imagePath": "/assets/appetisers/crispy-lotus-stem.webp",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "asian-korean-water-chestnut",
-            "name": "Korean Water Chestnut",
-            "category": "Appetisers",
-            "isVeg": true,
-            "price": 395,
-            "basePrice": 395,
-            "description": "Crispy water chestnuts tossed in a flavourful spicy sauce.",
-            "imagePath": "/assets/appetisers/korean-water-chestnut.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "asian-saut-ed-veggies-butter-garlic-sauce",
-            "name": "Saut\u00e9ed Veggies (Butter Garlic Sauce)",
-            "category": "Appetisers",
-            "isVeg": true,
-            "price": 445,
-            "basePrice": 445,
-            "description": "Saut\u00e9ed vegetables served in your choice of sauce.",
-            "imagePath": "/assets/appetisers/sauteed-veggies.webp",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "asian-saut-ed-veggies-butter-garlic-sauce-hot-garlic-sauce",
-            "name": "Saut\u00e9ed Veggies (Butter Garlic Sauce) (Hot Garlic Sauce)",
-            "category": "Appetisers",
-            "isVeg": true,
-            "price": 445,
-            "basePrice": 445,
-            "description": "Saut\u00e9ed vegetables served in your choice of sauce.",
-            "imagePath": "/assets/appetisers/hot-garlic-prawn.webp",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "asian-paneer-bok-choy",
-            "name": "Paneer Bok Choy",
-            "category": "Appetisers",
-            "isVeg": true,
-            "price": 445,
-            "basePrice": 445,
-            "description": "Paneer and crisp bok choy tossed in a light, spicy Asian garlic sauce.",
-            "imagePath": "/assets/appetisers/paneer-bok-choy-appetiser.webp",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          }
-        ]
-      },
-      {
-        "id": "nonveg-asian-appetisers",
-        "title": "Non-Vegetarian Asian Appetisers & Small Plates",
-        "isVegSection": false,
-        "items": [
-          {
-            "id": "asian-cigar-roll",
-            "name": "Cigar Roll",
-            "category": "Appetisers",
-            "isVeg": false,
-            "price": 345,
-            "basePrice": 345,
-            "description": "Crispy rolls filled with pulled chicken and melted mozzarella. 6 pieces per serving.",
-            "imagePath": "/assets/appetisers/cigar-roll.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "asian-traditional-chicken-satay",
-            "name": "Traditional Chicken Satay",
-            "category": "Appetisers",
-            "isVeg": false,
-            "price": 345,
-            "basePrice": 345,
-            "description": "Grilled chicken and bell pepper skewers in a rich, creamy peanut sauce. 3 sticks per serving.",
-            "imagePath": "/assets/appetisers/chicken-satay.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "asian-crispy-honey-chicken",
-            "name": "Crispy Honey Chicken",
-            "category": "Appetisers",
-            "isVeg": false,
-            "price": 395,
-            "basePrice": 395,
-            "description": "Crispy chicken wok-tossed with spring onions and bell peppers in a sweet-and-spicy honey chilli glaze.",
-            "imagePath": "/assets/appetisers/crispy-honey-chicken.webp",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "asian-hot-basil-chicken",
-            "name": "Hot Basil Chicken",
-            "category": "Appetisers",
-            "isVeg": false,
-            "price": 395,
-            "basePrice": 395,
-            "description": "Crispy chicken and vegetables wok-tossed in a fragrant, spicy hot basil sauce.",
-            "imagePath": "/assets/appetisers/hot-basil-chciken.webp",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "asian-wok-tossed-chicken",
-            "name": "Wok-Tossed Chicken",
-            "category": "Appetisers",
-            "isVeg": false,
-            "price": 395,
-            "basePrice": 395,
-            "description": "Crispy fried chicken wok-tossed with vegetables in a spicy, tangy hot garlic sauce with a hint of sweetness.",
-            "imagePath": "/assets/appetisers/wok-tossed-chicken.webp",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "asian-rock-shrimp-tempura",
-            "name": "Rock Shrimp Tempura",
-            "category": "Appetisers",
-            "isVeg": false,
-            "price": 795,
-            "basePrice": 795,
-            "description": "Bite-sized tempura prawns tossed in a creamy, spicy dynamite sauce.",
-            "imagePath": "/assets/appetisers/rock-shrimp-tempura.webp",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "asian-katsu-chicken",
-            "name": "Katsu Chicken",
-            "category": "Appetisers",
-            "isVeg": false,
-            "price": 395,
-            "basePrice": 395,
-            "description": "Crispy fried chicken, tender on the inside, finished with teriyaki glaze, dynamite sauce and sesame seeds.",
-            "imagePath": "/assets/appetisers/chicken-katsu.webp",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "asian-hot-garlic-prawn",
-            "name": "Hot Garlic Prawn",
-            "category": "Appetisers",
-            "isVeg": false,
-            "price": 745,
-            "basePrice": 745,
-            "description": "Crispy prawns tossed in a spicy, buttery hot garlic sauce.",
-            "imagePath": "/assets/appetisers/hot-garlic-prawn.webp",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          }
-        ]
-      },
-      {
         "id": "veg-wok-noodles",
-        "title": "Vegetarian Wok-Tossed Noodles",
+        "title": "Vegetarian Wok Noodles",
         "isVegSection": true,
         "items": [
           {
@@ -3889,7 +2845,7 @@ export const RESTAURANT_MENU_ACCORDIONS: CategoryAccordionData[] = [
       },
       {
         "id": "nonveg-wok-noodles",
-        "title": "Non-Vegetarian Wok-Tossed Noodles (Chicken & Prawn)",
+        "title": "Non-Vegetarian Wok Noodles",
         "isVegSection": false,
         "items": [
           {
@@ -4100,7 +3056,7 @@ export const RESTAURANT_MENU_ACCORDIONS: CategoryAccordionData[] = [
       },
       {
         "id": "veg-noodle-bowls",
-        "title": "Vegetarian Asian Noodle Bowls",
+        "title": "Vegetarian Noodle Bowls",
         "isVegSection": true,
         "items": [
           {
@@ -4311,7 +3267,7 @@ export const RESTAURANT_MENU_ACCORDIONS: CategoryAccordionData[] = [
       },
       {
         "id": "nonveg-noodle-bowls",
-        "title": "Non-Vegetarian Asian Noodle Bowls (Chicken & Prawn)",
+        "title": "Non-Vegetarian Noodle Bowls",
         "isVegSection": false,
         "items": [
           {
@@ -4485,866 +3441,18 @@ export const RESTAURANT_MENU_ACCORDIONS: CategoryAccordionData[] = [
             "addons": []
           }
         ]
-      },
-      {
-        "id": "veg-curries",
-        "title": "Vegetarian Signature Curries (With Rice Add-ons)",
-        "isVegSection": true,
-        "items": [
-          {
-            "id": "asian-thai-green-curry-vegetarian",
-            "name": "Thai Green Curry Vegetarian",
-            "category": "Curries",
-            "isVeg": true,
-            "price": 365,
-            "basePrice": 365,
-            "description": "A fragrant Thai green curry with coconut milk, vegetables and fresh herbs. Rice not included.",
-            "imagePath": "/assets/rice-bowls/thai-pineapple-n-egg-fried-rice.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-steamed-rice",
-                "name": "Steamed Rice",
-                "price": 129
-              },
-              {
-                "id": "addon-fried-rice",
-                "name": "Fried Rice",
-                "price": 179
-              },
-              {
-                "id": "addon-jasmine-rice",
-                "name": "Jasmine Rice",
-                "price": 199
-              },
-              {
-                "id": "addon-steamed-rice-2",
-                "name": "Steamed Rice",
-                "price": 129
-              },
-              {
-                "id": "addon-fried-rice-2",
-                "name": "Fried Rice",
-                "price": 179
-              },
-              {
-                "id": "addon-jasmine-rice-2",
-                "name": "Jasmine Rice",
-                "price": 199
-              }
-            ]
-          },
-          {
-            "id": "asian-thai-red-curry-vegetarian",
-            "name": "Thai Red Curry Vegetarian",
-            "category": "Curries",
-            "isVeg": true,
-            "price": 365,
-            "basePrice": 365,
-            "description": "A rich Thai red curry with coconut milk, vegetables and aromatic spices. Rice not included",
-            "imagePath": "/assets/rice-bowls/thai-pineapple-n-egg-fried-rice.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-steamed-rice-7",
-                "name": "Steamed Rice",
-                "price": 129
-              },
-              {
-                "id": "addon-fried-rice-7",
-                "name": "Fried Rice",
-                "price": 179
-              },
-              {
-                "id": "addon-jasmine-rice-7",
-                "name": "Jasmine Rice",
-                "price": 199
-              },
-              {
-                "id": "addon-steamed-rice-8",
-                "name": "Steamed Rice",
-                "price": 129
-              },
-              {
-                "id": "addon-fried-rice-8",
-                "name": "Fried Rice",
-                "price": 179
-              },
-              {
-                "id": "addon-jasmine-rice-8",
-                "name": "Jasmine Rice",
-                "price": 199
-              }
-            ]
-          },
-          {
-            "id": "asian-burmese-yellow-curry-vegetarian",
-            "name": "Burmese Yellow Curry Vegetarian",
-            "category": "Curries",
-            "isVeg": true,
-            "price": 365,
-            "basePrice": 365,
-            "description": "Rich Burmese coconut curry with mild spices. Rice not included",
-            "imagePath": "/assets/pizza/classic-margherita.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-steamed-rice-13",
-                "name": "Steamed Rice",
-                "price": 129
-              },
-              {
-                "id": "addon-fried-rice-13",
-                "name": "Fried Rice",
-                "price": 179
-              },
-              {
-                "id": "addon-jasmine-rice-13",
-                "name": "Jasmine Rice",
-                "price": 199
-              },
-              {
-                "id": "addon-steamed-rice-14",
-                "name": "Steamed Rice",
-                "price": 129
-              },
-              {
-                "id": "addon-fried-rice-14",
-                "name": "Fried Rice",
-                "price": 179
-              },
-              {
-                "id": "addon-jasmine-rice-14",
-                "name": "Jasmine Rice",
-                "price": 199
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "nonveg-curries",
-        "title": "Non-Vegetarian Signature Curries (Chicken & Prawn)",
-        "isVegSection": false,
-        "items": [
-          {
-            "id": "asian-thai-green-curry-chicken",
-            "name": "Thai Green Curry Chicken",
-            "category": "Curries",
-            "isVeg": false,
-            "price": 425,
-            "basePrice": 425,
-            "description": "A fragrant Thai green curry with coconut milk, vegetables and fresh herbs. Rice not included.",
-            "imagePath": "/assets/rice-bowls/thai-pineapple-n-egg-fried-rice.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-steamed-rice-3",
-                "name": "Steamed Rice",
-                "price": 129
-              },
-              {
-                "id": "addon-fried-rice-3",
-                "name": "Fried Rice",
-                "price": 179
-              },
-              {
-                "id": "addon-jasmine-rice-3",
-                "name": "Jasmine Rice",
-                "price": 199
-              },
-              {
-                "id": "addon-steamed-rice-4",
-                "name": "Steamed Rice",
-                "price": 129
-              },
-              {
-                "id": "addon-fried-rice-4",
-                "name": "Fried Rice",
-                "price": 179
-              },
-              {
-                "id": "addon-jasmine-rice-4",
-                "name": "Jasmine Rice",
-                "price": 199
-              }
-            ]
-          },
-          {
-            "id": "asian-thai-green-curry-prawn",
-            "name": "Thai Green Curry Prawn",
-            "category": "Curries",
-            "isVeg": false,
-            "price": 645,
-            "basePrice": 645,
-            "description": "A fragrant Thai green curry with coconut milk, vegetables and fresh herbs. Rice not included.",
-            "imagePath": "/assets/rice-bowls/thai-pineapple-n-egg-fried-rice.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-steamed-rice-5",
-                "name": "Steamed Rice",
-                "price": 129
-              },
-              {
-                "id": "addon-fried-rice-5",
-                "name": "Fried Rice",
-                "price": 179
-              },
-              {
-                "id": "addon-jasmine-rice-5",
-                "name": "Jasmine Rice",
-                "price": 199
-              },
-              {
-                "id": "addon-steamed-rice-6",
-                "name": "Steamed Rice",
-                "price": 129
-              },
-              {
-                "id": "addon-fried-rice-6",
-                "name": "Fried Rice",
-                "price": 179
-              },
-              {
-                "id": "addon-jasmine-rice-6",
-                "name": "Jasmine Rice",
-                "price": 199
-              }
-            ]
-          },
-          {
-            "id": "asian-thai-red-curry-chicken",
-            "name": "Thai Red Curry Chicken",
-            "category": "Curries",
-            "isVeg": false,
-            "price": 425,
-            "basePrice": 425,
-            "description": "A rich Thai red curry with coconut milk, vegetables and aromatic spices. Rice not included.",
-            "imagePath": "/assets/rice-bowls/thai-pineapple-n-egg-fried-rice.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-steamed-rice-9",
-                "name": "Steamed Rice",
-                "price": 129
-              },
-              {
-                "id": "addon-fried-rice-9",
-                "name": "Fried Rice",
-                "price": 179
-              },
-              {
-                "id": "addon-jasmine-rice-9",
-                "name": "Jasmine Rice",
-                "price": 199
-              },
-              {
-                "id": "addon-steamed-rice-10",
-                "name": "Steamed Rice",
-                "price": 129
-              },
-              {
-                "id": "addon-fried-rice-10",
-                "name": "Fried Rice",
-                "price": 179
-              },
-              {
-                "id": "addon-jasmine-rice-10",
-                "name": "Jasmine Rice",
-                "price": 199
-              }
-            ]
-          },
-          {
-            "id": "asian-thai-red-curry-prawn",
-            "name": "Thai Red Curry Prawn",
-            "category": "Curries",
-            "isVeg": false,
-            "price": 645,
-            "basePrice": 645,
-            "description": "A rich Thai red curry with coconut milk, vegetables and aromatic spices. Rice not included.",
-            "imagePath": "/assets/rice-bowls/thai-pineapple-n-egg-fried-rice.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-steamed-rice-11",
-                "name": "Steamed Rice",
-                "price": 129
-              },
-              {
-                "id": "addon-fried-rice-11",
-                "name": "Fried Rice",
-                "price": 179
-              },
-              {
-                "id": "addon-jasmine-rice-11",
-                "name": "Jasmine Rice",
-                "price": 199
-              },
-              {
-                "id": "addon-steamed-rice-12",
-                "name": "Steamed Rice",
-                "price": 129
-              },
-              {
-                "id": "addon-fried-rice-12",
-                "name": "Fried Rice",
-                "price": 179
-              },
-              {
-                "id": "addon-jasmine-rice-12",
-                "name": "Jasmine Rice",
-                "price": 199
-              }
-            ]
-          },
-          {
-            "id": "asian-burmese-yellow-curry-chicken",
-            "name": "Burmese Yellow Curry Chicken",
-            "category": "Curries",
-            "isVeg": false,
-            "price": 425,
-            "basePrice": 425,
-            "description": "Rich Burmese coconut curry with mild spices. Rice not included.",
-            "imagePath": "/assets/pizza/classic-margherita.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-steamed-rice-15",
-                "name": "Steamed Rice",
-                "price": 129
-              },
-              {
-                "id": "addon-fried-rice-15",
-                "name": "Fried Rice",
-                "price": 179
-              },
-              {
-                "id": "addon-jasmine-rice-15",
-                "name": "Jasmine Rice",
-                "price": 199
-              },
-              {
-                "id": "addon-steamed-rice-16",
-                "name": "Steamed Rice",
-                "price": 129
-              },
-              {
-                "id": "addon-fried-rice-16",
-                "name": "Fried Rice",
-                "price": 179
-              },
-              {
-                "id": "addon-jasmine-rice-16",
-                "name": "Jasmine Rice",
-                "price": 199
-              }
-            ]
-          },
-          {
-            "id": "asian-burmese-yellow-curry-prawn",
-            "name": "Burmese Yellow Curry Prawn",
-            "category": "Curries",
-            "isVeg": false,
-            "price": 645,
-            "basePrice": 645,
-            "description": "Rich Burmese coconut curry with mild spices. Rice not included.",
-            "imagePath": "/assets/pizza/classic-margherita.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": [
-              {
-                "id": "addon-steamed-rice-17",
-                "name": "Steamed Rice",
-                "price": 129
-              },
-              {
-                "id": "addon-fried-rice-17",
-                "name": "Fried Rice",
-                "price": 179
-              },
-              {
-                "id": "addon-jasmine-rice-17",
-                "name": "Jasmine Rice",
-                "price": 199
-              },
-              {
-                "id": "addon-steamed-rice-18",
-                "name": "Steamed Rice",
-                "price": 129
-              },
-              {
-                "id": "addon-fried-rice-18",
-                "name": "Fried Rice",
-                "price": 179
-              },
-              {
-                "id": "addon-jasmine-rice-18",
-                "name": "Jasmine Rice",
-                "price": 199
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "veg-rice-bowls",
-        "title": "Vegetarian Asian Rice Bowls",
-        "isVegSection": true,
-        "items": [
-          {
-            "id": "asian-paneer-krapow",
-            "name": "Paneer Krapow",
-            "category": "Rice Bowls",
-            "isVeg": true,
-            "price": 425,
-            "basePrice": 425,
-            "description": "Thai basil, chilli and garlic wok-tossed with minced paneer, served over jasmine rice.",
-            "imagePath": "/assets/rice-bowls/chilli-paneer-rice-bowl.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "asian-kimchi-rice-bowl",
-            "name": "Kimchi Rice Bowl",
-            "category": "Rice Bowls",
-            "isVeg": true,
-            "price": 445,
-            "basePrice": 445,
-            "description": "Grilled paneer, corn, mushrooms and bok choy tossed in a sweet-and-spicy kimchi sauce, served with jasmine rice.",
-            "imagePath": "/assets/rice-bowls/kimchi-pickle-rice-bowl.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "asian-chilli-paneer-rice-bowl",
-            "name": "Chilli Paneer Rice Bowl",
-            "category": "Rice Bowls",
-            "isVeg": true,
-            "price": 395,
-            "basePrice": 395,
-            "description": "Sweet-and-spicy Indo-Chinese sauce with crispy paneer, peppers and onions, served over fried rice.",
-            "imagePath": "/assets/rice-bowls/chilli-paneer-rice-bowl.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 1,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "asian-thai-basil-paneer-fried-rice-bowl",
-            "name": "Thai Basil Paneer & Fried Rice Bowl",
-            "category": "Rice Bowls",
-            "isVeg": true,
-            "price": 395,
-            "basePrice": 395,
-            "description": "Fresh Thai basil and savoury aromatics wok-tossed with paneer, served with vegetable fried rice.",
-            "imagePath": "/assets/rice-bowls/thai-basil-paneer-fried-rice.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "asian-chilli-mushroom-rice-bowl",
-            "name": "Chilli Mushroom Rice Bowl",
-            "category": "Rice Bowls",
-            "isVeg": true,
-            "price": 395,
-            "basePrice": 395,
-            "description": "Crispy mushrooms in a spicy soy-garlic sauce, served over fried rice.",
-            "imagePath": "/assets/rice-bowls/chilli-mushroom-rice-bowl.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 1,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "asian-manchurian-rice-bowl",
-            "name": "Manchurian Rice Bowl",
-            "category": "Rice Bowls",
-            "isVeg": true,
-            "price": 375,
-            "basePrice": 375,
-            "description": "Crispy vegetable Manchurian in a rich, tangy sauce, served over fried rice.",
-            "imagePath": "/assets/rice-bowls/thai-pineapple-n-egg-fried-rice.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          }
-        ]
-      },
-      {
-        "id": "nonveg-rice-bowls",
-        "title": "Non-Vegetarian Asian Rice Bowls",
-        "isVegSection": false,
-        "items": [
-          {
-            "id": "asian-nasi-goreng",
-            "name": "Nasi Goreng",
-            "category": "Rice Bowls",
-            "isVeg": false,
-            "price": 445,
-            "basePrice": 445,
-            "description": "Indonesian fried rice with chicken, vegetables and a savoury peanut butter sauce, served with fried chicken and a sunny-side-up egg.",
-            "imagePath": "/assets/rice-bowls/nasi-goreng.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "asian-krapow-jasmine-rice-bowl",
-            "name": "Krapow Jasmine Rice Bowl",
-            "category": "Rice Bowls",
-            "isVeg": false,
-            "price": 445,
-            "basePrice": 445,
-            "description": "Thai basil, chilli and garlic wok-tossed with minced chicken, served over fragrant jasmine rice.",
-            "imagePath": "/assets/rice-bowls/krapow-jasmine-rice-bowl.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "asian-katsu-chicken-rice-bowl",
-            "name": "Katsu Chicken Rice Bowl",
-            "category": "Rice Bowls",
-            "isVeg": false,
-            "price": 445,
-            "basePrice": 445,
-            "description": "Golden crispy chicken katsu served over jasmine rice with creamy garlic sauce and tangy ginger pickle.",
-            "imagePath": "/assets/rice-bowls/katsu-chickwn-rice-bowl.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "asian-chilli-chicken-rice-bowl",
-            "name": "Chilli Chicken Rice Bowl",
-            "category": "Rice Bowls",
-            "isVeg": false,
-            "price": 425,
-            "basePrice": 425,
-            "description": "Crispy chilli chicken with peppers and onions in a spicy Indo-Chinese sauce, served over fried rice.",
-            "imagePath": "/assets/rice-bowls/chilli-mushroom-rice-bowl.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 1,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "asian-thai-pineapple-chicken-egg-fried-rice-bowl",
-            "name": "Thai Pineapple, Chicken & Egg Fried Rice bowl",
-            "category": "Rice Bowls",
-            "isVeg": false,
-            "price": 445,
-            "basePrice": 445,
-            "description": "Fragrant fried rice with chicken, egg, vegetables and caramelised pineapple in a sweet-and-spicy chilli basil sauce.",
-            "imagePath": "/assets/rice-bowls/thai-pineapple-n-egg-fried-rice.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "asian-chilli-prawn-rice-bowl",
-            "name": "Chilli Prawn Rice Bowl",
-            "category": "Rice Bowls",
-            "isVeg": false,
-            "price": 595,
-            "basePrice": 595,
-            "description": "Crispy prawns in a bold hot garlic sauce, served over fried rice.",
-            "imagePath": "/assets/rice-bowls/chilli-mushroom-rice-bowl.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 1,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          }
-        ]
       }
     ]
   },
   {
-    "id": "italian-pastas-sandwiches",
-    "title": "Pastas, Napoli Sandwiches & Garlic Breads",
-    "description": "Hand-rolled Italian pasta, wood-fired sourdough sandwiches, and garlic loaves.",
-    "badge": "Italian Hearth",
+    "id": "burgers",
+    "title": "Burgers",
+    "description": "Smash patties in freshly baked wood-fired sourdough buns.",
+    "badge": "Sourdough Buns",
     "subcategories": [
       {
-        "id": "veg-salads",
-        "title": "Vegetarian Fresh Salads",
-        "isVegSection": true,
-        "items": [
-          {
-            "id": "dish-caprese-salad",
-            "name": "Caprese Salad",
-            "category": "Salads",
-            "isVeg": true,
-            "price": 365,
-            "basePrice": 365,
-            "description": "Rocket leaves, freshly sliced tomatoes, bocconcini and basil pesto, finished with mild seasoning and a balsamic reduction.",
-            "imagePath": "/assets/napoli-sandwiches/caprese-sandwich.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "dish-caesar-salad",
-            "name": "Caesar Salad",
-            "category": "Salads",
-            "isVeg": true,
-            "price": 345,
-            "basePrice": 345,
-            "description": "Lettuce, crunchy croutons, saut\u00e9ed bell peppers and sweetcorn, tossed in a creamy mustard-mayo dressing, finished with parmesan.",
-            "imagePath": "/assets/salad/caesar-salad.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "dish-apple-salad",
-            "name": "Apple Salad",
-            "category": "Salads",
-            "isVeg": true,
-            "price": 365,
-            "basePrice": 365,
-            "description": "Crisp green apple and orange slices tossed with mixed lettuce, crunchy nuts and a refreshing honey-lemon dressing.",
-            "imagePath": "/assets/rice-bowls/thai-pineapple-n-egg-fried-rice.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "dish-watermelon-salad",
-            "name": "Watermelon Salad",
-            "category": "Salads",
-            "isVeg": true,
-            "price": 365,
-            "basePrice": 365,
-            "description": "Watermelon, burrata, lettuce and feta tossed in a honey-lemon dressing.",
-            "imagePath": "/assets/salad/watermelon-salad.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "dish-rucola-burrata-salad",
-            "name": "Rucola Burrata Salad",
-            "category": "Salads",
-            "isVeg": true,
-            "price": 445,
-            "basePrice": 445,
-            "description": "Rocket leaves, cherry tomatoes, burrata and pesto tossed in a honey-balsamic dressing and finished with a delicate balsamic reduction.",
-            "imagePath": "/assets/garlic-bread/asparagus-burrata.webp",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          }
-        ]
-      },
-      {
-        "id": "nonveg-salads",
-        "title": "Grilled Chicken Salads",
-        "isVegSection": false,
-        "items": [
-          {
-            "id": "dish-caprese-grilled-chicken",
-            "name": "Caprese Grilled Chicken",
-            "category": "Salads",
-            "isVeg": false,
-            "price": 415,
-            "basePrice": 415,
-            "description": "Fresh Caprese Grilled Chicken prepared with tender protein and chef's dressings.",
-            "imagePath": "/assets/garlic-bread/grilled-chicken.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "dish-caesar-grilled-chicken",
-            "name": "Caesar Grilled Chicken",
-            "category": "Salads",
-            "isVeg": false,
-            "price": 395,
-            "basePrice": 395,
-            "description": "Fresh Caesar Grilled Chicken prepared with tender protein and chef's dressings.",
-            "imagePath": "/assets/garlic-bread/grilled-chicken.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "dish-apple-grilled-chicken",
-            "name": "Apple Grilled Chicken",
-            "category": "Salads",
-            "isVeg": false,
-            "price": 415,
-            "basePrice": 415,
-            "description": "Fresh Apple Grilled Chicken prepared with tender protein and chef's dressings.",
-            "imagePath": "/assets/garlic-bread/grilled-chicken.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "dish-watermelon-grilled-chicken",
-            "name": "Watermelon Grilled chicken",
-            "category": "Salads",
-            "isVeg": false,
-            "price": 415,
-            "basePrice": 415,
-            "description": "Fresh Watermelon Grilled chicken prepared with tender protein and chef's dressings.",
-            "imagePath": "/assets/garlic-bread/grilled-chicken.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "dish-rucola-burrata-grilled-chicken",
-            "name": "Rucola Burrata Grilled Chicken",
-            "category": "Salads",
-            "isVeg": false,
-            "price": 495,
-            "basePrice": 495,
-            "description": "Fresh Rucola Burrata Grilled Chicken prepared with tender protein and chef's dressings.",
-            "imagePath": "/assets/garlic-bread/grilled-chicken.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          }
-        ]
-      },
-      {
         "id": "sourdough-burgers",
-        "title": "Wood-Fired Sourdough Burgers",
+        "title": "Sourdough Burgers",
         "items": [
           {
             "id": "dish-sourdough-smash-veggie-cheese-burger",
@@ -5383,339 +3491,104 @@ export const RESTAURANT_MENU_ACCORDIONS: CategoryAccordionData[] = [
         ]
       },
       {
-        "id": "veg-pastas",
-        "title": "Vegetarian Artisanal Pastas (Spaghetti / Penne)",
-        "isVegSection": true,
+        "id": "mexican-burgers",
+        "title": "Handcrafted Burgers",
         "items": [
           {
-            "id": "dish-arrabbiata-pasta",
-            "name": "Arrabbiata Pasta",
-            "category": "Pasta",
+            "id": "dish-classic-potato-cheese-burger",
+            "name": "Classic Potato Cheese Burger",
+            "category": "Burgers - Vegetarian",
             "isVeg": true,
-            "price": 365,
-            "basePrice": 365,
-            "description": "Fiery San Marzano tomato sauce tossed with fresh capsicum, broccoli and zucchini.",
-            "imagePath": "/assets/pasta/arrabbiata-pasta.avif",
+            "price": 275,
+            "basePrice": 275,
+            "description": "Freshly prepared Classic Potato Cheese Burger made with premium ingredients in our kitchen.",
+            "imagePath": "/assets/burgers/classic-potato-cheese-burger.avif",
             "isAvailable": true,
             "isChefSpecial": false,
             "isBestseller": false,
             "spicyLevel": 0,
-            "hasVariants": true,
-            "variants": [
-              {
-                "id": "var-spaghetti",
-                "name": "Spaghetti",
-                "price": 365,
-                "isVeg": true
-              },
-              {
-                "id": "var-penne",
-                "name": "Penne",
-                "price": 365,
-                "isVeg": true
-              }
-            ],
-            "addons": [
-              {
-                "id": "addon-spaghetti-add-grilled-chicken",
-                "name": "Spaghetti / Add Grilled Chicken",
-                "price": 50
-              },
-              {
-                "id": "addon-penne-add-grilled-chicken",
-                "name": "Penne / Add Grilled Chicken",
-                "price": 50
-              }
-            ]
-          },
-          {
-            "id": "dish-alfredo-pasta",
-            "name": "Alfredo Pasta",
-            "category": "Pasta",
-            "isVeg": true,
-            "price": 365,
-            "basePrice": 365,
-            "description": "Velvety parmesan cream sauce tossed with garlic-herb saut\u00e9ed mushrooms.",
-            "imagePath": "/assets/pasta/alfredo-pasta.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": true,
-            "variants": [
-              {
-                "id": "var-spaghetti-3",
-                "name": "Spaghetti",
-                "price": 365,
-                "isVeg": true
-              },
-              {
-                "id": "var-penne-3",
-                "name": "Penne",
-                "price": 365,
-                "isVeg": true
-              }
-            ],
-            "addons": [
-              {
-                "id": "addon-spaghetti-add-grilled-chicken-2",
-                "name": "Spaghetti / Add Grilled Chicken",
-                "price": 50
-              },
-              {
-                "id": "addon-penne-add-grilled-chicken-2",
-                "name": "Penne / Add Grilled Chicken",
-                "price": 50
-              }
-            ]
-          },
-          {
-            "id": "dish-pesto-pasta",
-            "name": "Pesto Pasta",
-            "category": "Pasta",
-            "isVeg": true,
-            "price": 365,
-            "basePrice": 365,
-            "description": "Vibrant house-made basil pesto tossed with bell peppers, broccoli and zucchini.",
-            "imagePath": "/assets/pasta/pesto-pastaa.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": true,
-            "variants": [
-              {
-                "id": "var-spaghetti-5",
-                "name": "Spaghetti",
-                "price": 365,
-                "isVeg": true
-              },
-              {
-                "id": "var-penne-5",
-                "name": "Penne",
-                "price": 365,
-                "isVeg": true
-              }
-            ],
-            "addons": [
-              {
-                "id": "addon-spaghetti-add-grilled-chicken-3",
-                "name": "Spaghetti / Add Grilled Chicken",
-                "price": 50
-              },
-              {
-                "id": "addon-penne-add-grilled-chicken-3",
-                "name": "Penne / Add Grilled Chicken",
-                "price": 50
-              }
-            ]
-          },
-          {
-            "id": "dish-aglio-e-olio-pasta",
-            "name": "Aglio e Olio Pasta",
-            "category": "Pasta",
-            "isVeg": true,
-            "price": 365,
-            "basePrice": 365,
-            "description": "Spaghetti tossed in extra-virgin olive oil, garlic, sun-dried tomatoes and black olives.",
-            "imagePath": "/assets/pasta/aglio-olio-pasta.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": true,
-            "variants": [
-              {
-                "id": "var-spaghetti-7",
-                "name": "Spaghetti",
-                "price": 365,
-                "isVeg": true
-              },
-              {
-                "id": "var-penne-7",
-                "name": "Penne",
-                "price": 365,
-                "isVeg": true
-              }
-            ],
-            "addons": [
-              {
-                "id": "addon-add-grilled-chicken",
-                "name": "Add Grilled Chicken",
-                "price": 50
-              }
-            ]
-          },
-          {
-            "id": "dish-ros-pasta",
-            "name": "Ros\u00e9 Pasta",
-            "category": "Pasta",
-            "isVeg": true,
-            "price": 365,
-            "basePrice": 365,
-            "description": "A creamy blend of white sauce and tangy tomato sauce, tossed with fresh garden vegetables.",
-            "imagePath": "/assets/pasta/rose-pasta.webp",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": true,
-            "variants": [
-              {
-                "id": "var-spaghetti-8",
-                "name": "Spaghetti",
-                "price": 365,
-                "isVeg": true
-              },
-              {
-                "id": "var-penne-8",
-                "name": "Penne",
-                "price": 365,
-                "isVeg": true
-              }
-            ],
-            "addons": [
-              {
-                "id": "addon-spaghetti-add-grilled-chicken-4",
-                "name": "Spaghetti / Add Grilled Chicken",
-                "price": 50
-              },
-              {
-                "id": "addon-penne-add-grilled-chicken-4",
-                "name": "Penne / Add Grilled Chicken",
-                "price": 50
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "nonveg-pastas",
-        "title": "Non-Vegetarian Pastas with Grilled Chicken",
-        "isVegSection": false,
-        "items": [
-          {
-            "id": "dish-penne",
-            "name": "Penne",
-            "category": "Pasta",
-            "isVeg": true,
-            "price": 365,
-            "basePrice": 365,
-            "description": "Fresh Penne prepared with tender protein and chef's dressings.",
-            "imagePath": "/assets/pasta/alfredo-pasta.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": true,
-            "variants": [
-              {
-                "id": "var-spaghetti-2",
-                "name": "Spaghetti",
-                "price": 365,
-                "isVeg": false
-              },
-              {
-                "id": "var-penne-2",
-                "name": "Penne",
-                "price": 365,
-                "isVeg": false
-              }
-            ],
+            "hasVariants": false,
+            "variants": [],
             "addons": []
           },
           {
-            "id": "dish-penne-2",
-            "name": "Penne",
-            "category": "Pasta",
+            "id": "dish-peri-peri-potato-cheese-burger",
+            "name": "Peri-Peri Potato Cheese Burger",
+            "category": "Burgers - Vegetarian",
             "isVeg": true,
-            "price": 365,
-            "basePrice": 365,
-            "description": "Fresh Penne prepared with tender protein and chef's dressings.",
-            "imagePath": "/assets/pasta/alfredo-pasta.avif",
+            "price": 285,
+            "basePrice": 285,
+            "description": "Freshly prepared Peri-Peri Potato Cheese Burger made with premium ingredients in our kitchen.",
+            "imagePath": "/assets/burgers/peri-peri-potato-cheese-burger.avif",
             "isAvailable": true,
             "isChefSpecial": false,
             "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": true,
-            "variants": [
-              {
-                "id": "var-spaghetti-4",
-                "name": "Spaghetti",
-                "price": 365,
-                "isVeg": false
-              },
-              {
-                "id": "var-penne-4",
-                "name": "Penne",
-                "price": 365,
-                "isVeg": false
-              }
-            ],
+            "spicyLevel": 1,
+            "hasVariants": false,
+            "variants": [],
             "addons": []
           },
           {
-            "id": "dish-penne-3",
-            "name": "Penne",
-            "category": "Pasta",
+            "id": "dish-smash-veggie-cheese-burger",
+            "name": "Smash Veggie Cheese Burger",
+            "category": "Burgers - Vegetarian",
             "isVeg": true,
-            "price": 365,
-            "basePrice": 365,
-            "description": "Fresh Penne prepared with tender protein and chef's dressings.",
-            "imagePath": "/assets/pasta/alfredo-pasta.avif",
+            "price": 295,
+            "basePrice": 295,
+            "description": "Freshly prepared Smash Veggie Cheese Burger made with premium ingredients in our kitchen.",
+            "imagePath": "/assets/burgers/smash-veggie-cheese-burger.avif",
             "isAvailable": true,
             "isChefSpecial": false,
             "isBestseller": false,
             "spicyLevel": 0,
-            "hasVariants": true,
-            "variants": [
-              {
-                "id": "var-spaghetti-6",
-                "name": "Spaghetti",
-                "price": 365,
-                "isVeg": false
-              },
-              {
-                "id": "var-penne-6",
-                "name": "Penne",
-                "price": 365,
-                "isVeg": false
-              }
-            ],
+            "hasVariants": false,
+            "variants": [],
             "addons": []
           },
           {
-            "id": "dish-penne-4",
-            "name": "Penne",
-            "category": "Pasta",
-            "isVeg": true,
-            "price": 365,
-            "basePrice": 365,
-            "description": "Fresh Penne prepared with tender protein and chef's dressings.",
-            "imagePath": "/assets/pasta/alfredo-pasta.avif",
+            "id": "dish-crispy-chipotle-chicken-burger",
+            "name": "Crispy Chipotle Chicken Burger",
+            "category": "Burgers - Non-Vegetarian",
+            "isVeg": false,
+            "price": 295,
+            "basePrice": 295,
+            "description": "Freshly prepared Crispy Chipotle Chicken Burger made with premium ingredients in our kitchen.",
+            "imagePath": "/assets/burgers/crispy-spicy-chicken-burgher.avif",
             "isAvailable": true,
             "isChefSpecial": false,
             "isBestseller": false,
             "spicyLevel": 0,
-            "hasVariants": true,
-            "variants": [
-              {
-                "id": "var-spaghetti-9",
-                "name": "Spaghetti",
-                "price": 365,
-                "isVeg": false
-              },
-              {
-                "id": "var-penne-9",
-                "name": "Penne",
-                "price": 365,
-                "isVeg": false
-              }
-            ],
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "dish-smash-chicken-cheese-burger",
+            "name": "Smash Chicken Cheese Burger",
+            "category": "Burgers - Non-Vegetarian",
+            "isVeg": false,
+            "price": 325,
+            "basePrice": 325,
+            "description": "Freshly prepared Smash Chicken Cheese Burger made with premium ingredients in our kitchen.",
+            "imagePath": "/assets/burgers/smash-veggie-cheese-burger.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
             "addons": []
           }
         ]
-      },
+      }
+    ]
+  },
+  {
+    "id": "sandwiches",
+    "title": "Sandwiches",
+    "description": "Wood-fired Napoli sourdough sandwiches and loaded garlic breads.",
+    "badge": "Hearth Baked",
+    "subcategories": [
       {
         "id": "veg-napoli-sandwiches",
         "title": "Vegetarian Napoli Sandwiches",
@@ -6066,104 +3939,13 @@ export const RESTAURANT_MENU_ACCORDIONS: CategoryAccordionData[] = [
             "addons": []
           }
         ]
-      },
-      {
-        "id": "italian-appetizers",
-        "title": "Italian Appetizers & Fries",
-        "items": [
-          {
-            "id": "dish-classic-fries",
-            "name": "Classic Fries",
-            "category": "Appetizers - Vegetarian",
-            "isVeg": true,
-            "price": 195,
-            "basePrice": 195,
-            "description": "Freshly prepared Classic Fries made with premium ingredients in our kitchen.",
-            "imagePath": "/assets/mexican-appetisers/classic-fries.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "dish-peri-peri-fries",
-            "name": "Peri-Peri Fries",
-            "category": "Appetizers - Vegetarian",
-            "isVeg": true,
-            "price": 215,
-            "basePrice": 215,
-            "description": "Freshly prepared Peri-Peri Fries made with premium ingredients in our kitchen.",
-            "imagePath": "/assets/mexican-appetisers/peri-peri-fries.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 1,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "dish-parmesan-fries",
-            "name": "Parmesan Fries",
-            "category": "Appetizers - Vegetarian",
-            "isVeg": true,
-            "price": 245,
-            "basePrice": 245,
-            "description": "Freshly prepared Parmesan Fries made with premium ingredients in our kitchen.",
-            "imagePath": "/assets/mexican-appetisers/parmesan-fries.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "dish-chicken-popcorn",
-            "name": "Chicken Popcorn",
-            "category": "Appetizers - Non-Vegetarian",
-            "isVeg": false,
-            "price": 275,
-            "basePrice": 275,
-            "description": "Freshly prepared Chicken Popcorn made with premium ingredients in our kitchen.",
-            "imagePath": "/assets/mexican-appetisers/chicken-popcorn.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "dish-chicken-strips",
-            "name": "Chicken Strips",
-            "category": "Appetizers - Non-Vegetarian",
-            "isVeg": false,
-            "price": 285,
-            "basePrice": 285,
-            "description": "Freshly prepared Chicken Strips made with premium ingredients in our kitchen.",
-            "imagePath": "/assets/mexican-appetisers/chicken-strips.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          }
-        ]
       }
     ]
   },
   {
-    "id": "mexican-street-food",
-    "title": "Mexican Street (Tacos, Burritos & Hot Dogs)",
-    "description": "Sizzling burrito bowls, toasted wraps, street tacos, loaded nachos, and wood-fired hot dogs.",
+    "id": "mexican",
+    "title": "Mexican",
+    "description": "Sizzling burrito bowls, toasted wraps, crispy tacos, and loaded nachos.",
     "badge": "Street Flavours",
     "subcategories": [
       {
@@ -6366,99 +4148,8 @@ export const RESTAURANT_MENU_ACCORDIONS: CategoryAccordionData[] = [
         ]
       },
       {
-        "id": "mexican-burgers",
-        "title": "Handcrafted Burgers",
-        "items": [
-          {
-            "id": "dish-classic-potato-cheese-burger",
-            "name": "Classic Potato Cheese Burger",
-            "category": "Burgers - Vegetarian",
-            "isVeg": true,
-            "price": 275,
-            "basePrice": 275,
-            "description": "Freshly prepared Classic Potato Cheese Burger made with premium ingredients in our kitchen.",
-            "imagePath": "/assets/burgers/classic-potato-cheese-burger.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "dish-peri-peri-potato-cheese-burger",
-            "name": "Peri-Peri Potato Cheese Burger",
-            "category": "Burgers - Vegetarian",
-            "isVeg": true,
-            "price": 285,
-            "basePrice": 285,
-            "description": "Freshly prepared Peri-Peri Potato Cheese Burger made with premium ingredients in our kitchen.",
-            "imagePath": "/assets/burgers/peri-peri-potato-cheese-burger.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 1,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "dish-smash-veggie-cheese-burger",
-            "name": "Smash Veggie Cheese Burger",
-            "category": "Burgers - Vegetarian",
-            "isVeg": true,
-            "price": 295,
-            "basePrice": 295,
-            "description": "Freshly prepared Smash Veggie Cheese Burger made with premium ingredients in our kitchen.",
-            "imagePath": "/assets/burgers/smash-veggie-cheese-burger.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "dish-crispy-chipotle-chicken-burger",
-            "name": "Crispy Chipotle Chicken Burger",
-            "category": "Burgers - Non-Vegetarian",
-            "isVeg": false,
-            "price": 295,
-            "basePrice": 295,
-            "description": "Freshly prepared Crispy Chipotle Chicken Burger made with premium ingredients in our kitchen.",
-            "imagePath": "/assets/burgers/crispy-spicy-chicken-burgher.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          },
-          {
-            "id": "dish-smash-chicken-cheese-burger",
-            "name": "Smash Chicken Cheese Burger",
-            "category": "Burgers - Non-Vegetarian",
-            "isVeg": false,
-            "price": 325,
-            "basePrice": 325,
-            "description": "Freshly prepared Smash Chicken Cheese Burger made with premium ingredients in our kitchen.",
-            "imagePath": "/assets/burgers/smash-veggie-cheese-burger.avif",
-            "isAvailable": true,
-            "isChefSpecial": false,
-            "isBestseller": false,
-            "spicyLevel": 0,
-            "hasVariants": false,
-            "variants": [],
-            "addons": []
-          }
-        ]
-      },
-      {
         "id": "tacos-nachos",
-        "title": "Street Tacos & Baked Nachos",
+        "title": "Street Tacos & Nachos",
         "items": [
           {
             "id": "dish-grilled-spicy-paneer-tacos",
@@ -6583,7 +4274,7 @@ export const RESTAURANT_MENU_ACCORDIONS: CategoryAccordionData[] = [
       },
       {
         "id": "wood-fired-hot-dogs",
-        "title": "Wood-Fired Hot Dogs (With Gourmet Toppings)",
+        "title": "Wood-Fired Hot Dogs",
         "items": [
           {
             "id": "dish-chicken-cheese",
@@ -6782,10 +4473,1689 @@ export const RESTAURANT_MENU_ACCORDIONS: CategoryAccordionData[] = [
     ]
   },
   {
-    "id": "beverages-desserts",
-    "title": "Beverages, Shakes & Desserts",
-    "description": "Fresh fruit mojitos, hand-spun shakes, iced teas, artisan coffee, and sweet endings.",
-    "badge": "Chilled & Sweet",
+    "id": "appetizers",
+    "title": "Appetizers",
+    "description": "Crispy Asian small plates, street tempura, and Italian sides.",
+    "badge": "Small Plates",
+    "subcategories": [
+      {
+        "id": "veg-asian-appetisers",
+        "title": "Vegetarian Appetisers",
+        "isVegSection": true,
+        "items": [
+          {
+            "id": "asian-salt-pepper-corn",
+            "name": "Salt & Pepper Corn",
+            "category": "Appetisers",
+            "isVeg": true,
+            "price": 315,
+            "basePrice": 315,
+            "description": "Thai-style crispy fried corn.",
+            "imagePath": "/assets/appetisers/salt-and-pepper-corn.webp",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-veg-cheese-corn-roll",
+            "name": "Veg Cheese Corn Roll",
+            "category": "Appetisers",
+            "isVeg": true,
+            "price": 345,
+            "basePrice": 345,
+            "description": "Crispy rolls filled with saut\u00e9ed vegetables, mozzarella and sweet corn. 6 pieces per serving.",
+            "imagePath": "/assets/appetisers/veg-cheese-corn-roll.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-chilli-potato",
+            "name": "Chilli Potato",
+            "category": "Appetisers",
+            "isVeg": true,
+            "price": 345,
+            "basePrice": 345,
+            "description": "Crispy fried potatoes tossed in chilli sauce with bell peppers and spring onion.",
+            "imagePath": "/assets/appetisers/chilli-potato.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 1,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-honey-chilli-cauliflower",
+            "name": "Honey Chilli Cauliflower",
+            "category": "Appetisers",
+            "isVeg": true,
+            "price": 345,
+            "basePrice": 345,
+            "description": "Crispy fried cauliflower tossed in honey garlic sauce.",
+            "imagePath": "/assets/appetisers/honey-chilli-cauliflower.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 1,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-manchurian-dry",
+            "name": "Manchurian (Dry)",
+            "category": "Appetisers",
+            "isVeg": true,
+            "price": 345,
+            "basePrice": 345,
+            "description": "Crispy vegetable balls in a spicy, tangy Indo-Chinese sauce.",
+            "imagePath": "/assets/appetisers/manchurian.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-manchurian-dry-gravy",
+            "name": "Manchurian (Dry) (Gravy)",
+            "category": "Appetisers",
+            "isVeg": true,
+            "price": 345,
+            "basePrice": 345,
+            "description": "Crispy vegetable balls in a spicy, tangy Indo-Chinese sauce.",
+            "imagePath": "/assets/mexican-appetisers/chicken-popcorn.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-chilli-paneer",
+            "name": "Chilli Paneer",
+            "category": "Appetisers",
+            "isVeg": true,
+            "price": 365,
+            "basePrice": 365,
+            "description": "Crispy paneer coated in a sweet-and-spicy Indo-Chinese glaze.",
+            "imagePath": "/assets/appetisers/chilli-paneer.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 1,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-thai-basil-paneer",
+            "name": "Thai Basil Paneer",
+            "category": "Appetisers",
+            "isVeg": true,
+            "price": 365,
+            "basePrice": 365,
+            "description": "Crispy paneer tossed in a fragrant Thai basil sauce.",
+            "imagePath": "/assets/appetisers/thai-basil-paneer.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-mushroom-shanghai",
+            "name": "Mushroom Shanghai",
+            "category": "Appetisers",
+            "isVeg": true,
+            "price": 365,
+            "basePrice": 365,
+            "description": "Crispy mushrooms tossed in a spicy Shanghai-style soy sauce.",
+            "imagePath": "/assets/appetisers/mushroom-shanghai.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-crispy-lotus-stem",
+            "name": "Crispy Lotus Stem",
+            "category": "Appetisers",
+            "isVeg": true,
+            "price": 365,
+            "basePrice": 365,
+            "description": "Crispy lotus stem coated in a sweet-and-spicy glaze.",
+            "imagePath": "/assets/appetisers/crispy-lotus-stem.webp",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-korean-water-chestnut",
+            "name": "Korean Water Chestnut",
+            "category": "Appetisers",
+            "isVeg": true,
+            "price": 395,
+            "basePrice": 395,
+            "description": "Crispy water chestnuts tossed in a flavourful spicy sauce.",
+            "imagePath": "/assets/appetisers/korean-water-chestnut.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-saut-ed-veggies-butter-garlic-sauce",
+            "name": "Saut\u00e9ed Veggies (Butter Garlic Sauce)",
+            "category": "Appetisers",
+            "isVeg": true,
+            "price": 445,
+            "basePrice": 445,
+            "description": "Saut\u00e9ed vegetables served in your choice of sauce.",
+            "imagePath": "/assets/appetisers/sauteed-veggies.webp",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-saut-ed-veggies-butter-garlic-sauce-hot-garlic-sauce",
+            "name": "Saut\u00e9ed Veggies (Butter Garlic Sauce) (Hot Garlic Sauce)",
+            "category": "Appetisers",
+            "isVeg": true,
+            "price": 445,
+            "basePrice": 445,
+            "description": "Saut\u00e9ed vegetables served in your choice of sauce.",
+            "imagePath": "/assets/appetisers/hot-garlic-prawn.webp",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-paneer-bok-choy",
+            "name": "Paneer Bok Choy",
+            "category": "Appetisers",
+            "isVeg": true,
+            "price": 445,
+            "basePrice": 445,
+            "description": "Paneer and crisp bok choy tossed in a light, spicy Asian garlic sauce.",
+            "imagePath": "/assets/appetisers/paneer-bok-choy-appetiser.webp",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          }
+        ]
+      },
+      {
+        "id": "nonveg-asian-appetisers",
+        "title": "Non-Vegetarian Appetisers",
+        "isVegSection": false,
+        "items": [
+          {
+            "id": "asian-cigar-roll",
+            "name": "Cigar Roll",
+            "category": "Appetisers",
+            "isVeg": false,
+            "price": 345,
+            "basePrice": 345,
+            "description": "Crispy rolls filled with pulled chicken and melted mozzarella. 6 pieces per serving.",
+            "imagePath": "/assets/appetisers/cigar-roll.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-traditional-chicken-satay",
+            "name": "Traditional Chicken Satay",
+            "category": "Appetisers",
+            "isVeg": false,
+            "price": 345,
+            "basePrice": 345,
+            "description": "Grilled chicken and bell pepper skewers in a rich, creamy peanut sauce. 3 sticks per serving.",
+            "imagePath": "/assets/appetisers/chicken-satay.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-crispy-honey-chicken",
+            "name": "Crispy Honey Chicken",
+            "category": "Appetisers",
+            "isVeg": false,
+            "price": 395,
+            "basePrice": 395,
+            "description": "Crispy chicken wok-tossed with spring onions and bell peppers in a sweet-and-spicy honey chilli glaze.",
+            "imagePath": "/assets/appetisers/crispy-honey-chicken.webp",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-hot-basil-chicken",
+            "name": "Hot Basil Chicken",
+            "category": "Appetisers",
+            "isVeg": false,
+            "price": 395,
+            "basePrice": 395,
+            "description": "Crispy chicken and vegetables wok-tossed in a fragrant, spicy hot basil sauce.",
+            "imagePath": "/assets/appetisers/hot-basil-chciken.webp",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-wok-tossed-chicken",
+            "name": "Wok-Tossed Chicken",
+            "category": "Appetisers",
+            "isVeg": false,
+            "price": 395,
+            "basePrice": 395,
+            "description": "Crispy fried chicken wok-tossed with vegetables in a spicy, tangy hot garlic sauce with a hint of sweetness.",
+            "imagePath": "/assets/appetisers/wok-tossed-chicken.webp",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-rock-shrimp-tempura",
+            "name": "Rock Shrimp Tempura",
+            "category": "Appetisers",
+            "isVeg": false,
+            "price": 795,
+            "basePrice": 795,
+            "description": "Bite-sized tempura prawns tossed in a creamy, spicy dynamite sauce.",
+            "imagePath": "/assets/appetisers/rock-shrimp-tempura.webp",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-katsu-chicken",
+            "name": "Katsu Chicken",
+            "category": "Appetisers",
+            "isVeg": false,
+            "price": 395,
+            "basePrice": 395,
+            "description": "Crispy fried chicken, tender on the inside, finished with teriyaki glaze, dynamite sauce and sesame seeds.",
+            "imagePath": "/assets/appetisers/chicken-katsu.webp",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-hot-garlic-prawn",
+            "name": "Hot Garlic Prawn",
+            "category": "Appetisers",
+            "isVeg": false,
+            "price": 745,
+            "basePrice": 745,
+            "description": "Crispy prawns tossed in a spicy, buttery hot garlic sauce.",
+            "imagePath": "/assets/appetisers/hot-garlic-prawn.webp",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          }
+        ]
+      },
+      {
+        "id": "italian-appetizers",
+        "title": "Italian Appetizers & Fries",
+        "items": [
+          {
+            "id": "dish-classic-fries",
+            "name": "Classic Fries",
+            "category": "Appetizers - Vegetarian",
+            "isVeg": true,
+            "price": 195,
+            "basePrice": 195,
+            "description": "Freshly prepared Classic Fries made with premium ingredients in our kitchen.",
+            "imagePath": "/assets/mexican-appetisers/classic-fries.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "dish-peri-peri-fries",
+            "name": "Peri-Peri Fries",
+            "category": "Appetizers - Vegetarian",
+            "isVeg": true,
+            "price": 215,
+            "basePrice": 215,
+            "description": "Freshly prepared Peri-Peri Fries made with premium ingredients in our kitchen.",
+            "imagePath": "/assets/mexican-appetisers/peri-peri-fries.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 1,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "dish-parmesan-fries",
+            "name": "Parmesan Fries",
+            "category": "Appetizers - Vegetarian",
+            "isVeg": true,
+            "price": 245,
+            "basePrice": 245,
+            "description": "Freshly prepared Parmesan Fries made with premium ingredients in our kitchen.",
+            "imagePath": "/assets/mexican-appetisers/parmesan-fries.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "dish-chicken-popcorn",
+            "name": "Chicken Popcorn",
+            "category": "Appetizers - Non-Vegetarian",
+            "isVeg": false,
+            "price": 275,
+            "basePrice": 275,
+            "description": "Freshly prepared Chicken Popcorn made with premium ingredients in our kitchen.",
+            "imagePath": "/assets/mexican-appetisers/chicken-popcorn.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "dish-chicken-strips",
+            "name": "Chicken Strips",
+            "category": "Appetizers - Non-Vegetarian",
+            "isVeg": false,
+            "price": 285,
+            "basePrice": 285,
+            "description": "Freshly prepared Chicken Strips made with premium ingredients in our kitchen.",
+            "imagePath": "/assets/mexican-appetisers/chicken-strips.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "soups",
+    "title": "Soups",
+    "description": "Slow-simmered aromatic Thai and Asian broths.",
+    "badge": "Simmered Broths",
+    "subcategories": [
+      {
+        "id": "veg-asian-soups",
+        "title": "Vegetarian Soups",
+        "isVegSection": true,
+        "items": [
+          {
+            "id": "asian-manchow-soup-vegetarian",
+            "name": "Manchow Soup (Vegetarian)",
+            "category": "Soups",
+            "isVeg": true,
+            "price": 175,
+            "basePrice": 175,
+            "description": "Authentic Manchow Soup (Vegetarian) prepared with Asian herbs and wok fire.",
+            "imagePath": "/assets/soups/manchow-soup.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-tom-kha-soup-vegetarian",
+            "name": "Tom Kha Soup (Vegetarian)",
+            "category": "Soups",
+            "isVeg": true,
+            "price": 215,
+            "basePrice": 215,
+            "description": "Creamy Thai coconut broth with galangal, lemongrass and kaffir lime leaves.",
+            "imagePath": "/assets/soups/tom-kha-soup.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-sweet-corn-soup-vegetarian",
+            "name": "Sweet Corn Soup (Vegetarian)",
+            "category": "Soups",
+            "isVeg": true,
+            "price": 145,
+            "basePrice": 145,
+            "description": "Creamy Thai coconut broth with galangal, lemongrass and kaffir lime leaves.",
+            "imagePath": "/assets/soups/sweet-corn-soup.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-hot-sour-soup-vegetarian",
+            "name": "Hot & Sour Soup (Vegetarian)",
+            "category": "Soups",
+            "isVeg": true,
+            "price": 175,
+            "basePrice": 175,
+            "description": "Creamy Thai coconut broth with galangal, lemongrass and kaffir lime leaves.",
+            "imagePath": "/assets/soups/hot-n-sour-soup.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-tom-yum-soup-vegetarian",
+            "name": "Tom Yum Soup (Vegetarian)",
+            "category": "Soups",
+            "isVeg": true,
+            "price": 175,
+            "basePrice": 175,
+            "description": "Hot and sour Thai broth with lemongrass and kaffir lime leaves.",
+            "imagePath": "/assets/soups/tom-yum-soup.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-lemon-coriander-soup-vegetarian",
+            "name": "Lemon Coriander Soup (Vegetarian)",
+            "category": "Soups",
+            "isVeg": true,
+            "price": 145,
+            "basePrice": 145,
+            "description": "Hot and sour Thai broth with lemongrass and kaffir lime leaves.",
+            "imagePath": "/assets/soups/lemon-coriander-soup.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          }
+        ]
+      },
+      {
+        "id": "nonveg-asian-soups",
+        "title": "Non-Vegetarian Soups",
+        "isVegSection": false,
+        "items": [
+          {
+            "id": "asian-manchow-soup-chicken",
+            "name": "Manchow Soup (Chicken)",
+            "category": "Soups",
+            "isVeg": false,
+            "price": 225,
+            "basePrice": 225,
+            "description": "Authentic Manchow Soup (Vegetarian) prepared with Asian herbs and wok fire.",
+            "imagePath": "/assets/soups/manchow-soup.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-manchow-soup-prawn",
+            "name": "Manchow Soup (Prawn)",
+            "category": "Soups",
+            "isVeg": false,
+            "price": 295,
+            "basePrice": 295,
+            "description": "Authentic Manchow Soup (Vegetarian) prepared with Asian herbs and wok fire.",
+            "imagePath": "/assets/soups/manchow-soup.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-tom-kha-soup-chicken",
+            "name": "Tom Kha Soup (Chicken)",
+            "category": "Soups",
+            "isVeg": false,
+            "price": 275,
+            "basePrice": 275,
+            "description": "Creamy Thai coconut broth with galangal, lemongrass and kaffir lime leaves.",
+            "imagePath": "/assets/soups/tom-kha-soup.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-tom-kha-soup-prawn",
+            "name": "Tom Kha Soup (Prawn)",
+            "category": "Soups",
+            "isVeg": false,
+            "price": 345,
+            "basePrice": 345,
+            "description": "Creamy Thai coconut broth with galangal, lemongrass and kaffir lime leaves.",
+            "imagePath": "/assets/soups/tom-kha-soup.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-sweet-corn-soup-chicken",
+            "name": "Sweet Corn Soup (Chicken)",
+            "category": "Soups",
+            "isVeg": false,
+            "price": 195,
+            "basePrice": 195,
+            "description": "Creamy Thai coconut broth with galangal, lemongrass and kaffir lime leaves.",
+            "imagePath": "/assets/soups/sweet-corn-soup.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-sweet-corn-soup-prawn",
+            "name": "Sweet Corn Soup (Prawn)",
+            "category": "Soups",
+            "isVeg": false,
+            "price": 295,
+            "basePrice": 295,
+            "description": "Creamy Thai coconut broth with galangal, lemongrass and kaffir lime leaves.",
+            "imagePath": "/assets/soups/sweet-corn-soup.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-hot-sour-soup-chicken",
+            "name": "Hot & Sour Soup (Chicken)",
+            "category": "Soups",
+            "isVeg": false,
+            "price": 225,
+            "basePrice": 225,
+            "description": "Creamy Thai coconut broth with galangal, lemongrass and kaffir lime leaves.",
+            "imagePath": "/assets/soups/hot-n-sour-soup.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-hot-sour-soup-prawn",
+            "name": "Hot & Sour Soup (Prawn)",
+            "category": "Soups",
+            "isVeg": false,
+            "price": 295,
+            "basePrice": 295,
+            "description": "Creamy Thai coconut broth with galangal, lemongrass and kaffir lime leaves.",
+            "imagePath": "/assets/soups/hot-n-sour-soup.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-tom-yum-soup-chicken",
+            "name": "Tom Yum Soup (Chicken)",
+            "category": "Soups",
+            "isVeg": false,
+            "price": 225,
+            "basePrice": 225,
+            "description": "Hot and sour Thai broth with lemongrass and kaffir lime leaves.",
+            "imagePath": "/assets/soups/tom-yum-soup.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-tom-yum-soup-prawn",
+            "name": "Tom Yum Soup (Prawn)",
+            "category": "Soups",
+            "isVeg": false,
+            "price": 295,
+            "basePrice": 295,
+            "description": "Hot and sour Thai broth with lemongrass and kaffir lime leaves.",
+            "imagePath": "/assets/soups/tom-yum-soup.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-lemon-coriander-soup-chicken",
+            "name": "Lemon Coriander Soup (Chicken)",
+            "category": "Soups",
+            "isVeg": false,
+            "price": 195,
+            "basePrice": 195,
+            "description": "Hot and sour Thai broth with lemongrass and kaffir lime leaves.",
+            "imagePath": "/assets/soups/lemon-coriander-soup.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-lemon-coriander-soup-prawn",
+            "name": "Lemon Coriander Soup (Prawn)",
+            "category": "Soups",
+            "isVeg": false,
+            "price": 295,
+            "basePrice": 295,
+            "description": "Hot and sour Thai broth with lemongrass and kaffir lime leaves.",
+            "imagePath": "/assets/soups/lemon-coriander-soup.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "curries",
+    "title": "Curries",
+    "description": "Rich coconut curries and wok-tossed Asian rice bowls.",
+    "badge": "Wok & Rice",
+    "subcategories": [
+      {
+        "id": "veg-curries",
+        "title": "Vegetarian Curries",
+        "isVegSection": true,
+        "items": [
+          {
+            "id": "asian-thai-green-curry-vegetarian",
+            "name": "Thai Green Curry Vegetarian",
+            "category": "Curries",
+            "isVeg": true,
+            "price": 365,
+            "basePrice": 365,
+            "description": "A fragrant Thai green curry with coconut milk, vegetables and fresh herbs. Rice not included.",
+            "imagePath": "/assets/rice-bowls/thai-pineapple-n-egg-fried-rice.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": [
+              {
+                "id": "addon-steamed-rice",
+                "name": "Steamed Rice",
+                "price": 129
+              },
+              {
+                "id": "addon-fried-rice",
+                "name": "Fried Rice",
+                "price": 179
+              },
+              {
+                "id": "addon-jasmine-rice",
+                "name": "Jasmine Rice",
+                "price": 199
+              },
+              {
+                "id": "addon-steamed-rice-2",
+                "name": "Steamed Rice",
+                "price": 129
+              },
+              {
+                "id": "addon-fried-rice-2",
+                "name": "Fried Rice",
+                "price": 179
+              },
+              {
+                "id": "addon-jasmine-rice-2",
+                "name": "Jasmine Rice",
+                "price": 199
+              }
+            ]
+          },
+          {
+            "id": "asian-thai-red-curry-vegetarian",
+            "name": "Thai Red Curry Vegetarian",
+            "category": "Curries",
+            "isVeg": true,
+            "price": 365,
+            "basePrice": 365,
+            "description": "A rich Thai red curry with coconut milk, vegetables and aromatic spices. Rice not included",
+            "imagePath": "/assets/rice-bowls/thai-pineapple-n-egg-fried-rice.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": [
+              {
+                "id": "addon-steamed-rice-7",
+                "name": "Steamed Rice",
+                "price": 129
+              },
+              {
+                "id": "addon-fried-rice-7",
+                "name": "Fried Rice",
+                "price": 179
+              },
+              {
+                "id": "addon-jasmine-rice-7",
+                "name": "Jasmine Rice",
+                "price": 199
+              },
+              {
+                "id": "addon-steamed-rice-8",
+                "name": "Steamed Rice",
+                "price": 129
+              },
+              {
+                "id": "addon-fried-rice-8",
+                "name": "Fried Rice",
+                "price": 179
+              },
+              {
+                "id": "addon-jasmine-rice-8",
+                "name": "Jasmine Rice",
+                "price": 199
+              }
+            ]
+          },
+          {
+            "id": "asian-burmese-yellow-curry-vegetarian",
+            "name": "Burmese Yellow Curry Vegetarian",
+            "category": "Curries",
+            "isVeg": true,
+            "price": 365,
+            "basePrice": 365,
+            "description": "Rich Burmese coconut curry with mild spices. Rice not included",
+            "imagePath": "/assets/pizza/classic-margherita.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": [
+              {
+                "id": "addon-steamed-rice-13",
+                "name": "Steamed Rice",
+                "price": 129
+              },
+              {
+                "id": "addon-fried-rice-13",
+                "name": "Fried Rice",
+                "price": 179
+              },
+              {
+                "id": "addon-jasmine-rice-13",
+                "name": "Jasmine Rice",
+                "price": 199
+              },
+              {
+                "id": "addon-steamed-rice-14",
+                "name": "Steamed Rice",
+                "price": 129
+              },
+              {
+                "id": "addon-fried-rice-14",
+                "name": "Fried Rice",
+                "price": 179
+              },
+              {
+                "id": "addon-jasmine-rice-14",
+                "name": "Jasmine Rice",
+                "price": 199
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "nonveg-curries",
+        "title": "Non-Vegetarian Curries",
+        "isVegSection": false,
+        "items": [
+          {
+            "id": "asian-thai-green-curry-chicken",
+            "name": "Thai Green Curry Chicken",
+            "category": "Curries",
+            "isVeg": false,
+            "price": 425,
+            "basePrice": 425,
+            "description": "A fragrant Thai green curry with coconut milk, vegetables and fresh herbs. Rice not included.",
+            "imagePath": "/assets/rice-bowls/thai-pineapple-n-egg-fried-rice.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": [
+              {
+                "id": "addon-steamed-rice-3",
+                "name": "Steamed Rice",
+                "price": 129
+              },
+              {
+                "id": "addon-fried-rice-3",
+                "name": "Fried Rice",
+                "price": 179
+              },
+              {
+                "id": "addon-jasmine-rice-3",
+                "name": "Jasmine Rice",
+                "price": 199
+              },
+              {
+                "id": "addon-steamed-rice-4",
+                "name": "Steamed Rice",
+                "price": 129
+              },
+              {
+                "id": "addon-fried-rice-4",
+                "name": "Fried Rice",
+                "price": 179
+              },
+              {
+                "id": "addon-jasmine-rice-4",
+                "name": "Jasmine Rice",
+                "price": 199
+              }
+            ]
+          },
+          {
+            "id": "asian-thai-green-curry-prawn",
+            "name": "Thai Green Curry Prawn",
+            "category": "Curries",
+            "isVeg": false,
+            "price": 645,
+            "basePrice": 645,
+            "description": "A fragrant Thai green curry with coconut milk, vegetables and fresh herbs. Rice not included.",
+            "imagePath": "/assets/rice-bowls/thai-pineapple-n-egg-fried-rice.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": [
+              {
+                "id": "addon-steamed-rice-5",
+                "name": "Steamed Rice",
+                "price": 129
+              },
+              {
+                "id": "addon-fried-rice-5",
+                "name": "Fried Rice",
+                "price": 179
+              },
+              {
+                "id": "addon-jasmine-rice-5",
+                "name": "Jasmine Rice",
+                "price": 199
+              },
+              {
+                "id": "addon-steamed-rice-6",
+                "name": "Steamed Rice",
+                "price": 129
+              },
+              {
+                "id": "addon-fried-rice-6",
+                "name": "Fried Rice",
+                "price": 179
+              },
+              {
+                "id": "addon-jasmine-rice-6",
+                "name": "Jasmine Rice",
+                "price": 199
+              }
+            ]
+          },
+          {
+            "id": "asian-thai-red-curry-chicken",
+            "name": "Thai Red Curry Chicken",
+            "category": "Curries",
+            "isVeg": false,
+            "price": 425,
+            "basePrice": 425,
+            "description": "A rich Thai red curry with coconut milk, vegetables and aromatic spices. Rice not included.",
+            "imagePath": "/assets/rice-bowls/thai-pineapple-n-egg-fried-rice.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": [
+              {
+                "id": "addon-steamed-rice-9",
+                "name": "Steamed Rice",
+                "price": 129
+              },
+              {
+                "id": "addon-fried-rice-9",
+                "name": "Fried Rice",
+                "price": 179
+              },
+              {
+                "id": "addon-jasmine-rice-9",
+                "name": "Jasmine Rice",
+                "price": 199
+              },
+              {
+                "id": "addon-steamed-rice-10",
+                "name": "Steamed Rice",
+                "price": 129
+              },
+              {
+                "id": "addon-fried-rice-10",
+                "name": "Fried Rice",
+                "price": 179
+              },
+              {
+                "id": "addon-jasmine-rice-10",
+                "name": "Jasmine Rice",
+                "price": 199
+              }
+            ]
+          },
+          {
+            "id": "asian-thai-red-curry-prawn",
+            "name": "Thai Red Curry Prawn",
+            "category": "Curries",
+            "isVeg": false,
+            "price": 645,
+            "basePrice": 645,
+            "description": "A rich Thai red curry with coconut milk, vegetables and aromatic spices. Rice not included.",
+            "imagePath": "/assets/rice-bowls/thai-pineapple-n-egg-fried-rice.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": [
+              {
+                "id": "addon-steamed-rice-11",
+                "name": "Steamed Rice",
+                "price": 129
+              },
+              {
+                "id": "addon-fried-rice-11",
+                "name": "Fried Rice",
+                "price": 179
+              },
+              {
+                "id": "addon-jasmine-rice-11",
+                "name": "Jasmine Rice",
+                "price": 199
+              },
+              {
+                "id": "addon-steamed-rice-12",
+                "name": "Steamed Rice",
+                "price": 129
+              },
+              {
+                "id": "addon-fried-rice-12",
+                "name": "Fried Rice",
+                "price": 179
+              },
+              {
+                "id": "addon-jasmine-rice-12",
+                "name": "Jasmine Rice",
+                "price": 199
+              }
+            ]
+          },
+          {
+            "id": "asian-burmese-yellow-curry-chicken",
+            "name": "Burmese Yellow Curry Chicken",
+            "category": "Curries",
+            "isVeg": false,
+            "price": 425,
+            "basePrice": 425,
+            "description": "Rich Burmese coconut curry with mild spices. Rice not included.",
+            "imagePath": "/assets/pizza/classic-margherita.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": [
+              {
+                "id": "addon-steamed-rice-15",
+                "name": "Steamed Rice",
+                "price": 129
+              },
+              {
+                "id": "addon-fried-rice-15",
+                "name": "Fried Rice",
+                "price": 179
+              },
+              {
+                "id": "addon-jasmine-rice-15",
+                "name": "Jasmine Rice",
+                "price": 199
+              },
+              {
+                "id": "addon-steamed-rice-16",
+                "name": "Steamed Rice",
+                "price": 129
+              },
+              {
+                "id": "addon-fried-rice-16",
+                "name": "Fried Rice",
+                "price": 179
+              },
+              {
+                "id": "addon-jasmine-rice-16",
+                "name": "Jasmine Rice",
+                "price": 199
+              }
+            ]
+          },
+          {
+            "id": "asian-burmese-yellow-curry-prawn",
+            "name": "Burmese Yellow Curry Prawn",
+            "category": "Curries",
+            "isVeg": false,
+            "price": 645,
+            "basePrice": 645,
+            "description": "Rich Burmese coconut curry with mild spices. Rice not included.",
+            "imagePath": "/assets/pizza/classic-margherita.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": [
+              {
+                "id": "addon-steamed-rice-17",
+                "name": "Steamed Rice",
+                "price": 129
+              },
+              {
+                "id": "addon-fried-rice-17",
+                "name": "Fried Rice",
+                "price": 179
+              },
+              {
+                "id": "addon-jasmine-rice-17",
+                "name": "Jasmine Rice",
+                "price": 199
+              },
+              {
+                "id": "addon-steamed-rice-18",
+                "name": "Steamed Rice",
+                "price": 129
+              },
+              {
+                "id": "addon-fried-rice-18",
+                "name": "Fried Rice",
+                "price": 179
+              },
+              {
+                "id": "addon-jasmine-rice-18",
+                "name": "Jasmine Rice",
+                "price": 199
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "veg-rice-bowls",
+        "title": "Vegetarian Rice Bowls",
+        "isVegSection": true,
+        "items": [
+          {
+            "id": "asian-paneer-krapow",
+            "name": "Paneer Krapow",
+            "category": "Rice Bowls",
+            "isVeg": true,
+            "price": 425,
+            "basePrice": 425,
+            "description": "Thai basil, chilli and garlic wok-tossed with minced paneer, served over jasmine rice.",
+            "imagePath": "/assets/rice-bowls/chilli-paneer-rice-bowl.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-kimchi-rice-bowl",
+            "name": "Kimchi Rice Bowl",
+            "category": "Rice Bowls",
+            "isVeg": true,
+            "price": 445,
+            "basePrice": 445,
+            "description": "Grilled paneer, corn, mushrooms and bok choy tossed in a sweet-and-spicy kimchi sauce, served with jasmine rice.",
+            "imagePath": "/assets/rice-bowls/kimchi-pickle-rice-bowl.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-chilli-paneer-rice-bowl",
+            "name": "Chilli Paneer Rice Bowl",
+            "category": "Rice Bowls",
+            "isVeg": true,
+            "price": 395,
+            "basePrice": 395,
+            "description": "Sweet-and-spicy Indo-Chinese sauce with crispy paneer, peppers and onions, served over fried rice.",
+            "imagePath": "/assets/rice-bowls/chilli-paneer-rice-bowl.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 1,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-thai-basil-paneer-fried-rice-bowl",
+            "name": "Thai Basil Paneer & Fried Rice Bowl",
+            "category": "Rice Bowls",
+            "isVeg": true,
+            "price": 395,
+            "basePrice": 395,
+            "description": "Fresh Thai basil and savoury aromatics wok-tossed with paneer, served with vegetable fried rice.",
+            "imagePath": "/assets/rice-bowls/thai-basil-paneer-fried-rice.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-chilli-mushroom-rice-bowl",
+            "name": "Chilli Mushroom Rice Bowl",
+            "category": "Rice Bowls",
+            "isVeg": true,
+            "price": 395,
+            "basePrice": 395,
+            "description": "Crispy mushrooms in a spicy soy-garlic sauce, served over fried rice.",
+            "imagePath": "/assets/rice-bowls/chilli-mushroom-rice-bowl.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 1,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-manchurian-rice-bowl",
+            "name": "Manchurian Rice Bowl",
+            "category": "Rice Bowls",
+            "isVeg": true,
+            "price": 375,
+            "basePrice": 375,
+            "description": "Crispy vegetable Manchurian in a rich, tangy sauce, served over fried rice.",
+            "imagePath": "/assets/rice-bowls/thai-pineapple-n-egg-fried-rice.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          }
+        ]
+      },
+      {
+        "id": "nonveg-rice-bowls",
+        "title": "Non-Vegetarian Rice Bowls",
+        "isVegSection": false,
+        "items": [
+          {
+            "id": "asian-nasi-goreng",
+            "name": "Nasi Goreng",
+            "category": "Rice Bowls",
+            "isVeg": false,
+            "price": 445,
+            "basePrice": 445,
+            "description": "Indonesian fried rice with chicken, vegetables and a savoury peanut butter sauce, served with fried chicken and a sunny-side-up egg.",
+            "imagePath": "/assets/rice-bowls/nasi-goreng.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-krapow-jasmine-rice-bowl",
+            "name": "Krapow Jasmine Rice Bowl",
+            "category": "Rice Bowls",
+            "isVeg": false,
+            "price": 445,
+            "basePrice": 445,
+            "description": "Thai basil, chilli and garlic wok-tossed with minced chicken, served over fragrant jasmine rice.",
+            "imagePath": "/assets/rice-bowls/krapow-jasmine-rice-bowl.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-katsu-chicken-rice-bowl",
+            "name": "Katsu Chicken Rice Bowl",
+            "category": "Rice Bowls",
+            "isVeg": false,
+            "price": 445,
+            "basePrice": 445,
+            "description": "Golden crispy chicken katsu served over jasmine rice with creamy garlic sauce and tangy ginger pickle.",
+            "imagePath": "/assets/rice-bowls/katsu-chickwn-rice-bowl.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-chilli-chicken-rice-bowl",
+            "name": "Chilli Chicken Rice Bowl",
+            "category": "Rice Bowls",
+            "isVeg": false,
+            "price": 425,
+            "basePrice": 425,
+            "description": "Crispy chilli chicken with peppers and onions in a spicy Indo-Chinese sauce, served over fried rice.",
+            "imagePath": "/assets/rice-bowls/chilli-mushroom-rice-bowl.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 1,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-thai-pineapple-chicken-egg-fried-rice-bowl",
+            "name": "Thai Pineapple, Chicken & Egg Fried Rice bowl",
+            "category": "Rice Bowls",
+            "isVeg": false,
+            "price": 445,
+            "basePrice": 445,
+            "description": "Fragrant fried rice with chicken, egg, vegetables and caramelised pineapple in a sweet-and-spicy chilli basil sauce.",
+            "imagePath": "/assets/rice-bowls/thai-pineapple-n-egg-fried-rice.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "asian-chilli-prawn-rice-bowl",
+            "name": "Chilli Prawn Rice Bowl",
+            "category": "Rice Bowls",
+            "isVeg": false,
+            "price": 595,
+            "basePrice": 595,
+            "description": "Crispy prawns in a bold hot garlic sauce, served over fried rice.",
+            "imagePath": "/assets/rice-bowls/chilli-mushroom-rice-bowl.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 1,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "salads",
+    "title": "Salads",
+    "description": "Crisp greens, fresh bocconcini, burrata, and house dressings.",
+    "badge": "Farm Fresh",
+    "subcategories": [
+      {
+        "id": "veg-salads",
+        "title": "Vegetarian Fresh Salads",
+        "isVegSection": true,
+        "items": [
+          {
+            "id": "dish-caprese-salad",
+            "name": "Caprese Salad",
+            "category": "Salads",
+            "isVeg": true,
+            "price": 365,
+            "basePrice": 365,
+            "description": "Rocket leaves, freshly sliced tomatoes, bocconcini and basil pesto, finished with mild seasoning and a balsamic reduction.",
+            "imagePath": "/assets/napoli-sandwiches/caprese-sandwich.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "dish-caesar-salad",
+            "name": "Caesar Salad",
+            "category": "Salads",
+            "isVeg": true,
+            "price": 345,
+            "basePrice": 345,
+            "description": "Lettuce, crunchy croutons, saut\u00e9ed bell peppers and sweetcorn, tossed in a creamy mustard-mayo dressing, finished with parmesan.",
+            "imagePath": "/assets/salad/caesar-salad.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "dish-apple-salad",
+            "name": "Apple Salad",
+            "category": "Salads",
+            "isVeg": true,
+            "price": 365,
+            "basePrice": 365,
+            "description": "Crisp green apple and orange slices tossed with mixed lettuce, crunchy nuts and a refreshing honey-lemon dressing.",
+            "imagePath": "/assets/rice-bowls/thai-pineapple-n-egg-fried-rice.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "dish-watermelon-salad",
+            "name": "Watermelon Salad",
+            "category": "Salads",
+            "isVeg": true,
+            "price": 365,
+            "basePrice": 365,
+            "description": "Watermelon, burrata, lettuce and feta tossed in a honey-lemon dressing.",
+            "imagePath": "/assets/salad/watermelon-salad.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "dish-rucola-burrata-salad",
+            "name": "Rucola Burrata Salad",
+            "category": "Salads",
+            "isVeg": true,
+            "price": 445,
+            "basePrice": 445,
+            "description": "Rocket leaves, cherry tomatoes, burrata and pesto tossed in a honey-balsamic dressing and finished with a delicate balsamic reduction.",
+            "imagePath": "/assets/garlic-bread/asparagus-burrata.webp",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          }
+        ]
+      },
+      {
+        "id": "nonveg-salads",
+        "title": "Grilled Chicken Salads",
+        "isVegSection": false,
+        "items": [
+          {
+            "id": "dish-caprese-grilled-chicken",
+            "name": "Caprese Grilled Chicken",
+            "category": "Salads",
+            "isVeg": false,
+            "price": 415,
+            "basePrice": 415,
+            "description": "Fresh Caprese Grilled Chicken prepared with tender protein and chef's dressings.",
+            "imagePath": "/assets/garlic-bread/grilled-chicken.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "dish-caesar-grilled-chicken",
+            "name": "Caesar Grilled Chicken",
+            "category": "Salads",
+            "isVeg": false,
+            "price": 395,
+            "basePrice": 395,
+            "description": "Fresh Caesar Grilled Chicken prepared with tender protein and chef's dressings.",
+            "imagePath": "/assets/garlic-bread/grilled-chicken.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "dish-apple-grilled-chicken",
+            "name": "Apple Grilled Chicken",
+            "category": "Salads",
+            "isVeg": false,
+            "price": 415,
+            "basePrice": 415,
+            "description": "Fresh Apple Grilled Chicken prepared with tender protein and chef's dressings.",
+            "imagePath": "/assets/garlic-bread/grilled-chicken.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "dish-watermelon-grilled-chicken",
+            "name": "Watermelon Grilled chicken",
+            "category": "Salads",
+            "isVeg": false,
+            "price": 415,
+            "basePrice": 415,
+            "description": "Fresh Watermelon Grilled chicken prepared with tender protein and chef's dressings.",
+            "imagePath": "/assets/garlic-bread/grilled-chicken.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          },
+          {
+            "id": "dish-rucola-burrata-grilled-chicken",
+            "name": "Rucola Burrata Grilled Chicken",
+            "category": "Salads",
+            "isVeg": false,
+            "price": 495,
+            "basePrice": 495,
+            "description": "Fresh Rucola Burrata Grilled Chicken prepared with tender protein and chef's dressings.",
+            "imagePath": "/assets/garlic-bread/grilled-chicken.avif",
+            "isAvailable": true,
+            "isChefSpecial": false,
+            "isBestseller": false,
+            "spicyLevel": 0,
+            "hasVariants": false,
+            "variants": [],
+            "addons": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "beverages",
+    "title": "Beverages",
+    "description": "Chilled mojitos, artisan coolers, and hand-spun milkshakes.",
+    "badge": "Chilled & Fresh",
     "subcategories": [
       {
         "id": "beverages",
@@ -6985,7 +6355,15 @@ export const RESTAURANT_MENU_ACCORDIONS: CategoryAccordionData[] = [
             "addons": []
           }
         ]
-      },
+      }
+    ]
+  },
+  {
+    "id": "desserts",
+    "title": "Desserts",
+    "description": "Handmade desserts and sweet house creations.",
+    "badge": "Sweet Endings",
+    "subcategories": [
       {
         "id": "desserts",
         "title": "Artisan Desserts",

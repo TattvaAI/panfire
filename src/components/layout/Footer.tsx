@@ -25,26 +25,57 @@ export const Footer: React.FC = () => {
             <p className="text-sm text-stone-400 leading-relaxed font-sans">
               48-hour cold-fermented sourdough pizza baked on 450°C volcanic stone. Handcrafted dim sums, wok noodles, and street-style bites with zero shortcuts.
             </p>
+            <div className="pt-1 text-xs text-stone-400 font-sans space-y-1">
+              <p>SCO 91, Omaxe Clockton Highstreet Market, New Chandigarh</p>
+              <p className="flex items-center gap-3">
+                <a href="tel:+917814219191" className="text-stone-300 hover:text-white font-mono">
+                  +91 78142 19191
+                </a>
+                <span>•</span>
+                <span className="text-emerald-400">Open Everyday 12 PM – 11 PM</span>
+              </p>
+            </div>
           </div>
 
           {/* Quick Nav Links */}
-          <nav className="flex flex-wrap items-center gap-6 sm:gap-8 text-sm font-semibold text-stone-300 font-sans">
-            <a href="#" className="hover:text-white transition-colors">
-              Home
-            </a>
-            <a href="#menu" className="hover:text-white transition-colors">
-              Menu
-            </a>
-            <a href="#story" className="hover:text-white transition-colors">
-              Our Story
-            </a>
-            <a href="#booking" className="hover:text-white transition-colors">
-              Book a Table
-            </a>
-            <a href="#location" className="hover:text-white transition-colors">
-              Hours & Location
-            </a>
-          </nav>
+          <div className="flex flex-col gap-4">
+            <nav className="flex flex-wrap items-center gap-6 sm:gap-8 text-sm font-semibold text-stone-300 font-sans">
+              <a href="#" className="hover:text-white transition-colors">
+                Home
+              </a>
+              <a href="#menu" className="hover:text-white transition-colors">
+                Menu
+              </a>
+              <a href="#story" className="hover:text-white transition-colors">
+                Our Story
+              </a>
+              <a href="#booking" className="hover:text-white transition-colors">
+                Book a Table
+              </a>
+              <a href="#location" className="hover:text-white transition-colors">
+                Hours & Location
+              </a>
+            </nav>
+            <div className="flex items-center gap-4 text-xs font-semibold text-stone-400 font-sans">
+              <a
+                href="https://www.instagram.com/panfire_newchandigarh?cplk=Nnpma3cxeHJ5cTZu"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white transition-colors text-stone-300"
+              >
+                Instagram: @panfire_newchandigarh
+              </a>
+              <span>•</span>
+              <a
+                href="https://maps.app.goo.gl/vEzf4jEKKoFkfGqz8?g_st=iw"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white transition-colors text-stone-300"
+              >
+                Directions on Google Maps
+              </a>
+            </div>
+          </div>
 
         </div>
 
@@ -52,7 +83,7 @@ export const Footer: React.FC = () => {
         <div className="pt-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs text-stone-500 font-sans">
           <span>© 2026 PanFire Restaurant & Hospitality. All rights reserved.</span>
           <div className="flex items-center gap-3">
-            <span>Oak Wood Fired • 450°C Volcanic Hearth • Connaught Market</span>
+            <span>Oak Wood Fired • 450°C Volcanic Hearth • New Chandigarh</span>
             <button
               onClick={() => setView('ADMIN')}
               className="text-stone-600 hover:text-stone-400 transition-colors p-1 rounded cursor-pointer"

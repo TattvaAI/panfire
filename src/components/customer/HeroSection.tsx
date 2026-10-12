@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Calendar, Sparkles, Flame } from 'lucide-react';
+import { ArrowRight, Calendar } from 'lucide-react';
 
 interface HeroSectionProps {
   onOpenReservation?: () => void;
@@ -23,21 +23,17 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenReservation }) =
           {/* Left Column: Headlines & Call-to-actions (7 Cols) */}
           <div className="lg:col-span-7 space-y-6">
             
-            {/* Friendly Badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold">
-              <Flame className="w-3.5 h-3.5 text-[#C8371A]" />
-              <span>Wood-Fired Hearth & Asian Small Plates</span>
-            </div>
-
             {/* Main Headline */}
-            <h1 className="font-serif-clean text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-stone-900 leading-[1.08]">
-              Wood-Fired Pizza. <br />
-              <span className="text-[#C8371A] font-serif-clean italic font-medium">Handcrafted</span> Asian Bites.
+            <h1 className="font-serif-clean text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-stone-900 leading-[1.1]">
+              Asian <span className="text-[#C8371A] font-light">|</span> Italian <span className="text-[#C8371A] font-light">|</span> Mexican
             </h1>
 
-            {/* Welcoming Description */}
+            {/* Subline / Cuisine Highlights */}
             <p className="font-sans text-base sm:text-lg text-stone-600 max-w-xl leading-relaxed">
-              48-hour cold-fermented sourdough pizza baked on 450°C volcanic stone, alongside delicate dim sums, wok noodles, and street-style small plates. Made fresh to order with zero shortcuts.
+              <span className="inline-block">Neapolitan (wood-fired) pizza .</span>{' '}
+              <span className="inline-block">Sushi .</span>{' '}
+              <span className="inline-block">Dim sum .</span>{' '}
+              <span className="inline-block">Burrito bowl .</span>
             </p>
 
             {/* Action Buttons */}
@@ -57,22 +53,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenReservation }) =
                 <Calendar className="w-4 h-4 text-stone-600" />
                 <span>Reserve a Table</span>
               </button>
-            </div>
-
-            {/* Hearth Quick Highlights */}
-            <div className="grid grid-cols-3 gap-3 sm:gap-6 pt-4 border-t border-stone-200/80 max-w-lg">
-              <div>
-                <span className="block font-serif-clean text-xl sm:text-2xl font-black text-stone-900">450°C</span>
-                <span className="text-xs font-medium text-stone-500">Volcanic Stone Oven</span>
-              </div>
-              <div>
-                <span className="block font-serif-clean text-xl sm:text-2xl font-black text-stone-900">48h</span>
-                <span className="text-xs font-medium text-stone-500">Slow Cold Ferment</span>
-              </div>
-              <div>
-                <span className="block font-serif-clean text-xl sm:text-2xl font-black text-stone-900">90s</span>
-                <span className="text-xs font-medium text-stone-500">Blistered Crust Bake</span>
-              </div>
             </div>
 
           </div>

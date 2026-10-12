@@ -18,6 +18,8 @@ export interface Variant {
   name: string;
   price: number;
   isVeg?: boolean;
+  imagePath?: string;
+  crustType?: 'woodfired-small' | 'woodfired-large' | 'thin-crust' | string;
 }
 
 export interface Addon {

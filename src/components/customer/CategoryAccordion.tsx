@@ -46,7 +46,7 @@ export const CategoryAccordion: React.FC<CategoryAccordionProps> = ({
           <div className="flex items-center gap-2.5 flex-wrap mb-1">
             {/* Category Index Number */}
             <span className="font-mono text-xs font-bold text-stone-600">
-              0{index + 1}
+              {(index + 1).toString().padStart(2, '0')}
             </span>
 
             {/* Category Title */}

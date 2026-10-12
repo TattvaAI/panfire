@@ -57,7 +57,36 @@ export const VariantSelectorModal: React.FC<VariantSelectorModalProps> = ({
         role="dialog"
         aria-modal="true"
       >
-        {/* Header */}
+        {/* Dynamic Dish Image Header (Changes when switching size/crust) */}
+        {(selectedVariant?.imagePath || item.imagePath) && (
+          <div className="relative h-44 sm:h-52 w-full bg-stone-100 shrink-0 overflow-hidden border-b border-stone-200">
+            <img
+              key={selectedVariant?.imagePath || item.imagePath}
+              src={selectedVariant?.imagePath || item.imagePath}
+              alt={item.name}
+              className={`w-full h-full object-cover transition-all duration-300 ${
+                selectedVariant?.crustType === 'woodfired-small' ? 'scale-90' :
+                selectedVariant?.crustType === 'woodfired-large' ? 'scale-105' :
+                selectedVariant?.crustType === 'thin-crust' ? 'scale-100 contrast-105' : ''
+              }`}
+            />
+            <button
+              onClick={onClose}
+              className="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/60 hover:bg-black text-white flex items-center justify-center transition-colors cursor-pointer z-10"
+              aria-label="Close"
+            >
+              <X className="w-4 h-4" />
+            </button>
+            {selectedVariant && (
+              <div className="absolute bottom-3 left-4 bg-black/80 backdrop-blur-xs text-white text-xs font-mono font-bold px-2.5 py-1 rounded-md shadow-sm flex items-center gap-1.5">
+                <span>{selectedVariant.name}</span>
+                <span className="text-emerald-300">• ₹{selectedVariant.price}</span>
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* Header Details */}
         <div className="p-5 border-b border-stone-100 flex items-start justify-between gap-4 bg-white">
           <div className="flex-1">
             <div className="flex items-center gap-2 mb-1">
@@ -90,13 +119,15 @@ export const VariantSelectorModal: React.FC<VariantSelectorModalProps> = ({
             )}
           </div>
 
-          <button
-            onClick={onClose}
-            className="w-8 h-8 rounded-full bg-stone-100 hover:bg-stone-200 text-stone-600 flex items-center justify-center transition-colors cursor-pointer shrink-0"
-            aria-label="Close"
-          >
-            <X className="w-4 h-4" />
-          </button>
+          {!(selectedVariant?.imagePath || item.imagePath) && (
+            <button
+              onClick={onClose}
+              className="w-8 h-8 rounded-full bg-stone-100 hover:bg-stone-200 text-stone-600 flex items-center justify-center transition-colors cursor-pointer shrink-0"
+              aria-label="Close"
+            >
+              <X className="w-4 h-4" />
+            </button>
+          )}
         </div>
 
         {/* Scrollable Options */}
@@ -106,7 +137,7 @@ export const VariantSelectorModal: React.FC<VariantSelectorModalProps> = ({
             <div className="bg-white p-4 rounded-xl border border-stone-200/80 shadow-xs space-y-3">
               <div className="flex justify-between items-center">
                 <label className="text-xs font-bold uppercase tracking-wider text-stone-700">
-                  Select Protein / Preparation Option
+                  {item.category?.includes('Pizza') ? 'Select Crust & Size Option' : 'Select Option'}
                 </label>
                 <span className="text-[11px] text-stone-400 font-semibold">1 Option Required</span>
               </div>

@@ -16,7 +16,7 @@ export const BookingSection: React.FC = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [bookingRef, setBookingRef] = useState('');
 
-  const timeSlots = ['12:30 PM', '1:30 PM', '7:00 PM', '8:00 PM', '9:15 PM'];
+  const timeSlots = ['12:30 PM', '1:30 PM', '3:00 PM', '5:00 PM', '7:00 PM', '8:30 PM', '10:00 PM'];
   const partySizes = ['1 Guest', '2 Guests', '4 Guests', '6 Guests', '8+ Guests'];
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -218,7 +218,7 @@ export const BookingSection: React.FC = () => {
                   <input
                     type="tel"
                     required
-                    placeholder="e.g. +91 98100 12345"
+                    placeholder="e.g. +91 78142 19191"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     className="w-full px-3.5 py-2.5 rounded-xl border border-stone-200 bg-white text-stone-900 text-sm placeholder-stone-400 focus:outline-none focus:border-[#1E2D24] shadow-xs"
